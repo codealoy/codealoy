@@ -28,7 +28,9 @@ This is a full-featured boilerplate for a creating a documentation website using
 
 Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
 
-- `Inline code`
+- `const a = 10;`
+- Run this command: `npm install`
+
 - Code block
 
 ```js
