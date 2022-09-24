@@ -88,7 +88,6 @@ function getNodeText(node) {
 function collectHeadings(nodes: any, slugify = slugifyWithCounter()) {
   const sections: any = [];
 
-  console.log(`🐞🐞🐞 nodes:`, JSON.stringify(nodes));
   if (nodes.length) {
     for (const node of nodes) {
       if (/^h[23]$/.test(node.name)) {
