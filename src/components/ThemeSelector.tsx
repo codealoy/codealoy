@@ -54,9 +54,9 @@ function SystemIcon(props) {
 
 export function ThemeSelector(props) {
   const [selectedTheme, setSelectedTheme] = useState({
-    name: "Dark",
-    value: "dark",
-    icon: DarkIcon,
+    name: "System",
+    value: "system",
+    icon: SystemIcon,
   });
 
   useEffect(() => {
