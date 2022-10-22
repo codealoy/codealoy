@@ -17,16 +17,15 @@ const IndexPage = () => {
         <meta
           key="twitter:title"
           name="twitter:title"
-          content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
+          content="Codealoy - Programming and Web Development Learning Platform in Bangla"
         />
         <meta
           key="og:title"
           property="og:title"
-          content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
+          content="Codealoy - Programming and Web Development Learning Platform in Bangla"
         />
         <title>
-          Tailwind CSS - Rapidly build modern websites without ever leaving your
-          HTML.
+          Codealoy - Programming and Web Development Learning Platform in Bangla
         </title>
       </Head>
       <div
@@ -40,7 +39,7 @@ const IndexPage = () => {
             কোড + বিদ্যালয় = কোডালয়
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-slate-600 dark:text-slate-400">
-            মাতৃভাষা বাংলায় ওয়েব ডেভেলপমেন্ট শেখার
+            মাতৃভাষা বাংলায় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার
             <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
               {" "}
               সম্পূর্ণ ফ্রি
