@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
@@ -106,7 +107,13 @@ export const Footer = () => {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2020 Workflow, Inc. All rights reserved.
+          Designed and built with ♥️ by the{" "}
+          <a
+            href="#meet-team"
+            className="hover:text-sky-500 dark:hover:text-sky-400"
+          >
+            Codaloy Team
+          </a>
         </p>
       </div>
     </footer>
