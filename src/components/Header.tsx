@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import clsx from "clsx";
-import Link from "next/link";
+import React, { useEffect, useState, useContext } from 'react';
+import clsx from 'clsx';
+import Link from 'next/link';
 
-import { GithubIcon } from "../components/icons/GithubIcon";
-import { Logo } from "../components/Logo";
-import { MobileNavigation } from "../components/MobileNavigation";
-import { Search } from "../components/Search";
-import { ThemeSelector } from "../components/ThemeSelector";
+import { GithubIcon } from '../components/icons/GithubIcon';
+import { Logo } from '../components/Logo';
+import { MobileNavigation } from '../components/MobileNavigation';
+import { Search } from '../components/Search';
+import { ThemeSelector } from '../components/ThemeSelector';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 interface HeaderProps {
   navigation: any;
@@ -14,27 +15,28 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ navigation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     function onScroll() {
       setIsScrolled(window.scrollY > 0);
     }
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll);
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
   return (
     <header
       className={clsx(
-        "sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8",
+        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         {
-          "dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75":
+          'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75':
             isScrolled,
-          "dark:bg-transparent": !isScrolled,
-        }
+          'dark:bg-transparent': !isScrolled,
+        },
       )}
     >
       <div className="mr-6 lg:hidden">
@@ -44,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ navigation }) => {
         <Link href="/">
           <a className="block w-10 overflow-hidden lg:w-auto">
             <span className="sr-only">Home page</span>
-            <Logo />
+            <Logo variant={theme.isDarkTheme ? 'dark' : 'light'} />
           </a>
         </Link>
       </div>
