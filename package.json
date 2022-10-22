@@ -41,6 +41,8 @@
     "zod": "^3.19.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
@@ -50,6 +52,7 @@
     "autoprefixer": "^10.4.12",
     "eslint": "8.26.0",
     "eslint-config-next": "12.3.1",
+    "husky": "^8.0.1",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
