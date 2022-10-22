@@ -20,6 +20,8 @@ import type { AppRouter } from "../server/router";
 
 import "../styles/globals.css";
 import "../styles/tailwind.css";
+import { Announcement } from "../components/Announcement";
+import { useState } from "react";
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
@@ -30,12 +32,31 @@ const MyApp: AppType<MyAppProps> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const router = useRouter();
-  const isHomePage = router.pathname === "/";
   const isDocPage = router.pathname.includes("/docs");
-
   const pageTitle = getPageTitle(pageProps);
-
   const description = pageProps.markdoc?.frontmatter.description;
+
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
+
+  const renderLayout = () => {
+    if (isDocPage) {
+      return (
+        <GuideLayout {...pageProps}>
+          <Component {...pageProps} />
+        </GuideLayout>
+      );
+    }
+
+    return (
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    );
+  };
+
+  const hideAnnouncement = () => {
+    setShowAnnouncement(false);
+  };
 
   return (
     <>
@@ -44,16 +65,10 @@ const MyApp: AppType<MyAppProps> = ({
           <title>{pageTitle}</title>
           {description && <meta name="description" content={description} />}
         </Head>
-        {isHomePage && (
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+        {showAnnouncement && (
+          <Announcement hideAnnouncement={hideAnnouncement} />
         )}
-        {isDocPage && (
-          <GuideLayout {...pageProps}>
-            <Component {...pageProps} />
-          </GuideLayout>
-        )}
+        {renderLayout()}
       </SessionProvider>
     </>
   );
