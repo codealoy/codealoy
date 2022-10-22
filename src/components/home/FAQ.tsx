@@ -5,17 +5,17 @@ const faqs = [
       "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
   {
-    question: "How do you make holy water?",
+    question: "How do you make holy water 2?",
     answer:
       "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
   {
-    question: "How do you make holy water?",
+    question: "How do you make holy water 3?",
     answer:
       "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
   {
-    question: "How do you make holy water?",
+    question: "How do you make holy water 4?",
     answer:
       "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
