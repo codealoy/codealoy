@@ -15,6 +15,7 @@
     "@codesandbox/sandpack-themes": "^1.6.0",
     "@docsearch/react": "^3.2.1",
     "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.11",
     "@markdoc/markdoc": "^0.1.10",
     "@markdoc/next.js": "^0.1.8",
     "@next-auth/prisma-adapter": "^1.0.4",
