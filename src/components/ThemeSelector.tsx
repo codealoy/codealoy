@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
-import { Listbox } from "@headlessui/react";
-import clsx from "clsx";
+import clsx from 'clsx';
+
+import { Listbox } from '@headlessui/react';
+import { useEffect, useState, useContext } from 'react';
+
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const themes = [
-  { name: "Light", value: "light", icon: LightIcon },
-  { name: "Dark", value: "dark", icon: DarkIcon },
-  { name: "System", value: "system", icon: SystemIcon },
+  { name: 'Light', value: 'light', icon: LightIcon },
+  { name: 'Dark', value: 'dark', icon: DarkIcon },
 ];
 
 function IconBase({ children, ...props }) {
@@ -40,39 +42,33 @@ function DarkIcon(props) {
   );
 }
 
-function SystemIcon(props) {
-  return (
-    <IconBase {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M1 4a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-1.5l.31 1.242c.084.333.36.573.63.808.091.08.182.158.264.24A1 1 0 0 1 11 15H5a1 1 0 0 1-.704-1.71c.082-.082.173-.16.264-.24.27-.235.546-.475.63-.808L5.5 11H4a3 3 0 0 1-3-3V4Zm3-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4Z"
-      />
-    </IconBase>
-  );
-}
-
 export function ThemeSelector(props) {
   const [selectedTheme, setSelectedTheme] = useState<typeof themes[0]>();
+  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     if (selectedTheme) {
-      document.documentElement.setAttribute("data-theme", selectedTheme.value);
+      document.documentElement.setAttribute('data-theme', selectedTheme.value);
     } else {
       const t: any = themes.find(
         (theme) =>
-          theme.value === document.documentElement.getAttribute("data-theme")
+          theme.value === document.documentElement.getAttribute('data-theme'),
       );
 
       setSelectedTheme(t);
     }
   }, [selectedTheme]);
 
+  const selectThemeHandler = (selectedTheme: typeof themes[0]) => {
+    setSelectedTheme(selectedTheme);
+    theme.setTheme(selectedTheme.value);
+  };
+
   return (
     <Listbox
       as="div"
       value={selectedTheme}
-      onChange={setSelectedTheme}
+      onChange={selectThemeHandler}
       {...props}
     >
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
@@ -90,13 +86,13 @@ export function ThemeSelector(props) {
             value={theme}
             className={({ active, selected }) =>
               clsx(
-                "flex cursor-pointer select-none items-center rounded-[0.625rem] p-1",
+                'flex cursor-pointer select-none items-center rounded-[0.625rem] p-1',
                 {
-                  "text-sky-500": selected,
-                  "text-slate-900 dark:text-white": active && !selected,
-                  "text-slate-700 dark:text-slate-400": !active && !selected,
-                  "bg-slate-100 dark:bg-slate-900/40": active,
-                }
+                  'text-sky-500': selected,
+                  'text-slate-900 dark:text-white': active && !selected,
+                  'text-slate-700 dark:text-slate-400': !active && !selected,
+                  'bg-slate-100 dark:bg-slate-900/40': active,
+                },
               )
             }
           >
@@ -104,9 +100,9 @@ export function ThemeSelector(props) {
               <>
                 <div className="rounded-md bg-white p-1 shadow ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
                   <theme.icon
-                    className={clsx("h-4 w-4", {
-                      "fill-sky-400 dark:fill-sky-400": selected,
-                      "fill-slate-400": !selected,
+                    className={clsx('h-4 w-4', {
+                      'fill-sky-400 dark:fill-sky-400': selected,
+                      'fill-slate-400': !selected,
                     })}
                   />
                 </div>
