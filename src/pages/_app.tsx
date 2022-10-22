@@ -1,27 +1,29 @@
-import "focus-visible";
+import 'focus-visible';
 
-import Head from "next/head";
-import superjson from "superjson";
+import Head from 'next/head';
+import superjson from 'superjson';
 
-import { MarkdocNextJsPageProps } from "@markdoc/next.js";
-import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
-import { loggerLink } from "@trpc/client/links/loggerLink";
-import { withTRPC } from "@trpc/next";
-import { SessionProvider } from "next-auth/react";
-import { useRouter } from "next/router";
-import { GuideLayout } from "../layouts/GuideLayout";
-import { Layout } from "../layouts/Layout";
-import { getBaseUrl } from "../utils/getBaseUrl";
-import { getPageTitle } from "../utils/getPageTitle";
+import '../styles/globals.css';
+import '../styles/tailwind.css';
 
-import type { Session } from "next-auth";
-import type { AppType } from "next/app";
-import type { AppRouter } from "../server/router";
+import type { Session } from 'next-auth';
+import type { AppType } from 'next/app';
+import type { AppRouter } from '../server/router';
 
-import "../styles/globals.css";
-import "../styles/tailwind.css";
-import { Announcement } from "../components/Announcement";
-import { useState } from "react";
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
+import { httpBatchLink } from '@trpc/client/links/httpBatchLink';
+import { loggerLink } from '@trpc/client/links/loggerLink';
+import { withTRPC } from '@trpc/next';
+import { SessionProvider } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+
+import { Announcement } from '../components/Announcement';
+import { ThemeContextProvider } from '../contexts/ThemeContext';
+import { GuideLayout } from '../layouts/GuideLayout';
+import { Layout } from '../layouts/Layout';
+import { getBaseUrl } from '../utils/getBaseUrl';
+import { getPageTitle } from '../utils/getPageTitle';
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
@@ -32,7 +34,7 @@ const MyApp: AppType<MyAppProps> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const router = useRouter();
-  const isDocPage = router.pathname.includes("/docs");
+  const isDocPage = router.pathname.includes('/docs');
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
@@ -60,16 +62,18 @@ const MyApp: AppType<MyAppProps> = ({
 
   return (
     <>
-      <SessionProvider session={session}>
-        <Head>
-          <title>{pageTitle}</title>
-          {description && <meta name="description" content={description} />}
-        </Head>
-        {showAnnouncement && (
-          <Announcement hideAnnouncement={hideAnnouncement} />
-        )}
-        {renderLayout()}
-      </SessionProvider>
+      <ThemeContextProvider>
+        <SessionProvider session={session}>
+          <Head>
+            <title>{pageTitle}</title>
+            {description && <meta name="description" content={description} />}
+          </Head>
+          {showAnnouncement && (
+            <Announcement hideAnnouncement={hideAnnouncement} />
+          )}
+          {renderLayout()}
+        </SessionProvider>
+      </ThemeContextProvider>
     </>
   );
 };
@@ -82,8 +86,8 @@ export default withTRPC<AppRouter>({
       links: [
         loggerLink({
           enabled: (opts) =>
-            process.env.NODE_ENV === "development" ||
-            (opts.direction === "down" && opts.result instanceof Error),
+            process.env.NODE_ENV === 'development' ||
+            (opts.direction === 'down' && opts.result instanceof Error),
         }),
         httpBatchLink({ url }),
       ],
