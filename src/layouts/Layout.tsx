@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Header } from "../components/Header";
-import { Prose } from "../components/Prose";
+import { Footer } from "../components/Footer";
 import { NAVIGATION_LIST } from "../constants/navigations";
 
 interface LayoutProps {
@@ -15,7 +15,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header navigation={navigation} />
-      <Prose>{children}</Prose>
+      {children}
+      <Footer />
     </>
   );
 };
