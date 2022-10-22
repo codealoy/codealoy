@@ -112,7 +112,7 @@ export const Footer = () => {
             href="#meet-team"
             className="hover:text-sky-500 dark:hover:text-sky-400"
           >
-            Codaloy Team
+            Codealoy Team
           </a>
         </p>
       </div>
