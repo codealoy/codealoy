@@ -9,24 +9,15 @@ import { Team } from "../components/home/Team";
 import { CTA } from "../components/home/CTA";
 import { FAQ } from "../components/home/FAQ";
 import { LiveCodingFeature } from "../components/home/LiveCodingFeature";
+import { SITE_TITLE } from "../constants/site-settings";
 
 const IndexPage = () => {
   return (
     <>
       <Head>
-        <meta
-          key="twitter:title"
-          name="twitter:title"
-          content="Codealoy - Programming and Web Development Learning Platform in Bangla"
-        />
-        <meta
-          key="og:title"
-          property="og:title"
-          content="Codealoy - Programming and Web Development Learning Platform in Bangla"
-        />
-        <title>
-          Codealoy - Programming and Web Development Learning Platform in Bangla
-        </title>
+        <meta key="twitter:title" name="twitter:title" content={SITE_TITLE} />
+        <meta key="og:title" property="og:title" content={SITE_TITLE} />
+        <title>{SITE_TITLE}</title>
       </Head>
       <div
         className={clsx(
