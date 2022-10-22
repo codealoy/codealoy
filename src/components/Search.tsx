@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
-import { createPortal } from "react-dom";
-import Link from "next/link";
-import Router from "next/router";
-import { DocSearchModal, useDocSearchKeyboardEvents } from "@docsearch/react";
+import { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import Link from 'next/link';
+import Router from 'next/router';
+import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react';
 
 const docSearchConfig = {
   appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID!,
@@ -20,7 +20,7 @@ function Hit({ hit, children }) {
 
 export function Search() {
   const [isOpen, setIsOpen] = useState(false);
-  const [modifierKey, setModifierKey] = useState("Ctrl ");
+  const [modifierKey, setModifierKey] = useState('Ctrl ');
 
   const onOpen = useCallback(() => {
     setIsOpen(true);
@@ -34,7 +34,7 @@ export function Search() {
 
   useEffect(() => {
     setModifierKey(
-      /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? "⌘" : "Ctrl "
+      /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl ',
     );
   }, []);
 
@@ -74,7 +74,7 @@ export function Search() {
               },
             }}
           />,
-          document.body
+          document.body,
         )}
     </>
   );

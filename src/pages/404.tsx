@@ -1,31 +1,31 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import {
   BookmarkSquareIcon,
   BookOpenIcon,
   RssIcon,
   QueueListIcon,
-} from "@heroicons/react/24/outline";
-import Link from "next/link";
+} from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const links = [
   {
-    title: "Documentation",
-    description: "Learn how to integrate our tools with your app",
+    title: 'Documentation',
+    description: 'Learn how to integrate our tools with your app',
     icon: BookOpenIcon,
   },
   {
-    title: "API Reference",
-    description: "A complete API reference for our libraries",
+    title: 'API Reference',
+    description: 'A complete API reference for our libraries',
     icon: QueueListIcon,
   },
   {
-    title: "Guides",
-    description: "Installation guides that cover popular setups",
+    title: 'Guides',
+    description: 'Installation guides that cover popular setups',
     icon: BookmarkSquareIcon,
   },
   {
-    title: "Blog",
-    description: "Read our latest news and articles",
+    title: 'Blog',
+    description: 'Read our latest news and articles',
     icon: RssIcon,
   },
 ];

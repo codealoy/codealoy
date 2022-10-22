@@ -1,15 +1,15 @@
-import clsx from "clsx";
-import Head from "next/head";
-import NextLink from "next/link";
-import styles from "../styles/index.module.css";
+import clsx from 'clsx';
+import Head from 'next/head';
+import NextLink from 'next/link';
+import styles from '../styles/index.module.css';
 
-import { Features } from "../components/home/Features";
-import { BlogPosts } from "../components/home/BlogPosts";
-import { Team } from "../components/home/Team";
-import { CTA } from "../components/home/CTA";
-import { FAQ } from "../components/home/FAQ";
-import { LiveCodingFeature } from "../components/home/LiveCodingFeature";
-import { SITE_TITLE } from "../constants/site-settings";
+import { Features } from '../components/home/Features';
+import { BlogPosts } from '../components/home/BlogPosts';
+import { Team } from '../components/home/Team';
+import { CTA } from '../components/home/CTA';
+import { FAQ } from '../components/home/FAQ';
+import { LiveCodingFeature } from '../components/home/LiveCodingFeature';
+import { SITE_TITLE } from '../constants/site-settings';
 
 const IndexPage = () => {
   return (
@@ -21,8 +21,8 @@ const IndexPage = () => {
       </Head>
       <div
         className={clsx(
-          "-mt-[76px] flex h-screen items-center justify-center space-y-20 overflow-hidden sm:space-y-32 md:space-y-40",
-          styles.beams
+          '-mt-[76px] flex h-screen items-center justify-center space-y-20 overflow-hidden sm:space-y-32 md:space-y-40',
+          styles.beams,
         )}
       >
         <div className="relative mx-auto max-w-5xl">
@@ -32,13 +32,13 @@ const IndexPage = () => {
           <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-slate-600 dark:text-slate-400">
             মাতৃভাষা বাংলায় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার
             <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
-              {" "}
+              {' '}
               সম্পূর্ণ ফ্রি
             </code>
-            , এবং{" "}
+            , এবং{' '}
             <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
               ওপেনসোর্স
-            </code>{" "}
+            </code>{' '}
             প্লাটফর্ম
           </p>
           <div className="mt-6 flex justify-center space-x-6 text-sm sm:mt-10">

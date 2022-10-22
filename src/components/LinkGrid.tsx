@@ -1,6 +1,6 @@
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-import { Icon } from "./Icon";
+import { Icon } from './Icon';
 
 export function LinkGrid({ children }) {
   return (

@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId } from 'react';
 
 export function HeroBackground(props) {
   const id = useId();

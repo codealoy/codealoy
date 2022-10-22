@@ -1,4 +1,4 @@
-import { Fence } from "../../components/Fence";
+import { Fence } from '../../components/Fence';
 
 export const fence = {
   render: Fence,
@@ -7,7 +7,7 @@ export const fence = {
     language: {
       type: String,
       description:
-        "The programming language of the code block. Place it after the backticks.",
+        'The programming language of the code block. Place it after the backticks.',
     },
   },
 };

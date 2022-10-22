@@ -1,15 +1,15 @@
-import React from "react";
-import clsx from "clsx";
-import Link from "next/link";
+import React from 'react';
+import clsx from 'clsx';
+import Link from 'next/link';
 
-import { useRouter } from "next/router";
-import { Header } from "../components/Header";
-import { Navigation } from "../components/Navigation";
-import { Prose } from "../components/Prose";
-import { NAVIGATION_LIST } from "../constants/navigations";
-import { MarkdocNextJsPageProps } from "@markdoc/next.js";
-import { getTableOfContent } from "../utils/getTableOfContent";
-import { useTableOfContents } from "../hooks/useTableOfContent";
+import { useRouter } from 'next/router';
+import { Header } from '../components/Header';
+import { Navigation } from '../components/Navigation';
+import { Prose } from '../components/Prose';
+import { NAVIGATION_LIST } from '../constants/navigations';
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
+import { getTableOfContent } from '../utils/getTableOfContent';
+import { useTableOfContents } from '../hooks/useTableOfContent';
 
 interface GuideLayoutProps extends MarkdocNextJsPageProps {
   children?: React.ReactNode;
@@ -27,14 +27,14 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
   const router = useRouter();
   const allLinks = navigation.flatMap((section) => section.links);
   const linkIndex = allLinks.findIndex(
-    (link) => link && link.href === router.pathname
+    (link) => link && link.href === router.pathname,
   );
   const previousPage = allLinks[linkIndex - 1];
   const nextPage = allLinks[linkIndex + 1];
   const section: any = navigation.find(
     (section) =>
       section.links &&
-      section.links.find((link) => link.href === router.pathname)
+      section.links.find((link) => link.href === router.pathname),
   );
   const currentSection = useTableOfContents(tableOfContents);
 
@@ -131,8 +131,8 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
                           <a
                             className={clsx(
                               isActive(section)
-                                ? "text-sky-500"
-                                : "font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
+                                ? 'text-sky-500'
+                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
                             )}
                           >
                             {section.title}
@@ -147,8 +147,8 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
                                 <a
                                   className={
                                     isActive(subSection)
-                                      ? "text-sky-500"
-                                      : "hover:text-slate-600 dark:hover:text-slate-300"
+                                      ? 'text-sky-500'
+                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
                                   }
                                 >
                                   {subSection.title}

@@ -12,7 +12,7 @@ const indexHtmlCode = `<!DOCTYPE html>
   <body>
     <div id="root"></div>
   </body>
-</html>`
+</html>`;
 
 const indexCode = `import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -25,7 +25,7 @@ root.render(
   <StrictMode>
     <App />
   </StrictMode>
-);`
+);`;
 
 const appCode = `import Button from './Button.js';
 
@@ -37,7 +37,7 @@ const appCode = `import Button from './Button.js';
        <Button />
      </>
    )
- }`
+ }`;
 
 const buttonCode = `export default function Button() {
    return (
@@ -45,7 +45,7 @@ const buttonCode = `export default function Button() {
        <button>Click me</button>
      </>
    )
- }`
+ }`;
 
 const styleCode = `body {
   font-family: sans-serif;
@@ -61,7 +61,7 @@ const styleCode = `body {
 
 h1 {
   font-size: 1.5rem;
-}`
+}`;
 
 export const REACT_PRESET = {
   files: {
@@ -89,4 +89,4 @@ export const REACT_PRESET = {
   entry: '/index.js',
   main: '/App.js',
   environment: 'create-react-app',
-}
+};

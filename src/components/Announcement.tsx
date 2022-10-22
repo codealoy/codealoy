@@ -1,5 +1,5 @@
-import React from "react";
-import { MegaphoneIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import React from 'react';
+import { MegaphoneIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export const Announcement: React.FC<{
   hideAnnouncement: () => void;

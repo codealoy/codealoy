@@ -1,13 +1,13 @@
-import { LinkGrid as LinkGridComponent } from "../../components/LinkGrid";
+import { LinkGrid as LinkGridComponent } from '../../components/LinkGrid';
 
 export const LinkGrid = {
   render: LinkGridComponent,
-  description: "Link grid container",
+  description: 'Link grid container',
 };
 
 export const LinkGridLink = {
   render: LinkGridComponent.Link,
-  description: "Link grid item",
+  description: 'Link grid item',
   selfClosing: true,
   attributes: {
     title: { type: String },

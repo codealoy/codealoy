@@ -1,5 +1,5 @@
-import { Head, Html, Main, NextScript } from "next/document";
-import { COLORS } from "../constants/site-settings";
+import { Head, Html, Main, NextScript } from 'next/document';
+import { COLORS } from '../constants/site-settings';
 
 const themeScript = `
   let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')

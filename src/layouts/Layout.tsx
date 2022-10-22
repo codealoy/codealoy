@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { NAVIGATION_LIST } from "../constants/navigations";
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { NAVIGATION_LIST } from '../constants/navigations';
 
 interface LayoutProps {
   navigation?: any;

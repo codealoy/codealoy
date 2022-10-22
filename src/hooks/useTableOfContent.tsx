@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 export const useTableOfContents = (tableOfContents) => {
   const [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id);
@@ -45,13 +45,13 @@ export const useTableOfContents = (tableOfContents) => {
       }
       setCurrentSection(current);
     }
-    window.addEventListener("scroll", onScroll, {
+    window.addEventListener('scroll', onScroll, {
       capture: true,
       passive: true,
     });
     onScroll();
     return () => {
-      window.removeEventListener("scroll", onScroll, {
+      window.removeEventListener('scroll', onScroll, {
         capture: true,
       });
     };

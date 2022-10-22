@@ -1,10 +1,10 @@
-import { MarkdocNextJsPageProps } from "@markdoc/next.js";
-import { slugifyWithCounter } from "@sindresorhus/slugify";
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
+import { slugifyWithCounter } from '@sindresorhus/slugify';
 
 const getNodeText = (node) => {
-  let text = "";
+  let text = '';
   for (const child of node.children ?? []) {
-    if (typeof child === "string") {
+    if (typeof child === 'string') {
       text += child;
     }
     text += getNodeText(child);
@@ -22,7 +22,7 @@ const collectHeadings = (nodes: any, slugify = slugifyWithCounter()) => {
         if (title) {
           const id = slugify(title);
           node.attributes.id = id;
-          if (node.name === "h3") {
+          if (node.name === 'h3') {
             sections[sections.length - 1].children.push({
               ...node.attributes,
               title,
@@ -45,12 +45,12 @@ export const getTableOfContent = ({ markdoc }: MarkdocNextJsPageProps) => {
   if (markdoc) {
     const markdocContent = markdoc.content;
     const isMarkdocContentObject =
-      typeof markdoc.content === "object" && !Array.isArray(markdocContent);
+      typeof markdoc.content === 'object' && !Array.isArray(markdocContent);
 
     tableOfContents = collectHeadings(
       isMarkdocContentObject
         ? [markdocContent]
-        : [...(markdocContent as Array<any>)]
+        : [...(markdocContent as Array<any>)],
     );
   }
 

@@ -1,6 +1,6 @@
-import { Fragment } from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import nightOwl from "prism-react-renderer/themes/nightOwl";
+import { Fragment } from 'react';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import nightOwl from 'prism-react-renderer/themes/nightOwl';
 
 export function Fence({ children, language }) {
   return (
@@ -18,7 +18,7 @@ export function Fence({ children, language }) {
                 {line.map((token, index) => (
                   <span key={index} {...getTokenProps({ token })} />
                 ))}
-                {"\n"}
+                {'\n'}
               </Fragment>
             ))}
           </code>

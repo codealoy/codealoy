@@ -1,5 +1,5 @@
 interface LogoProps {
-  variant?: "light" | "dark";
+  variant?: 'light' | 'dark';
 }
 
 const LogoLight = () => (
@@ -122,6 +122,6 @@ const LogoDark = () => (
   </svg>
 );
 
-export const Logo = ({ variant = "light" }: LogoProps) => {
-  return variant === "dark" ? <LogoDark /> : <LogoLight />;
+export const Logo = ({ variant = 'light' }: LogoProps) => {
+  return variant === 'dark' ? <LogoDark /> : <LogoLight />;
 };

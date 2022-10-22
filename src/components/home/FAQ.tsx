@@ -1,23 +1,23 @@
 const faqs = [
   {
-    question: "How do you make holy water?",
+    question: 'How do you make holy water?',
     answer:
-      "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
   },
   {
-    question: "How do you make holy water 2?",
+    question: 'How do you make holy water 2?',
     answer:
-      "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
   },
   {
-    question: "How do you make holy water 3?",
+    question: 'How do you make holy water 3?',
     answer:
-      "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
   },
   {
-    question: "How do you make holy water 4?",
+    question: 'How do you make holy water 4?',
     answer:
-      "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
   },
 ];
 
@@ -31,13 +31,13 @@ export const FAQ = () => {
               Frequently asked questions
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Can’t find the answer you’re looking for? Reach out to our{" "}
+              Can’t find the answer you’re looking for? Reach out to our{' '}
               <a
                 href="#"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
                 customer support
-              </a>{" "}
+              </a>{' '}
               team.
             </p>
           </div>

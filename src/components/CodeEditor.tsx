@@ -1,7 +1,7 @@
-import React from "react";
-import { Sandpack } from "@codesandbox/sandpack-react";
-import { nightOwl } from "@codesandbox/sandpack-themes";
-import { REACT_PRESET } from "../presets/react";
+import React from 'react';
+import { Sandpack } from '@codesandbox/sandpack-react';
+import { nightOwl } from '@codesandbox/sandpack-themes';
+import { REACT_PRESET } from '../presets/react';
 
 const CODE_SETUP_MAP = {
   test: REACT_PRESET,
