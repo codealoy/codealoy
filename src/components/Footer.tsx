@@ -1,6 +1,5 @@
-import Link from "next/link";
 import React from "react";
-/* This example requires Tailwind CSS v2.0+ */
+
 const navigation = {
   main: [
     { name: "About", href: "#" },
