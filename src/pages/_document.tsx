@@ -53,7 +53,10 @@ const themeScript = `
 
 export default function Document() {
   return (
-    <Html className="antialiased [font-feature-settings:'ss01']" lang="en">
+    <Html
+      className="scroll-smooth antialiased [font-feature-settings:'ss01']"
+      lang="en"
+    >
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>
