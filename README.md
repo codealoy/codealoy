@@ -1,6 +1,6 @@
 # Codealoy's codebase and curriculum
 
-Codealoy is an open-source interactive learning web platform that intend to make learning web development easier in **Bangla** (Bengali Language).
+Codealoy is an open-source interactive learning web platform that intend to make learning programming & web development easier in **Bangla** (Bengali Language).
 
 ## Tech Stack
 
