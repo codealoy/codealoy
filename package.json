@@ -1,7 +1,8 @@
 {
-  "name": "tailwindui-syntax-t3-app",
-  "version": "0.1.0",
+  "name": "@codaloy/codaloy",
+  "version": "0.0.1",
   "private": true,
+  "main": "none",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -58,5 +59,18 @@
   },
   "ct3aMetadata": {
     "initVersion": "5.13.0"
-  }
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codealoy/codealoy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codealoy/codealoy/issues"
+  },
+  "homepage": "https://github.com/codealoy/codealoy#readme",
+  "author": "Codealoy Team<codealoyteam@gmail.com>"
 }
