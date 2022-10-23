@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { GithubIcon } from '../components/icons/GithubIcon';
 import { Logo } from '../components/Logo';
@@ -16,6 +17,9 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ navigation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const theme = useContext(ThemeContext);
+  const router = useRouter();
+
+  const isHomePage = router.pathname === '/';
 
   useEffect(() => {
     function onScroll() {
@@ -50,9 +54,11 @@ export const Header: React.FC<HeaderProps> = ({ navigation }) => {
           </a>
         </Link>
       </div>
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
-        <Search />
-      </div>
+      {!isHomePage && (
+        <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
+          <Search />
+        </div>
+      )}
       <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
         <Link href="https://github.com">
