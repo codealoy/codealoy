@@ -61,12 +61,15 @@ export const Header: React.FC<HeaderProps> = ({ navigation }) => {
       )}
       <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com">
-          <a className="group">
-            <span className="sr-only">GitHub</span>
-            <GithubIcon />
-          </a>
-        </Link>
+        <a
+          href="https://github.com/codealoy/codealoy"
+          target="_blank"
+          className="group"
+          rel="noopener noreferrer"
+        >
+          <span className="sr-only">Codealoy on GitHub</span>
+          <GithubIcon />
+        </a>
       </div>
     </header>
   );
