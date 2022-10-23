@@ -1,7 +1,10 @@
-export interface NavigationItem {
+export interface NavigationLink {
   title: string;
   href?: string;
-  links?: Array<{ title: string; href: string }>;
+}
+
+export interface NavigationItem extends NavigationLink {
+  links?: Array<NavigationLink>;
 }
 
 interface NavigationList {
@@ -10,7 +13,16 @@ interface NavigationList {
 }
 
 export const NAVIGATION_LIST: NavigationList = {
-  HOME: [],
+  HOME: [
+    {
+      title: 'Home',
+      href: '/',
+    },
+    {
+      title: 'Docs',
+      href: '/docs',
+    },
+  ],
   GUIDES: [
     {
       title: 'Introduction',
