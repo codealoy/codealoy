@@ -32,22 +32,22 @@ const links = [
 
 const ErrorPage = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-900">
       <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl py-16 sm:py-24">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+            <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600 dark:text-red-700">
               404 error
             </p>
-            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-400 sm:text-5xl">
               This page does not exist.
             </h1>
-            <p className="mt-2 text-lg text-gray-500">
+            <p className="mt-2 text-lg text-gray-500 dark:text-slate-300">
               The page you are looking for could not be found.
             </p>
           </div>
           <div className="mt-12">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-white">
               Popular pages
             </h2>
             <ul
@@ -68,7 +68,7 @@ const ErrorPage = () => {
                     </span>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-base font-medium text-gray-900">
+                    <h3 className="text-base font-medium text-gray-900 dark:text-white">
                       <span className="rounded-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2">
                         <a href="#" className="focus:outline-none">
                           <span
@@ -79,7 +79,7 @@ const ErrorPage = () => {
                         </a>
                       </span>
                     </h3>
-                    <p className="text-base text-gray-500">
+                    <p className="text-base text-gray-500 dark:text-slate-400">
                       {link.description}
                     </p>
                   </div>
