@@ -36,10 +36,10 @@ const ErrorPage = () => {
       <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl py-16 sm:py-24">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600 dark:text-red-700">
+            <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600 ">
               404 error
             </p>
-            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-400 sm:text-5xl">
+            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
               This page does not exist.
             </h1>
             <p className="mt-2 text-lg text-gray-500 dark:text-slate-300">
@@ -60,9 +60,9 @@ const ErrorPage = () => {
                   className="relative flex items-start space-x-4 py-6"
                 >
                   <div className="flex-shrink-0">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-700">
                       <link.icon
-                        className="h-6 w-6 text-indigo-700"
+                        className="h-6 w-6 text-indigo-700 dark:text-indigo-50"
                         aria-hidden="true"
                       />
                     </span>
