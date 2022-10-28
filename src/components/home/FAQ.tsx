@@ -23,11 +23,11 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <div className="bg-white">
+    <div className="dark:border-tdark:border-t dark:border-slate-100/5 dark:text-gray-500">
       <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div>
-            <h2 className="text-3xl font-extrabold text-gray-900">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
               Frequently asked questions
             </h2>
             <p className="mt-4 text-lg text-gray-500">
@@ -45,10 +45,12 @@ export const FAQ = () => {
             <dl className="space-y-12">
               {faqs.map((faq) => (
                 <div key={faq.question}>
-                  <dt className="text-lg font-medium leading-6 text-gray-900">
+                  <dt className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
                     {faq.question}
                   </dt>
-                  <dd className="mt-2 text-base text-gray-500">{faq.answer}</dd>
+                  <dd className="mt-2 text-base text-gray-500 dark:text-slate-300">
+                    {faq.answer}
+                  </dd>
                 </div>
               ))}
             </dl>

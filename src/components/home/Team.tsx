@@ -24,14 +24,17 @@ const people = [
 
 export const Team = () => {
   return (
-    <section id="meet-team" className="bg-white">
+    <section
+      id="meet-team"
+      className="bg-white dark:border-t dark:border-slate-100/5 dark:bg-slate-900"
+    >
       <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12">
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight dark:text-white sm:text-4xl">
               Meet our team
             </h2>
-            <p className="text-xl text-gray-500">
+            <p className="text-xl text-gray-500 dark:text-slate-400">
               Ornare sagittis, suspendisse in hendrerit quis. Sed dui aliquet
               lectus sit pretium egestas vel mattis neque.
             </p>
@@ -49,7 +52,7 @@ export const Team = () => {
                     alt=""
                   />
                   <div className="space-y-2">
-                    <div className="space-y-1 text-lg font-medium leading-6">
+                    <div className="space-y-1 text-lg font-medium leading-6 dark:text-white">
                       <h3>{person.name}</h3>
                       <p className="text-indigo-600">{person.role}</p>
                     </div>

@@ -2,7 +2,7 @@ import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 export const LiveCodingFeature = () => {
   return (
-    <div className="relative overflow-hidden bg-white pt-16 pb-32">
+    <div className="relative overflow-hidden bg-white pt-16 pb-32 dark:border-t dark:border-slate-100/5 dark:bg-slate-900">
       <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
@@ -16,7 +16,7 @@ export const LiveCodingFeature = () => {
                 </span>
               </div>
               <div className="mt-6">
-                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                   Stay on top of customer support
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
@@ -38,7 +38,7 @@ export const LiveCodingFeature = () => {
             <div className="mt-8 border-t border-gray-200 pt-6">
               <blockquote>
                 <div>
-                  <p className="text-base text-gray-500">
+                  <p className="text-base text-gray-500 dark:text-slate-400">
                     &ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed
                     diam. Sit orci risus aenean curabitur donec aliquet. Mi
                     venenatis in euismod ut.&rdquo;
@@ -53,7 +53,7 @@ export const LiveCodingFeature = () => {
                         alt=""
                       />
                     </div>
-                    <div className="text-base font-medium text-gray-700">
+                    <div className="text-base font-medium text-gray-700 dark:text-slate-400">
                       Marcia Hill, Digital Marketing Manager
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export const LiveCodingFeature = () => {
                 </span>
               </div>
               <div className="mt-6">
-                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                   Better understand your customers
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
