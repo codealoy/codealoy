@@ -53,7 +53,7 @@ export const LiveCodingFeature = () => {
                         alt=""
                       />
                     </div>
-                    <div className="text-base font-medium text-gray-700 dark:text-slate-400 ">
+                    <div className="text-base font-medium text-gray-700 dark:text-slate-400">
                       Marcia Hill, Digital Marketing Manager
                     </div>
                   </div>

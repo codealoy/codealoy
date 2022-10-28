@@ -52,7 +52,7 @@ export const Team = () => {
                     alt=""
                   />
                   <div className="space-y-2">
-                    <div className="space-y-1 text-lg font-medium leading-6 dark:text-white ">
+                    <div className="space-y-1 text-lg font-medium leading-6 dark:text-white">
                       <h3>{person.name}</h3>
                       <p className="text-indigo-600">{person.role}</p>
                     </div>

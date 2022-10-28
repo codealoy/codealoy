@@ -2,7 +2,7 @@ import React from 'react';
 
 export const CTA = () => {
   return (
-    <div className=" bg-indigo-700   ">
+    <div className="bg-indigo-700">
       <div className="mx-auto max-w-2xl py-16 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
           <span className="block">Boost your productivity.</span>

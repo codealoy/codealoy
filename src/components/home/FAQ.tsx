@@ -23,7 +23,7 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <div className=" dark:border-tdark:border-t dark:border-slate-100/5 dark:text-gray-500">
+    <div className="dark:border-tdark:border-t dark:border-slate-100/5 dark:text-gray-500">
       <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div>
