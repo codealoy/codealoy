@@ -36,7 +36,7 @@ const ErrorPage = () => {
       <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl py-16 sm:py-24">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600 ">
+            <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
               404 error
             </p>
             <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
