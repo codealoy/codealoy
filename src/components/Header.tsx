@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({ navigation }) => {
         },
       )}
     >
-      <div className="relative flex flex-grow basis-0 items-center">
+      <div className="relative top-1 flex flex-grow basis-0 items-center">
         <Link href="/">
           <a className="block w-auto overflow-hidden lg:w-auto">
             <Logo variant={theme.isDarkTheme ? 'dark' : 'light'} />
