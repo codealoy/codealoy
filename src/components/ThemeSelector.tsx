@@ -5,7 +5,7 @@ import { useEffect, useState, useContext } from 'react';
 
 import { ThemeContext } from '../contexts/ThemeContext';
 
-const themes = [
+const themes: any = [
   { name: 'Light', value: 'light', icon: SunIcon },
   { name: 'Dark', value: 'dark', icon: MoonIcon },
 ];
@@ -88,12 +88,7 @@ export function ThemeSelector(props) {
   };
 
   return (
-    <Listbox
-      as="div"
-      value={selectedTheme}
-      onChange={selectThemeHandler}
-      {...props}
-    >
+    <Listbox value={selectedTheme} onChange={selectThemeHandler} {...props}>
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button type="button">
         <span className="dark:hidden">
@@ -103,7 +98,11 @@ export function ThemeSelector(props) {
           <MoonIcon className="h-6 w-6" selected={true} />
         </span>
       </Listbox.Button>
-      <Listbox.Options className="absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
+      <Listbox.Options
+        className={clsx(
+          'dark:highlight-white/5 absolute top-full right-0 z-50 w-36 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold text-slate-700 shadow-lg ring-1 ring-slate-900/10 dark:bg-slate-800 dark:text-slate-300 dark:ring-0',
+        )}
+      >
         {themes.map((theme) => (
           <Listbox.Option
             key={theme.value}
