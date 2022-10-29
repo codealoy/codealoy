@@ -1,8 +1,6 @@
 import clsx from 'clsx';
-
 import { Listbox } from '@headlessui/react';
 import { useEffect, useState, useContext } from 'react';
-
 import { ThemeContext } from '../contexts/ThemeContext';
 
 const themes: any = [

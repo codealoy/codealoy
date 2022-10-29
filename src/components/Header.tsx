@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import Router, { useRouter } from 'next/router';
-import { Dialog } from '@headlessui/react';
+import { useRouter } from 'next/router';
 import { Logo } from '../components/Logo';
 import { Search } from '../components/Search';
 import { ThemeSelector } from '../components/ThemeSelector';
