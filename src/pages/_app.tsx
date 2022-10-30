@@ -35,13 +35,14 @@ const MyApp: AppType<MyAppProps> = ({
 }) => {
   const router = useRouter();
   const isDocPage = router.pathname.includes('/docs');
+  const isCoursesPage = router.pathname.includes('/courses');
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
   const [showAnnouncement, setShowAnnouncement] = useState(false);
 
   const renderLayout = () => {
-    if (isDocPage) {
+    if (isDocPage || isCoursesPage) {
       return (
         <GuideLayout {...pageProps}>
           <Component {...pageProps} />
