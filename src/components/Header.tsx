@@ -57,7 +57,7 @@ export const Header: React.FC<any> = () => {
           </ul>
         </nav>
         <div className="ml-6 flex items-center border-l border-slate-200 pl-6 dark:border-slate-800">
-          <ThemeSelector />
+          <ThemeSelector iconOnly={true} />
           <a
             href="https://github.com/codealoy/codealoy"
             target="_blank"
