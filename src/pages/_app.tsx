@@ -20,10 +20,11 @@ import { useState } from 'react';
 
 import { Announcement } from '../components/Announcement';
 import { ThemeContextProvider } from '../contexts/ThemeContext';
-import { GuideLayout } from '../layouts/GuideLayout';
+import { CourseLayout } from '../layouts/CourseLayout';
 import { Layout } from '../layouts/Layout';
 import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
+import { getNavigationItems } from '../utils/getNavigationItems';
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
@@ -42,10 +43,15 @@ const MyApp: AppType<MyAppProps> = ({
 
   const renderLayout = () => {
     if (isCoursesPage) {
+      const navigationItems = getNavigationItems({
+        scope: 'COURSES',
+        routePath: router.pathname,
+      });
+
       return (
-        <GuideLayout {...pageProps}>
+        <CourseLayout navigationItems={navigationItems} {...pageProps}>
           <Component {...pageProps} />
-        </GuideLayout>
+        </CourseLayout>
       );
     }
 

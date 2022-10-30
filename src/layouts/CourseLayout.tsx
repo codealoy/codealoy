@@ -2,24 +2,24 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import { useRouter } from 'next/router';
 import { Header } from '../components/Header';
 import { Navigation } from '../components/Navigation';
 import { Prose } from '../components/Prose';
-import { NAVIGATION_LIST } from '../constants/navigations';
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import { getTableOfContent } from '../utils/getTableOfContent';
 import { useTableOfContents } from '../hooks/useTableOfContent';
 import { Tag } from '../components/Tag';
+import { NavigationItem } from '../constants/navigations';
+import { useRouter } from 'next/router';
 
-interface GuideLayoutProps extends MarkdocNextJsPageProps {
+interface CourseLayoutProps extends MarkdocNextJsPageProps {
+  navigationItems: NavigationItem[];
   children?: React.ReactNode;
 }
 
-const navigation = NAVIGATION_LIST.COURSES;
-
-export const GuideLayout: React.FC<GuideLayoutProps> = ({
+export const CourseLayout: React.FC<CourseLayoutProps> = ({
   markdoc,
+  navigationItems = [],
   children,
 }) => {
   const {
@@ -35,13 +35,14 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
   const tableOfContents = getTableOfContent({ markdoc });
 
   const router = useRouter();
-  const allLinks = navigation.flatMap((section) => section.links);
+
+  const allLinks = navigationItems.flatMap((section) => section.links);
   const linkIndex = allLinks.findIndex(
     (link) => link && link.href === router.pathname,
   );
   const previousPage = allLinks[linkIndex - 1];
   const nextPage = allLinks[linkIndex + 1];
-  const section: any = navigation.find(
+  const section: any = navigationItems.find(
     (section) =>
       section.links &&
       section.links.find((link) => link.href === router.pathname),
@@ -60,7 +61,7 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
 
   return (
     <>
-      <Header navigation={navigation} />
+      <Header />
 
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
@@ -69,7 +70,7 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
             <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
             <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
             <Navigation
-              navigation={navigation}
+              navigationItems={navigationItems}
               className="w-64 pr-8 xl:w-72 xl:pr-16"
             />
           </div>
