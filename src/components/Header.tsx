@@ -12,7 +12,7 @@ import { MobileNavbar } from './MobileNavbar';
 
 export const Header: React.FC<any> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const theme = useContext(ThemeContext);
+  const siteTheme = useContext(ThemeContext);
   const router = useRouter();
 
   const isHomePage = router.pathname === '/';
@@ -42,7 +42,7 @@ export const Header: React.FC<any> = () => {
       <div className="relative top-1 flex flex-grow basis-0 items-center">
         <Link href="/">
           <a className="block w-auto overflow-hidden lg:w-auto">
-            <Logo variant={theme.isDarkTheme ? 'dark' : 'light'} />
+            <Logo variant={siteTheme.isDarkTheme ? 'dark' : 'light'} />
           </a>
         </Link>
       </div>
