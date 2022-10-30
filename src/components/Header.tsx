@@ -52,7 +52,7 @@ export const Header: React.FC<any> = () => {
         })}
       >
         <nav className="text-sm font-semibold leading-6 text-slate-700 dark:text-slate-200">
-          <ul className="flex space-x-8">
+          <ul className="flex space-x-10">
             <NavItems />
           </ul>
         </nav>
