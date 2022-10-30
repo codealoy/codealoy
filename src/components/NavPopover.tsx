@@ -2,7 +2,7 @@ import { Router } from 'next/router';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { Dialog } from '@headlessui/react';
-import { ThemeSelector, ThemeSelect } from './ThemeSelector';
+import { ThemeSelector } from './ThemeSelector';
 import { NavItems } from './NavItems';
 import ArrowDown from './icons/ArrowDown';
 
