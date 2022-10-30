@@ -2,32 +2,34 @@ import clsx from 'clsx';
 import { Listbox } from '@headlessui/react';
 import { useEffect, useState, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { SunIcon } from './icons/SunIcon';
+import { MoonIcon } from './icons/MoonIcon';
 
-const themes: any = [
+const themes = [
   { name: 'Light', value: 'light', icon: SunIcon },
   { name: 'Dark', value: 'dark', icon: MoonIcon },
 ];
 
 export function ThemeSelector(props) {
   const [selectedTheme, setSelectedTheme] = useState<typeof themes[0]>();
-  const theme = useContext(ThemeContext);
+  const siteTheme = useContext(ThemeContext);
 
   useEffect(() => {
     if (selectedTheme) {
       document.documentElement.setAttribute('data-theme', selectedTheme.value);
     } else {
-      const t: any = themes.find(
+      const selectedTheme = themes.find(
         (theme) =>
           theme.value === document.documentElement.getAttribute('data-theme'),
       );
 
-      setSelectedTheme(t);
+      setSelectedTheme(selectedTheme);
     }
   }, [selectedTheme]);
 
   const selectThemeHandler = (selectedTheme: typeof themes[0]) => {
     setSelectedTheme(selectedTheme);
-    theme.setTheme(selectedTheme.value);
+    siteTheme.setTheme(selectedTheme.value);
   };
 
   return (
@@ -57,13 +59,11 @@ export function ThemeSelector(props) {
                 )}
               >
                 <theme.icon
-                  className={clsx('h-4 w-4', {
-                    'fill-sky-400 dark:fill-sky-400': selected,
-                    'fill-slate-400': !selected,
-                  })}
+                  className={clsx('h-6 w-6')}
+                  selected={theme.value === siteTheme.currentTheme}
                 />
 
-                <div className="ml-3">{theme.name}</div>
+                <p className="ml-3">{theme.name}</p>
               </li>
             )}
           </Listbox.Option>
