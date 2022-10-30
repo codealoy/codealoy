@@ -7,12 +7,12 @@ import { Search } from '../components/Search';
 import { ThemeSelector } from '../components/ThemeSelector';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { GithubIcon } from './icons/GithubIcon';
-import { NavItems } from './NavItems';
+import { PrimaryNavItems } from './PrimaryNavItems';
 import { MobileNavbar } from './MobileNavbar';
 
 export const Header: React.FC<any> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const theme = useContext(ThemeContext);
+  const siteTheme = useContext(ThemeContext);
   const router = useRouter();
 
   const isHomePage = router.pathname === '/';
@@ -42,7 +42,7 @@ export const Header: React.FC<any> = () => {
       <div className="relative top-1 flex flex-grow basis-0 items-center">
         <Link href="/">
           <a className="block w-auto overflow-hidden lg:w-auto">
-            <Logo variant={theme.isDarkTheme ? 'dark' : 'light'} />
+            <Logo variant={siteTheme.isDarkTheme ? 'dark' : 'light'} />
           </a>
         </Link>
       </div>
@@ -52,8 +52,8 @@ export const Header: React.FC<any> = () => {
         })}
       >
         <nav className="text-sm font-semibold leading-6 text-slate-700 dark:text-slate-200">
-          <ul className="flex space-x-8">
-            <NavItems />
+          <ul className="flex space-x-10">
+            <PrimaryNavItems />
           </ul>
         </nav>
         <div className="ml-6 flex items-center border-l border-slate-200 pl-6 dark:border-slate-800">

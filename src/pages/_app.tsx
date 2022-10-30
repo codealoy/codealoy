@@ -20,10 +20,11 @@ import { useState } from 'react';
 
 import { Announcement } from '../components/Announcement';
 import { ThemeContextProvider } from '../contexts/ThemeContext';
-import { GuideLayout } from '../layouts/GuideLayout';
+import { CourseLayout } from '../layouts/CourseLayout';
 import { Layout } from '../layouts/Layout';
 import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
+import { getNavigationItems } from '../utils/getNavigationItems';
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
@@ -34,18 +35,23 @@ const MyApp: AppType<MyAppProps> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const router = useRouter();
-  const isDocPage = router.pathname.includes('/docs');
+  const isCoursesPage = router.pathname.includes('/courses');
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
   const [showAnnouncement, setShowAnnouncement] = useState(false);
 
   const renderLayout = () => {
-    if (isDocPage) {
+    if (isCoursesPage) {
+      const navigationItems = getNavigationItems({
+        scope: 'COURSES',
+        routePath: router.pathname,
+      });
+
       return (
-        <GuideLayout {...pageProps}>
+        <CourseLayout navigationItems={navigationItems} {...pageProps}>
           <Component {...pageProps} />
-        </GuideLayout>
+        </CourseLayout>
       );
     }
 

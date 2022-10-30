@@ -4,7 +4,7 @@ import { Router } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ThemeSelector } from './ThemeSelector';
-import { NavItems } from './NavItems';
+import { PrimaryNavItems } from './PrimaryNavItems';
 
 export function MobileNavbar({ display = 'lg:hidden', className, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +68,7 @@ export function MobileNavbar({ display = 'lg:hidden', className, ...props }) {
             </svg>
           </button>
           <ul className="space-y-4">
-            <NavItems />
+            <PrimaryNavItems />
             <li>
               <a
                 href="https://github.com/codealoy/codealoy"

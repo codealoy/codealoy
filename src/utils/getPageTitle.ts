@@ -3,9 +3,9 @@ import { SITE_TITLE } from '../constants/site-settings';
 
 export const getPageTitle = ({ markdoc }: MarkdocNextJsPageProps) => {
   if (markdoc) {
-    return (
-      markdoc.frontmatter.pageTitle || `${markdoc.frontmatter.title} - Docs`
-    );
+    return `${
+      markdoc.frontmatter.pageTitle || markdoc.frontmatter.title
+    } - Codealoy`;
   } else {
     return SITE_TITLE;
   }
