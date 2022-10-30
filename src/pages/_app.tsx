@@ -38,7 +38,7 @@ const MyApp: AppType<MyAppProps> = ({
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showAnnouncement, setShowAnnouncement] = useState(false);
 
   const renderLayout = () => {
     if (isDocPage) {
