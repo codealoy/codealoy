@@ -2,19 +2,15 @@ import React, { useEffect, useState, useContext } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-import { GithubIcon } from '../components/icons/GithubIcon';
 import { Logo } from '../components/Logo';
-import { MobileNavigation } from '../components/MobileNavigation';
 import { Search } from '../components/Search';
 import { ThemeSelector } from '../components/ThemeSelector';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { GithubIcon } from './icons/GithubIcon';
+import { NavItems } from './NavItems';
+import { MobileNavbar } from './MobileNavbar';
 
-interface HeaderProps {
-  navigation: any;
-}
-
-export const Header: React.FC<HeaderProps> = ({ navigation }) => {
+export const Header: React.FC<any> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const theme = useContext(ThemeContext);
   const router = useRouter();
@@ -43,34 +39,47 @@ export const Header: React.FC<HeaderProps> = ({ navigation }) => {
         },
       )}
     >
-      <div className="mr-6 lg:hidden">
-        <MobileNavigation navigation={navigation} />
-      </div>
-      <div className="relative flex flex-grow basis-0 items-center">
+      <div className="relative top-1 flex flex-grow basis-0 items-center">
         <Link href="/">
-          <a className="block w-10 overflow-hidden lg:w-auto">
-            <span className="sr-only">Home page</span>
+          <a className="block w-auto overflow-hidden lg:w-auto">
             <Logo variant={theme.isDarkTheme ? 'dark' : 'light'} />
           </a>
         </Link>
       </div>
-      {!isHomePage && (
-        <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
-          <Search />
+      <div
+        className={clsx('relative ml-auto hidden items-center lg:flex', {
+          'md:flex': isHomePage,
+        })}
+      >
+        <nav className="text-sm font-semibold leading-6 text-slate-700 dark:text-slate-200">
+          <ul className="flex space-x-8">
+            <NavItems />
+          </ul>
+        </nav>
+        <div className="ml-6 flex items-center border-l border-slate-200 pl-6 dark:border-slate-800">
+          <ThemeSelector iconOnly={true} />
+          <a
+            href="https://github.com/codealoy/codealoy"
+            target="_blank"
+            className="group ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+            rel="noopener noreferrer"
+          >
+            <span className="sr-only">Codealoy on GitHub</span>
+            <GithubIcon />
+          </a>
         </div>
-      )}
-      <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
-        <ThemeSelector className="relative z-10" />
-        <a
-          href="https://github.com/codealoy/codealoy"
-          target="_blank"
-          className="group"
-          rel="noopener noreferrer"
-        >
-          <span className="sr-only">Codealoy on GitHub</span>
-          <GithubIcon />
-        </a>
       </div>
+      <div
+        className={clsx('relative ml-auto  items-center lg:hidden', {
+          'md:hidden': isHomePage,
+        })}
+      >
+        <Search />
+      </div>
+      <MobileNavbar
+        className="-my-1 ml-2"
+        display={clsx('lg:hidden', { 'md:hidden': isHomePage })}
+      />
     </header>
   );
 };
