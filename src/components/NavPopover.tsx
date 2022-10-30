@@ -2,8 +2,9 @@ import { Router } from 'next/router';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { Dialog } from '@headlessui/react';
-import { ThemeSelector } from './ThemeSelector';
+import { ThemeSelector, ThemeSelect } from './ThemeSelector';
 import { NavItems } from './NavItems';
+import ArrowDown from './icons/ArrowDown';
 
 export function NavPopover({ display = 'lg:hidden', className, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,13 +73,18 @@ export function NavPopover({ display = 'lg:hidden', className, ...props }) {
               <a
                 href="https://github.com/codealoy/codealoy"
                 className="hover:text-sky-500 dark:hover:text-sky-400"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
             </li>
           </ul>
           <div className="mt-6 flex justify-between border-t border-slate-200 pt-6 dark:border-slate-200/10">
-            <span> Select Theme</span> <ThemeSelector />
+            <span> Select Theme</span>
+            <div className="dark:highlight-white/5 relative flex items-center rounded-lg p-3 px-5 font-semibold text-slate-700 shadow-sm ring-1 ring-slate-900/10 dark:bg-slate-600 dark:text-slate-200 dark:ring-0">
+              <ThemeSelector /> <ArrowDown />
+            </div>
           </div>
         </div>
       </Dialog>
