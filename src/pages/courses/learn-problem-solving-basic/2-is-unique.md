@@ -16,6 +16,14 @@ Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod i
 
 **Output**: Boolean
 
+## Inline code
+
+- `const a = 10;`
+- `const a = 10;`
+- `const a = 10;`
+- `const a = 10;`
+- `const a = 10;`
+
 ## Examples
 
 ```js
