@@ -10,18 +10,28 @@ import { NAVIGATION_LIST } from '../constants/navigations';
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import { getTableOfContent } from '../utils/getTableOfContent';
 import { useTableOfContents } from '../hooks/useTableOfContent';
+import { Tag } from '../components/Tag';
 
 interface GuideLayoutProps extends MarkdocNextJsPageProps {
   children?: React.ReactNode;
 }
 
-const navigation = NAVIGATION_LIST.GUIDES;
+const navigation = NAVIGATION_LIST.COURSES;
 
 export const GuideLayout: React.FC<GuideLayoutProps> = ({
   markdoc,
   children,
 }) => {
-  const title = markdoc?.frontmatter.title;
+  const {
+    title,
+    level,
+    estimation,
+    lessons,
+    challenges,
+    playgrounds,
+    illustrations,
+  } = markdoc?.frontmatter!;
+
   const tableOfContents = getTableOfContent({ markdoc });
 
   const router = useRouter();
@@ -67,16 +77,30 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (
-              <header className="mb-9 space-y-1">
+              <header className="mb-9 space-y-4">
                 {section && (
-                  <p className="font-display text-sm font-medium text-sky-500">
+                  <p className="font-display text-sm font-medium text-indigo-600 dark:text-indigo-400">
                     {section.title}
                   </p>
                 )}
                 {title && (
-                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
-                    {title}
-                  </h1>
+                  <>
+                    <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
+                      {title}
+                    </h1>
+                    <div className="space-x-2">
+                      {level ? <Tag>{level} Level</Tag> : null}
+                      {estimation ? <Tag>{estimation}</Tag> : null}
+                      {lessons ? <Tag>{lessons} Lessons</Tag> : null}
+                      {challenges ? <Tag>{challenges} Challenges</Tag> : null}
+                      {playgrounds ? (
+                        <Tag>{playgrounds} Playgrounds</Tag>
+                      ) : null}
+                      {illustrations ? (
+                        <Tag>{illustrations} Illustrations</Tag>
+                      ) : null}
+                    </div>
+                  </>
                 )}
               </header>
             )}
@@ -89,7 +113,7 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
                   Previous
                 </dt>
                 <dd className="mt-1">
-                  <Link href={previousPage.href}>
+                  <Link href={previousPage.href!}>
                     <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
                       &larr; {previousPage.title}
                     </a>
@@ -103,7 +127,7 @@ export const GuideLayout: React.FC<GuideLayoutProps> = ({
                   Next
                 </dt>
                 <dd className="mt-1">
-                  <Link href={nextPage.href}>
+                  <Link href={nextPage.href!}>
                     <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
                       {nextPage.title} &rarr;
                     </a>
