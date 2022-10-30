@@ -6,7 +6,7 @@ import { ThemeSelector } from './ThemeSelector';
 import { NavItems } from './NavItems';
 import ArrowDown from './icons/ArrowDown';
 
-export function NavPopover({ display = 'lg:hidden', className, ...props }) {
+export function MobileNavbar({ display = 'lg:hidden', className, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

@@ -8,13 +8,9 @@ import { ThemeSelector } from '../components/ThemeSelector';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { GithubIcon } from './icons/GithubIcon';
 import { NavItems } from './NavItems';
-import { NavPopover } from './NavPopover';
+import { MobileNavbar } from './MobileNavbar';
 
-interface HeaderProps {
-  navigation: any;
-}
-
-export const Header: React.FC<HeaderProps> = ({ navigation }) => {
+export const Header: React.FC<any> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const theme = useContext(ThemeContext);
   const router = useRouter();
@@ -80,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ navigation }) => {
       >
         <Search />
       </div>
-      <NavPopover
+      <MobileNavbar
         className="-my-1 ml-2"
         display={clsx('lg:hidden', { 'md:hidden': isHomePage })}
       />
