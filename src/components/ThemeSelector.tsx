@@ -102,33 +102,24 @@ export function ThemeSelector(props) {
         )}
       >
         {themes.map((theme) => (
-          <Listbox.Option
-            key={theme.value}
-            value={theme}
-            className={({ active, selected }) =>
-              clsx(
-                'flex cursor-pointer select-none items-center rounded-[0.625rem] p-5',
-                {
-                  'text-sky-500': selected,
-                  'text-slate-900 dark:text-white': active && !selected,
-                  'text-slate-700 dark:text-slate-400': !active && !selected,
-                  'bg-slate-100 dark:bg-slate-900/40': active,
-                },
-              )
-            }
-          >
-            {({ selected }) => (
-              <>
-                <div className="rounded-md bg-white p-1 shadow ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
-                  <theme.icon
-                    className={clsx('h-4 w-4', {
-                      'fill-sky-400 dark:fill-sky-400': selected,
-                      'fill-slate-400': !selected,
-                    })}
-                  />
-                </div>
+          <Listbox.Option key={theme.value} value={theme}>
+            {({ active, selected }) => (
+              <li
+                className={clsx(
+                  'flex cursor-pointer items-center py-1 px-3',
+                  selected && 'text-sky-500',
+                  active && 'bg-slate-50 dark:bg-slate-600/30',
+                )}
+              >
+                <theme.icon
+                  className={clsx('h-4 w-4', {
+                    'fill-sky-400 dark:fill-sky-400': selected,
+                    'fill-slate-400': !selected,
+                  })}
+                />
+
                 <div className="ml-3">{theme.name}</div>
-              </>
+              </li>
             )}
           </Listbox.Option>
         ))}
