@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Sandpack } from '@codesandbox/sandpack-react';
-import { nightOwl } from '@codesandbox/sandpack-themes';
+import { aquaBlue, nightOwl } from '@codesandbox/sandpack-themes';
+
+import { ThemeContext } from '../contexts/ThemeContext';
 import { REACT_PRESET } from '../presets/react';
 
 const CODE_SETUP_MAP = {
@@ -8,9 +10,10 @@ const CODE_SETUP_MAP = {
 };
 
 const CodeEditor = ({ template, codeSetup }) => {
+  const siteTheme = useContext(ThemeContext);
   return (
     <Sandpack
-      theme={nightOwl}
+      theme={siteTheme.isDarkTheme ? nightOwl : aquaBlue}
       template={template}
       customSetup={CODE_SETUP_MAP[codeSetup]}
       options={{
