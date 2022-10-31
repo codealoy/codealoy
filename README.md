@@ -4,16 +4,18 @@ Codealoy is an open-source interactive learning web platform that intend to make
 
 ## Tech Stack
 
-We've used the _"T3 Stack"_ which focused on **simplicity**, **modularity**, and **full-stack typesafety**.
+We've used the [_"T3 Stack"_](https://github.com/t3-oss/create-t3-app) which focused on **simplicity**, **modularity**, and **full-stack typesafety**.
 
-It consists of:
+Here are the building blocks of Codealoy:
 
 - [Next.js](https://nextjs.org)
-- [tRPC](https://trpc.io)
 - [Tailwind CSS](https://tailwindcss.com)
-- [TypeScript](https://typescriptlang.org)
-- [Prisma](https://prisma.io)
+- [Markdoc](https://markdoc.dev)
+- [Sandpack by Codesandbox](https://sandpack.codesandbox.io/)
+- [tRPC](https://trpc.io)
 - [NextAuth.js](https://next-auth.js.org)
+- [Prisma](https://prisma.io)
+- [TypeScript](https://typescriptlang.org)
 
 To learn more about the _"T3 Stack"_, you can visit the official [github repo](https://github.com/t3-oss/create-t3-app).
 
