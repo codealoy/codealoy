@@ -4,7 +4,7 @@ import { useEffect, useState, useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { SunIcon } from './icons/SunIcon';
 import { MoonIcon } from './icons/MoonIcon';
-import ArrowDown from './icons/ArrowDown';
+import { ArrowDown } from './icons/ArrowDown';
 
 interface ThemeSelectorProps {
   iconOnly?: boolean;
