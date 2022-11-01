@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.2",
-    "@codesandbox/sandpack-react": "^1.15.2",
-    "@codesandbox/sandpack-themes": "^1.15.2",
+    "@codesandbox/sandpack-react": "^1.17.0",
+    "@codesandbox/sandpack-themes": "^1.17.0",
     "@docsearch/react": "^3.2.2",
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
