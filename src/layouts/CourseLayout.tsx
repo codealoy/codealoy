@@ -78,7 +78,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
     <>
       <Header />
 
-      <div className=" flex items-center border-b border-slate-900/10 p-4 dark:border-slate-50/[0.06] lg:hidden">
+      {/* <div className=" flex items-center border-t border-b border-slate-900/10 p-4 dark:border-slate-50/[0.06] lg:hidden">
         <button
           type="button"
           onClick={() => setNavIsOpen(!navIsOpen)}
@@ -95,8 +95,6 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
             />
           </svg>
         </button>
-        {/* <MobileCourseNav navigationItems={navigationItems} /> */}
-        {/* {navIsOpen && <Navigation navigationItems={navigationItems} />} */}
         <Dialog
           as="div"
           open={navIsOpen}
@@ -121,38 +119,44 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                 />
               </svg>
             </button>
+            <Navigation navigationItems={navigationItems} />
           </div>
         </Dialog>
-        {navigationItems.map((section) => (
-          <>
-            {console.log({ section })}
-            <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
-              {section && (
-                <li className="flex items-center">
-                  {/* {title} */}
-                  <svg
-                    width="3"
-                    height="6"
-                    aria-hidden="true"
-                    className="mx-3 overflow-visible text-slate-400"
-                  >
-                    <path
-                      d="M0 0L3 3L0 6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </li>
-              )}
-              <li className="truncate font-semibold text-slate-900 dark:text-slate-200">
-                {/* {section.title} */}
+
+        <>
+          <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
+            {section && (
+              <li className="flex items-center dark:text-white">
+                {section.title}
+                <svg
+                  width="3"
+                  height="6"
+                  aria-hidden="true"
+                  className="mx-3 overflow-visible text-slate-400"
+                >
+                  <path
+                    d="M0 0L3 3L0 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </li>
-            </ol>
-          </>
-        ))}
-      </div>
+            )}
+
+            <li className="truncate font-semibold text-slate-900 dark:text-slate-200">
+              {section.links[0].title}
+            </li>
+          </ol>
+        </>
+      </div> */}
+      <MobileCourseNav
+        navigationItems={navigationItems}
+        navIsOpen={navIsOpen}
+        setNavIsOpen={setNavIsOpen}
+        section={section}
+      />
 
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
