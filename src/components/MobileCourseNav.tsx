@@ -9,7 +9,7 @@ export const MobileCourseNav = ({
   section,
 }) => {
   return (
-    <div className="fixed z-10 flex w-full items-center border-t border-b border-slate-900/10 p-4 backdrop-blur dark:border-slate-50/[0.06] lg:hidden">
+    <div className="fixed z-10 flex w-full items-center border-t border-b border-slate-900/10 bg-white p-4 dark:border-slate-50/[0.06] dark:bg-slate-900/95 dark:backdrop-blur lg:hidden">
       <button
         type="button"
         onClick={() => setNavIsOpen(!navIsOpen)}
