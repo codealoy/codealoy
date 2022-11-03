@@ -15,5 +15,9 @@ export const CodeEditor = {
       required: true,
       errorLevel: 'critical',
     },
+    title: {
+      type: String,
+      required: false,
+    },
   },
 };

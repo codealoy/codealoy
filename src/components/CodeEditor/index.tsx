@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import clsx from 'clsx';
 import {
   SandpackCodeEditor,
-  SandpackConsole,
   SandpackLayout,
   SandpackProvider,
   SandpackStack,
@@ -15,7 +14,16 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { ControllerButtons } from './ControllerButtons';
 import { TestResultViewer } from './TestResultViewer';
 
-const CodeEditor = ({ template, boilerplate }) => {
+interface CodeEditorProps {
+  title?: string;
+  template: 'test-runner-js' | 'react';
+  boilerplate: string;
+}
+const CodeEditor = ({
+  title = 'Write your solution',
+  template,
+  boilerplate,
+}: CodeEditorProps) => {
   const siteTheme = useContext(ThemeContext);
   const [editorOutput, setEditorOutput] = React.useState<Record<string, any>>();
   const [isExecutingCode, setIsExecutingCode] = React.useState(false);
@@ -92,7 +100,7 @@ export default sub;`,
     >
       <div className="overflow-hidden rounded-md bg-gray-50 shadow ring-1 ring-slate-300/10 dark:bg-slate-800/60">
         <div className="flex h-12 flex-row items-center justify-between rounded-t bg-gray-100 px-4 text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
-          <p className="text-sm font-semibold">Code editor title</p>
+          <p className="text-sm font-semibold">{title}</p>
           <ControllerButtons
             editorOutput={editorOutput}
             setEditorOutput={setEditorOutput}
@@ -105,7 +113,7 @@ export default sub;`,
           <SandpackCodeEditor
             showRunButton={false}
             readOnly={false}
-            showTabs={template === 'test-js' ? false : true}
+            showTabs={template !== 'test-runner-js'}
             showLineNumbers={true}
             showInlineErrors={false}
             wrapContent={true}
