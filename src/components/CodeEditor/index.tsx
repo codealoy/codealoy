@@ -130,9 +130,9 @@ export default sub;`,
 
           {(isExecutingCode || editorOutput) && (
             <SandpackStack>
-              <div className="min-h-[300px] bg-gray-50">
+              <div className="min-h-[300px] bg-gray-50 dark:bg-slate-800/60">
                 <Tab.Group>
-                  <Tab.List className="flex h-10 space-x-1 border-b px-2 ring-1 ring-slate-500/10">
+                  <Tab.List className="flex h-10 space-x-1 border-b px-2 ring-1 ring-slate-500/10 dark:border-slate-800/60">
                     {tabList.map(
                       (tab) =>
                         tab.isVisible && (
@@ -142,8 +142,8 @@ export default sub;`,
                               clsx(
                                 'border-b-2 border-transparent px-2 text-xs font-medium capitalize leading-5 ring-indigo-600 focus:outline-none focus:ring-0',
                                 selected
-                                  ? 'border-indigo-600 text-indigo-600'
-                                  : 'text-slate-500 hover:bg-indigo-100 hover:text-indigo-600',
+                                  ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
+                                  : 'text-slate-500 hover:bg-indigo-100 hover:text-indigo-600 dark:text-slate-400 dark:hover:bg-indigo-800/30 dark:hover:text-indigo-400',
                               )
                             }
                           >
