@@ -6,11 +6,13 @@ export const CodeEditor = {
   attributes: {
     template: {
       type: String,
+      required: true,
       matches: ['react', 'test-runner-js'],
       errorLevel: 'critical',
     },
     boilerplate: {
       type: String,
+      required: true,
       errorLevel: 'critical',
     },
   },
