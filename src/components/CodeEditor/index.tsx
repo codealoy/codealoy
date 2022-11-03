@@ -23,7 +23,12 @@ const CodeEditor = ({ template, boilerplate }) => {
   const tabList = [
     {
       title: 'Result',
-      content: <TestResultViewer editorOutput={editorOutput} />,
+      content: (
+        <TestResultViewer
+          editorOutput={editorOutput}
+          isExecutingCode={isExecutingCode}
+        />
+      ),
       isVisible: true,
     },
     {
@@ -38,7 +43,7 @@ const CodeEditor = ({ template, boilerplate }) => {
       theme={siteTheme.isDarkTheme ? nightOwl : aquaBlue}
       options={{
         autorun: true,
-        initMode: 'user-visible',
+        initMode: 'lazy',
         recompileMode: 'delayed',
       }}
       files={{
@@ -123,7 +128,7 @@ export default sub;`,
             />
           </div>
 
-          {editorOutput && (
+          {(isExecutingCode || editorOutput) && (
             <SandpackStack>
               <div className="min-h-[300px] bg-gray-50">
                 <Tab.Group>
