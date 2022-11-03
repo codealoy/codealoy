@@ -6,7 +6,7 @@ export const CodeEditor = {
   attributes: {
     template: {
       type: String,
-      matches: ['react'],
+      matches: ['react', 'test-runner-js'],
       errorLevel: 'critical',
     },
     boilerplate: {
