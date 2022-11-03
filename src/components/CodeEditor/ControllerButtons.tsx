@@ -42,7 +42,7 @@ export const ControllerButtons = ({
       },
     },
     {
-      title: 'Refresh',
+      title: 'Run again',
       onClick: runTests,
       icon: ArrowPathIcon,
       isVisible: editorOutput || isExecutingCode,
