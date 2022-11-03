@@ -1,10 +1,15 @@
+import React, { useContext } from 'react';
+import clsx from 'clsx';
 import {
   SandpackCodeEditor,
+  SandpackConsole,
   SandpackLayout,
   SandpackProvider,
+  SandpackStack,
+  SandpackTests,
 } from '@codesandbox/sandpack-react';
 import { aquaBlue, nightOwl } from '@codesandbox/sandpack-themes';
-import React, { useContext } from 'react';
+import { Tab } from '@headlessui/react';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { ControllerButtons } from './ControllerButtons';
@@ -14,6 +19,19 @@ const CodeEditor = ({ template, boilerplate }) => {
   const siteTheme = useContext(ThemeContext);
   const [editorOutput, setEditorOutput] = React.useState<Record<string, any>>();
   const [isExecutingCode, setIsExecutingCode] = React.useState(false);
+
+  const tabList = [
+    {
+      title: 'Result',
+      content: <TestResultViewer editorOutput={editorOutput} />,
+      isVisible: true,
+    },
+    {
+      title: 'Console',
+      content: 'Console component',
+      isVisible: false,
+    },
+  ];
 
   return (
     <SandpackProvider
@@ -67,7 +85,7 @@ export default sub;`,
         environment: 'parcel',
       }}
     >
-      <div className="overflow-hidden rounded-md shadow ring-1 ring-slate-300/10">
+      <div className="overflow-hidden rounded-md bg-gray-50 shadow ring-1 ring-slate-300/10 dark:bg-slate-800/60">
         <div className="flex h-12 flex-row items-center justify-between rounded-t bg-gray-100 px-4 text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
           <p className="text-sm font-semibold">Code editor title</p>
           <ControllerButtons
@@ -88,11 +106,56 @@ export default sub;`,
             wrapContent={true}
           />
 
-          <TestResultViewer
-            editorOutput={editorOutput}
-            setEditorOutput={setEditorOutput}
-            setIsExecutingCode={setIsExecutingCode}
-          />
+          <div className="hidden">
+            <SandpackTests
+              watchMode={false}
+              onComplete={(specs) => {
+                /* =================================================================
+               * Wait for test result bundle loader, to avoid render collision 
+               * between CodeEditor component and Sandpack component. It also
+               * gives time for loading 'run' button animation.
+               =============================================================== */
+                setTimeout(() => {
+                  setEditorOutput(specs);
+                  setIsExecutingCode(false);
+                }, 500);
+              }}
+            />
+          </div>
+
+          {editorOutput && (
+            <SandpackStack>
+              <div className="min-h-[300px] bg-gray-50">
+                <Tab.Group>
+                  <Tab.List className="flex h-10 space-x-1 border-b px-2 ring-1 ring-slate-500/10">
+                    {tabList.map(
+                      (tab) =>
+                        tab.isVisible && (
+                          <Tab
+                            key={tab.title}
+                            className={({ selected }) =>
+                              clsx(
+                                'border-b-2 border-transparent px-2 text-xs font-medium capitalize leading-5 ring-indigo-600 focus:outline-none focus:ring-0',
+                                selected
+                                  ? 'border-indigo-600 text-indigo-600'
+                                  : 'text-slate-500 hover:bg-indigo-100 hover:text-indigo-600',
+                              )
+                            }
+                          >
+                            {tab.title}
+                          </Tab>
+                        ),
+                    )}
+                  </Tab.List>
+                  <Tab.Panels>
+                    {tabList.map((tab) => (
+                      <Tab.Panel key={tab.title}>{tab.content}</Tab.Panel>
+                    ))}
+                  </Tab.Panels>
+                </Tab.Group>
+              </div>
+            </SandpackStack>
+          )}
         </SandpackLayout>
       </div>
     </SandpackProvider>
