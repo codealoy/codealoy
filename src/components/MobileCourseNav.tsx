@@ -2,7 +2,7 @@ import { Dialog } from '@headlessui/react';
 import React from 'react';
 import { Navigation } from './Navigation';
 
-const MobileCourseNav = ({
+export const MobileCourseNav = ({
   navigationItems,
   navIsOpen,
   setNavIsOpen,
@@ -84,5 +84,3 @@ const MobileCourseNav = ({
     </div>
   );
 };
-
-export default MobileCourseNav;

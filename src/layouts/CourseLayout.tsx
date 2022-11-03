@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-
 import { Header } from '../components/Header';
 import { Navigation } from '../components/Navigation';
 import { Prose } from '../components/Prose';
@@ -11,8 +10,7 @@ import { useTableOfContents } from '../hooks/useTableOfContent';
 import { Tag } from '../components/Tag';
 import { NavigationItem } from '../constants/navigations';
 import { Router, useRouter } from 'next/router';
-import MobileCourseNav from 'src/components/MobileCourseNav';
-import { Dialog } from '@headlessui/react';
+import { MobileCourseNav } from '../components/MobileCourseNav';
 
 interface CourseLayoutProps extends MarkdocNextJsPageProps {
   navigationItems: NavigationItem[];
