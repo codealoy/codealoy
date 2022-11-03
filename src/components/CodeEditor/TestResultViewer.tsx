@@ -82,6 +82,9 @@ export const TestResultViewer = ({ editorOutput }) => {
         <div className="bg-gray-50">
           {/* <p>{JSON.stringify(editorOutput)}</p> */}
           <div className="relative">
+            <span className="absolute -top-7 right-2 text-xs font-medium text-slate-400">
+              <p className="inline">Time: 0.004s</p>
+            </span>
             <div className="flex justify-center px-2 text-sm font-semibold">
               {failedTestCount > 0 ? (
                 <p className=" text-red-500">1 of 6 Tests Failed</p>
