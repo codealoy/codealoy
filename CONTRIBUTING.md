@@ -70,3 +70,19 @@ Please also make a manual, functional test of your changes. When all that's done
 **NOTE**: All pull requests should target the `main` branch. Here is a guide on how to create a new [pull request on Github](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request).
 
 Fill out the title and body appropriately. Again, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines for your title.
+
+### Use custom domain (optional)
+
+You can optionally use `https://codealoy.localhost` instead of `http://localhost:3000` as the domain name of the Codealoy server during development. As an extra benefit, this will automatically add an `SSL` certificate to the local domain, so you can use `HTTPS` with the domain. Here are the custom domain setup instructions:
+
+- Install [Caddy Server](https://caddyserver.com/docs/install) on your machine
+
+- Start Codealoy server: `npm run dev`
+
+  > This will start the server at `http://localhost:3000`
+
+- Start Caddy server: `caddy reverse-proxy --change-host-header --from codealoy.localhost --to http://localhost:3000`
+
+  > This will start a reverse proxy at `codealoy.localhost` domain, which will forward requests to `localhost:3000`
+
+- Done. Now you can visit the site from your browser using `https://codealoy.localhost`
