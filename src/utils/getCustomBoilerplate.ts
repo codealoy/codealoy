@@ -18,11 +18,11 @@ export const getCustomBoilerplate = ({
 }: GetCustomBoilerplateParams):
   | SandpackProviderProps
   | Record<string, never> => {
-  const { courseName, moduleName } = getCourseAndModuleFromBoilerplate({
-    boilerplate,
-  });
-
   if (boilerplateCategory === CODE_EDITOR_BOILERPLATE_CATEGORIES.COURSE) {
+    const { courseName, moduleName } = getCourseAndModuleFromBoilerplate({
+      boilerplate,
+    });
+
     return courseBoilerplates[courseName][moduleName];
   }
 
