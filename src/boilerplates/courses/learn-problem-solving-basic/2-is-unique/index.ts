@@ -5,8 +5,8 @@
 
 import { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
-import functionCode from './function.txt';
-import functionTestCode from './function.test.txt';
+import functionCode from './function.js.txt';
+import functionTestCode from './function.test.js.txt';
 
 export const boilerplate2IsUnique: SandpackProviderProps = {
   files: {
