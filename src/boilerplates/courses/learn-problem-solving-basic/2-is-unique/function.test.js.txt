@@ -1,9 +1,9 @@
-import testFn from './function';
+import target from './function';
 
 test('2 - 1 = 1', () => {
-  expect(testFn(2, 1)).toBe(3);
+  expect(target(2, 1)).toBe(3);
 });
 
 test('9 - 5 = 4', () => {
-  expect(testFn(9, 5)).toBe(14);
+  expect(target(9, 5)).toBe(14);
 });
