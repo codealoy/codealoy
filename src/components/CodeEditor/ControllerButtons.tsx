@@ -16,9 +16,6 @@ export const ControllerButtons = ({
   const { sandpack } = useSandpackClient();
 
   const runTests = () => {
-    console.log('clinets', sandpack.clients);
-    console.log('status', sandpack.status);
-
     setIsExecutingCode(true);
 
     Object.values(sandpack.clients).forEach((client) => {
