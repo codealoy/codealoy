@@ -11,6 +11,7 @@ import { Tag } from '../components/Tag';
 import { NavigationItem } from '../constants/navigations';
 import { Router, useRouter } from 'next/router';
 import { MobileCourseNav } from '../components/MobileCourseNav';
+import { Dialog } from '@headlessui/react';
 
 interface CourseLayoutProps extends MarkdocNextJsPageProps {
   navigationItems: NavigationItem[];
@@ -73,15 +74,16 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
   }
 
   return (
-    <>
+    <div className="">
       <Header />
-      <MobileCourseNav
-        navigationItems={navigationItems}
-        navIsOpen={navIsOpen}
-        setNavIsOpen={setNavIsOpen}
-        section={section}
-      />
-
+      <div className="sticky top-[84px] z-10">
+        <MobileCourseNav
+          navigationItems={navigationItems}
+          navIsOpen={navIsOpen}
+          setNavIsOpen={setNavIsOpen}
+          section={section}
+        />
+      </div>
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
@@ -210,6 +212,6 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
           </nav>
         </div>
       </div>
-    </>
+    </div>
   );
 };

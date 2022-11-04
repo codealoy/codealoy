@@ -1,6 +1,7 @@
+import React, { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import React from 'react';
 import { Navigation } from './Navigation';
+import clsx from 'clsx';
 
 export const MobileCourseNav = ({
   navigationItems,
@@ -8,8 +9,30 @@ export const MobileCourseNav = ({
   setNavIsOpen,
   section,
 }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setIsScrolled(window.scrollY > 0);
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
-    <div className="fixed z-10 flex w-full items-center border-t border-b border-slate-900/10 bg-white p-4 dark:border-slate-50/[0.06] dark:bg-slate-900/95 dark:backdrop-blur lg:hidden">
+    <div
+      className={clsx(
+        'z-10 flex w-full items-center border-t border-b border-slate-900/10 bg-white p-4 dark:border-slate-50/[0.06] lg:hidden',
+        {
+          'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75':
+            isScrolled,
+          'dark:bg-transparent': !isScrolled,
+        },
+      )}
+    >
       <button
         type="button"
         onClick={() => setNavIsOpen(!navIsOpen)}
