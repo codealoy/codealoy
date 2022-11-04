@@ -1,0 +1,5 @@
+import target from './function';
+
+test('Exported value is a function', () => {
+  expect(typeof target).toBe('function')
+});
