@@ -10,7 +10,7 @@ export const generateDynamicTestsContent = (
   let dynamicTestsContent = `import target from './function';\n\n`;
 
   for (const test of dynamicTests) {
-    dynamicTestsContent += `test('${test.title}', () => {
+    dynamicTestsContent += `test('${test.title || test.input}', () => {
   expect(target(${test.input})).${test.compareFunctionName}(${test.output});
 });\n\n`;
   }
