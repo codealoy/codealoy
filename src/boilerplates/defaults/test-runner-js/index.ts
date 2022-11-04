@@ -1,23 +1,16 @@
+// @ts-nocheck
 /**
  * @hidden
  */
 
 import { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
+import tsconfigCode from './tsconfig.json.txt';
+
 export const defaultBoilerplateForTestRunnerJs: SandpackProviderProps = {
   files: {
     'tsconfig.json': {
-      code: `{
-            "include": [
-              "./**/*"
-            ],
-            "compilerOptions": {
-              "strict": true,
-              "esModuleInterop": true,
-              "lib": [ "dom", "es2015" ],
-              "jsx": "react-jsx"
-            }
-          }`,
+      code: tsconfigCode,
       hidden: true,
     },
   },
