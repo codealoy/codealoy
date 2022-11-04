@@ -1,11 +1,12 @@
-// @ts-nocheck
 /**
  * @hidden
  */
 
 import { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
+// @ts-ignore
 import tsconfigCode from './tsconfig.json.txt';
+// @ts-ignore
 import baseTestCode from './base.test.js.txt';
 
 export const defaultBoilerplateForTestRunnerJs: SandpackProviderProps = {
