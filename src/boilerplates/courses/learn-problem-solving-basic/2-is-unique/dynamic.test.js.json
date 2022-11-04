@@ -1,0 +1,20 @@
+[
+  {
+    "title": "20 + 10 = 30",
+    "input": "20, 10",
+    "output": "30",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "100 + 5 = 105",
+    "input": "100, 5",
+    "output": "105",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "Test with string compare",
+    "input": "'hel', 'lo'",
+    "output": "'hello'",
+    "compareFunctionName": "toBe"
+  }
+]
