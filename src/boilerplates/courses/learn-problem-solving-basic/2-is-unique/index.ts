@@ -1,28 +1,21 @@
+// @ts-nocheck
 /**
  * @hidden
  */
 
 import { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
+import functionCode from './function.txt';
+import functionTestCode from './function.test.txt';
+
 export const boilerplate2IsUnique: SandpackProviderProps = {
   files: {
     '/function.js': {
-      code: `const sub = (a, b) => a - b;
-      
-export default sub;`,
+      code: functionCode,
     },
     '/function.test.js': {
-      code: `import testFn from "./function";
-
-      test("2 - 1 = 1", () => {
-        expect(testFn(2, 1)).toBe(1);
-      });
-      
-      test("9 - 5 = 4", () => {
-        expect(testFn(9, 5)).toBe(4);
-      });
-      `,
-      readOnly: false,
+      code: functionTestCode,
+      readOnly: true,
       hidden: true,
     },
   },
