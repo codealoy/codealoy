@@ -45,7 +45,7 @@ function isUnique(str) {
 }
 ```
 
-{% CodeEditor template="test-runner-js"  boilerplate="test-runner-js" /%}
+{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
 ## Solution (1)
 
