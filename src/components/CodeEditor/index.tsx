@@ -13,20 +13,39 @@ import { Tab } from '@headlessui/react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { ControllerButtons } from './ControllerButtons';
 import { TestResultViewer } from './TestResultViewer';
+import { getBoilerpate } from '../../utils/getBoilerpate';
+import {
+  CodeEditorBoilerplateCategoires,
+  CodeEditorBoilerplates,
+  CodeEditorTempates,
+} from '../../types/code-editor-types';
 
 interface CodeEditorProps {
   title?: string;
-  template: 'test-runner-js' | 'react';
-  boilerplate: string;
+  template: CodeEditorTempates;
+  boilerplate: CodeEditorBoilerplates;
+  boilerplateCategory: CodeEditorBoilerplateCategoires;
 }
+
 const CodeEditor = ({
   title = 'Write your solution',
   template,
   boilerplate,
+  boilerplateCategory,
 }: CodeEditorProps) => {
   const siteTheme = useContext(ThemeContext);
   const [editorOutput, setEditorOutput] = React.useState<Record<string, any>>();
   const [isExecutingCode, setIsExecutingCode] = React.useState(false);
+
+  const editorBoilerplate = getBoilerpate({
+    template,
+    boilerplate,
+    boilerplateCategory,
+  }) as any;
+
+  if (!editorBoilerplate) {
+    throw new Error('Invalid code editor boilerplate.');
+  }
 
   const tabList = [
     {
@@ -49,54 +68,9 @@ const CodeEditor = ({
   return (
     <SandpackProvider
       theme={siteTheme.isDarkTheme ? nightOwl : aquaBlue}
-      options={{
-        autorun: true,
-        initMode: 'lazy',
-        recompileMode: 'delayed',
-      }}
-      files={{
-        'tsconfig.json': {
-          code: `{
-                "include": [
-                  "./**/*"
-                ],
-                "compilerOptions": {
-                  "strict": true,
-                  "esModuleInterop": true,
-                  "lib": [ "dom", "es2015" ],
-                  "jsx": "react-jsx"
-                }
-              }`,
-          hidden: true,
-        },
-        '/function.js': {
-          code: `const sub = (a, b) => a - b;
-          
-export default sub;`,
-        },
-        '/function.test.js': {
-          code: `import testFn from "./function";
-
-          test("2 - 1 = 1", () => {
-            expect(testFn(2, 1)).toBe(1);
-          });
-          
-          test("9 - 5 = 4", () => {
-            expect(testFn(9, 5)).toBe(4);
-          });
-          `,
-          readOnly: false,
-          hidden: true,
-        },
-      }}
-      customSetup={{
-        dependencies: {},
-        devDependencies: {
-          typescript: '^4.0.0',
-        },
-        entry: '/function.js',
-        environment: 'parcel',
-      }}
+      options={editorBoilerplate.options}
+      files={editorBoilerplate.files}
+      customSetup={editorBoilerplate.customSetup}
     >
       <div className="overflow-hidden rounded-md bg-gray-50 shadow ring-1 ring-slate-300/10 dark:bg-slate-800/60">
         <div className="flex h-12 flex-row items-center justify-between rounded-t bg-gray-100 px-4 text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
