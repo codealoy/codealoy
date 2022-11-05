@@ -76,7 +76,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
   return (
     <div className="">
       <Header />
-      <div className="sticky top-[84px] z-10">
+      <div className="sticky top-[75px] z-10 md:top-[84px]">
         <MobileCourseNav
           navigationItems={navigationItems}
           navIsOpen={navIsOpen}
