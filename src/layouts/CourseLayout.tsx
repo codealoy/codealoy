@@ -46,20 +46,37 @@ const CourseContent: React.FC<{ content: any }> = ({ content }) => {
   );
 };
 
+const CourseTags: React.FC<{ tags: Record<string, any> }> = ({ tags }) => {
+  const { level, estimation, lessons, challenges, playgrounds, illustrations } =
+    tags;
+
+  const tagList = [
+    level,
+    lessons,
+    estimation,
+    playgrounds,
+    challenges,
+    illustrations,
+  ].filter(Boolean);
+
+  return (
+    <div className="mr-2">
+      {tagList.map((tag, index) => (
+        <Tag
+          key={index}
+          className={index !== tagList.length - 1 ? 'mr-2' : ''}
+        >{`${tag}`}</Tag>
+      ))}
+    </div>
+  );
+};
+
 export const CourseLayout: React.FC<CourseLayoutProps> = ({
   markdoc,
   navigationItems = [],
   children,
 }) => {
-  const {
-    title,
-    level,
-    estimation,
-    lessons,
-    challenges,
-    playgrounds,
-    illustrations,
-  } = markdoc?.frontmatter!;
+  const { title } = markdoc?.frontmatter!;
 
   const tableOfContents = getTableOfContent({ markdoc });
 
@@ -120,18 +137,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                     <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
                       {title}
                     </h1>
-                    <div className="space-x-2">
-                      {level ? <Tag>{level} Level</Tag> : null}
-                      {estimation ? <Tag>{estimation}</Tag> : null}
-                      {lessons ? <Tag>{lessons} Lessons</Tag> : null}
-                      {challenges ? <Tag>{challenges} Challenges</Tag> : null}
-                      {playgrounds ? (
-                        <Tag>{playgrounds} Playgrounds</Tag>
-                      ) : null}
-                      {illustrations ? (
-                        <Tag>{illustrations} Illustrations</Tag>
-                      ) : null}
-                    </div>
+                    <CourseTags tags={markdoc?.frontmatter! || {}} />
                   </>
                 )}
               </header>
