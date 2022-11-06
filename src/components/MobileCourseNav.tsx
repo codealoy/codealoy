@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import { Navigation } from './Navigation';
 import clsx from 'clsx';
+
+import { Navigation } from './Navigation';
 
 export const MobileCourseNav = ({
   navigationItems,
@@ -49,34 +50,36 @@ export const MobileCourseNav = ({
           />
         </svg>
       </button>
-      <Dialog
-        as="div"
-        open={navIsOpen}
-        onClose={() => setNavIsOpen(false)}
-        className="fixed inset-0 z-50 overflow-y-auto lg:hidden"
-      >
-        <Dialog.Overlay className="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80" />
-        <div className="relative w-80 max-w-[calc(100%-3rem)] bg-white p-6 dark:bg-slate-800">
-          <button
-            type="button"
-            onClick={() => setNavIsOpen(false)}
-            className="absolute top-5 right-5 z-10 flex h-8 w-8 items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
-          >
-            <span className="sr-only">Close navigation</span>
-            <svg viewBox="0 0 10 10" className="h-2.5 w-2.5 overflow-visible">
-              <path
-                d="M0 0L10 10M10 0L0 10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-          <Navigation navigationItems={navigationItems} />
-        </div>
-      </Dialog>
 
+      {navIsOpen && (
+        <Dialog
+          as="div"
+          open={navIsOpen}
+          onClose={() => setNavIsOpen(false)}
+          className="fixed inset-0 z-50 overflow-y-auto lg:hidden"
+        >
+          <Dialog.Overlay className="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80" />
+          <div className="relative w-80 max-w-[calc(100%-3rem)] bg-white p-6 dark:bg-slate-800">
+            <button
+              type="button"
+              onClick={() => setNavIsOpen(false)}
+              className="absolute top-5 right-5 z-10 flex h-8 w-8 items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+            >
+              <span className="sr-only">Close navigation</span>
+              <svg viewBox="0 0 10 10" className="h-2.5 w-2.5 overflow-visible">
+                <path
+                  d="M0 0L10 10M10 0L0 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+            <Navigation navigationItems={navigationItems} />
+          </div>
+        </Dialog>
+      )}
       <>
         <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
           {section && (

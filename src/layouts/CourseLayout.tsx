@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { Router, useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+
 import { Header } from '../components/Header';
+import { MobileCourseNav } from '../components/MobileCourseNav';
 import { Navigation } from '../components/Navigation';
 import { Prose } from '../components/Prose';
-import { MarkdocNextJsPageProps } from '@markdoc/next.js';
-import { getTableOfContent } from '../utils/getTableOfContent';
-import { useTableOfContents } from '../hooks/useTableOfContent';
 import { Tag } from '../components/Tag';
 import { NavigationItem } from '../constants/navigations';
-import { Router, useRouter } from 'next/router';
-import { MobileCourseNav } from '../components/MobileCourseNav';
-import { Dialog } from '@headlessui/react';
+import { useTableOfContents } from '../hooks/useTableOfContent';
+import { getTableOfContent } from '../utils/getTableOfContent';
 
 interface CourseLayoutProps extends MarkdocNextJsPageProps {
   navigationItems: NavigationItem[];
@@ -74,7 +74,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
   }
 
   return (
-    <div className="">
+    <div>
       <Header />
       <div className="sticky top-[75.5px] z-10 dark:backdrop-blur md:top-[84px]">
         <MobileCourseNav
