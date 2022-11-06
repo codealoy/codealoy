@@ -2,12 +2,12 @@
 pageTitle: Overview - Learn Problem Solving with JavaScript - Basic
 title: Learn Problem Solving with JavaScript - Basic
 description: Practice 20 carefully curated interview questions and solutions to getting started with basics of Mastering JavaScript Interview.
-level: Beginner
-estimation: 2 hours
-lessons: 22
-challenges: 51
-playgrounds: 9
-illustrations: 10
+level: Beginner Level
+estimation: 2 Hours
+lessons: 22 Lessons
+challenges: 51 Challenges
+playgrounds: 9 Playgrounds
+illustrations: 10 Illustrations
 ---
 
 {% $markdoc.frontmatter.description %} {% .lead %}

@@ -1,5 +1,5 @@
 // import { env } from "./src/env/server.mjs";
-import withMarkdoc from "@markdoc/next.js";
+import withMarkdoc from '@markdoc/next.js';
 
 /** @type {import('next').NextConfig} */
 
@@ -16,16 +16,15 @@ function defineNextConfig(config) {
 }
 
 export default withMarkdoc({
-  schemaPath: "./src/markdoc",
+  schemaPath: './src/markdoc',
 })(
   defineNextConfig({
     reactStrictMode: true,
     swcMinify: true,
-    pageExtensions: ["md", "js", "jsx", "ts", "tsx"],
-    // Next.js i18n docs: https://nextjs.org/docs/advanced-features/i18n-routing
+    pageExtensions: ['md', 'js', 'jsx', 'ts', 'tsx'],
     i18n: {
-      locales: ["en"],
-      defaultLocale: "en",
+      locales: ['bn-BD'],
+      defaultLocale: 'bn-BD',
     },
-  })
+  }),
 );
