@@ -1,8 +1,8 @@
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { Router, useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 
 import { Header } from '../components/Header';
 import { MobileCourseNav } from '../components/MobileCourseNav';
@@ -17,6 +17,19 @@ interface CourseLayoutProps extends MarkdocNextJsPageProps {
   navigationItems: NavigationItem[];
   children?: React.ReactNode;
 }
+
+const CourseContent: React.FC = ({ content }: any) => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1);
+  }, []);
+  return (
+    <div style={{ overflowAnchor: 'none' }}>
+      <Prose>{content}</Prose>;
+    </div>
+  );
+};
 
 export const CourseLayout: React.FC<CourseLayoutProps> = ({
   markdoc,
@@ -33,22 +46,9 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
     illustrations,
   } = markdoc?.frontmatter!;
 
-  const [navIsOpen, setNavIsOpen] = useState(false);
-
   const tableOfContents = getTableOfContent({ markdoc });
 
   const router = useRouter();
-
-  useEffect(() => {
-    if (!navIsOpen) return;
-    function handleRouteChange() {
-      setNavIsOpen(false);
-    }
-    Router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [navIsOpen]);
 
   const allLinks = navigationItems.flatMap((section) => section.links);
   const linkIndex = allLinks.findIndex(
@@ -77,12 +77,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
     <div>
       <Header />
       <div className="sticky top-[75.5px] z-10 dark:backdrop-blur md:top-[84px]">
-        <MobileCourseNav
-          navigationItems={navigationItems}
-          navIsOpen={navIsOpen}
-          setNavIsOpen={setNavIsOpen}
-          section={section}
-        />
+        <MobileCourseNav navigationItems={navigationItems} section={section} />
       </div>
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
@@ -126,7 +121,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                 )}
               </header>
             )}
-            <Prose>{children}</Prose>
+            <CourseContent content={children} />
           </article>
           <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
             {previousPage && (
