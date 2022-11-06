@@ -183,33 +183,31 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                   {tableOfContents.map((section: any) => (
                     <li key={section.id}>
                       <h3>
-                        <Link href={`#${section.id}`}>
-                          <a
-                            className={clsx(
-                              isActive(section)
-                                ? 'text-sky-500'
-                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
-                            )}
-                          >
-                            {section.title}
-                          </a>
-                        </Link>
+                        <a
+                          href={`#${section.id}`}
+                          className={clsx(
+                            isActive(section)
+                              ? 'text-sky-500'
+                              : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
+                          )}
+                        >
+                          {section.title}
+                        </a>
                       </h3>
                       {section.children.length > 0 && (
                         <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
-                              <Link href={`#${subSection.id}`}>
-                                <a
-                                  className={
-                                    isActive(subSection)
-                                      ? 'text-sky-500'
-                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
-                                  }
-                                >
-                                  {subSection.title}
-                                </a>
-                              </Link>
+                              <a
+                                href={`#${subSection.id}`}
+                                className={
+                                  isActive(subSection)
+                                    ? 'text-sky-500'
+                                    : 'hover:text-slate-600 dark:hover:text-slate-300'
+                                }
+                              >
+                                {subSection.title}
+                              </a>
                             </li>
                           ))}
                         </ul>
