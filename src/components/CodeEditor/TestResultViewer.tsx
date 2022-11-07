@@ -78,9 +78,46 @@ const resultTableDataSource = [
   },
 ];
 
-const TestResultTable = () => {
+const TestResultTable = ({ editorOutput }) => {
   const failedTestCount = 1;
+  console.log({ editorOutput });
 
+  const editorResult: any = [];
+
+  const getErrorBaseResult = (message) => {
+    console.log({ message });
+    const textMessage = message.replace(
+      /[.,\/#!$%\^&\*;:{}=\-_`~()\n'']/g,
+      ' ',
+    );
+    const messageArray = textMessage.split(' ');
+    if (messageArray[15] !== messageArray[18]) {
+      return {
+        Expected: messageArray[15].replace(/^"(.*)"$/, '$1'),
+        Received: messageArray[18].replace(/^"(.*)"$/, '$1'),
+      };
+    }
+  };
+
+  if (editorOutput !== undefined) {
+    Object.values(editorOutput).map((key: any) => {
+      if (key.name === '/base.test.js') {
+        Object.values(key.tests).map((test: any) => {
+          const temp = {
+            key: test.name,
+            title: test.name,
+            status: test.status,
+            errorMessage:
+              test.status === 'fail'
+                ? getErrorBaseResult(test.errors[0].message)
+                : null,
+          };
+          editorResult.push(...editorResult, temp);
+        });
+      }
+    });
+  }
+  console.log({ editorResult });
   return (
     <div className="flex flex-col">
       <div className="flex justify-center px-2 text-sm font-semibold">
@@ -158,7 +195,11 @@ export const TestResultViewer = ({
             <span className="absolute -top-7 right-2 text-xs font-medium text-slate-400">
               <p className="inline">Time: 0.004s</p>
             </span>
-            {isExecutingCode ? <CodeExecutionLoader /> : <TestResultTable />}
+            {isExecutingCode ? (
+              <CodeExecutionLoader />
+            ) : (
+              <TestResultTable editorOutput={editorOutput} />
+            )}
           </div>
         </div>
       )}
