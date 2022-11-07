@@ -35,14 +35,17 @@ const MyApp: AppType<MyAppProps> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const router = useRouter();
-  const isCoursesPage = router.pathname.includes('/courses');
+
+  // INFO: this will only match "/couses/courseName/moduleName" pattern, but not "/courses"
+  const isCourseDetailPage = router.pathname.match(/courses\/\S+/i);
+
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
   const [showAnnouncement, setShowAnnouncement] = useState(false);
 
   const renderLayout = () => {
-    if (isCoursesPage) {
+    if (isCourseDetailPage) {
       const navigationItems = getNavigationItems({
         scope: 'COURSES',
         routePath: router.pathname,
