@@ -17,6 +17,11 @@ const resultTableColumns = [
     key: 'title',
   },
   {
+    title: 'Input',
+    dataIndex: 'input',
+    key: 'input',
+  },
+  {
     title: 'Expected',
     dataIndex: 'expected',
     key: 'expected',
@@ -112,6 +117,7 @@ const TestResultTable = ({ editorOutput }) => {
         const temp = {
           key: test.name,
           title: testTitle,
+          input: testInput,
           status: test.status,
           expected: errorMessage ? errorMessage.Expected : testOutput,
           received: errorMessage ? errorMessage.Received : testOutput,
