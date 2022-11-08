@@ -1,8 +1,17 @@
 import React from 'react';
+import { getEditorErrorResult } from 'src/utils/getEditorErrorResult';
 
 interface TestResultViewerProps {
   editorOutput: Record<string, any> | undefined;
   isExecutingCode: boolean;
+}
+interface EditorResultTypes {
+  key: string;
+  title: string;
+  input: string;
+  expected: string;
+  received: string;
+  result: string;
 }
 
 const resultTableColumns = [
@@ -38,79 +47,17 @@ const resultTableColumns = [
   },
 ];
 
-const resultTableDataSource = [
-  {
-    key: '1',
-    title: '[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]',
-    expected: '9',
-    received: '1',
-    result: '❌',
-  },
-  {
-    key: '2',
-    title: 'Exported value is a function',
-    expected: 'function',
-    received: 'boolean',
-    result: '❌',
-  },
-  {
-    key: '3',
-    title: '[1, 2, 3, 4, 5]',
-    expected: '9',
-    received: '1',
-    result: '✅',
-  },
-  {
-    key: '4',
-    title: '[1, 2, 3, 4, 5]',
-    expected: '9',
-    received: '1',
-    result: '❌',
-  },
-  {
-    key: '5',
-    title: '[1, 2, 3, 4, 5]',
-    expected: '9',
-    received: '1',
-    result: '❌',
-  },
-  {
-    key: '6',
-    title: '[1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]',
-    expected: '9',
-    received: '1',
-    result: '❌',
-  },
-];
-
 const TestResultTable = ({ editorOutput }) => {
   let failedTestCount = 0;
   console.log({ editorOutput });
-
-  const editorResult: any = [];
-
-  const getErrorResult = (message) => {
-    console.log({ message });
-    const textMessage = message.replace(
-      /[.,\/#!$%\^&\*;:{}=\-_`~()\n'']/g,
-      ' ',
-    );
-    const messageArray = textMessage.split(' ');
-    if (messageArray[15] !== messageArray[18]) {
-      return {
-        Expected: messageArray[15].replace(/^"(.*)"$/, '$1'),
-        Received: messageArray[18].replace(/^"(.*)"$/, '$1'),
-      };
-    }
-  };
+  const editorResult: EditorResultTypes[] = [];
 
   if (editorOutput !== undefined) {
     Object.values(editorOutput).map((key: any) => {
       Object.values(key.tests).map((test: any) => {
-        console.log({ test });
         const errorMessage =
           test.status === 'fail'
-            ? getErrorResult(test.errors[0].message)
+            ? getEditorErrorResult(test.errors[0].message)
             : null;
 
         const [testTitle, testOutput, testInput] = test.name.split(' | ');
@@ -128,8 +75,6 @@ const TestResultTable = ({ editorOutput }) => {
       });
     });
   }
-  console.log({ editorResult });
-  console.log({ failedTestCount });
 
   return (
     <div className="flex flex-col">
