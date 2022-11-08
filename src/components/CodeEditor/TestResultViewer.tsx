@@ -79,12 +79,12 @@ const resultTableDataSource = [
 ];
 
 const TestResultTable = ({ editorOutput }) => {
-  const failedTestCount = 1;
+  let failedTestCount = 0;
   console.log({ editorOutput });
 
   const editorResult: any = [];
 
-  const getErrorBaseResult = (message) => {
+  const getErrorResult = (message) => {
     console.log({ message });
     const textMessage = message.replace(
       /[.,\/#!$%\^&\*;:{}=\-_`~()\n'']/g,
@@ -101,28 +101,35 @@ const TestResultTable = ({ editorOutput }) => {
 
   if (editorOutput !== undefined) {
     Object.values(editorOutput).map((key: any) => {
-      if (key.name === '/base.test.js') {
-        Object.values(key.tests).map((test: any) => {
-          const temp = {
-            key: test.name,
-            title: test.name,
-            status: test.status,
-            errorMessage:
-              test.status === 'fail'
-                ? getErrorBaseResult(test.errors[0].message)
-                : null,
-          };
-          editorResult.push(...editorResult, temp);
-        });
-      }
+      Object.values(key.tests).map((test: any) => {
+        console.log({ test });
+        const errorMessage =
+          test.status === 'fail'
+            ? getErrorResult(test.errors[0].message)
+            : null;
+        const temp = {
+          key: test.name,
+          title: test.name,
+          status: test.status,
+          expected: errorMessage ? errorMessage.Expected : null,
+          received: errorMessage ? errorMessage.Received : null,
+          result: test.status === 'fail' ? '❌' : '✅',
+        };
+        test.status === 'fail' ? failedTestCount++ : failedTestCount;
+        editorResult.push(temp);
+      });
     });
   }
   console.log({ editorResult });
+  console.log({ failedTestCount });
+
   return (
     <div className="flex flex-col">
       <div className="flex justify-center px-2 text-sm font-semibold">
         {failedTestCount > 0 ? (
-          <p className=" text-red-500">1 of 6 Tests Failed</p>
+          <p className=" text-red-500">
+            {failedTestCount} of {editorResult.length} Tests Failed
+          </p>
         ) : (
           <p className=" text-green-500">All Tests Passed</p>
         )}
@@ -143,7 +150,8 @@ const TestResultTable = ({ editorOutput }) => {
             </tr>
           </thead>
           <tbody className="overflow-auto">
-            {resultTableDataSource.map((data, index) => {
+            {editorResult.map((data, index) => {
+              console.log({ data });
               return (
                 <tr
                   key={data.key}
