@@ -29,6 +29,7 @@
     "@trpc/react": "^9.27.4",
     "@trpc/server": "^9.27.4",
     "clsx": "^1.2.1",
+    "dayjs": "^1.11.6",
     "focus-visible": "^5.2.0",
     "next": "12.3.1",
     "next-auth": "^4.14.0",
