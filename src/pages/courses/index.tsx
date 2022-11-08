@@ -63,7 +63,7 @@ const courseList = [
   },
 ];
 
-export default function Example() {
+const CoursesPage = () => {
   return (
     <div className="relative mx-auto mb-20 min-h-screen max-w-8xl bg-white px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="py-16 px-4 text-center sm:px-6 lg:px-8">
@@ -143,6 +143,7 @@ export default function Example() {
                     className="h-56 w-full rounded-t-lg object-cover grayscale"
                     src={course.coverImage}
                     alt={course.title}
+                    loading="lazy"
                   />
                 </a>
                 <div className="p-5">
@@ -191,4 +192,6 @@ export default function Example() {
       </div>
     </div>
   );
-}
+};
+
+export default CoursesPage;
