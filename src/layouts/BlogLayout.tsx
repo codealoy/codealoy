@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { BlogPosts } from '../components/home/BlogPosts';
 import { Prose } from '../components/Prose';
+import { dayjs } from '../utils/dayjs';
 
 interface BlogLayoutProps extends MarkdocNextJsPageProps {
   children?: React.ReactNode;
@@ -14,8 +15,11 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
   markdoc,
   children,
 }) => {
-  const { title, authorName, authorAvatar, publishDate, authorProfession } =
+  const { title, authorName, authorAvatar, publishedAt, authorProfession } =
     markdoc?.frontmatter!;
+
+  const publishedAtEn = dayjs(publishedAt).locale('en').format('YYYY-MM-DD');
+  const publishedAtBn = dayjs(publishedAt).format('LL');
 
   return (
     <>
@@ -44,8 +48,8 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
                         {authorProfession}
                       </p>
                       <p className="text-base font-light text-slate-500 dark:text-slate-400">
-                        <time dateTime="2022-02-08" title="February 8th, 2022">
-                          {publishDate}
+                        <time dateTime={publishedAtEn} title={publishedAtBn}>
+                          {publishedAtBn}
                         </time>
                       </p>
                     </div>

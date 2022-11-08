@@ -4,7 +4,7 @@ description: Welcome to the basic course to learn problem-solving with javascrip
 authorName: Mukitul Islam Mukit
 authorAvatar: https://i.pravatar.cc/1024?img=2
 authorProfession: Senior Software Engineer, ShopUp
-publishDate: 'November 08, 2022'
+publishedAt: '2022-11-10'
 ---
 
 {% $markdoc.frontmatter.description %} {% .lead %}
