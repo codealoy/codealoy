@@ -107,12 +107,14 @@ const TestResultTable = ({ editorOutput }) => {
           test.status === 'fail'
             ? getErrorResult(test.errors[0].message)
             : null;
+
+        const [testTitle, testOutput, testInput] = test.name.split(' | ');
         const temp = {
           key: test.name,
-          title: test.name,
+          title: testTitle,
           status: test.status,
-          expected: errorMessage ? errorMessage.Expected : null,
-          received: errorMessage ? errorMessage.Received : null,
+          expected: errorMessage ? errorMessage.Expected : testOutput,
+          received: errorMessage ? errorMessage.Received : testOutput,
           result: test.status === 'fail' ? '❌' : '✅',
         };
         test.status === 'fail' ? failedTestCount++ : failedTestCount;
