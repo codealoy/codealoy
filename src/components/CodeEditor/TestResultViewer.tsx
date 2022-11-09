@@ -1,5 +1,6 @@
 import React from 'react';
 import { getEditorErrorResult } from 'src/utils/getEditorErrorResult';
+import { LoadingSpinner } from '../LoadingSpinner';
 
 interface TestResultViewerProps {
   editorOutput: Record<string, any> | undefined;
@@ -133,9 +134,7 @@ const CodeExecutionLoader = () => {
   return (
     <div className="flex min-h-[260px] items-center justify-center">
       <div className="flex items-center">
-        <div className="relative h-4 w-4 animate-spin rounded-full bg-gradient-to-r from-indigo-500 to-sky-500">
-          <div className="absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-gray-50 dark:bg-[#112133]" />
-        </div>
+        <LoadingSpinner />
         <p className="m-0 ml-2 block text-center text-base font-medium text-slate-400 dark:text-slate-500">
           Executing your code...
         </p>
