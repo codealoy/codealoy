@@ -1,18 +1,11 @@
 import React from 'react';
-import { getEditorErrorResult } from 'src/utils/getEditorErrorResult';
+import { getEditorResultParser } from 'src/utils/getEditorResultParser';
+
 import { LoadingSpinner } from '../LoadingSpinner';
 
 interface TestResultViewerProps {
   editorOutput: Record<string, any> | undefined;
   isExecutingCode: boolean;
-}
-interface EditorResultTypes {
-  key: string;
-  title: string;
-  input: string;
-  expected: string;
-  received: string;
-  result: string;
 }
 
 const resultTableColumns = [
@@ -49,33 +42,7 @@ const resultTableColumns = [
 ];
 
 const TestResultTable = ({ editorOutput }) => {
-  let failedTestCount = 0;
-  console.log({ editorOutput });
-  const editorResult: EditorResultTypes[] = [];
-
-  if (editorOutput !== undefined) {
-    Object.values(editorOutput).map((key: any) => {
-      Object.values(key.tests).map((test: any) => {
-        const errorMessage =
-          test.status === 'fail'
-            ? getEditorErrorResult(test.errors[0].message)
-            : null;
-
-        const [testTitle, testOutput, testInput] = test.name.split(' | ');
-        const temp = {
-          key: test.name,
-          title: testTitle,
-          input: testInput,
-          status: test.status,
-          expected: errorMessage ? errorMessage.Expected : testOutput,
-          received: errorMessage ? errorMessage.Received : testOutput,
-          result: test.status === 'fail' ? '❌' : '✅',
-        };
-        test.status === 'fail' ? failedTestCount++ : failedTestCount;
-        editorResult.push(temp);
-      });
-    });
-  }
+  const { editorResult, failedTestCount } = getEditorResultParser(editorOutput);
 
   return (
     <div className="flex flex-col">
@@ -147,13 +114,14 @@ export const TestResultViewer = ({
   editorOutput,
   isExecutingCode,
 }: TestResultViewerProps) => {
+  const { testExecutionTime } = getEditorResultParser(editorOutput);
   return (
     <>
       {(isExecutingCode || editorOutput) && (
         <div className="bg-gray-50 dark:bg-transparent">
           <div className="relative">
             <span className="absolute -top-7 right-2 text-xs font-medium text-slate-400">
-              <p className="inline">Time: 0.004s</p>
+              <p className="inline">{testExecutionTime / 1000}s</p>
             </span>
             {isExecutingCode ? (
               <CodeExecutionLoader />
