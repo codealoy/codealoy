@@ -1,11 +1,17 @@
+import React from 'react';
 import clsx from 'clsx';
-import { useSandpackClient } from '@codesandbox/sandpack-react';
+import {
+  useLoadingOverlayState,
+  useSandpackClient,
+} from '@codesandbox/sandpack-react';
 import {
   PlayIcon,
   ArrowPathIcon,
   ArrowUturnLeftIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline';
+
+import { LoadingSpinner } from '../LoadingSpinner';
 
 export const ControllerButtons = ({
   editorOutput,
@@ -14,6 +20,14 @@ export const ControllerButtons = ({
   setIsExecutingCode,
 }) => {
   const { sandpack } = useSandpackClient();
+  const loadingOverlayState = useLoadingOverlayState();
+
+  const isButtonDisabled = sandpack.status !== 'running';
+
+  const isEditorLoading =
+    sandpack.status === 'initial' ||
+    sandpack.status === 'idle' ||
+    loadingOverlayState === 'LOADING';
 
   const runTests = () => {
     setIsExecutingCode(true);
@@ -70,9 +84,9 @@ export const ControllerButtons = ({
     },
   ];
 
-  const isDisabled = sandpack.status !== 'running';
-
-  return (
+  return isEditorLoading ? (
+    <LoadingSpinner />
+  ) : (
     <span className="flex">
       {controllerButtons.map(
         (btn) =>
@@ -81,13 +95,13 @@ export const ControllerButtons = ({
               key={btn.title}
               title={btn.title}
               onClick={btn.onClick}
-              disabled={isDisabled}
+              disabled={isButtonDisabled}
               className="m-auto flex h-8 w-7 transform cursor-pointer items-center justify-center transition duration-300 ease-in-out hover:scale-110 disabled:transform-none disabled:cursor-not-allowed disabled:text-slate-300 disabled:dark:text-slate-500"
             >
               <btn.icon
                 className={clsx(
                   'w-4s h-4',
-                  !isDisabled &&
+                  !isButtonDisabled &&
                     'hover:h-5 hover:w-5 hover:text-indigo-600 hover:dark:text-indigo-400',
                   btn.animation.shouldAnimate && btn.animation.animationClass,
                 )}
