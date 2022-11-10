@@ -1,3 +1,4 @@
+import React from 'react';
 import { Disclosure } from '@headlessui/react';
 
 const courseList = [
@@ -63,7 +64,29 @@ const courseList = [
   },
 ];
 
+type searchData = string | null;
+
 const CoursesPage = () => {
+  const [searchQuery, setSearchQuery] = React.useState<searchData>('');
+
+  const search = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    setSearchQuery(e.target.value);
+  };
+
+  const searchData = (searchQuery: string | null, courseList: any) => {
+    if (searchQuery) {
+      return courseList.filter((data: any) => {
+        return data.title
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase().trim());
+      });
+    }
+    return courseList;
+  };
+
+  const filterData = searchData(searchQuery, courseList);
+
   return (
     <div className="relative mx-auto mb-20 min-h-screen max-w-8xl bg-white px-4 dark:bg-slate-900 sm:px-6 lg:px-8 xl:px-12">
       <div className="py-16 px-4 text-center sm:px-6 lg:px-8">
@@ -112,8 +135,11 @@ const CoursesPage = () => {
                 type="search"
                 id="default-search"
                 className="block w-full rounded-lg border border-slate-300 bg-slate-50 p-4 pl-10 text-sm text-slate-900 focus:border-blue-500 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                placeholder="Search course"
+                placeholder="Search course by title"
                 required
+                onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  search(e);
+                }}
               />
               <button
                 type="submit"
@@ -132,7 +158,7 @@ const CoursesPage = () => {
           role="list"
           className="mx-6 grid grid-cols-1 gap-8 sm:mx-auto sm:grid-cols-2 lg:grid-cols-3"
         >
-          {courseList.map((course) => (
+          {(searchQuery ? filterData : courseList).map((course) => (
             <li
               key={course.title}
               className="col-span-1 divide-y divide-slate-200 rounded-lg bg-white shadow ring-1 ring-slate-100/80 dark:rounded-lg dark:shadow-lg dark:ring-0"
