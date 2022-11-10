@@ -65,12 +65,12 @@ const courseList = [
 
 const CoursesPage = () => {
   return (
-    <div className="relative mx-auto mb-20 min-h-screen max-w-8xl bg-white px-4 sm:px-6 lg:px-8 xl:px-12">
+    <div className="relative mx-auto mb-20 min-h-screen max-w-8xl bg-white px-4 dark:bg-slate-900 sm:px-6 lg:px-8 xl:px-12">
       <div className="py-16 px-4 text-center sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Course Catalog
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-base text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-base text-slate-500 dark:text-slate-400">
           Want to learn something new? Don&apos;t get rid of anything, just put
           it in really really nice looking containers.
         </p>
@@ -135,9 +135,9 @@ const CoursesPage = () => {
           {courseList.map((course) => (
             <li
               key={course.title}
-              className="col-span-1 divide-y divide-slate-200 rounded-lg bg-white shadow ring-1 ring-slate-100/80"
+              className="col-span-1 divide-y divide-slate-200 rounded-lg bg-white shadow ring-1 ring-slate-100/80 dark:rounded-lg dark:shadow-lg dark:ring-0"
             >
-              <div className="rounded-lg border border-slate-200 bg-white text-center shadow dark:border-slate-700 dark:bg-slate-800">
+              <div className="rounded-lg border border-slate-200 bg-white text-center shadow  dark:rounded-lg dark:border-none dark:bg-slate-800 dark:shadow-lg">
                 <a href="#">
                   <img
                     className="h-56 w-full rounded-t-lg object-cover grayscale"
