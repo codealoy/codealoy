@@ -3,13 +3,22 @@ import { getEditorErrorResult } from 'src/utils/getEditorErrorResult';
 interface EditorResultTypes {
   key: string;
   title: string;
+  status: 'fail' | 'pass';
   input: string;
   expected: string;
   received: string;
   result: string;
 }
 
-export const getEditorResultParser = (editorOutput) => {
+interface GetEditorResultParserReturnType {
+  editorResult: EditorResultTypes[];
+  failedTestCount: number;
+  testExecutionTime: number;
+}
+
+export const getEditorResultParser = (
+  editorOutput: Record<string, any> | undefined,
+): GetEditorResultParserReturnType => {
   let failedTestCount = 0;
   let testExecutionTime = 0;
   const editorResult: EditorResultTypes[] = [];
@@ -23,7 +32,8 @@ export const getEditorResultParser = (editorOutput) => {
             : null;
 
         const [testTitle, testOutput, testInput] = test.name.split(' | ');
-        const temp = {
+
+        editorResult.push({
           key: test.name,
           title: testTitle,
           input: testInput,
@@ -31,10 +41,10 @@ export const getEditorResultParser = (editorOutput) => {
           expected: errorMessage ? errorMessage.Expected : testOutput,
           received: errorMessage ? errorMessage.Received : testOutput,
           result: test.status === 'fail' ? '❌' : '✅',
-        };
+        });
+
         test.status === 'fail' ? failedTestCount++ : failedTestCount;
         testExecutionTime = testExecutionTime + test.duration;
-        editorResult.push(temp);
       });
     });
   }
