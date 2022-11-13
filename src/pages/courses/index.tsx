@@ -70,7 +70,6 @@ const CoursesPage = () => {
   const [searchQuery, setSearchQuery] = React.useState<searchData>('');
 
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setSearchQuery(e.target.value);
   };
 
