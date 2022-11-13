@@ -103,7 +103,7 @@ const CoursesPage = () => {
       <Disclosure
         as="section"
         aria-labelledby="filter-heading"
-        className="flex items-center justify-center border-t border-b border-slate-200 py-4"
+        className="flex items-center justify-center border-t border-b border-slate-200 py-4 dark:border-slate-800"
       >
         <div className="w-full sm:w-10/12 lg:w-1/2">
           <form>
