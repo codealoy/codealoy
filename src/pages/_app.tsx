@@ -36,7 +36,9 @@ const MyApp: AppType<MyAppProps> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const router = useRouter();
-  const isCoursesPage = router.pathname.includes('/courses');
+
+  // INFO: this will only match "/couses/courseName/moduleName" pattern, but not "/courses"
+  const isCourseDetailPage = router.pathname.match(/courses\/\S+/i);
 
   // INFO: this will only match "/blog/blog-slug" pattern, but not "/blog"
   const isBlogDetailPage = router.pathname.match(/blog\/\S+/i);
@@ -47,7 +49,7 @@ const MyApp: AppType<MyAppProps> = ({
   const [showAnnouncement, setShowAnnouncement] = useState(false);
 
   const renderLayout = () => {
-    if (isCoursesPage) {
+    if (isCourseDetailPage) {
       const navigationItems = getNavigationItems({
         scope: 'COURSES',
         routePath: router.pathname,
