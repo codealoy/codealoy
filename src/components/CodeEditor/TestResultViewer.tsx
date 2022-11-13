@@ -72,7 +72,6 @@ const TestResultTable = ({ editorOutput }) => {
           </thead>
           <tbody className="overflow-auto">
             {editorResult.map((data, index) => {
-              console.log({ data });
               return (
                 <tr
                   key={data.key}

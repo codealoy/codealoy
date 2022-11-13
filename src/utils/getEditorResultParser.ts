@@ -12,7 +12,6 @@ interface EditorResultTypes {
 export const getEditorResultParser = (editorOutput) => {
   let failedTestCount = 0;
   let testExecutionTime = 0;
-  console.log({ editorOutput });
   const editorResult: EditorResultTypes[] = [];
 
   if (editorOutput !== undefined) {
