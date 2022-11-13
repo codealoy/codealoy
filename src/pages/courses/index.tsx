@@ -157,7 +157,7 @@ const CoursesPage = () => {
           role="list"
           className="mx-6 grid grid-cols-1 gap-8 sm:mx-auto sm:grid-cols-2 lg:grid-cols-3"
         >
-          {(searchQuery ? filterData : courseList).map((course) => (
+          {filterData.map((course) => (
             <li
               key={course.title}
               className="col-span-1 divide-y divide-slate-200 rounded-lg bg-white shadow ring-1 ring-slate-100/80 dark:rounded-lg dark:shadow-lg dark:ring-0"
