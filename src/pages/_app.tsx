@@ -25,6 +25,7 @@ import { Layout } from '../layouts/Layout';
 import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
 import { getNavigationItems } from '../utils/getNavigationItems';
+import { BlogLayout } from '../layouts/BlogLayout';
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
@@ -36,6 +37,10 @@ const MyApp: AppType<MyAppProps> = ({
 }) => {
   const router = useRouter();
   const isCoursesPage = router.pathname.includes('/courses');
+
+  // INFO: this will only match "/blog/blog-slug" pattern, but not "/blog"
+  const isBlogDetailPage = router.pathname.match(/blog\/\S+/i);
+
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
@@ -52,6 +57,14 @@ const MyApp: AppType<MyAppProps> = ({
         <CourseLayout navigationItems={navigationItems} {...pageProps}>
           <Component {...pageProps} />
         </CourseLayout>
+      );
+    }
+
+    if (isBlogDetailPage) {
+      return (
+        <BlogLayout {...pageProps}>
+          <Component {...pageProps} />
+        </BlogLayout>
       );
     }
 
