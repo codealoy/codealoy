@@ -1,36 +1,82 @@
-import React from 'react';
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 
 import { Header } from '../components/Header';
+import { MobileCourseNav } from '../components/MobileCourseNav';
 import { Navigation } from '../components/Navigation';
 import { Prose } from '../components/Prose';
-import { MarkdocNextJsPageProps } from '@markdoc/next.js';
-import { getTableOfContent } from '../utils/getTableOfContent';
-import { useTableOfContents } from '../hooks/useTableOfContent';
 import { Tag } from '../components/Tag';
 import { NavigationItem } from '../constants/navigations';
-import { useRouter } from 'next/router';
+import { useTableOfContents } from '../hooks/useTableOfContent';
+import { getTableOfContent } from '../utils/getTableOfContent';
 
 interface CourseLayoutProps extends MarkdocNextJsPageProps {
   navigationItems: NavigationItem[];
   children?: React.ReactNode;
 }
 
+const CourseContent: React.FC<{ content: any }> = ({ content }) => {
+  const router = useRouter();
+
+  const [lastScrolledPath, setLastScrolledPath] = useState(router.pathname);
+
+  useEffect(() => {
+    const shouldScrollToSubSection = router.asPath.includes('#');
+    if (!shouldScrollToSubSection) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 1);
+    }
+  }, [lastScrolledPath, router.asPath]);
+
+  useEffect(() => {
+    const currentFilePath = router.pathname;
+    if (currentFilePath !== lastScrolledPath) {
+      setLastScrolledPath(currentFilePath);
+    }
+  }, [lastScrolledPath, router.pathname]);
+
+  return (
+    <div style={{ overflowAnchor: 'none' }}>
+      <Prose>{content}</Prose>;
+    </div>
+  );
+};
+
+const CourseTags: React.FC<{ tags: Record<string, any> }> = ({ tags }) => {
+  const { level, estimation, lessons, challenges, playgrounds, illustrations } =
+    tags;
+
+  const tagList = [
+    level,
+    lessons,
+    estimation,
+    playgrounds,
+    challenges,
+    illustrations,
+  ].filter(Boolean);
+
+  return (
+    <div className="mr-2">
+      {tagList.map((tag, index) => (
+        <Tag
+          key={index}
+          className={index !== tagList.length - 1 ? 'mr-2' : ''}
+        >{`${tag}`}</Tag>
+      ))}
+    </div>
+  );
+};
+
 export const CourseLayout: React.FC<CourseLayoutProps> = ({
   markdoc,
   navigationItems = [],
   children,
 }) => {
-  const {
-    title,
-    level,
-    estimation,
-    lessons,
-    challenges,
-    playgrounds,
-    illustrations,
-  } = markdoc?.frontmatter!;
+  const { title } = markdoc?.frontmatter!;
 
   const tableOfContents = getTableOfContent({ markdoc });
 
@@ -60,9 +106,11 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
   }
 
   return (
-    <>
+    <div>
       <Header />
-
+      <div className="sticky top-[75.5px] z-10 dark:backdrop-blur md:top-[84px]">
+        <MobileCourseNav navigationItems={navigationItems} section={section} />
+      </div>
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
@@ -89,23 +137,12 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                     <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
                       {title}
                     </h1>
-                    <div className="space-x-2">
-                      {level ? <Tag>{level} Level</Tag> : null}
-                      {estimation ? <Tag>{estimation}</Tag> : null}
-                      {lessons ? <Tag>{lessons} Lessons</Tag> : null}
-                      {challenges ? <Tag>{challenges} Challenges</Tag> : null}
-                      {playgrounds ? (
-                        <Tag>{playgrounds} Playgrounds</Tag>
-                      ) : null}
-                      {illustrations ? (
-                        <Tag>{illustrations} Illustrations</Tag>
-                      ) : null}
-                    </div>
+                    <CourseTags tags={markdoc?.frontmatter! || {}} />
                   </>
                 )}
               </header>
             )}
-            <Prose>{children}</Prose>
+            <CourseContent content={children} />
           </article>
           <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
             {previousPage && (
@@ -152,33 +189,31 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                   {tableOfContents.map((section: any) => (
                     <li key={section.id}>
                       <h3>
-                        <Link href={`#${section.id}`}>
-                          <a
-                            className={clsx(
-                              isActive(section)
-                                ? 'text-sky-500'
-                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
-                            )}
-                          >
-                            {section.title}
-                          </a>
-                        </Link>
+                        <a
+                          href={`#${section.id}`}
+                          className={clsx(
+                            isActive(section)
+                              ? 'text-sky-500'
+                              : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
+                          )}
+                        >
+                          {section.title}
+                        </a>
                       </h3>
                       {section.children.length > 0 && (
                         <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
-                              <Link href={`#${subSection.id}`}>
-                                <a
-                                  className={
-                                    isActive(subSection)
-                                      ? 'text-sky-500'
-                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
-                                  }
-                                >
-                                  {subSection.title}
-                                </a>
-                              </Link>
+                              <a
+                                href={`#${subSection.id}`}
+                                className={
+                                  isActive(subSection)
+                                    ? 'text-sky-500'
+                                    : 'hover:text-slate-600 dark:hover:text-slate-300'
+                                }
+                              >
+                                {subSection.title}
+                              </a>
                             </li>
                           ))}
                         </ul>
@@ -191,6 +226,6 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
           </nav>
         </div>
       </div>
-    </>
+    </div>
   );
 };

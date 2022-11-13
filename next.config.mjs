@@ -24,8 +24,8 @@ export default withMarkdoc({
     pageExtensions: ['md', 'js', 'jsx', 'ts', 'tsx'],
     // Next.js i18n docs: https://nextjs.org/docs/advanced-features/i18n-routing
     i18n: {
-      locales: ['en'],
-      defaultLocale: 'en',
+      locales: ['bn-BD'],
+      defaultLocale: 'bn-BD',
     },
     webpack: (config) => {
       config.module.rules.push({
