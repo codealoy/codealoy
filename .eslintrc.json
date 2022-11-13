@@ -9,6 +9,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@next/next/no-img-element": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-non-null-asserted-optional-chain": "off"
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

@@ -4,7 +4,7 @@ import {
   NavigationItem,
 } from '../constants/navigations';
 
-interface GetNavigationItemsParms {
+interface GetNavigationItemsParams {
   scope: keyof NavigationList;
   routePath?: string;
 }
@@ -12,7 +12,7 @@ interface GetNavigationItemsParms {
 export const getNavigationItems = ({
   scope,
   routePath,
-}: GetNavigationItemsParms) => {
+}: GetNavigationItemsParams) => {
   let baseUrl: string | undefined;
 
   if (routePath && scope === 'COURSES') {

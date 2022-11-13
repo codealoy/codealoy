@@ -1,10 +1,12 @@
 import clsx from 'clsx';
+
 import { Listbox } from '@headlessui/react';
-import { useEffect, useState, useContext } from 'react';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { useContext, useEffect, useState } from 'react';
+
 import { ThemeContext } from '../contexts/ThemeContext';
-import { SunIcon } from './icons/SunIcon';
 import { MoonIcon } from './icons/MoonIcon';
-import ArrowDown from './icons/ArrowDown';
+import { SunIcon } from './icons/SunIcon';
 
 interface ThemeSelectorProps {
   iconOnly?: boolean;
@@ -62,7 +64,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
               <ThemeSelectorIcon />
               <p className="ml-3 capitalize">{siteTheme.currentTheme}</p>
               <span className="ml-2 h-4 w-4">
-                <ArrowDown />
+                <ChevronDownIcon />
               </span>
             </div>
           )}
@@ -71,7 +73,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
           {themes.map((theme) => (
             <Listbox.Option key={theme.value} value={theme}>
               {({ active, selected }) => (
-                <li
+                <span
                   className={clsx(
                     'flex cursor-pointer items-center py-1 px-3',
                     selected && 'text-sky-500',
@@ -83,7 +85,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
                     selected={theme.value === siteTheme.currentTheme}
                   />
                   <p className="ml-3">{theme.name}</p>
-                </li>
+                </span>
               )}
             </Listbox.Option>
           ))}

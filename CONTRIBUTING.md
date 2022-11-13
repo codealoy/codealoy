@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-When contributing to `codealoy`, whether on GitHub or in other community spaces:
+When contributing to `Codealoy`, whether on GitHub or in other community spaces:
 
 - Be respectful, civil, and open-minded.
 - Before opening a new pull request, try searching through the [issue tracker](https://github.com/codealoy/codealoy/issues) for known issues or fixes.
@@ -9,7 +9,7 @@ When contributing to `codealoy`, whether on GitHub or in other community spaces:
 
 ### Prerequisites
 
-In order to not waste your time implementing changes that has already been declined, or is generally not needed, start by [opening an issue](https://github.com/codealoy/codealoy/issues/new) describing the problem you would like to solve.
+To save time and resources by not implementing changes that have already been declined, or are generally not needed, start by [opening an issue](https://github.com/codealoy/codealoy/issues/new) describing the problem you would like to solve.
 
 ### Setup your environment
 
@@ -39,7 +39,7 @@ npm run dev
 
 ### Implement your changes
 
-This project is built on top of the _"T3 Stack"_. To learn more about the _"T3 Stack"_, you can visit the official [github repo](https://github.com/t3-oss/create-t3-app).
+This project is built on top of the _"T3 Stack"_. To learn more about the _"T3 Stack"_, you can visit the official GitHub repo](https://github.com/t3-oss/create-t3-app).
 
 Here are some useful scripts for when you are developing:
 
@@ -51,7 +51,7 @@ Here are some useful scripts for when you are developing:
 | `npm run lint`        | Lints the code                                                             |
 | `npm run postinstall` | Generate prisma client codes. Automatically runs after every `npm install` |
 
-When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with `feat:`, `fix:`, `chore:`, `docs:`, etc... You can use `git status` to double check which files have not yet been staged for commit:
+When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with prefixes like ` feat``,  `fix`, `chore`, `docs`, etc... You can use `git status` to double-check which files have not yet been staged for commit:
 
 ```bash
 git add <file> && git commit -m "feat/fix/chore/docs: commit message"
@@ -65,8 +65,24 @@ Check that your code follows the project's style guidelines by running:
 npm run lint
 ```
 
-Please also make a manual, functional test of your changes. When all that's done, it's time to file a pull request to upstream.
+Please also make a manual, functional test of your changes. When all that's done, it's time to file a pull request to the upstream.
 
-**NOTE**: All pull requests should target the `main` branch. Here is a guide on how to create new [pull request on github](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request).
+**NOTE**: All pull requests should target the `main` branch. Here is a guide on how to create a new [pull request on Github](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request).
 
 Fill out the title and body appropriately. Again, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines for your title.
+
+### Use custom domain (optional)
+
+You can optionally use `https://codealoy.localhost` instead of `http://localhost:3000` as the domain name of the Codealoy server during development. As an extra benefit, this will automatically add an `SSL` certificate to the local domain, so you can use `HTTPS` with the domain. Here are the custom domain setup instructions:
+
+- Install [Caddy Server](https://caddyserver.com/docs/install) on your machine
+
+- Start Codealoy server: `npm run dev`
+
+  > This will start the server at `http://localhost:3000`
+
+- Start Caddy server: `caddy reverse-proxy --change-host-header --from codealoy.localhost --to http://localhost:3000`
+
+  > This will start a reverse proxy at `codealoy.localhost` domain, which will forward requests to `localhost:3000`
+
+- Done. Now you can visit the site from your browser using `https://codealoy.localhost`

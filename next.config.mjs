@@ -22,9 +22,18 @@ export default withMarkdoc({
     reactStrictMode: true,
     swcMinify: true,
     pageExtensions: ['md', 'js', 'jsx', 'ts', 'tsx'],
+    // Next.js i18n docs: https://nextjs.org/docs/advanced-features/i18n-routing
     i18n: {
       locales: ['bn-BD'],
       defaultLocale: 'bn-BD',
+    },
+    webpack: (config) => {
+      config.module.rules.push({
+        test: /\.txt/,
+        type: 'asset/source',
+      });
+
+      return config;
     },
   }),
 );
