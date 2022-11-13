@@ -8,6 +8,10 @@ description: Learn to determine uniqueness of all characters in a string.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum.
 
+{% Callout title="Did you know?" type="warning" %}
+This is a full-featured boilerplate for a creating a documentation website using Markdoc and Next.js.
+{% /Callout %}
+
 ## Instructions
 
 Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis.
@@ -41,7 +45,7 @@ function isUnique(str) {
 }
 ```
 
-_Code Editor Component_
+{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
 ## Solution (1)
 
