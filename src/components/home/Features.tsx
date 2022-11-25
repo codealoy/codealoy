@@ -1,48 +1,42 @@
 import {
-  CloudArrowUpIcon,
-  CogIcon,
-  LockClosedIcon,
-  ArrowPathIcon,
-  ServerIcon,
-  ShieldCheckIcon,
+  BanknotesIcon,
+  VideoCameraSlashIcon,
+  BeakerIcon,
+  ComputerDesktopIcon,
+  CommandLineIcon,
+  RocketLaunchIcon,
 } from '@heroicons/react/24/outline';
 
 const features = [
   {
-    name: 'Push to Deploy',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: CloudArrowUpIcon,
+    name: `ফ্রি এবং ওপেনসোর্স প্লাটফর্ম`,
+    description: `আমাদের অনেকের প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট সেক্টরে ক্যারিয়ার গড়ার ইচ্ছা থাকলেও পূর্ণাঙ্গ গাইডলাইনের অভাবে আগাতে পারি না। ইউটিউবের শত শত ছন্নছাড়া ভিডিওয়ের ভিড়ে আমরা দিশেহারা। কি শিখবো, কতটুকু শিখবো, নতুন হিসাবে চাকরি পেতে ন্যূনতম কতটুকু দক্ষতা থাকা দরকার, এমন হাজারটা প্রশ্ন মাথায় ঘুরপাক খায়। তাই একেবারে জিরো নলেজ থেকে পরিপূর্ণ এবং দক্ষ ডেভেলপার হওয়ার স্টেপ বাই স্টেপ গাইডলাইন প্রদানের জন্য মাতৃভাষা বাংলায় বিনামূল্যে এটি আমাদের ক্ষুদ্র একটি প্রচেষ্টা।`,
+    icon: BanknotesIcon,
   },
   {
-    name: 'SSL Certificates',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: LockClosedIcon,
+    name: `ভিডিও টিউটোরিয়ালের চেয়ে দ্রুত`,
+    description: `ইউটিউব বা অন্য কোন সাইটের ভিডিও টিউটোরিয়ালগুলো দেখে প্রোগ্রামিং বা ওয়েব ডেভেলপমেন্ট শেখা তুলনামূলকভাবে বেশি সময় সাপেক্ষ। সাধারণত ভিডিও টিউটোরিয়ালগুলোতে গড়ে ১৫০ শব্দ/মিনিট গতিতে কথা বলে, যেখানে আমরা গড়ে ~৩০০ শব্দ/মিনিট এর বেশি গতিতে পড়তে পারি। তাছাড়া বাংলা ভাষাতে মানসম্পন্ন টিউটোরিয়ালের রয়েছে অভাব। একারণে আমাদের কোর্সগুলোতে লিখিত কনটেন্টের উপর জোর দেওয়া হয়েছে, যেটা দ্রুত লার্নিং এ সহায়তা করবে।`,
+    icon: VideoCameraSlashIcon,
   },
   {
-    name: 'Simple Queues',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ArrowPathIcon,
+    name: `হাতে কলমে শিক্ষা`,
+    description: `প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট এর মতো বিষয়গুলো শুধুমাত্র পুঁথিগত বিদ্যা দিয়ে আয়ত্ত করা সবভব নয়। দক্ষ ডেভেলপার হওয়ার জন্য এই বিষয়গুলোর বাস্তব জগতে ব্যবহার হাতে কলমে শেখা ও বোঝা সবথেকে বেশি গুরুত্বপূর্ণ। তাই কোডালয়ের প্রতিটি কোর্সেই হাতে কলমে শেখার বিষয়টি সবথেকে বেশি গুরত্ব দেওয়া হয়েছে। প্রতিটা বিষয় শেখার আগে কেন আমাদের সেটা শেখা দরকার, কোথায় কাজে লাগবে, অন্য কোন বিকল্প সল্যুশন আছে কিনা, সবকিছু সম্পর্কেই পূর্ণ ধারণা পাওয়া যাবে।`,
+    icon: BeakerIcon,
   },
   {
-    name: 'Advanced Security',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ShieldCheckIcon,
+    name: `লোকাল সেটআপের ঝামেলামুক্ত`,
+    description: `কোনকিছু নতুন বা প্রথমবারের মতো শেখা এমনিতেই বেশ কঠিন একটা ব্যাপার। তার উপর প্রোগ্রামিং শেখার শুরুতেই লোকাল কম্পিউটার বা ল্যাপটপে একগাদা সফটওয়্যার, লাইব্রেরি ইনস্টল করতে হয়। আবার অনেক সময় টিউটোরিয়ালে দেখানো পদ্ধতিতে আমাদের লোকাল মেশিনে ঠিকভাবে সবকিছু ইনস্টল হয় না। নতুনদের জন্য সেটা মরার উপর খাড়ার ঘায়ের মতো। কোডালয় ইন্টারঅ্যাকটিভ ক্লাউড এডিটর এনভায়রনমেন্ট দিবে শেখার শুরুতেই এসকল অনাকাঙ্খিত ঝামেলা থেকে মুক্তি।`,
+    icon: ComputerDesktopIcon,
   },
   {
-    name: 'Powerful API',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: CogIcon,
+    name: `লাইভ কোডিং এডিটর`,
+    description: `শুধুমাত্র সাঁতার দেখে যেমন সাঁতার শেখা যায় না, তেমনি কোডিং বা প্রোগ্রামিংও শুধু দেখে দেখে শেখা সম্ভব নয়। পরিচিত একটি প্রবাদ আছে, "গাইতে গাইতে গায়েন"। তাই শেখার পাশাপাশি প্রাকটিস করাটা বেশি গুরুত্বপূর্ণ। কোডালয় প্ল্যাটফর্মে রয়েছে লাইভ কোডিং এডিটর ফিচার, যেটা যেকোনো বিষয় শেখার সাথে সাথেই প্রাকটিস করার সুযোগ দিবে। আর লাইভ প্রাকটিস করার সুবিধা থাকায় শেখার সেটার উপযুক্ত ব্যবহার সম্পর্কে পাকাপোক্ত ধারণা পাওয়া যাবে। তাছাড়া যেকোন কনফিউশনের সমাধান করা যাবে।`,
+    icon: CommandLineIcon,
   },
   {
-    name: 'Database Backups',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ServerIcon,
+    name: `বাস্তবসম্মত প্রজেক্টস`,
+    description: `ছোটবেলা থেকেই আমরা দেখে আসছি, পুঁথিগত বিদ্যা আর বাস্তব জীবনে কাজে লাগানোর মতো দক্ষতা, দুইটার ভিতরে অধিকাংশ সময়েই অনেকটা ব্যবধান থেকে যায়। এই ব্যবধান নিরসনে কোডালয়ের প্রতিটি কোর্সে বাস্তবসম্মত প্রোজেক্ট অন্তরভূক্ত করা হয়েছে। চাকরি জীবনে প্রতিদিন একজন ডেভলপারকে যেধরনের কাজ করতে হয়, সেগুলো সর্ম্পকে আগে থেকেই পরিপূর্ণ ধারণা দেবে এসব প্রজেক্ট। তাছাড়া চাকরির ইন্টারভিউয়ের সময় এসকল রিয়েল ওয়ার্ল্ড পোর্টফোলিও প্রোজেক্ট নতুনদের দক্ষতা উপস্থাপনেও সহায়তা করবে।`,
+    icon: RocketLaunchIcon,
   },
 ];
 
@@ -51,15 +45,14 @@ export const Features = () => {
     <div className="relative py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-base font-semibold uppercase tracking-wider text-indigo-600">
-          Deploy faster
+          বৈশিষ্টসমূহ
         </h2>
         <p className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-          Everything you need to deploy your app
+          প্রোগ্রামিং ক্যারিয়ার গঠনের পূর্ণাঙ্গ গাইডলাইন
         </p>
         <p className="mx-auto mt-5 max-w-prose text-xl text-gray-600 dark:text-slate-400">
-          Phasellus lorem quam molestie id quisque diam aenean nulla in.
-          Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
-          condimentum id viverra nulla.
+          সবচেয়ে কম সময়ে প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শিখুন, কোন রকম লোকাল
+          সেটআপ বা ভিডিও টিউটোরিয়ালের ঝামেলা ছাড়া
         </p>
         <div className="mt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
