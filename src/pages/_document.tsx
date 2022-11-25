@@ -23,14 +23,6 @@ function updateTheme() {
   return theme;
 }
 
-function updateThemeWithoutTransitions() {
-  updateTheme();
-  document.documentElement.classList.add("[&_*]:!transition-none");
-  window.setTimeout(() => {
-    document.documentElement.classList.remove("[&_*]:!transition-none");
-  }, 0);
-}
-
 document.documentElement.setAttribute("data-theme", updateTheme());
 
 new MutationObserver(([{ oldValue }]) => {
@@ -39,14 +31,14 @@ new MutationObserver(([{ oldValue }]) => {
     try {
       window.localStorage.setItem("theme", newValue);
     } catch {}
-    updateThemeWithoutTransitions();
+    updateTheme();
   }
 }).observe(document.documentElement, {
   attributeFilter: ["data-theme"],
   attributeOldValue: true,
 });
 
-window.addEventListener("storage", updateThemeWithoutTransitions);
+window.addEventListener("storage", updateTheme);
 
 `;
 
