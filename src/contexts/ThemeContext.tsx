@@ -15,15 +15,9 @@ export const ThemeContext = createContext<ThemeContext>({
   setTheme: () => {},
 });
 
-const isSystemPreferenceDarkMode = () => {
-  return window.matchMedia('(prefers-color-scheme:dark)').matches;
-};
-
 const getCurrentThemePreference = () => {
   if (window.localStorage.getItem('theme')) {
     return window.localStorage.getItem('theme') as string;
-  } else if (isSystemPreferenceDarkMode()) {
-    return 'dark';
   } else {
     return DEFAULT_THEME;
   }
