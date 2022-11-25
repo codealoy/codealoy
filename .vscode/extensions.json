@@ -5,6 +5,7 @@
     "dbaeumer.vscode-eslint",
     "prisma.prisma",
     "ms-azuretools.vscode-docker",
-    "mohitsingh.markdoc"
+    "mohitsingh.markdoc",
+    "sonarsource.sonarlint-vscode"
   ]
 }

@@ -1,12 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "sonarjs"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+      "files": ["*.ts", "*.tsx"],
       "extends": [
         "next/core-web-vitals",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:sonarjs/recommended"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"
