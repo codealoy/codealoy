@@ -57,6 +57,7 @@
     "autoprefixer": "^10.4.12",
     "eslint": "8.26.0",
     "eslint-config-next": "12.3.1",
+    "eslint-plugin-sonarjs": "^0.16.0",
     "husky": "^8.0.1",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
