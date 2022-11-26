@@ -3,12 +3,12 @@ import Head from 'next/head';
 import NextLink from 'next/link';
 import styles from '../styles/index.module.css';
 
-import { Features } from '../components/home/Features';
-import { BlogPosts } from '../components/home/BlogPosts';
-import { Team } from '../components/home/Team';
 import { CTA } from '../components/home/CTA';
 import { FAQ } from '../components/home/FAQ';
+import { Features } from '../components/home/Features';
+import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
 import { LiveCodingFeature } from '../components/home/LiveCodingFeature';
+import { Team } from '../components/home/Team';
 import { SITE_TITLE } from '../constants/site-settings';
 
 const IndexPage = () => {
@@ -52,31 +52,15 @@ const IndexPage = () => {
       </div>
 
       <Features />
-      <LiveCodingFeature />
-      <Team />
 
-      {/* Blog Posts Section */}
-      <div className="relative bg-gray-50 px-4 pt-16 pb-20 dark:border-t dark:border-slate-100/5 dark:bg-slate-900 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
-        <div className="absolute inset-0">
-          <div className="h-1/3 bg-white dark:bg-slate-900 sm:h-2/3" />
-        </div>
-        <div className="relative mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              From the blog
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 dark:text-slate-300 sm:mt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-              libero labore natus atque, ducimus sed.
-            </p>
-          </div>
-          <div className="mt-12">
-            <BlogPosts limit={3} />
-          </div>
-        </div>
-      </div>
+      <LiveCodingFeature />
 
       <FAQ />
+
+      <LatestBlogPosts />
+
+      <Team />
+
       <CTA />
     </>
   );
