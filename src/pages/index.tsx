@@ -5,7 +5,7 @@ import styles from '../styles/index.module.css';
 
 import { CTA } from '../components/home/CTA';
 import { FAQ } from '../components/home/FAQ';
-import { Features } from '../components/home/Features';
+import { FeatureGrid } from '../components/home/FeatureGrid';
 import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
 import { LiveCodingFeature } from '../components/home/LiveCodingFeature';
 import { Team } from '../components/home/Team';
@@ -51,7 +51,7 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <Features />
+      <FeatureGrid />
 
       <LiveCodingFeature />
 
