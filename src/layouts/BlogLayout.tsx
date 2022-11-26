@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import { BlogPosts } from '../components/home/BlogPosts';
+import { BlogPosts } from '../components/BlogPosts';
 import { Prose } from '../components/Prose';
 import { dayjs } from '../utils/dayjs';
 
