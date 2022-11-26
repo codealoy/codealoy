@@ -7,7 +7,7 @@ import { CTA } from '../components/home/CTA';
 import { FAQ } from '../components/home/FAQ';
 import { FeatureGrid } from '../components/home/FeatureGrid';
 import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
-import { LiveCodingFeature } from '../components/home/LiveCodingFeature';
+import { HighlightedFeatures } from '../components/home/HighlightedFeatures';
 import { Team } from '../components/home/Team';
 import { SITE_TITLE } from '../constants/site-settings';
 
@@ -53,7 +53,7 @@ const IndexPage = () => {
 
       <FeatureGrid />
 
-      <LiveCodingFeature />
+      <HighlightedFeatures />
 
       <FAQ />
 

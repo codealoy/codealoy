@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import codeEditorImage from '../../../public/images/codealoy-live-editor.webp';
 
-export const LiveCodingFeature = () => {
+export const HighlightedFeatures = () => {
   return (
     <div className="relative overflow-hidden bg-white pt-16 pb-32 dark:border-t dark:border-slate-100/5 dark:bg-slate-900">
       <div className="relative">
@@ -17,13 +19,12 @@ export const LiveCodingFeature = () => {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                  Stay on top of customer support
+                  Hands-on coding environments
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis
-                  bibendum malesuada faucibus lacinia porttitor. Pulvinar
-                  laoreet sagittis viverra duis. In venenatis sem arcu pretium
-                  pharetra at. Lectus viverra dui tellus ornare pharetra.
+                  You don’t get better at swimming by watching others. Coding is
+                  no different. Practice as you learn with live code
+                  environments inside your browser.
                 </p>
                 <div className="mt-6">
                   <a
@@ -35,44 +36,18 @@ export const LiveCodingFeature = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-8 border-t border-gray-200 pt-6">
-              <blockquote>
-                <div>
-                  <p className="text-base text-gray-500 dark:text-slate-400">
-                    &ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed
-                    diam. Sit orci risus aenean curabitur donec aliquet. Mi
-                    venenatis in euismod ut.&rdquo;
-                  </p>
-                </div>
-                <footer className="mt-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="h-6 w-6 rounded-full"
-                        src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                        alt=""
-                      />
-                    </div>
-                    <div className="text-base font-medium text-gray-700 dark:text-slate-400">
-                      Marcia Hill, Digital Marketing Manager
-                    </div>
-                  </div>
-                </footer>
-              </blockquote>
-            </div>
           </div>
           <div className="mt-12 sm:mt-16 lg:mt-0">
             <div className="-mr-48 pl-4 sm:pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-              <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
-                alt="Inbox user interface"
-              />
+              <div className="w-full overflow-hidden rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-[1175px] lg:max-w-none">
+                <Image src={codeEditorImage} alt="Codealoy live code editor" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-24">
+
+      <div className="mt-32">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-4 sm:px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:py-32 lg:px-0">
             <div>
@@ -86,13 +61,14 @@ export const LiveCodingFeature = () => {
               </div>
               <div className="mt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                  Better understand your customers
+                  2x Faster Learning
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis
-                  bibendum malesuada faucibus lacinia porttitor. Pulvinar
-                  laoreet sagittis viverra duis. In venenatis sem arcu pretium
-                  pharetra at. Lectus viverra dui tellus ornare pharetra.
+                  Reading is faster than watching: The average tutorial is
+                  spoken at 150 words per minute. You can read at 250. That’s
+                  why our courses are laid out as rich text and an interactive
+                  experience so you learn more, learn faster, and learn exactly
+                  what you need.
                 </p>
                 <div className="mt-6">
                   <a
