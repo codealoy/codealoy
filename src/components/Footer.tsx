@@ -106,7 +106,7 @@ export const Footer = () => {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          Designed and built with ♥️ by the{' '}
+          Designed and built with <span className="text-red-600">♥</span> by the{' '}
           <a
             href="#meet-team"
             className="hover:text-sky-500 dark:hover:text-sky-400"
