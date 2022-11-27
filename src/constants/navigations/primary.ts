@@ -1,18 +1,18 @@
 export const PRIMARY_NAV_ITEMS = [
   {
-    title: 'Home',
+    title: 'হোম',
     href: '/',
   },
   {
-    title: 'Courses',
+    title: 'কোর্সসমূহ',
     href: '/courses',
   },
   {
-    title: 'Blog',
+    title: 'ব্লগ',
     href: '/blog',
   },
   {
-    title: 'Login',
+    title: 'লগইন',
     href: '/login',
   },
 ];
