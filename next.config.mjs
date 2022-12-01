@@ -27,6 +27,9 @@ export default withMarkdoc({
       locales: ['bn-BD'],
       defaultLocale: 'bn-BD',
     },
+    images: {
+      domains: ['images.unsplash.com', 'avatars.githubusercontent.com'],
+    },
     webpack: (config) => {
       config.module.rules.push({
         test: /\.txt/,
