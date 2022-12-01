@@ -7,4 +7,6 @@ dayjs.locale('bn');
 dayjs.extend(localizedFormat);
 dayjs.extend(preParsePostFormat);
 
-export { dayjs };
+const convertDateToBangla = (date: string) => dayjs(date).format('LL');
+
+export { dayjs, convertDateToBangla };
