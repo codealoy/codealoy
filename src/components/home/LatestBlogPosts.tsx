@@ -10,11 +10,10 @@ export const LatestBlogPosts = () => {
       <div className="relative mx-auto max-w-7xl">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            From the blog
+            ব্লগের পাতা থেকে
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 dark:text-slate-300 sm:mt-4">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-            libero labore natus atque, ducimus sed.
+            এক নজরে কোডালয়ের সর্বশেষ ব্লগ পোস্টগুলো
           </p>
         </div>
         <div className="mt-12">

@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React from 'react';
+import { convertDateToBangla, dayjs } from '../utils/dayjs';
 
 interface BlogPostsProps {
   limit?: number;
@@ -6,112 +8,52 @@ interface BlogPostsProps {
 
 const posts = [
   {
-    title: 'Boost your conversion rate',
-    href: '#',
-    category: { name: 'Article', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '6 min',
+    title: 'হ্যালো ওয়ার্ল্ড',
+    href: '/blog/1-welcome-to-codealoy',
+    category: { name: 'বিবৃতি', href: 'announement' },
+    description: `স্বাগতম। অনেক প্রত্যাশা ও আনন্দের সাথে আমরা "কোডালয়" প্লাটফরমের যাত্রা শুরু করছি। কোডালয় বাংলা ভাষাভাষী শিক্ষার্থীদের জন্য একটি প্রোগ্রামিং শেখার ওপেন সোর্স প্ল্যাটফর্ম। নতুনদের ডেভেলপমেন্ট ক্যারিয়ার সমৃদ্ধ করার লক্ষ্যে আমাদের এই সন্মিলিত প্রচেষ্টা...`,
+    coverImageUrl:
+      'https://images.unsplash.com/photo-1633989464004-1aada5ed6702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80',
+    readingTime: '৫ মিনিট',
     author: {
-      name: 'Roel Aufderehar',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      name: 'আল-আমিন শাহেদ সুমন',
+      href: 'shahed-sumon',
+      avatarImageUrl: 'https://avatars.githubusercontent.com/u/57568263?v=4',
     },
+    publishedAt: '2022-12-01',
+    isPublished: true,
   },
   {
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    category: { name: 'Video', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
+    title: '১০০ দিনের কোডিং চ্যালেঞ্জ',
+    href: '/blog/2-100-days-of-coding-challenge',
+    category: { name: 'ক্যারিয়ার', href: 'career' },
+    description: `প্রোগ্রামিং শেখার জন্য দুইটি বিষয় সব থেকে প্রয়োজন: আগ্রহ আর অধ্যবসায়। কোন কিছু শেখা শুরু করার সব থেকে কঠিন বাপারটা হচ্ছে হতাশ না হয়ে প্রতিদিন লেগে থাকা। ১০০ দিনের কোডিং চ্যালেঞ্জ আমাদের অধ্যবসায়ের প্রথম ধাপ...`,
+    coverImageUrl:
+      'https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
+    readingTime: '১২ মিনিট',
     author: {
-      name: 'Brenna Goyette',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      name: 'মুকিতুল ইসলাম মুকিত',
+      href: 'mukitul-islam-mukit',
+      avatarImageUrl: 'https://avatars.githubusercontent.com/u/11677026?v=4',
     },
+    publishedAt: 'TBD',
+    isPublished: false,
   },
   {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
+    title: 'কেন, কিভাবে কন্ট্রিবিউট করবেন কোডালয় প্ল্যাটফর্মে',
+    href: '/blog/3-how-to-contribute-to-codealoy',
+    category: { name: 'টিউটোরিয়াল', href: 'tutorial' },
+    description: `কোডালয় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার সম্পূর্ণ ফ্রি এবং ওপেনসোর্স প্লাটফর্ম। সকল সফটওয়্যার ইঞ্জিনিরদের জন্য এই সন্মিলিত প্রচেষ্টায় আপনিও সংযুক্ত হতে পারেন কোডালয়ের সাথে...`,
+    coverImageUrl:
+      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
+    readingTime: '১০ মিনিট',
     author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      name: 'মুকিতুল ইসলাম মুকিত',
+      href: 'mukitul-islam-mukit',
+      avatarImageUrl: 'https://avatars.githubusercontent.com/u/11677026?v=4',
     },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+    publishedAt: 'TBD',
+    isPublished: false,
   },
 ];
 
@@ -124,7 +66,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
   }, [limit]);
 
   return (
-    <div className="mx-auto grid max-w-lg gap-10 md:max-w-none md:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto grid max-w-lg place-items-center gap-10 md:max-w-none md:grid-cols-2 lg:grid-cols-3">
       {filteredPosts.map((post) => (
         <div
           key={post.title}
@@ -133,34 +75,40 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
           <div className="flex-shrink-0">
             <img
               className="h-48 w-full object-cover"
-              src={post.imageUrl}
-              alt=""
+              src={post.coverImageUrl}
+              alt={post.title}
             />
           </div>
           <div className="flex flex-1 flex-col justify-between bg-white p-6 dark:bg-slate-800">
             <div className="flex-1">
               <p className="text-sm font-medium text-indigo-600">
-                <a href={post.category.href} className="hover:underline">
-                  {post.category.name}
-                </a>
+                {post.isPublished ? (
+                  <a href={post.category.href} className="hover:underline">
+                    {post.category.name}
+                  </a>
+                ) : (
+                  'শীঘ্রই আসছে'
+                )}
               </p>
-              <a href={post.href} className="mt-2 block">
-                <p className="text-xl font-semibold text-gray-900 dark:text-white">
-                  {post.title}
-                </p>
-                <p className="mt-3 text-base text-gray-500 dark:text-slate-400">
-                  {post.description}
-                </p>
-              </a>
+              <Link href={post.isPublished ? post.href : '#'}>
+                <a className="mt-2 block">
+                  <p className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {post.title}
+                  </p>
+                  <p className="mt-3 text-base text-gray-500 dark:text-slate-400">
+                    {post.description}
+                  </p>
+                </a>
+              </Link>
             </div>
             <div className="mt-6 flex items-center">
               <div className="flex-shrink-0">
                 <a href={post.author.href}>
                   <span className="sr-only">{post.author.name}</span>
                   <img
-                    className="h-10 w-10 rounded-full"
-                    src={post.author.imageUrl}
-                    alt=""
+                    className="h-10 w-10 rounded-full grayscale"
+                    src={post.author.avatarImageUrl}
+                    alt={post.author.name}
                   />
                 </a>
               </div>
@@ -171,9 +119,17 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                   </a>
                 </p>
                 <div className="flex space-x-1 text-sm text-gray-500">
-                  <time dateTime={post.datetime}>{post.date}</time>
-                  <span aria-hidden="true">&middot;</span>
-                  <span>{post.readingTime} read</span>
+                  {post.isPublished ? (
+                    <>
+                      <time dateTime={post.publishedAt}>
+                        {convertDateToBangla(post.publishedAt)}
+                      </time>
+                      <span aria-hidden="true">&middot;</span>
+                      <span>{post.readingTime}</span>
+                    </>
+                  ) : (
+                    <p>শীঘ্রই আসছে</p>
+                  )}
                 </div>
               </div>
             </div>
