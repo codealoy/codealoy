@@ -13,8 +13,8 @@ interface ThemeSelectorProps {
 }
 
 const themes = [
-  { name: 'Light', value: 'light', icon: SunIcon },
-  { name: 'Dark', value: 'dark', icon: MoonIcon },
+  { name: 'লাইট থিম', value: 'light', icon: SunIcon },
+  { name: 'ডার্ক থিম', value: 'dark', icon: MoonIcon },
 ];
 
 const ThemeSelectorIcon = () => (
@@ -62,7 +62,9 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
           ) : (
             <div className="dark:highlight-white/5 flex items-center rounded-lg py-1 px-2 font-semibold text-slate-700 shadow-sm ring-1 ring-slate-900/10 dark:bg-slate-600 dark:text-slate-200 dark:ring-0">
               <ThemeSelectorIcon />
-              <p className="ml-3 capitalize">{siteTheme.currentTheme}</p>
+              <p className="ml-3">
+                {siteTheme.isDarkTheme ? 'ডার্ক থিম' : 'লাইট থিম'}
+              </p>
               <span className="ml-2 h-4 w-4">
                 <ChevronDownIcon />
               </span>

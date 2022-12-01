@@ -1,66 +1,67 @@
 import React from 'react';
+import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 
 const courseList = [
   {
-    title: 'Introduction to HTML',
-    description:
-      'এই কোর্সে জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাঙ্গুয়েজের সাধারণ এবং অ্যাডভ্যান্সড লেভেলের বৈচিত্র্যময় ব্যবহার এবং সাথে বেস্ট প্র্যাকটিস নিয়ে আলোচনা থাকছে',
-    courseUrl: '#',
-    level: 'হাতেখড়ি',
-    chapters: '০৪',
+    title: 'প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি',
+    description: 'কোর্স বিবরণ শীঘ্রই আসছে',
+    href: '/courses/learn-problem-solving-basic',
+    level: '০১',
+    chapters: '০০',
     score: '১০০',
     coverImage: 'https://picsum.photos/400',
+    isPublished: false,
   },
   {
-    title: 'Introduction to CSS',
-    description:
-      'এই কোর্সে জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাঙ্গুয়েজের সাধারণ এবং অ্যাডভ্যান্সড লেভেলের বৈচিত্র্যময় ব্যবহার এবং সাথে বেস্ট প্র্যাকটিস নিয়ে আলোচনা থাকছে',
-    courseUrl: '#',
-    level: 'হাতেখড়ি',
-    chapters: '০৪',
+    title: 'সফটওয়্যার ইঞ্জিনিয়ারিং ক্যারিয়ার গাইডলাইন',
+    description: 'কোর্স বিবরণ শীঘ্রই আসছে',
+    href: '#',
+    level: '০১',
+    chapters: '০০',
     score: '১০০',
     coverImage: 'https://picsum.photos/400',
+    isPublished: false,
   },
   {
-    title: 'Introduction to JavaScript',
-    description:
-      'এই কোর্সে জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাঙ্গুয়েজের সাধারণ এবং অ্যাডভ্যান্সড লেভেলের বৈচিত্র্যময় ব্যবহার এবং সাথে বেস্ট প্র্যাকটিস নিয়ে আলোচনা থাকছে',
-    courseUrl: '#',
-    level: 'হাতেখড়ি',
-    chapters: '০৪',
+    title: 'ইন্টারভিউ প্রস্তুতি গাইডলাইন',
+    description: 'কোর্স বিবরণ শীঘ্রই আসছে',
+    href: '#',
+    level: '০১',
+    chapters: '০০',
     score: '১০০',
     coverImage: 'https://picsum.photos/400',
+    isPublished: false,
   },
   {
-    title: 'Learn NodeJS',
-    description:
-      'এই কোর্সে জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাঙ্গুয়েজের সাধারণ এবং অ্যাডভ্যান্সড লেভেলের বৈচিত্র্যময় ব্যবহার এবং সাথে বেস্ট প্র্যাকটিস নিয়ে আলোচনা থাকছে',
-    courseUrl: '#',
-    level: 'হাতেখড়ি',
-    chapters: '০৪',
+    title: 'ওয়েব ডেভলপমেন্ট হাতেখড়ি',
+    description: 'কোর্স বিবরণ শীঘ্রই আসছে',
+    href: '#',
+    level: '০১',
+    chapters: '০০',
     score: '১০০',
     coverImage: 'https://picsum.photos/400',
+    isPublished: false,
   },
   {
-    title: 'Mastering React',
-    description:
-      'এই কোর্সে জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাঙ্গুয়েজের সাধারণ এবং অ্যাডভ্যান্সড লেভেলের বৈচিত্র্যময় ব্যবহার এবং সাথে বেস্ট প্র্যাকটিস নিয়ে আলোচনা থাকছে',
-    courseUrl: '#',
-    level: 'হাতেখড়ি',
-    chapters: '০৪',
+    title: 'মাস্টারিং (ReactJS)',
+    description: 'কোর্স বিবরণ শীঘ্রই আসছে',
+    href: '#',
+    level: '০১',
+    chapters: '০০',
     score: '১০০',
     coverImage: 'https://picsum.photos/400',
+    isPublished: false,
   },
   {
-    title: 'Git and Github',
-    description:
-      'এই কোর্সে জাভাস্ক্রিপ্ট প্রোগ্রামিং ল্যাঙ্গুয়েজের সাধারণ এবং অ্যাডভ্যান্সড লেভেলের বৈচিত্র্যময় ব্যবহার এবং সাথে বেস্ট প্র্যাকটিস নিয়ে আলোচনা থাকছে',
-    courseUrl: '#',
-    level: 'হাতেখড়ি',
-    chapters: '০৪',
+    title: 'গিট, গিটহাব এবং ওপেনসোর্স',
+    description: 'কোর্স বিবরণ শীঘ্রই আসছে',
+    href: '#',
+    level: '০১',
+    chapters: '০০',
     score: '১০০',
     coverImage: 'https://picsum.photos/400',
+    isPublished: false,
   },
 ];
 
@@ -90,11 +91,10 @@ const CoursesPage = () => {
     <div className="relative mx-auto mb-20 min-h-screen max-w-8xl bg-white px-4 dark:bg-slate-900 sm:px-6 lg:px-8 xl:px-12">
       <div className="py-16 px-4 text-center sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Course Catalog
+          কোর্সসমূহ
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-base text-slate-500 dark:text-slate-400">
-          Want to learn something new? Don&apos;t get rid of anything, just put
-          it in really really nice looking containers.
+          কোডালয়ের সর্বশেষ কোর্সসমূহ
         </p>
       </div>
 
@@ -134,7 +134,7 @@ const CoursesPage = () => {
                 type="search"
                 id="default-search"
                 className="block w-full rounded-lg border border-slate-300 bg-slate-50 p-4 pl-10 text-sm text-slate-900 focus:border-blue-500 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:placeholder-slate-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                placeholder="Search course by title"
+                placeholder="কোর্স টাইটেল দিয়ে সার্চ করুন"
                 required
                 onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
                   search(e);
@@ -144,7 +144,7 @@ const CoursesPage = () => {
                 type="submit"
                 className="absolute right-2.5 bottom-2.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Search
+                সার্চ করুন
               </button>
             </div>
           </form>
@@ -173,7 +173,7 @@ const CoursesPage = () => {
                 </a>
                 <div className="p-5">
                   <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold text-slate-700 dark:text-white">
+                    <h5 className="mb-2 text-xl font-bold text-slate-700 dark:text-white">
                       {course.title}
                     </h5>
                   </a>
@@ -204,11 +204,13 @@ const CoursesPage = () => {
                     {course.description}
                   </p>
 
-                  <button className="group relative my-3 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800">
-                    <span className="relative rounded-md bg-white px-4 py-2 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                      বিস্তারিত
-                    </span>
-                  </button>
+                  <Link href={course.href}>
+                    <a className="group relative my-3 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800">
+                      <span className="relative rounded-md bg-white px-4 py-2 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+                        {course.isPublished ? 'বিস্তারিত' : 'শীঘ্রই আসছে'}
+                      </span>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </li>
