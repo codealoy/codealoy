@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export const CTA = () => {
@@ -10,12 +11,11 @@ export const CTA = () => {
         <p className="mt-4 text-lg leading-6 text-indigo-200">
           সফটওয়্যার ডেভেলপার হিসাবে ক্যারিয়ার গড়ে তোলার এখনই উপযুক্ত সময়
         </p>
-        <a
-          href="#"
-          className="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50 sm:w-auto"
-        >
-          শেখা শুরু করুন
-        </a>
+        <Link href="/courses">
+          <a className="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50 sm:w-auto">
+            শেখা শুরু করুন
+          </a>
+        </Link>
       </div>
     </div>
   );
