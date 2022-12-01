@@ -55,7 +55,9 @@ const IndexPage = () => {
 
       <HighlightedFeatures />
 
-      <FAQ />
+      {/* <LatestCourses /> */}
+
+      {/* <FAQ /> */}
 
       <LatestBlogPosts />
 
