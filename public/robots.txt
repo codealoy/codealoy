@@ -1,0 +1,3 @@
+# Temporary block all crawlers
+User-agent: *
+Disallow: /

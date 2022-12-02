@@ -15,7 +15,7 @@ const navigation = {
     },
     {
       name: 'যোগাযোগ করুন',
-      href: 'mailto:team@codealoy.com',
+      href: 'mailto:support@codealoy.com',
       target: '_blank',
     },
   ],
