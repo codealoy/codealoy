@@ -12,6 +12,7 @@ const getNodeText = (node) => {
   return text;
 };
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 const collectHeadings = (nodes: any, slugify = slugifyWithCounter()) => {
   const sections: any = [];
 

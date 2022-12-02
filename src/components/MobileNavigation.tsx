@@ -71,7 +71,7 @@ export function MobileNavigation({ navigation }) {
               </a>
             </Link>
           </div>
-          <Navigation navigation={navigation} className="mt-5 px-1" />
+          <Navigation navigationItems={navigation} className="mt-5 px-1" />
         </Dialog.Panel>
       </Dialog>
     </>

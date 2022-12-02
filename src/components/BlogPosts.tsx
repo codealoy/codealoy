@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { convertDateToBangla, dayjs } from '../utils/dayjs';
+import { convertDateToBangla } from '../utils/dayjs';
 
 interface BlogPostsProps {
   limit?: number;
