@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/index.module.css';
 
 import { CTA } from '../components/home/CTA';
-import { FAQ } from '../components/home/FAQ';
+// import { FAQ } from '../components/home/FAQ';
 import { FeatureGrid } from '../components/home/FeatureGrid';
 import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
 import { HighlightedFeatures } from '../components/home/HighlightedFeatures';

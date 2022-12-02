@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 import { getEditorErrorResult } from 'src/utils/getEditorErrorResult';
 
 interface EditorResultTypes {
@@ -24,8 +25,8 @@ export const getEditorResultParser = (
   const editorResult: EditorResultTypes[] = [];
 
   if (editorOutput !== undefined) {
-    Object.values(editorOutput).map((key: any) => {
-      Object.values(key.tests).map((test: any) => {
+    Object.values(editorOutput).forEach((key: any) => {
+      Object.values(key.tests).forEach((test: any) => {
         const errorMessage =
           test.status === 'fail'
             ? getEditorErrorResult(test.errors[0].message)
