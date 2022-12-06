@@ -10,6 +10,7 @@ import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
 import { HighlightedFeatures } from '../components/home/HighlightedFeatures';
 import { Team } from '../components/home/Team';
 import { SITE_TITLE } from '../constants/site-settings';
+import Divider from 'src/components/Divider';
 
 const IndexPage = () => {
   return (
@@ -52,7 +53,7 @@ const IndexPage = () => {
       </div>
 
       <FeatureGrid />
-
+      <Divider />
       <HighlightedFeatures />
 
       {/* <LatestCourses /> */}
@@ -60,7 +61,7 @@ const IndexPage = () => {
       {/* <FAQ /> */}
 
       <LatestBlogPosts />
-
+      <Divider />
       <Team />
 
       <CTA />

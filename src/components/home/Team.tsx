@@ -63,10 +63,7 @@ const SocialLinks = ({
 
 export const Team = () => {
   return (
-    <section
-      id="meet-team"
-      className="bg-white dark:border-t dark:border-slate-100/5 dark:bg-slate-900"
-    >
+    <section id="meet-team" className="bg-white dark:bg-slate-900">
       <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12">
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
