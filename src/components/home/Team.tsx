@@ -47,7 +47,7 @@ const SocialLinks = ({
         <li key={socialLink.key}>
           <a
             title={socialLink.title}
-            className="text-gray-400 hover:text-gray-500"
+            className="text-slate-400 hover:text-slate-500"
             href={socialLink.url}
             target="_blank"
             rel="noreferrer"
@@ -70,7 +70,7 @@ export const Team = () => {
             <h2 className="text-3xl font-extrabold tracking-tight dark:text-white sm:text-4xl">
               কোডালয় সদস্য পরিচিতি
             </h2>
-            <p className="text-xl text-gray-500 dark:text-slate-400">
+            <p className="text-xl text-slate-500 dark:text-slate-400">
               মাতৃভাষা বাংলায় আধুনিক প্রোগ্রামিং ও ওয়েব ডেভেলপমেন্ট শেখার
               পূর্ণাঙ্গ গাইডলাইন সকলের কাছে বিনামূল্যে পৌঁছে দেওয়ার লক্ষ্যে
               যারা অবদান রাখছেন

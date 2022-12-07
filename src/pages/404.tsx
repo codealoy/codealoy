@@ -39,20 +39,20 @@ const ErrorPage = () => {
             <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
               404 error
             </p>
-            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
               This page does not exist.
             </h1>
-            <p className="mt-2 text-lg text-gray-500 dark:text-slate-300">
+            <p className="mt-2 text-lg text-slate-500 dark:text-slate-300">
               The page you are looking for could not be found.
             </p>
           </div>
           <div className="mt-12">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-white">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-white">
               Popular pages
             </h2>
             <ul
               role="list"
-              className="mt-4 divide-y divide-gray-200 border-t border-b border-gray-200"
+              className="mt-4 divide-y divide-slate-200 border-t border-b border-slate-200"
             >
               {links.map((link, linkIdx) => (
                 <li
@@ -68,7 +68,7 @@ const ErrorPage = () => {
                     </span>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-base font-medium text-gray-900 dark:text-white">
+                    <h3 className="text-base font-medium text-slate-900 dark:text-white">
                       <span className="rounded-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2">
                         <a href="#" className="focus:outline-none">
                           <span
@@ -79,13 +79,13 @@ const ErrorPage = () => {
                         </a>
                       </span>
                     </h3>
-                    <p className="text-base text-gray-500 dark:text-slate-400">
+                    <p className="text-base text-slate-500 dark:text-slate-400">
                       {link.description}
                     </p>
                   </div>
                   <div className="flex-shrink-0 self-center">
                     <ChevronRightIcon
-                      className="h-5 w-5 text-gray-400"
+                      className="h-5 w-5 text-slate-400"
                       aria-hidden="true"
                     />
                   </div>

@@ -72,8 +72,8 @@ const CodeEditor = ({
       files={editorBoilerplate.files}
       customSetup={editorBoilerplate.customSetup}
     >
-      <div className="overflow-hidden rounded-md bg-gray-50 shadow ring-1 ring-slate-300/10 dark:bg-slate-800/60">
-        <div className="flex h-12 flex-row items-center justify-between rounded-t bg-gray-100 px-4 text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
+      <div className="overflow-hidden rounded-md bg-slate-50 shadow ring-1 ring-slate-300/10 dark:bg-slate-800/60">
+        <div className="flex h-12 flex-row items-center justify-between rounded-t bg-slate-100 px-4 text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
           <p className="text-sm font-semibold">{title}</p>
           <ControllerButtons
             editorOutput={editorOutput}
