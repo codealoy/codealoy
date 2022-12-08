@@ -16,14 +16,14 @@ export const Hero = () => {
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-slate-600 dark:text-slate-400">
           মাতৃভাষা বাংলায় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার
-          <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
+          <span className="font-medium text-sky-500 dark:text-sky-400">
             {' '}
             সম্পূর্ণ ফ্রি
-          </code>
+          </span>
           , এবং{' '}
-          <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
+          <span className="font-medium text-sky-500 dark:text-sky-400">
             ওপেনসোর্স
-          </code>{' '}
+          </span>{' '}
           প্লাটফর্ম
         </p>
         <div className="mt-6 flex justify-center space-x-6 text-sm sm:mt-10">
