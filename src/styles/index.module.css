@@ -1,9 +1,15 @@
 .beams {
   background-image: url('../images/beams/hero.jpg');
-  background-size: 300rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 :global(.dark) .beams {
   background-image: url('../images/beams/hero-dark.jpg');
-  background-size: 86.125rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
