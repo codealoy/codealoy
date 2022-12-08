@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+
+import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import { convertDateToBangla } from '../utils/dayjs';
 
 interface BlogPostsProps {
@@ -73,10 +76,15 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
           className="flex flex-col overflow-hidden rounded-lg shadow-lg"
         >
           <div className="flex-shrink-0">
-            <img
-              className="h-48 w-full object-cover"
+            <Image
               src={post.coverImageUrl}
               alt={post.title}
+              width={400}
+              height={250}
+              layout="responsive"
+              placeholder="blur"
+              loading="lazy"
+              blurDataURL={coverImageBlurDataUrl}
             />
           </div>
           <div className="flex flex-1 flex-col justify-between bg-white p-6 dark:bg-slate-800">
