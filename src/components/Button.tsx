@@ -22,7 +22,7 @@ export function ButtonLink({
 }) {
   return (
     <Link href={href}>
-      <a className={clsx(styles[variant], className)} {...props} />
+      <span className={clsx(styles[variant], className)} {...props} />
     </Link>
   );
 }

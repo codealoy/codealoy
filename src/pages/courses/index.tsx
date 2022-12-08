@@ -6,7 +6,7 @@ import Image from 'next/image';
 import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
 
 const DEFAULT_COURSE_COVER =
-  'https://images.unsplash.com/photo-1556037757-40496ad2fbc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80';
+  'https://images.unsplash.com/photo-1556037757-40496ad2fbc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80';
 const DEFAULT_COURSE_DESCRIPTION = 'কোর্স বিবরণ শীঘ্রই আসছে';
 
 const courseList = [
@@ -171,20 +171,17 @@ const CoursesPage = () => {
             >
               <div className="rounded-lg border border-slate-200 bg-white text-center shadow  dark:rounded-lg dark:border-none dark:bg-slate-800 dark:shadow-lg">
                 <Link href={course.href}>
-                  <a>
-                    <div className="w-full overflow-hidden rounded-t-lg object-cover">
-                      <Image
-                        src={course.coverImage}
-                        alt={course.title}
-                        width={400}
-                        height={250}
-                        layout="responsive"
-                        placeholder="blur"
-                        loading="lazy"
-                        blurDataURL={coverImageBlurDataUrl}
-                      />
-                    </div>
-                  </a>
+                  <div className="w-full overflow-hidden rounded-t-lg object-cover">
+                    <Image
+                      src={course.coverImage}
+                      alt={course.title}
+                      width={500}
+                      height={250}
+                      placeholder="blur"
+                      loading="lazy"
+                      blurDataURL={coverImageBlurDataUrl}
+                    />
+                  </div>
                 </Link>
                 <div className="p-5">
                   <a href="#">
@@ -215,16 +212,16 @@ const CoursesPage = () => {
                       </p>
                     </span>
                   </div>
-                  <p className="m-4 font-normal text-slate-700 dark:text-slate-400">
+                  <p className="m-4 text-center font-normal text-slate-700 dark:text-slate-400">
                     {course.description}
                   </p>
 
                   <Link href={course.href}>
-                    <a className="group relative my-3 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-slate-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800">
+                    <span className="group relative my-3 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-slate-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800">
                       <span className="relative rounded-md bg-white px-4 py-2 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-slate-900">
                         {course.isPublished ? 'বিস্তারিত' : 'শীঘ্রই আসছে'}
                       </span>
-                    </a>
+                    </span>
                   </Link>
                 </div>
               </div>

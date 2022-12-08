@@ -8,12 +8,12 @@ const navigation = {
     { name: 'কোর্সসমুহ', href: '/courses' },
     { name: 'ব্লগ', href: '/blog' },
     {
-      name: 'আলোচনা ফোরাম',
+      name: 'ফোরাম',
       href: 'https://github.com/codealoy/codealoy/discussions',
       target: '_blank',
     },
     {
-      name: 'যোগাযোগ করুন',
+      name: 'যোগাযোগ',
       href: 'mailto:support@codealoy.com',
       target: '_blank',
     },

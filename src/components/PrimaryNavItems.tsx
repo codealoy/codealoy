@@ -11,9 +11,9 @@ export const PrimaryNavItems = () => {
       {navigationItems.map((navigationItem) => (
         <li key={navigationItem.title}>
           <Link href={navigationItem.href!}>
-            <a className="hover:text-sky-500 dark:hover:text-sky-400">
+            <span className="hover:text-sky-500 dark:hover:text-sky-400">
               {navigationItem.title}
-            </a>
+            </span>
           </Link>
         </li>
       ))}

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FaGithubSquare, FaLinkedin, FaFacebookSquare } from 'react-icons/fa';
+import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
 
 import imageOfMukit from '../../images/home/codealoy-team-mukit.png';
 import imageOfShahed from '../../images/home/codealoy-team-shahed.png';
@@ -87,8 +88,8 @@ export const Team = () => {
                     <Image
                       src={member.image}
                       alt={member.name}
-                      layout="fill"
                       placeholder="blur"
+                      blurDataURL={coverImageBlurDataUrl}
                     />
                   </div>
                   <div className="space-y-3">

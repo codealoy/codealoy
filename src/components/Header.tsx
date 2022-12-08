@@ -41,9 +41,9 @@ export const Header: React.FC<any> = () => {
     >
       <div className="relative top-1 flex flex-grow basis-0 items-center">
         <Link href="/">
-          <a className="block w-auto overflow-hidden lg:w-auto">
+          <div className="block w-auto overflow-hidden lg:w-auto">
             <Logo variant={siteTheme.isDarkTheme ? 'dark' : 'light'} />
-          </a>
+          </div>
         </Link>
       </div>
       <div

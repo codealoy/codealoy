@@ -152,9 +152,9 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                 </dt>
                 <dd className="mt-1">
                   <Link href={previousPage.href!}>
-                    <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                    <span className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
                       &larr; {previousPage.title}
-                    </a>
+                    </span>
                   </Link>
                 </dd>
               </div>
@@ -166,9 +166,9 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                 </dt>
                 <dd className="mt-1">
                   <Link href={nextPage.href!}>
-                    <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                    <span className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
                       {nextPage.title} &rarr;
-                    </a>
+                    </span>
                   </Link>
                 </dd>
               </div>

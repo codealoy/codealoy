@@ -12,9 +12,9 @@ export const CTA = () => {
           সফটওয়্যার ডেভেলপার হিসাবে ক্যারিয়ার গড়ে তোলার এখনই উপযুক্ত সময়
         </p>
         <Link href="/courses">
-          <a className="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50 sm:w-auto">
+          <span className="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50 sm:w-auto">
             শেখা শুরু করুন
-          </a>
+          </span>
         </Link>
       </div>
     </div>
