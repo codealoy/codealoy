@@ -33,10 +33,11 @@ const ErrorPage = () => {
               404 error
             </p>
             <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-              এই পৃষ্ঠা বিদ্যমান না।
+              এই পৃষ্ঠা খুজে পাওয়া যায়নি
             </h1>
-            <p className="mt-2 text-lg text-slate-700 dark:text-slate-300">
-              আপনি যে পৃষ্ঠাটি খুঁজছেন তা খুঁজে পাওয়া যায়নি।
+            <p className="mt-4 text-lg text-slate-700 dark:text-slate-300">
+              আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান না। নিচে কিছু জনপ্রিয়
+              পৃষ্ঠার তালিকা দেওয়া হলো যা আপনি ঘুরে দেখতে পারেন।
             </p>
           </div>
           <div className="mt-12">
@@ -45,7 +46,7 @@ const ErrorPage = () => {
             </h2>
             <ul
               role="list"
-              className="mt-4 divide-y divide-slate-200 border-t border-b border-slate-200"
+              className="mt-4 divide-y divide-slate-200 dark:divide-slate-800"
             >
               {links.map((link, linkIdx) => (
                 <li
