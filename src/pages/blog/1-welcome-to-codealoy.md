@@ -2,7 +2,7 @@
 title: Welcome to Codeloy
 description: Welcome to the basic course to learn problem-solving with javascript!
 authorName: Mukitul Islam Mukit
-authorAvatar: https://i.pravatar.cc/1024?img=2
+authorAvatar: https://avatars.githubusercontent.com/u/11677026?v=4
 authorProfession: Senior Software Engineer, ShopUp
 publishedAt: '2022-11-10'
 ---

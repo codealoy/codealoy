@@ -1,11 +1,13 @@
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import React from 'react';
+import Image from 'next/image';
 
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { BlogPosts } from '../components/BlogPosts';
 import { Prose } from '../components/Prose';
 import { dayjs } from '../utils/dayjs';
+import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 
 interface BlogLayoutProps extends MarkdocNextJsPageProps {
   children?: React.ReactNode;
@@ -31,11 +33,18 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
               <header className="mb-4 lg:mb-6">
                 <address className="mb-6 flex items-center not-italic">
                   <div className="mr-3 inline-flex items-center text-sm text-slate-900 dark:text-slate-300">
-                    <img
-                      className="mr-4 h-20 w-20 rounded-full"
-                      src={authorAvatar}
-                      alt={authorName}
-                    />
+                    <div className="mr-4 h-20 w-20 overflow-hidden rounded-full">
+                      <Image
+                        src={authorAvatar}
+                        alt={authorName}
+                        width={80}
+                        height={80}
+                        layout="responsive"
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={coverImageBlurDataUrl}
+                      />
+                    </div>
                     <div>
                       <a
                         href="#"
