@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import imageOfMukit from '../images/home/codealoy-team-mukit.png';
+import imageOfShahed from '../images/home/codealoy-team-shahed.png';
 import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import { convertDateToBangla } from '../utils/dayjs';
 
@@ -20,8 +22,8 @@ const posts = [
     readingTime: '৫ মিনিট',
     author: {
       name: 'আল-আমিন শাহেদ সুমন',
-      href: 'shahed-sumon',
-      avatarImageUrl: 'https://avatars.githubusercontent.com/u/57568263?v=4',
+      href: 'https://github.com/alaminsahed',
+      avatarImageUrl: imageOfShahed,
     },
     publishedAt: '2022-12-01',
     isPublished: true,
@@ -36,8 +38,8 @@ const posts = [
     readingTime: '১২ মিনিট',
     author: {
       name: 'মুকিতুল ইসলাম মুকিত',
-      href: 'mukitul-islam-mukit',
-      avatarImageUrl: 'https://avatars.githubusercontent.com/u/11677026?v=4',
+      href: 'https://github.com/mimukit',
+      avatarImageUrl: imageOfMukit,
     },
     publishedAt: 'TBD',
     isPublished: false,
@@ -52,8 +54,8 @@ const posts = [
     readingTime: '১০ মিনিট',
     author: {
       name: 'মুকিতুল ইসলাম মুকিত',
-      href: 'mukitul-islam-mukit',
-      avatarImageUrl: 'https://avatars.githubusercontent.com/u/11677026?v=4',
+      href: 'https://github.com/mimukit',
+      avatarImageUrl: imageOfMukit,
     },
     publishedAt: 'TBD',
     isPublished: false,
@@ -113,11 +115,18 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
               <div className="flex-shrink-0">
                 <a href={post.author.href}>
                   <span className="sr-only">{post.author.name}</span>
-                  <img
-                    className="h-10 w-10 rounded-full grayscale"
-                    src={post.author.avatarImageUrl}
-                    alt={post.author.name}
-                  />
+                  <div className="h-10 w-10 overflow-hidden rounded-full grayscale">
+                    <Image
+                      src={post.author.avatarImageUrl}
+                      alt={post.author.name}
+                      width={40}
+                      height={40}
+                      layout="responsive"
+                      placeholder="blur"
+                      loading="lazy"
+                      blurDataURL={coverImageBlurDataUrl}
+                    />
+                  </div>
                 </a>
               </div>
               <div className="ml-3">
