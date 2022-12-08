@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Text Selection Custom Color */
+::-moz-selection {
+  color: #fff;
+  background: #4f46e5;
+}
+
+::selection {
+  color: #fff;
+  background: #4f46e5;
+}

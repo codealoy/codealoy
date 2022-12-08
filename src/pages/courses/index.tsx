@@ -1,8 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
+import Image from 'next/image';
 
-const DEFAULT_COURSE_COVER = 'https://picsum.photos/400';
+import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
+
+const DEFAULT_COURSE_COVER =
+  'https://images.unsplash.com/photo-1556037757-40496ad2fbc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80';
 const DEFAULT_COURSE_DESCRIPTION = 'কোর্স বিবরণ শীঘ্রই আসছে';
 
 const courseList = [
@@ -166,14 +170,22 @@ const CoursesPage = () => {
               className="col-span-1 divide-y divide-slate-200 rounded-lg bg-white shadow ring-1 ring-slate-100/80 dark:rounded-lg dark:shadow-lg dark:ring-0"
             >
               <div className="rounded-lg border border-slate-200 bg-white text-center shadow  dark:rounded-lg dark:border-none dark:bg-slate-800 dark:shadow-lg">
-                <a href="#">
-                  <img
-                    className="h-56 w-full rounded-t-lg object-cover grayscale"
-                    src={course.coverImage}
-                    alt={course.title}
-                    loading="lazy"
-                  />
-                </a>
+                <Link href={course.href}>
+                  <a>
+                    <div className="w-full overflow-hidden rounded-t-lg object-cover">
+                      <Image
+                        src={course.coverImage}
+                        alt={course.title}
+                        width={400}
+                        height={250}
+                        layout="responsive"
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={coverImageBlurDataUrl}
+                      />
+                    </div>
+                  </a>
+                </Link>
                 <div className="p-5">
                   <a href="#">
                     <h5 className="mb-2 text-xl font-bold text-slate-700 dark:text-white">
