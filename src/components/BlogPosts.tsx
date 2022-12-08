@@ -18,7 +18,7 @@ const posts = [
     category: { name: 'বিবৃতি', href: 'announement' },
     description: `স্বাগতম। অনেক প্রত্যাশা ও আনন্দের সাথে আমরা "কোডালয়" প্লাটফরমের যাত্রা শুরু করছি। কোডালয় বাংলা ভাষাভাষী শিক্ষার্থীদের জন্য একটি প্রোগ্রামিং শেখার ওপেন সোর্স প্ল্যাটফর্ম। নতুনদের ডেভেলপমেন্ট ক্যারিয়ার সমৃদ্ধ করার লক্ষ্যে আমাদের এই সন্মিলিত প্রচেষ্টা...`,
     coverImageUrl:
-      'https://images.unsplash.com/photo-1633989464004-1aada5ed6702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+      'https://images.unsplash.com/photo-1633989464004-1aada5ed6702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '৫ মিনিট',
     author: {
       name: 'আল-আমিন শাহেদ সুমন',
@@ -34,7 +34,7 @@ const posts = [
     category: { name: 'ক্যারিয়ার', href: 'career' },
     description: `প্রোগ্রামিং শেখার জন্য দুইটি বিষয় সব থেকে প্রয়োজন: আগ্রহ আর অধ্যবসায়। কোন কিছু শেখা শুরু করার সব থেকে কঠিন বাপারটা হচ্ছে হতাশ না হয়ে প্রতিদিন লেগে থাকা। ১০০ দিনের কোডিং চ্যালেঞ্জ আমাদের অধ্যবসায়ের প্রথম ধাপ...`,
     coverImageUrl:
-      'https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+      'https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১২ মিনিট',
     author: {
       name: 'মুকিতুল ইসলাম মুকিত',
@@ -50,7 +50,7 @@ const posts = [
     category: { name: 'টিউটোরিয়াল', href: 'tutorial' },
     description: `কোডালয় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার সম্পূর্ণ ফ্রি এবং ওপেনসোর্স প্লাটফর্ম। সকল সফটওয়্যার ইঞ্জিনিরদের জন্য এই সন্মিলিত প্রচেষ্টায় আপনিও সংযুক্ত হতে পারেন কোডালয়ের সাথে...`,
     coverImageUrl:
-      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১০ মিনিট',
     author: {
       name: 'মুকিতুল ইসলাম মুকিত',
@@ -77,18 +77,17 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
           key={post.title}
           className="flex flex-col overflow-hidden rounded-lg shadow-lg"
         >
-          <div className="flex-shrink-0">
-            <Image
-              src={post.coverImageUrl}
-              alt={post.title}
-              width={400}
-              height={250}
-              layout="responsive"
-              placeholder="blur"
-              loading="lazy"
-              blurDataURL={coverImageBlurDataUrl}
-            />
-          </div>
+          <Image
+            src={post.coverImageUrl}
+            alt={post.title}
+            width={500}
+            height={250}
+            className="flex-shrink-0 object-cover"
+            placeholder="blur"
+            loading="lazy"
+            blurDataURL={coverImageBlurDataUrl}
+          />
+
           <div className="flex flex-1 flex-col justify-between bg-white p-6 dark:bg-slate-800">
             <div className="flex-1">
               <p className="text-sm font-medium text-indigo-600">
@@ -101,32 +100,30 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                 )}
               </p>
               <Link href={post.isPublished ? post.href : '#'}>
-                <a className="mt-2 block">
+                <span className="mt-2 block">
                   <p className="text-xl font-semibold text-slate-900 dark:text-white">
                     {post.title}
                   </p>
                   <p className="mt-3 text-base text-slate-800 dark:text-slate-400">
                     {post.description}
                   </p>
-                </a>
+                </span>
               </Link>
             </div>
             <div className="mt-6 flex items-center">
               <div className="flex-shrink-0">
                 <a href={post.author.href}>
                   <span className="sr-only">{post.author.name}</span>
-                  <div className="h-10 w-10 overflow-hidden rounded-full grayscale">
-                    <Image
-                      src={post.author.avatarImageUrl}
-                      alt={post.author.name}
-                      width={40}
-                      height={40}
-                      layout="responsive"
-                      placeholder="blur"
-                      loading="lazy"
-                      blurDataURL={coverImageBlurDataUrl}
-                    />
-                  </div>
+                  <Image
+                    className="h-10 w-10 rounded-full border border-slate-200 object-cover grayscale"
+                    src={post.author.avatarImageUrl}
+                    alt={post.author.name}
+                    width={40}
+                    height={40}
+                    placeholder="blur"
+                    loading="lazy"
+                    blurDataURL={coverImageBlurDataUrl}
+                  />
                 </a>
               </div>
               <div className="ml-3">

@@ -28,9 +28,9 @@ export const Hero = () => {
         </p>
         <div className="mt-6 flex justify-center space-x-6 text-sm sm:mt-10">
           <Link href="/courses">
-            <a className="dark:highlight-white/20 flex h-12 w-full items-center justify-center rounded-lg bg-indigo-600 px-6 font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 dark:hover:bg-indigo-500 sm:w-auto">
+            <span className="dark:highlight-white/20 flex h-12 w-full items-center justify-center rounded-lg bg-indigo-600 px-6 font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 dark:hover:bg-indigo-500 sm:w-auto">
               শেখা শুরু করুন
-            </a>
+            </span>
           </Link>
         </div>
       </div>

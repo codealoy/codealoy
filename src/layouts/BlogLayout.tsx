@@ -39,7 +39,6 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
                         alt={authorName}
                         width={80}
                         height={80}
-                        layout="responsive"
                         placeholder="blur"
                         loading="lazy"
                         blurDataURL={coverImageBlurDataUrl}

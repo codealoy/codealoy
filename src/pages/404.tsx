@@ -88,9 +88,9 @@ const ErrorPage = () => {
             </ul>
             <div className="mt-8">
               <Link href="/">
-                <a className="text-base font-medium text-indigo-600 hover:text-indigo-500">
+                <span className="text-base font-medium text-indigo-600 hover:text-indigo-500">
                   অথবা হোম পেইজে ফিরে যান<span aria-hidden="true"> &rarr;</span>
-                </a>
+                </span>
               </Link>
             </div>
           </div>

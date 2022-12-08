@@ -39,9 +39,9 @@ export const HighlightedFeatures = () => {
                 </p>
                 <div className="mt-8">
                   <Link href="/courses">
-                    <a className="inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500">
+                    <span className="inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500">
                       শেখা শুরু করুন
-                    </a>
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -90,9 +90,9 @@ export const HighlightedFeatures = () => {
                 </p>
                 <div className="mt-8">
                   <Link href="/courses">
-                    <a className="inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500">
+                    <span className="inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500">
                       শেখা শুরু করুন
-                    </a>
+                    </span>
                   </Link>
                 </div>
               </div>

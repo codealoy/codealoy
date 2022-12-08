@@ -65,10 +65,10 @@ export function MobileNavigation({ navigation }) {
               </svg>
             </button>
             <Link href="/">
-              <a className="ml-6 block w-10 overflow-hidden lg:w-auto">
+              <span className="ml-6 block w-10 overflow-hidden lg:w-auto">
                 <span className="sr-only">Home page</span>
                 <Logo />
-              </a>
+              </span>
             </Link>
           </div>
           <Navigation navigationItems={navigation} className="mt-5 px-1" />
