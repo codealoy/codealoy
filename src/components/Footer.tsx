@@ -102,7 +102,7 @@ export const Footer = () => {
         <p className="mt-8 text-center text-base text-slate-400">
           কপিরাইট © {dayjs().year()} কোডালয় - সর্বস্বত্ব সংরক্ষিত
           <br />
-          প্রচালনায় <span className="text-red-600">♥</span> এর সাথে{' '}
+          পরিচালনায় <span className="text-red-600">♥</span> এর সাথে{' '}
           <a
             href="#meet-team"
             className="hover:text-sky-500 dark:hover:text-sky-400"
