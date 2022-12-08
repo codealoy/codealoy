@@ -19,7 +19,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   >
     <div
       className={clsx([
-        'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-gray-50 dark:bg-[#112133]',
+        'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-slate-50 dark:bg-[#112133]',
         `h-${height <= 5 ? height - 1 : height - 2}`,
         `w-${width <= 5 ? width - 1 : width - 2}`,
       ])}

@@ -92,10 +92,10 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
               </p>
               <Link href={post.isPublished ? post.href : '#'}>
                 <a className="mt-2 block">
-                  <p className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <p className="text-xl font-semibold text-slate-900 dark:text-white">
                     {post.title}
                   </p>
-                  <p className="mt-3 text-base text-gray-500 dark:text-slate-400">
+                  <p className="mt-3 text-base text-slate-800 dark:text-slate-400">
                     {post.description}
                   </p>
                 </a>
@@ -113,12 +113,12 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                 </a>
               </div>
               <div className="ml-3">
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                <p className="text-sm font-medium text-slate-900 dark:text-white">
                   <a href={post.author.href} className="hover:underline">
                     {post.author.name}
                   </a>
                 </p>
-                <div className="flex space-x-1 text-sm text-gray-500">
+                <div className="flex space-x-1 text-sm text-slate-500">
                   {post.isPublished ? (
                     <>
                       <time dateTime={post.publishedAt}>

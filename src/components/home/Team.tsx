@@ -47,7 +47,7 @@ const SocialLinks = ({
         <li key={socialLink.key}>
           <a
             title={socialLink.title}
-            className="text-gray-400 hover:text-gray-500"
+            className="text-slate-400 hover:text-slate-500"
             href={socialLink.url}
             target="_blank"
             rel="noreferrer"
@@ -63,17 +63,14 @@ const SocialLinks = ({
 
 export const Team = () => {
   return (
-    <section
-      id="meet-team"
-      className="bg-white dark:border-t dark:border-slate-100/5 dark:bg-slate-900"
-    >
+    <section id="meet-team" className="bg-white dark:bg-slate-900">
       <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12">
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
             <h2 className="text-3xl font-extrabold tracking-tight dark:text-white sm:text-4xl">
               কোডালয় সদস্য পরিচিতি
             </h2>
-            <p className="text-xl text-gray-500 dark:text-slate-400">
+            <p className="text-xl text-slate-500 dark:text-slate-400">
               মাতৃভাষা বাংলায় আধুনিক প্রোগ্রামিং ও ওয়েব ডেভেলপমেন্ট শেখার
               পূর্ণাঙ্গ গাইডলাইন সকলের কাছে বিনামূল্যে পৌঁছে দেওয়ার লক্ষ্যে
               যারা অবদান রাখছেন

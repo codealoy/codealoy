@@ -21,10 +21,10 @@ export const HighlightedFeatures = () => {
                 />
               </div>
               <div className="mt-8">
-                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   লাইভ কোডিং এডিটর
                 </h2>
-                <p className="mt-4 text-lg text-gray-500">
+                <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
                   শুধুমাত্র সাঁতার দেখে দেখে যেমন সাঁতার শেখা যায় না, তেমনি
                   কোডিং বা প্রোগ্রামিংও শুধু দেখে দেখে শেখা সম্ভব নয়। পরিচিত
                   একটি প্রবাদ আছে, &quot;গাইতে গাইতে গায়েন&quot;। শেখার
@@ -73,10 +73,10 @@ export const HighlightedFeatures = () => {
                 </span>
               </div>
               <div className="mt-8">
-                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   দ্বিগুণ গতিতে শেখার সুযোগ
                 </h2>
-                <p className="mt-4 text-lg text-gray-500">
+                <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
                   ইউটিউব বা অন্য কোন সাইটের ভিডিও টিউটোরিয়ালগুলো দেখে
                   প্রোগ্রামিং বা ওয়েব ডেভেলপমেন্ট শেখা তুলনামূলকভাবে বেশি সময়
                   সাপেক্ষ। সাধারণত ভিডিও টিউটোরিয়ালগুলোতে গড়ে ১৫০ শব্দ/মিনিট
