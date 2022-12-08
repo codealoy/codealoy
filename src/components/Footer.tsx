@@ -7,9 +7,8 @@ const navigation = {
   main: [
     { name: 'কোর্সসমুহ', href: '/courses' },
     { name: 'ব্লগ', href: '/blog' },
-    { name: 'আমাদের গল্প', href: '#' },
     {
-      name: 'মতামত',
+      name: 'আলোচনা ফোরাম',
       href: 'https://github.com/codealoy/codealoy/discussions',
       target: '_blank',
     },
