@@ -212,7 +212,7 @@ const CoursesPage = () => {
                       </p>
                     </span>
                   </div>
-                  <p className="m-4 font-normal text-slate-700 dark:text-slate-400">
+                  <p className="m-4 text-center font-normal text-slate-700 dark:text-slate-400">
                     {course.description}
                   </p>
 

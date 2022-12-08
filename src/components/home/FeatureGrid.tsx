@@ -72,7 +72,7 @@ export const FeatureGrid = () => {
                     <h3 className="mt-8 text-lg font-medium tracking-tight text-slate-900 dark:text-slate-300">
                       {feature.name}
                     </h3>
-                    <p className="mt-5 text-base text-slate-600 dark:text-slate-400">
+                    <p className="mt-5 text-center text-base text-slate-600 dark:text-slate-400">
                       {feature.description}
                     </p>
                   </div>
