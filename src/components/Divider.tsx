@@ -6,4 +6,4 @@ const Divider = () => {
   );
 };
 
-export default Divider;
+export { Divider };
