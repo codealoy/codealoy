@@ -1,32 +1,25 @@
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
-import {
-  BookmarkSquareIcon,
-  BookOpenIcon,
-  RssIcon,
-  QueueListIcon,
-} from '@heroicons/react/24/outline';
+import { BookOpenIcon, RssIcon, HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 const links = [
   {
-    title: 'Documentation',
-    description: 'Learn how to integrate our tools with your app',
+    title: 'হোম',
+    description: 'আমাদের সম্পর্কে বিস্তারিত জানুন',
+    icon: HomeIcon,
+    link: '/',
+  },
+  {
+    title: 'কোর্সসমূহ',
+    description: 'আমাদের কোর্সসমূহ সম্পর্কে বিস্তারিত জানুন',
     icon: BookOpenIcon,
+    link: '/courses',
   },
   {
-    title: 'API Reference',
-    description: 'A complete API reference for our libraries',
-    icon: QueueListIcon,
-  },
-  {
-    title: 'Guides',
-    description: 'Installation guides that cover popular setups',
-    icon: BookmarkSquareIcon,
-  },
-  {
-    title: 'Blog',
-    description: 'Read our latest news and articles',
+    title: 'ব্লগ',
+    description: 'আমাদের ব্লগ পোস্ট পড়ুন',
     icon: RssIcon,
+    link: '/blog',
   },
 ];
 
@@ -39,20 +32,21 @@ const ErrorPage = () => {
             <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
               404 error
             </p>
-            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-              This page does not exist.
+            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+              এই পৃষ্ঠা খুজে পাওয়া যায়নি
             </h1>
-            <p className="mt-2 text-lg text-slate-500 dark:text-slate-300">
-              The page you are looking for could not be found.
+            <p className="mt-4 text-lg text-slate-700 dark:text-slate-300">
+              আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান না। নিচে কিছু জনপ্রিয়
+              পৃষ্ঠার তালিকা দেওয়া হলো যা আপনি ঘুরে দেখতে পারেন।
             </p>
           </div>
           <div className="mt-12">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-white">
-              Popular pages
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-700 dark:text-white">
+              জনপ্রিয় পৃষ্ঠাগুলি
             </h2>
             <ul
               role="list"
-              className="mt-4 divide-y divide-slate-200 border-t border-b border-slate-200"
+              className="mt-4 divide-y divide-slate-200 dark:divide-slate-800"
             >
               {links.map((link, linkIdx) => (
                 <li
@@ -70,7 +64,7 @@ const ErrorPage = () => {
                   <div className="min-w-0 flex-1">
                     <h3 className="text-base font-medium text-slate-900 dark:text-white">
                       <span className="rounded-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2">
-                        <a href="#" className="focus:outline-none">
+                        <a href={link.link} className="focus:outline-none">
                           <span
                             className="absolute inset-0"
                             aria-hidden="true"
@@ -79,7 +73,7 @@ const ErrorPage = () => {
                         </a>
                       </span>
                     </h3>
-                    <p className="text-base text-slate-500 dark:text-slate-400">
+                    <p className="text-base text-slate-700 dark:text-slate-400">
                       {link.description}
                     </p>
                   </div>
@@ -95,7 +89,7 @@ const ErrorPage = () => {
             <div className="mt-8">
               <Link href="/">
                 <a className="text-base font-medium text-indigo-600 hover:text-indigo-500">
-                  Or go back home<span aria-hidden="true"> &rarr;</span>
+                  অথবা হোম পেইজে ফিরে যান<span aria-hidden="true"> &rarr;</span>
                 </a>
               </Link>
             </div>
