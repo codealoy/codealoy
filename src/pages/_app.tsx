@@ -2,6 +2,7 @@ import 'focus-visible';
 
 import Head from 'next/head';
 import superjson from 'superjson';
+import { Baloo_Da_2 } from '@next/font/google';
 
 import '../styles/globals.css';
 import '../styles/tailwind.css';
@@ -26,6 +27,11 @@ import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
 import { getNavigationItems } from '../utils/getNavigationItems';
 import { BlogLayout } from '../layouts/BlogLayout';
+
+const fontBengali = Baloo_Da_2({
+  variable: '--font-bengali',
+  subsets: ['bengali'],
+});
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
@@ -89,10 +95,12 @@ const MyApp: AppType<MyAppProps> = ({
             <title>{pageTitle}</title>
             {description && <meta name="description" content={description} />}
           </Head>
-          {showAnnouncement && (
-            <Announcement hideAnnouncement={hideAnnouncement} />
-          )}
-          {renderLayout()}
+          <main className={`${fontBengali.variable} font-sans`}>
+            {showAnnouncement && (
+              <Announcement hideAnnouncement={hideAnnouncement} />
+            )}
+            {renderLayout()}
+          </main>
         </SessionProvider>
       </ThemeContextProvider>
     </>
