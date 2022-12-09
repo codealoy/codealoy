@@ -100,14 +100,14 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                 )}
               </p>
               <Link href={post.isPublished ? post.href : '#'}>
-                <span className="mt-2 block">
-                  <p className="text-xl font-semibold text-slate-900 dark:text-white">
+                <div className="mt-2 inline-block h-44 w-60 overflow-hidden  xl:w-72">
+                  <p className="text-justify text-xl font-semibold text-slate-900 dark:text-white">
                     {post.title}
                   </p>
                   <p className="mt-3 text-justify text-base text-slate-800 dark:text-slate-400">
                     {post.description}
                   </p>
-                </span>
+                </div>
               </Link>
             </div>
             <div className="mt-6 flex items-center">
