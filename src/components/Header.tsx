@@ -58,15 +58,15 @@ export const Header: React.FC<any> = () => {
         </nav>
         <div className="ml-6 flex items-center border-l border-slate-200 pl-6 dark:border-slate-800">
           <ThemeSelector iconOnly={true} />
-          <a
+          <Link
             href="https://github.com/codealoy/codealoy"
             target="_blank"
             className="group ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             <span className="sr-only">Codealoy on GitHub</span>
             <GithubIcon />
-          </a>
+          </Link>
         </div>
       </div>
       <div

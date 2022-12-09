@@ -91,13 +91,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
           <div className="flex flex-1 flex-col justify-between bg-white p-6 dark:bg-slate-800">
             <div className="flex-1">
               <p className="text-sm font-medium text-indigo-600">
-                {post.isPublished ? (
-                  <a href={post.category.href} className="hover:underline">
-                    {post.category.name}
-                  </a>
-                ) : (
-                  'শীঘ্রই আসছে'
-                )}
+                {post.isPublished ? post.category.name : 'শীঘ্রই আসছে'}
               </p>
               <Link href={post.isPublished ? post.href : '#'}>
                 <span className="mt-2 block">
@@ -112,7 +106,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
             </div>
             <div className="mt-6 flex items-center">
               <div className="flex-shrink-0">
-                <a href={post.author.href}>
+                <Link href={post.author.href} target="_blank" rel="noreferrer">
                   <span className="sr-only">{post.author.name}</span>
                   <Image
                     className="h-10 w-10 rounded-full border border-slate-200 object-cover grayscale"
@@ -124,13 +118,18 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                     loading="lazy"
                     blurDataURL={coverImageBlurDataUrl}
                   />
-                </a>
+                </Link>
               </div>
               <div className="ml-3">
                 <p className="text-sm font-medium text-slate-900 dark:text-white">
-                  <a href={post.author.href} className="hover:underline">
+                  <Link
+                    href={post.author.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:underline"
+                  >
                     {post.author.name}
-                  </a>
+                  </Link>
                 </p>
                 <div className="flex space-x-1 text-sm text-slate-500">
                   {post.isPublished ? (
