@@ -9,6 +9,7 @@ import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
 import { Team } from '../components/home/Team';
 import { SITE_TITLE } from '../constants/site-settings';
 import { Hero } from '../components/home/Hero';
+import { LatestCourses } from '../components/home/LatestCourses';
 
 const IndexPage = () => {
   return (
@@ -27,7 +28,9 @@ const IndexPage = () => {
 
       <HighlightedFeatures />
 
-      {/* <LatestCourses /> */}
+      <Divider />
+
+      <LatestCourses />
 
       {/* <FAQ /> */}
 
