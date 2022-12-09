@@ -30,6 +30,9 @@ export default withMarkdoc({
     images: {
       domains: ['images.unsplash.com', 'avatars.githubusercontent.com'],
     },
+    experimental: {
+      newNextLinkBehavior: false,
+    },
     webpack: (config) => {
       config.module.rules.push({
         test: /\.txt/,
