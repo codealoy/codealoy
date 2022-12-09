@@ -184,12 +184,11 @@ const CoursesPage = () => {
                   </div>
                 </Link>
                 <div className="p-5">
-                  <a href="#">
+                  <Link href={course.href}>
                     <h5 className="mb-2 text-xl font-bold text-slate-700 dark:text-white">
                       {course.title}
                     </h5>
-                  </a>
-
+                  </Link>
                   <hr className="mx-auto w-16 border-t-4 border-indigo-500" />
 
                   <div className="flex justify-center space-x-6 pt-4 lg:pt-6">
