@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { BlogPosts } from '../BlogPosts';
 
@@ -18,6 +19,13 @@ export const LatestBlogPosts = () => {
         </div>
         <div className="mt-12">
           <BlogPosts limit={3} />
+        </div>
+        <div className="mt-8 flex justify-center">
+          <Link href="/blog">
+            <div className="inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500">
+              সব ব্লগ গুলো দেখুন
+            </div>
+          </Link>
         </div>
       </div>
     </div>
