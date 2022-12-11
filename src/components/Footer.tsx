@@ -65,8 +65,6 @@ const navigation = {
 };
 
 export const Footer = () => {
-  const router = useRouter();
-  console.log(`🐞🐞🐞 router:`, router);
   return (
     <footer className="bg-white dark:border-t dark:border-slate-100/5 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">

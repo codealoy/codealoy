@@ -8,6 +8,7 @@ import { BlogPosts } from '../components/BlogPosts';
 import { Prose } from '../components/Prose';
 import { dayjs } from '../utils/dayjs';
 import coverImageBlurDataUrl from '../images/common/cover-image-blur';
+import { Divider } from '../components/Divider';
 import Link from 'next/link';
 
 interface BlogLayoutProps extends MarkdocNextJsPageProps {
@@ -76,13 +77,14 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
         </main>
 
         {/* Latest Articles */}
+        <Divider />
         <aside
           aria-label="Related articles"
-          className="bg-slate-50 py-8 dark:bg-slate-800 lg:py-24"
+          className="bg-white py-8 dark:bg-slate-900 lg:py-24"
         >
           <div className="mx-auto max-w-screen-xl px-4">
-            <h2 className="mb-8 text-2xl font-bold text-slate-900 dark:text-slate-300">
-              Latest articles
+            <h2 className="mb-8 text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-300">
+              সাম্প্রতিক ব্লগসমূহ
             </h2>
             <div className="mt-10">
               <BlogPosts limit={3} />
@@ -90,6 +92,7 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
           </div>
         </aside>
       </section>
+      <Divider />
       <Footer />
     </>
   );
