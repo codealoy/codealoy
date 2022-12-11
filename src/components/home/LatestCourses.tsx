@@ -22,7 +22,7 @@ export const LatestCourses = () => {
           <div className="mt-12">
             <CourseList limit={3} />
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <Link href="/courses">
               <div className="inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:hover:bg-indigo-500">
                 সব কোর্সগুলো দেখুন
