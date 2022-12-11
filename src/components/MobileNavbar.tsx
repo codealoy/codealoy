@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ThemeSelector } from './ThemeSelector';
 import { PrimaryNavItems } from './PrimaryNavItems';
+import Link from 'next/link';
 
 export function MobileNavbar({ display = 'lg:hidden', className, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,18 +71,18 @@ export function MobileNavbar({ display = 'lg:hidden', className, ...props }) {
           <ul className="space-y-4">
             <PrimaryNavItems />
             <li>
-              <a
+              <Link
                 href="https://github.com/codealoy/codealoy"
                 className="hover:text-sky-500 dark:hover:text-sky-400"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
-                GitHub
-              </a>
+                গিটহাব
+              </Link>
             </li>
           </ul>
           <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-6 dark:border-slate-200/10">
-            <span className="font-normal">Switch theme</span>
+            <span className="font-normal">থিম পরিবর্তন</span>
             <ThemeSelector iconOnly={false} />
           </div>
         </div>

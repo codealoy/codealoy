@@ -189,7 +189,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                   {tableOfContents.map((section: any) => (
                     <li key={section.id}>
                       <h3>
-                        <a
+                        <Link
                           href={`#${section.id}`}
                           className={clsx(
                             isActive(section)
@@ -198,13 +198,13 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                           )}
                         >
                           {section.title}
-                        </a>
+                        </Link>
                       </h3>
                       {section.children.length > 0 && (
                         <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
-                              <a
+                              <Link
                                 href={`#${subSection.id}`}
                                 className={
                                   isActive(subSection)
@@ -213,7 +213,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                                 }
                               >
                                 {subSection.title}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>

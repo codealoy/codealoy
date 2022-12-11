@@ -8,7 +8,8 @@ import { BlogPosts } from '../components/BlogPosts';
 import { Prose } from '../components/Prose';
 import { dayjs } from '../utils/dayjs';
 import coverImageBlurDataUrl from '../images/common/cover-image-blur';
-import { Divider } from 'src/components/Divider';
+import { Divider } from '../components/Divider';
+import Link from 'next/link';
 
 interface BlogLayoutProps extends MarkdocNextJsPageProps {
   children?: React.ReactNode;
@@ -46,13 +47,13 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
                       />
                     </div>
                     <div>
-                      <a
+                      <Link
                         href="#"
                         rel="author"
                         className="text-xl font-medium text-slate-700 dark:text-slate-300"
                       >
                         {authorName}
-                      </a>
+                      </Link>
                       <p className="text-base font-light text-slate-500 dark:text-slate-400">
                         {authorProfession}
                       </p>

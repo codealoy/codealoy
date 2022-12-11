@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaGithubSquare, FaLinkedin, FaFacebookSquare } from 'react-icons/fa';
 import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
 
@@ -46,7 +47,7 @@ const SocialLinks = ({
     <ul role="list" className="flex justify-center space-x-5">
       {socialLinks.map((socialLink) => (
         <li key={socialLink.key}>
-          <a
+          <Link
             title={socialLink.title}
             className="text-slate-400 hover:text-slate-500"
             href={socialLink.url}
@@ -55,7 +56,7 @@ const SocialLinks = ({
           >
             <span className="sr-only">{socialLink.title}</span>
             <socialLink.icon className="h-5 w-5 transform text-slate-400 duration-200 ease-in-out hover:scale-110 hover:text-slate-600 dark:hover:text-slate-300" />
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

@@ -64,13 +64,13 @@ const ErrorPage = () => {
                   <div className="min-w-0 flex-1">
                     <h3 className="text-base font-medium text-slate-900 dark:text-white">
                       <span className="rounded-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2">
-                        <a href={link.link} className="focus:outline-none">
+                        <Link href={link.link} className="focus:outline-none">
                           <span
                             className="absolute inset-0"
                             aria-hidden="true"
                           />
                           {link.title}
-                        </a>
+                        </Link>
                       </span>
                     </h3>
                     <p className="text-base text-slate-700 dark:text-slate-400">

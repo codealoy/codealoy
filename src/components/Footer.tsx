@@ -1,5 +1,7 @@
 import dayjs from 'dayjs';
+import Link from 'next/link';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 import { HiOutlineUserGroup } from 'react-icons/hi';
 
@@ -63,6 +65,8 @@ const navigation = {
 };
 
 export const Footer = () => {
+  const router = useRouter();
+  console.log(`🐞🐞🐞 router:`, router);
   return (
     <footer className="bg-white dark:border-t dark:border-slate-100/5 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
@@ -72,39 +76,41 @@ export const Footer = () => {
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a
+              <Link
                 title={item.name}
                 href={item.href}
                 target={item.target ? item.target : '_self'}
                 className="text-base text-slate-500 hover:text-indigo-700 dark:text-white dark:hover:text-indigo-400"
               >
                 {item.name}
-              </a>
+              </Link>
             </div>
           ))}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
-            <a
+            <Link
               key={item.name}
               title={item.name}
               href={item.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
               className="text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
+            </Link>
           ))}
         </div>
         <p className="mt-8 text-center text-base text-slate-400">
           কপিরাইট © {dayjs().year()} কোডালয় - সর্বস্বত্ব সংরক্ষিত
           <br />
           পরিচালনায় <span className="text-red-600">♥</span> এর সাথে{' '}
+          {/* this a tag is required to enable smooth scrolling */}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a
-            href="#meet-team"
-            className="hover:text-sky-500 dark:hover:text-sky-400"
+            href="/#meet-team"
+            className="hosver:text-sky-500 dark:hover:text-sky-400"
           >
             কোডালয় টিম
           </a>
