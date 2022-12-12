@@ -20,11 +20,18 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1633989464004-1aada5ed6702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '৫ মিনিট',
-    author: {
-      name: 'আল-আমিন শাহেদ সুমন',
-      href: 'https://github.com/alaminsahed',
-      avatarImageUrl: imageOfShahed,
-    },
+    author: [
+      {
+        name: 'আল-আমিন শাহেদ সুমন',
+        href: 'https://github.com/alaminsahed',
+        avatarImageUrl: imageOfShahed,
+      },
+      {
+        name: 'মুকিতুল ইসলাম মুকিত',
+        href: 'https://github.com/mimukit',
+        avatarImageUrl: imageOfMukit,
+      },
+    ],
     publishedAt: '2022-12-01',
     isPublished: true,
   },
@@ -36,11 +43,13 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১২ মিনিট',
-    author: {
-      name: 'মুকিতুল ইসলাম মুকিত',
-      href: 'https://github.com/mimukit',
-      avatarImageUrl: imageOfMukit,
-    },
+    author: [
+      {
+        name: 'মুকিতুল ইসলাম মুকিত',
+        href: 'https://github.com/mimukit',
+        avatarImageUrl: imageOfMukit,
+      },
+    ],
     publishedAt: 'TBD',
     isPublished: false,
   },
@@ -52,11 +61,13 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১০ মিনিট',
-    author: {
-      name: 'মুকিতুল ইসলাম মুকিত',
-      href: 'https://github.com/mimukit',
-      avatarImageUrl: imageOfMukit,
-    },
+    author: [
+      {
+        name: 'মুকিতুল ইসলাম মুকিত',
+        href: 'https://github.com/mimukit',
+        avatarImageUrl: imageOfMukit,
+      },
+    ],
     publishedAt: 'TBD',
     isPublished: false,
   },
@@ -104,46 +115,39 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                 </div>
               </Link>
             </div>
-            <div className="mt-6 flex items-center">
+            <div className="mt-6 flex items-center justify-between">
               <div className="flex-shrink-0">
-                <Link href={post.author.href} target="_blank" rel="noreferrer">
-                  <span className="sr-only">{post.author.name}</span>
-                  <Image
-                    className="h-10 w-10 rounded-full border border-slate-200 object-cover grayscale"
-                    src={post.author.avatarImageUrl}
-                    alt={post.author.name}
-                    width={40}
-                    height={40}
-                    placeholder="blur"
-                    loading="lazy"
-                    blurDataURL={coverImageBlurDataUrl}
-                  />
-                </Link>
+                <span className="flex -space-x-4">
+                  {post.author.map((author) => (
+                    <div key={author.href} className="mb-5 flex -space-x-4">
+                      <Image
+                        className="h-10 w-10 cursor-pointer rounded-full border border-slate-200 object-cover grayscale"
+                        src={author.avatarImageUrl}
+                        alt={author.name}
+                        title={author.name}
+                        width={40}
+                        height={40}
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={coverImageBlurDataUrl}
+                      />
+                    </div>
+                  ))}
+                </span>
               </div>
-              <div className="ml-3">
-                <p className="text-sm font-medium text-slate-900 dark:text-white">
-                  <Link
-                    href={post.author.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:underline"
-                  >
-                    {post.author.name}
-                  </Link>
-                </p>
-                <div className="flex space-x-1 text-sm text-slate-500">
-                  {post.isPublished ? (
-                    <>
-                      <time dateTime={post.publishedAt}>
-                        {convertDateToBangla(post.publishedAt)}
-                      </time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime}</span>
-                    </>
-                  ) : (
-                    <p>শীঘ্রই আসছে</p>
-                  )}
-                </div>
+
+              <div className="text-sm text-slate-400">
+                {post.isPublished ? (
+                  <>
+                    <time dateTime={post.publishedAt}>
+                      {convertDateToBangla(post.publishedAt)}
+                    </time>
+                    <span aria-hidden="true">&middot;</span>
+                    <span>{post.readingTime}</span>
+                  </>
+                ) : (
+                  <p>শীঘ্রই আসছে</p>
+                )}
               </div>
             </div>
           </div>
