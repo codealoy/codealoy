@@ -136,7 +136,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                 </span>
               </div>
 
-              <div className="text-sm text-slate-400">
+              <div className="text-center text-sm text-slate-400">
                 {post.author.length < 2 &&
                   post.author.map((author) => (
                     <p
@@ -158,7 +158,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                     <time dateTime={post.publishedAt}>
                       {convertDateToBangla(post.publishedAt)}
                     </time>
-                    <span aria-hidden="true">&middot;</span>
+                    <span aria-hidden="true"> &middot; </span>
                     <span>{post.readingTime}</span>
                   </>
                 ) : (
