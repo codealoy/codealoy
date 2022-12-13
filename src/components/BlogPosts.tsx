@@ -119,7 +119,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
               <div className="flex-shrink-0">
                 <span className="flex -space-x-4">
                   {post.author.map((author) => (
-                    <div key={author.href} className="mb-5 flex -space-x-4">
+                    <div key={author.href}>
                       <Image
                         className="h-10 w-10 cursor-pointer rounded-full border border-slate-200 object-cover grayscale"
                         src={author.avatarImageUrl}
@@ -137,6 +137,22 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
               </div>
 
               <div className="text-sm text-slate-400">
+                {post.author.length < 2 &&
+                  post.author.map((author) => (
+                    <p
+                      key={author.href}
+                      className="text-sm font-medium text-slate-900 dark:text-white"
+                    >
+                      <Link
+                        href={author.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:underline"
+                      >
+                        {author.name}
+                      </Link>
+                    </p>
+                  ))}
                 {post.isPublished ? (
                   <>
                     <time dateTime={post.publishedAt}>
