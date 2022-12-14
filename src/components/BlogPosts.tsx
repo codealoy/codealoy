@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import clsx from 'clsx';
+import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
 
+import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import imageOfMukit from '../images/home/codealoy-team-mukit.png';
 import imageOfShahed from '../images/home/codealoy-team-shahed.png';
-import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import { convertDateToBangla } from '../utils/dayjs';
 
 interface BlogPostsProps {
@@ -116,12 +118,18 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
               </Link>
             </div>
             <div className="mt-6 flex items-center justify-between">
-              <div className="flex-shrink-0">
-                <span className="flex -space-x-4">
+              <div className="flex">
+                <span className="z-0 flex -space-x-4">
                   {post.author.map((author) => (
                     <div key={author.href}>
                       <Image
-                        className="h-10 w-10 cursor-pointer rounded-full border border-slate-200 object-cover grayscale"
+                        className={clsx(
+                          'relative h-10 w-10 cursor-pointer rounded-full border border-slate-200 object-cover grayscale hover:grayscale-0',
+                          {
+                            'z-10': post.author[1]?.name === author.name,
+                            'z-20': post.author[0]?.name === author.name,
+                          },
+                        )}
                         src={author.avatarImageUrl}
                         alt={author.name}
                         title={author.name}
@@ -134,32 +142,40 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                     </div>
                   ))}
                 </span>
-              </div>
-
-              <div className="text-center text-sm text-slate-400">
-                {post.author.length < 2 &&
-                  post.author.map((author) => (
+                <span className="ml-3">
+                  {post.author.map((author) => (
                     <p
                       key={author.href}
-                      className="text-sm font-medium text-slate-900 dark:text-white"
+                      className="text-sm font-medium text-slate-900 hover:text-white dark:text-slate-400"
                     >
                       <Link
                         href={author.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="hover:underline"
+                        className="hover:text-white "
                       >
                         {author.name}
                       </Link>
                     </p>
                   ))}
+                </span>
+              </div>
+
+              <div className="text-sm text-slate-400">
                 {post.isPublished ? (
                   <>
                     <time dateTime={post.publishedAt}>
+                      <CalendarDaysIcon
+                        title="তারিখ"
+                        className="mr-1 inline-block h-5 w-5 cursor-pointer"
+                      />
                       {convertDateToBangla(post.publishedAt)}
                     </time>
-                    <span aria-hidden="true"> &middot; </span>
-                    <span>{post.readingTime}</span>
+                    <br />
+                    <span>
+                      <ClockIcon className="mr-1 inline-block h-5 w-5 cursor-pointer" />
+                      {post.readingTime}
+                    </span>
                   </>
                 ) : (
                   <p>শীঘ্রই আসছে</p>

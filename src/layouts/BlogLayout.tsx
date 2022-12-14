@@ -64,6 +64,36 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
                       </p>
                     </div>
                   </div>
+                  <div className="mr-3 inline-flex items-center text-sm text-slate-900 dark:text-slate-300">
+                    <div className="mr-4 h-20 w-20 overflow-hidden rounded-full">
+                      <Image
+                        src={authorAvatar}
+                        alt={authorName}
+                        width={80}
+                        height={80}
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={coverImageBlurDataUrl}
+                      />
+                    </div>
+                    <div>
+                      <Link
+                        href="#"
+                        rel="author"
+                        className="text-xl font-medium text-slate-700 dark:text-slate-300"
+                      >
+                        {authorName}
+                      </Link>
+                      <p className="text-base font-light text-slate-500 dark:text-slate-400">
+                        {authorProfession}
+                      </p>
+                      <p className="text-base font-light text-slate-500 dark:text-slate-400">
+                        <time dateTime={publishedAtEn} title={publishedAtBn}>
+                          {publishedAtBn}
+                        </time>
+                      </p>
+                    </div>
+                  </div>
                 </address>
                 <h1 className="my-8 text-3xl font-extrabold leading-tight text-slate-800 dark:text-slate-200 lg:mb-6 lg:text-4xl">
                   {title}
