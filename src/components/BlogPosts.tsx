@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import clsx from 'clsx';
+import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
 
+import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import imageOfMukit from '../images/home/codealoy-team-mukit.png';
 import imageOfShahed from '../images/home/codealoy-team-shahed.png';
-import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import { convertDateToBangla } from '../utils/dayjs';
 
 interface BlogPostsProps {
@@ -20,11 +22,18 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1633989464004-1aada5ed6702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '৫ মিনিট',
-    author: {
-      name: 'আল-আমিন শাহেদ সুমন',
-      href: 'https://github.com/alaminsahed',
-      avatarImageUrl: imageOfShahed,
-    },
+    author: [
+      {
+        name: 'আল-আমিন শাহেদ সুমন',
+        href: 'https://github.com/alaminsahed',
+        avatarImageUrl: imageOfShahed,
+      },
+      {
+        name: 'মুকিতুল ইসলাম মুকিত',
+        href: 'https://github.com/mimukit',
+        avatarImageUrl: imageOfMukit,
+      },
+    ],
     publishedAt: '2022-12-01',
     isPublished: true,
   },
@@ -36,11 +45,13 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১২ মিনিট',
-    author: {
-      name: 'মুকিতুল ইসলাম মুকিত',
-      href: 'https://github.com/mimukit',
-      avatarImageUrl: imageOfMukit,
-    },
+    author: [
+      {
+        name: 'মুকিতুল ইসলাম মুকিত',
+        href: 'https://github.com/mimukit',
+        avatarImageUrl: imageOfMukit,
+      },
+    ],
     publishedAt: 'TBD',
     isPublished: false,
   },
@@ -52,11 +63,13 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১০ মিনিট',
-    author: {
-      name: 'মুকিতুল ইসলাম মুকিত',
-      href: 'https://github.com/mimukit',
-      avatarImageUrl: imageOfMukit,
-    },
+    author: [
+      {
+        name: 'মুকিতুল ইসলাম মুকিত',
+        href: 'https://github.com/mimukit',
+        avatarImageUrl: imageOfMukit,
+      },
+    ],
     publishedAt: 'TBD',
     isPublished: false,
   },
@@ -104,46 +117,72 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                 </div>
               </Link>
             </div>
-            <div className="mt-6 flex items-center">
-              <div className="flex-shrink-0">
-                <Link href={post.author.href} target="_blank" rel="noreferrer">
-                  <span className="sr-only">{post.author.name}</span>
-                  <Image
-                    className="h-10 w-10 rounded-full border border-slate-200 object-cover grayscale"
-                    src={post.author.avatarImageUrl}
-                    alt={post.author.name}
-                    width={40}
-                    height={40}
-                    placeholder="blur"
-                    loading="lazy"
-                    blurDataURL={coverImageBlurDataUrl}
-                  />
-                </Link>
+            <div className="mt-6 flex items-center justify-between">
+              <div className="flex">
+                <span className="flex -space-x-4">
+                  {post.author.map((author, index) => (
+                    <Link
+                      key={author.href}
+                      href={author.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        className={clsx([
+                          'relative h-10 w-10 transform cursor-pointer rounded-full border border-slate-200 object-cover grayscale transition duration-300 ease-in-out hover:z-50 hover:scale-110 hover:grayscale-0',
+                          index === 0 && 'z-40',
+                          index === 1 && 'z-30',
+                        ])}
+                        src={author.avatarImageUrl}
+                        alt={author.name}
+                        title={author.name}
+                        width={40}
+                        height={40}
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={coverImageBlurDataUrl}
+                      />
+                    </Link>
+                  ))}
+                </span>
+                <span className="ml-3">
+                  {post.author.map((author) => (
+                    <p
+                      key={author.href}
+                      className="text-sm font-medium text-slate-900 dark:text-slate-400"
+                    >
+                      <Link
+                        href={author.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:text-white"
+                      >
+                        {author.name}
+                      </Link>
+                    </p>
+                  ))}
+                </span>
               </div>
-              <div className="ml-3">
-                <p className="text-sm font-medium text-slate-900 dark:text-white">
-                  <Link
-                    href={post.author.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:underline"
-                  >
-                    {post.author.name}
-                  </Link>
-                </p>
-                <div className="flex space-x-1 text-sm text-slate-500">
-                  {post.isPublished ? (
-                    <>
-                      <time dateTime={post.publishedAt}>
-                        {convertDateToBangla(post.publishedAt)}
-                      </time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime}</span>
-                    </>
-                  ) : (
-                    <p>শীঘ্রই আসছে</p>
-                  )}
-                </div>
+
+              <div className="text-sm text-slate-400">
+                {post.isPublished ? (
+                  <>
+                    <time dateTime={post.publishedAt}>
+                      <CalendarDaysIcon
+                        title="তারিখ"
+                        className="mr-1 inline-block h-5 w-5 cursor-pointer"
+                      />
+                      {convertDateToBangla(post.publishedAt)}
+                    </time>
+                    <br />
+                    <span>
+                      <ClockIcon className="mr-1 inline-block h-5 w-5 cursor-pointer" />
+                      {post.readingTime}
+                    </span>
+                  </>
+                ) : (
+                  <p>শীঘ্রই আসছে</p>
+                )}
               </div>
             </div>
           </div>
