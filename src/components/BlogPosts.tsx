@@ -119,17 +119,20 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
             </div>
             <div className="mt-6 flex items-center justify-between">
               <div className="flex">
-                <span className="z-0 flex -space-x-4">
-                  {post.author.map((author) => (
-                    <div key={author.href}>
+                <span className="flex -space-x-4">
+                  {post.author.map((author, index) => (
+                    <Link
+                      key={author.href}
+                      href={author.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Image
-                        className={clsx(
-                          'relative h-10 w-10 cursor-pointer rounded-full border border-slate-200 object-cover grayscale hover:grayscale-0',
-                          {
-                            'z-10': post.author[1]?.name === author.name,
-                            'z-20': post.author[0]?.name === author.name,
-                          },
-                        )}
+                        className={clsx([
+                          'relative h-10 w-10 transform cursor-pointer rounded-full border border-slate-200 object-cover grayscale transition duration-300 ease-in-out hover:z-50 hover:scale-110 hover:grayscale-0',
+                          index === 0 && 'z-40',
+                          index === 1 && 'z-30',
+                        ])}
                         src={author.avatarImageUrl}
                         alt={author.name}
                         title={author.name}
@@ -139,20 +142,20 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                         loading="lazy"
                         blurDataURL={coverImageBlurDataUrl}
                       />
-                    </div>
+                    </Link>
                   ))}
                 </span>
                 <span className="ml-3">
                   {post.author.map((author) => (
                     <p
                       key={author.href}
-                      className="text-sm font-medium text-slate-900 hover:text-white dark:text-slate-400"
+                      className="text-sm font-medium text-slate-900 dark:text-slate-400"
                     >
                       <Link
                         href={author.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="hover:text-white "
+                        className="hover:text-white"
                       >
                         {author.name}
                       </Link>
