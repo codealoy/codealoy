@@ -31,6 +31,12 @@ Install dependencies
 npm install
 ```
 
+Copy `.env.example` to `.env` file, and fill up necessary values
+
+```bash
+cp .env.sample .env
+```
+
 Start the server
 
 ```bash
