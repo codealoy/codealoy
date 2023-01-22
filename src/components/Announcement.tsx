@@ -1,43 +1,40 @@
-import React from 'react';
-import { MegaphoneIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import React from 'react';
 
 export const Announcement: React.FC<{
   hideAnnouncement: () => void;
 }> = ({ hideAnnouncement }) => {
   return (
     <div className="z-50 bg-indigo-600">
-      <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between">
-          <div className="flex w-0 flex-1 items-center">
-            <span className="flex rounded-lg bg-indigo-800 p-2">
-              <MegaphoneIcon
-                className="h-6 w-6 text-white"
-                aria-hidden="true"
-              />
-            </span>
-            <p className="ml-3 truncate font-medium text-white">
+      <div className="mx-auto max-w-7xl py-2">
+        <div className="flex flex-wrap items-center justify-center space-x-2">
+          <div className="flex items-center space-x-1">
+            <p className="truncate text-sm font-medium text-white md:text-base">
               <span className="md:hidden">We announced a new product!</span>
               <span className="hidden md:inline">
-                Big news! We&apos;re excited to announce a brand new product.
+                Big news! We&apos;re excited to announce a brand new product!
               </span>
             </p>
-          </div>
-          <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
             <Link href="#">
-              <span className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-indigo-600 shadow-sm hover:bg-indigo-50">
-                Learn more
+              <span className="text-sm font-medium text-white underline underline-offset-2 hover:decoration-2 md:text-base">
+                Read More.
               </span>
             </Link>
           </div>
-          <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+          <div className="order-2 flex flex-shrink-0 items-center sm:order-3 sm:ml-3">
             <button
               type="button"
-              className="-mr-1 flex rounded-md p-2 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
+              className="font-medium text-white underline underline-offset-2 hover:decoration-2 "
               onClick={hideAnnouncement}
             >
-              <span className="sr-only">Dismiss</span>
-              <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+              <span className="hidden text-sm md:inline md:text-base ">
+                Dismiss
+              </span>
+              <XMarkIcon
+                className="h-6 w-6 text-white md:hidden"
+                aria-hidden="true"
+              />
             </button>
           </div>
         </div>
