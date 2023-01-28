@@ -38,7 +38,7 @@ Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis ege
 
 - [স্বাগতম](/courses/)
 
-### সহজ সমস্যাঃ
+### সহজ সমস্যা
 
 - [দুটি স্ট্রিং এর তুলনা, ধনাত্মক সংখ্যা, ঋণাত্মক সংখ্যা এবং বিজোড় বা জোড় সমস্যা](/courses/)
 - [মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর](/courses/)
@@ -52,7 +52,7 @@ Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis ege
 - [সাজানো অ্যারে মার্জ করুন](/courses/)
 - [n x n বক্স প্রিন্ট করুন](/courses/)
 
-### মধ্যম কঠিন সমস্যাঃ
+### মধ্যম কঠিন সমস্যা
 
 - [অঙ্কের যোগফল](/courses/)
 - [অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান](/courses/)
@@ -65,7 +65,7 @@ Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis ege
 - [একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা](/courses/)
 - [ফিবোনাচি সিরিজ](/courses/)
 
-### কঠিন সমস্যাঃ
+### কঠিন সমস্যা
 
 - [প্যালিনড্রোম নম্বর](/courses/)
 - [একটি সংখ্যার গুণনীয়ক](/courses/)
