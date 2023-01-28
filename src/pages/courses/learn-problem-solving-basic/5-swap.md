@@ -14,7 +14,7 @@ description: Learn to determine uniqueness of all characters in a string.
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
-নে কর, তোমার কাছে তোমার প্রিয় রঙের লাল বাক্স এবং তোমার বন্ধুর কাছে একটি নীল বাক্স আছে। তোমার বাক্সে আপেল এবং তোমার বন্ধুর বাক্সে চকলেট আছে। এখন তোমরা বাক্স পরিবর্তন না করে আপেল এবং চকলেটের অদর বদল করতে চাও। তাহলে তোমরা কিভাবে তোমাদের প্রিয় রঙের বাক্স পরিবর্তন না করে তোমার লাল বাক্সে চকলেট তোমার বন্ধুর নীল বাক্সে আপেল নিতে পারো?
+মনে কর, তোমার কাছে তোমার প্রিয় রঙের লাল বাক্স এবং তোমার বন্ধুর কাছে একটি নীল বাক্স আছে। তোমার বাক্সে আপেল এবং তোমার বন্ধুর বাক্সে চকলেট আছে। এখন তোমরা বাক্স পরিবর্তন না করে আপেল এবং চকলেটের অদর বদল করতে চাও। তাহলে তোমরা কিভাবে তোমাদের প্রিয় রঙের বাক্স পরিবর্তন না করে তোমার লাল বাক্সে চকলেট তোমার বন্ধুর নীল বাক্সে আপেল নিতে পারো?
 
 উপরের ঘটনা এবং আমাদের প্রোগ্রামিং সমস্যা মধ্যে বেশ মিল রয়েছে। যদি আমরা তোমার যে লাল বাক্সকে x ভেরিয়েবল এবং তোমার বন্ধুর নীল বাক্সকে y ভেরিয়েবল হিসাবে চিন্তা করি। তাহলে আপেল x ভেরিয়েবলের মান 10 এবং চকলেট y ভেরিয়েবলের মান 20 হিসেবে চিন্তা করতে হবে। আমাদের এমন একটি প্রোগ্রাম লিখতে হবে যেখানে x ভেরিয়েবলের মান y ভ্যারিয়েবলার মানের সমান এবং y ভেরিয়েবল এর মান x ভ্যারিয়েবলার মানের সমান। আমাদের প্রোগ্রাম শেষে আউটপুট হিসেবে x = 20 এবং y = 10 পাব।
 
@@ -45,7 +45,7 @@ swap(10, 20);
 
 {% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
-## সমাধান (১)
+## সমাধান (1)
 
 এখন একটু চিন্তা করি আমরা, তোমার এবং তোমার বন্ধুর দুজনের বাক্স পরিপূর্ণ। তাই তোমরা আপেল এবং চকলেটের অদল বদল করতে পারছ না।
 
@@ -58,166 +58,82 @@ swap(10, 20);
 - y এর মান x এ রাখবো
 - temp মান y এ রাখবো
 
-![My animated logo]("problem-solving-img/5-swap-1.png")
+![sp1](./problem-solving-img/5-swap-2.png)
+
+এখন আমরাই ধাপগুলো প্রোগ্রামিং এ করার চেষ্টা করব,
 
 ```js
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.lastIndexOf(str[i]) !== i) {
-      return false;
-    }
-  }
+function swap(x, y) {
+  var temp = x;
+  x = y;
+  y = temp;
 
-  return true;
+  console.log('x= ' + x + ' y= ' + y);
 }
+
+swap(10, 20);
 ```
 
-### How it Works (1)
+এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
 
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
+{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+### টাইম কমপ্লেক্সিটি (1)
 
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus. At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
-
-### Time Complexity (1)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in.
-
-Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus:
-
-> O(n^2)
-
-### Space Complexity (1)
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet:
+একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Consectetur adipiscing elit.
-
----
-
-## Solution (2)
-
-Here’s the brute-force, simplest solution.
-
-```js
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.lastIndexOf(str[i]) !== i) {
-      return false;
-    }
-  }
-
-  return true;
-}
-```
-
-### How it Works (2)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus. At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
-
-### Time Complexity (2)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in.
-
-Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus:
-
-> O(n^2)
-
-### Space Complexity (2)
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet:
+### স্পেস কমপ্লেক্সিটি (1)
 
 > O(1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Consectetur adipiscing elit.
-
 ---
 
-## Solution (3)
+## সমাধান (2)
 
-Here’s the brute-force, simplest solution.
+এবার আমরা অংকের মাধ্যমে এই প্রোগ্রামিং সমস্যাটি সমাধানের চেষ্টা করব। এখানে আমরা তৃতীয় কোন ভেরিয়েবল নেব না। চলো চিন্তা করি, এই প্রোগ্রামিং সমস্যার সমাধান কিভাবে করা যায়।
+
+এই সমস্যা সমাধানের ধাপ গুলো দেখি,
+
+- প্রথমে x এর মান হিসেবে x এবং y যোগ করি
+
+  আমরা জানি, আমাদের ইনপুট x = 10, y = 20। এখন, x = x+y = 10+20 = 30
+
+- y এর মান হিসাবে x এর মান থেকে y এর মান বিয়োগ করি
+
+  `y = x-y = 30 - 20 = 10`
+
+  এখন, y এর মান ১০। যদি আমদের ইনপুটের দিকে লক্ষ্য করি, x এর মান ছিল ১০ । আমরা y এর মান পরিবর্তন করতে সক্ষম হয়েছি।
+
+- x এর মান হিসাবে x এর মান থেকে y এর মান বিয়োগ করি
+
+  `x = x-y = 30 - 10 = 20`
+
+  ![sp2](problem-solving-img/5-swap-1.png)
+
+এখন যদি আমরা এই ধাপগুলোকে কোডে পরিবর্তন করি,
 
 ```js
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.lastIndexOf(str[i]) !== i) {
-      return false;
-    }
-  }
+function swap(x, y) {
+  x = x + y;
+  y = x - y;
+  x = x - y;
 
-  return true;
+  console.log('x= ' + x + ' y= ' + y);
 }
+
+swap(10, 20);
 ```
 
-### How it Works (3)
+### টাইম কমপ্লেক্সিটি (2)
 
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus. At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
-
-### Time Complexity (3)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in.
-
-Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus:
-
-> O(n^2)
-
-### Space Complexity (3)
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet:
+একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### স্পেস কমপ্লেক্সিটি (2)
 
-Consectetur adipiscing elit.
+> O(1)
 
 ---
-
-## Conclusion
-
-### Brute Force Solutions
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam.
-
-Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet.
-
-### Ideal Solutions
-
-Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis.
-
-Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in.
-
-### Extending our Code
-
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque.
-
-Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis.
-
-### Takeaways
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.

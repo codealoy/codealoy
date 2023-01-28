@@ -1,214 +1,156 @@
 ---
-pageTitle: Is Unique - Learn Problem Solving with JavaScript - Basic
-title: Is Unique
+pageTitle: দুটি স্ট্রিং এর  তুলনা - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
+title: দুটি স্ট্রিং এর তুলনা, ধনাত্মক সংখ্যা, ঋণাত্মক সংখ্যা এবং বিজোড় বা জোড় সমস্যা
 description: Learn to determine uniqueness of all characters in a string.
 ---
 
-{% $markdoc.frontmatter.description %} {% .lead %}
+## প্রোগ্রামিং সমস্যা (1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum.
+### দুটি স্ট্রিং এর তুলনা
 
-{% Callout title="Did you know?" type="warning" %}
-This is a full-featured boilerplate for a creating a documentation website using Markdoc and Next.js.
-{% /Callout %}
+দুটি স্ট্রিং দেওয়া, দুটি স্ট্রিং সমান কিনা তা কীভাবে পরীক্ষা করবেন?
 
-## Instructions
+**ইনপুট**: cake cake
 
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis.
+**আউটপুট**: Yes
 
-**Input**: String
+**ইনপুট**: god dog
 
-**Output**: Boolean
+**আউটপুট**: No
 
-## Inline code
+## সমস্যার বিস্তারিত ব্যাখ্যা (1)
 
-- `const a = 10;`
-- `const a = 10;`
-- `const a = 10;`
-- `const a = 10;`
-- `const a = 10;`
-
-## Examples
-
-```js
-isUnique('abcdef'); // -> true
-isUnique('89%df#$^a&x'); // -> true
-isUnique('abcAdef'); // -> true
-isUnique('abcaef'); // -> false
-```
-
-Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis.
-
-```js
-function isUnique(str) {
-  // Your code here
-}
-```
+আমদের ইনপুট হিসাবে দুটি স্ট্রিং দেওয়া থাকবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা দুটি স্ট্রিং একই হলে Yes রিটার্ন করবে এবং একই না হলে No রিটার্ন করবে।
 
 {% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
-## Solution (1)
-
-Here’s the brute-force, simplest solution.
+## সমাধান (1)
 
 ```js
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.lastIndexOf(str[i]) !== i) {
-      return false;
-    }
+function compareStrings(s1, s2) {
+  if (s1 == s2) {
+    return 'Yes';
   }
 
-  return true;
+  return 'No';
 }
 ```
 
-### How it Works (1)
+এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
 
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
+{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+### টাইম কমপ্লেক্সিটি (1)
 
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus. At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
-
-### Time Complexity (1)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in.
-
-Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus:
-
-> O(n^2)
-
-### Space Complexity (1)
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet:
+একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### স্পেস কমপ্লেক্সিটি (1)
 
-Consectetur adipiscing elit.
+> O(1)
 
 ---
 
-## Solution (2)
+---
 
-Here’s the brute-force, simplest solution.
+## প্রোগ্রামিং সমস্যা (2)
+
+### ধনাত্মক সংখ্যা, ঋণাত্মক সংখ্যা
+
+A সংখ্যাটি দেওয়া হয়েছে। এখন A ধনাত্মক, ঋণাত্মক বা শূন্য কিনা তা পরীক্ষা করতে হবে।
+
+**ইনপুট**: 0
+
+**আউটপুট**: Neither positive nor negative
+
+**ইনপুট**: -3
+
+**আউটপুট**: Negative
+
+## সমস্যার বিস্তারিত ব্যাখ্যা (2)
+
+আমদের ইনপুট হিসাবে num একটি নাম্বার দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে num ধনাত্মক, ঋণাত্মক বা শূন্য কিনা।
+
+## সমাধান (২)
 
 ```js
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.lastIndexOf(str[i]) !== i) {
-      return false;
-    }
+function checkNumber(num) {
+  if (num > 0) {
+    return 'positive';
+  } else if (num === 0) {
+    return 'Neither positive nor negative';
+  } else {
+    return 'negative';
   }
-
-  return true;
 }
 ```
 
-### How it Works (2)
+এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
 
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
+{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+### টাইম কমপ্লেক্সিটি (2)
 
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus. At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
-
-### Time Complexity (2)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in.
-
-Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus:
-
-> O(n^2)
-
-### Space Complexity (2)
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet:
+একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### স্পেস কমপ্লেক্সিটি (2)
 
-Consectetur adipiscing elit.
+> O(1)
 
 ---
 
-## Solution (3)
+---
 
-Here’s the brute-force, simplest solution.
+## প্রোগ্রামিং সমস্যা (3)
+
+### বিজোড় বা জোড় সমস্যা
+
+প্রদত্ত সংখ্যাটি বিজোড় বা জোড় কিনা তা পরীক্ষা করুন
+
+**ইনপুট**: 4
+
+**আউটপুট**: Even
+
+**ইনপুট**: 1
+
+**আউটপুট**: Odd
+
+## সমস্যার বিস্তারিত ব্যাখ্যা (3)
+
+আমদের ইনপুট হিসাবে num একটি নাম্বার দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে num জোড় না বিজোড়।
+
+## সমাধান (3)
 
 ```js
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.lastIndexOf(str[i]) !== i) {
-      return false;
-    }
+function checkOddEven(num) {
+  if (num % 2 == 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
   }
-
-  return true;
 }
 ```
 
-### How it Works (3)
+```js
+function checkOddEven(num) {
+  const result = number % 2 == 0 ? 'even' : 'odd';
+  return result;
+}
+```
 
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
+এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
 
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus. At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
+### টাইম কমপ্লেক্সিটি (3)
 
-### Time Complexity (3)
-
-Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in.
-
-Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus:
-
-> O(n^2)
-
-### Space Complexity (3)
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet:
+একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### স্পেস কমপ্লেক্সিটি (3)
 
-Consectetur adipiscing elit.
-
----
-
-## Conclusion
-
-### Brute Force Solutions
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam.
-
-Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
-
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet.
-
-### Ideal Solutions
-
-Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis.
-
-Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in.
-
-### Extending our Code
-
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque.
-
-Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis.
-
-### Takeaways
-
-Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-
-Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+> O(1)

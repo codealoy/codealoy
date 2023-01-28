@@ -183,7 +183,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                   id="on-this-page-title"
                   className="font-display text-sm font-medium text-slate-900 dark:text-white"
                 >
-                  On this page
+                  এই পৃষ্ঠায়
                 </h2>
                 <ul className="mt-4 space-y-3 text-sm">
                   {tableOfContents.map((section: any) => (
