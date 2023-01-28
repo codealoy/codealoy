@@ -3,103 +3,137 @@ export const LEARN_PROBLEM_SOLVING_BASIC_BASE_URL =
 
 export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
   {
-    title: 'Start Learning',
+    title: 'শেখা শুরু করুন',
     links: [
       {
-        title: 'Overview',
+        title: 'সংক্ষিপ্ত বিবরণ',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}`,
       },
     ],
   },
   {
-    title: 'Introduction',
+    title: 'ভূমিকা',
     links: [
       {
-        title: 'Welcome',
+        title: 'স্বাগতম',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/1-welcome`,
       },
     ],
   },
   {
-    title: 'Strings & Arrays',
+    title: 'সহজ সমস্যা',
     links: [
       {
-        title: 'Is Unique',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/2-is-unique`,
+        title:
+          'দুটি স্ট্রিং এর তুলনা, ধনাত্মক সংখ্যা, ঋণাত্মক সংখ্যা এবং বিজোড় বা জোড় সমস্যা',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/2-twoString`,
       },
       {
-        title: 'Flatten Array',
+        title:
+          'মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-c`,
       },
       {
-        title: 'Remove Dupes',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-d`,
+        title: 'দুটি সংখ্যা অদলবদল',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/5-swap`,
       },
       {
-        title: 'Highest Frequency',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-e`,
+        title: 'একটি অ্যারেতে প্রথম উপাদানটি ফেরত',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/is-unique`,
       },
       {
-        title: 'String Rotation',
+        title: 'অ্যারের সংমিশ্রণ',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+      },
+      {
+        title: 'বিপরীত অ্যারে',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+      },
+      {
+        title: 'বিপরীত স্ট্রিং',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+      },
+      {
+        title: 'সংখ্যাগুলিকে সংখ্যায় ভাগ',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+      },
+      {
+        title: 'একটি সংখ্যা বিপরীত',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+      },
+      {
+        title: 'সাজানো অ্যারে মার্জ করুন',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+      },
+      {
+        title: 'n x n বক্স প্রিন্ট করুন',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
       },
     ],
   },
   {
-    title: 'Advanced Strings & Arrays',
+    title: 'মধ্যম কঠিন সমস্যা',
     links: [
       {
-        title: 'Array Subset',
+        title: 'অঙ্কের যোগফল',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-g`,
       },
       {
-        title: 'Maximum Profits',
+        title: 'অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-h`,
       },
       {
-        title: 'Single Mutation',
+        title: 'অ্যারেতে একটি উপাদানের অবস্থান',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-i`,
       },
       {
-        title: 'All Anagrams',
+        title: 'দুই সমষ্টি',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-j`,
       },
       {
-        title: 'Rotate Matrix',
+        title: 'সাজানো অ্যারে থেকে সদৃশ সরান',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-k`,
       },
       {
-        title: 'Rotate Matrix, Advanced',
+        title: 'একক সংখ্যা',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+      },
+      {
+        title: 'একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+      },
+      {
+        title: 'একটি সাজানো অ্যারের বর্গক্ষেত্র',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+      },
+      {
+        title: 'একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+      },
+      {
+        title: 'ফিবোনাচি সিরিজ',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
       },
     ],
   },
   {
-    title: 'JavaScript Mastery',
+    title: 'কঠিন সমস্যা',
     links: [
       {
-        title: 'Deep Equals',
+        title: 'প্যালিনড্রোম নম্বর',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-m`,
       },
       {
-        title: 'Memoized Fibonacci',
+        title: 'একটি সংখ্যার গুণনীয়ক',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-n`,
-      },
-      {
-        title: 'Function Bind',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-o`,
-      },
-      {
-        title: 'Versatile Add',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-p`,
       },
     ],
   },
   {
-    title: 'Conclusion',
+    title: 'উপসংহার',
     links: [
       {
-        title: 'Congratulations',
+        title: 'অভিনন্দন',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-q`,
       },
     ],

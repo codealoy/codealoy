@@ -12,13 +12,13 @@ illustrations: 10 Illustrations
 
 {% $markdoc.frontmatter.description %} {% .lead %}
 
-## Course Overview
+## কোর্স সংক্ষিপ্ত বিবরণ
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae.
 
 Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
 
-## How You'll Learn
+## আপনি কিভাবে শিখবেন
 
 {% LinkGrid %}
 
@@ -32,44 +32,44 @@ Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis ege
 
 {% /LinkGrid %}
 
-## Course Contents
+## কোর্সের বিষয়বস্তু
 
-### Introduction
+### ভূমিকা
 
-- [Welcome](/courses/)
+- [স্বাগতম](/courses/)
 
-### Strings & Arrays
+### সহজ সমস্যাঃ
 
-- [Is Unique](/courses/)
-- [Flatten Array](/courses/)
-- [Remove Dupes](/courses/)
-- [Highest Frequency](/courses/)
-- [String Rotation](/courses/)
+- [দুটি স্ট্রিং এর তুলনা, ধনাত্মক সংখ্যা, ঋণাত্মক সংখ্যা এবং বিজোড় বা জোড় সমস্যা](/courses/)
+- [মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর](/courses/)
+- [দুটি সংখ্যা অদলবদল](/courses/)
+- [একটি অ্যারেতে প্রথম উপাদানটি ফেরত](/courses/)
+- [অ্যারের সংমিশ্রণ](/courses/)
+- [বিপরীত অ্যারে](/courses/)
+- [বিপরীত স্ট্রিং](/courses/)
+- [সংখ্যাগুলিকে সংখ্যায় ভাগ](/courses/)
+- [একটি সংখ্যা বিপরীত](/courses/)
+- [সাজানো অ্যারে মার্জ করুন](/courses/)
+- [n x n বক্স প্রিন্ট করুন](/courses/)
 
-### Advanced Strings & Arrays
+### মধ্যম কঠিন সমস্যাঃ
 
-- [Array Subset](/courses/)
-- [Maximum Profits](/courses/)
-- [Single Mutation](/courses/)
-- [All Anagrams](/courses/)
-- [Rotate Matrix](/courses/)
-- [Rotate Matrix, Advanced](/courses/)
+- [অঙ্কের যোগফল](/courses/)
+- [অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান](/courses/)
+- [অ্যারেতে একটি উপাদানের অবস্থান](/courses/)
+- [দুই সমষ্টি](/courses/)
+- [সাজানো অ্যারে থেকে সদৃশ সরান](/courses/)
+- [একক সংখ্যা](/courses/)
+- [একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান](/courses/)
+- [একটি সাজানো অ্যারের বর্গক্ষেত্র](/courses/)
+- [একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা](/courses/)
+- [ফিবোনাচি সিরিজ](/courses/)
 
-### Algorithms & Data Structures
+### কঠিন সমস্যাঃ
 
-- [Sorted Search](/courses/)
-- [Balanced Brackets](/courses/)
-- [Creating a Queue with O(1) Operations](/courses/)
-- [Creating a Queue with Limited Data Structures](/courses/)
-- [Linked List Cycles](/courses/)
+- [প্যালিনড্রোম নম্বর](/courses/)
+- [একটি সংখ্যার গুণনীয়ক](/courses/)
 
-### JavaScript Mastery
+### উপসংহার
 
-- [Deep Equals](/courses/)
-- [Memoized Fibonacci](/courses/)
-- [Function Bind](/courses/)
-- [Versatile Add](/courses/)
-
-### Conclusion
-
-- [Congratulations](/courses/)
+- [অভিনন্দন](/courses/)
