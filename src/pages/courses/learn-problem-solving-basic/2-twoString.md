@@ -22,8 +22,6 @@ description: Learn to determine uniqueness of all characters in a string.
 
 আমদের ইনপুট হিসাবে দুটি স্ট্রিং দেওয়া থাকবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা দুটি স্ট্রিং একই হলে Yes রিটার্ন করবে এবং একই না হলে No রিটার্ন করবে।
 
-{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
-
 ## সমাধান (1)
 
 ```js
@@ -35,10 +33,6 @@ function compareStrings(s1, s2) {
   return 'No';
 }
 ```
-
-এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
-
-{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
 ### টাইম কমপ্লেক্সিটি (1)
 
@@ -70,7 +64,7 @@ A সংখ্যাটি দেওয়া হয়েছে। এখন A 
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা (2)
 
-আমদের ইনপুট হিসাবে num একটি নাম্বার দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে num ধনাত্মক, ঋণাত্মক বা শূন্য কিনা।
+আমদের ইনপুট হিসাবে `num` একটি নাম্বার দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে num ধনাত্মক, ঋণাত্মক বা শূন্য কিনা।
 
 ## সমাধান (২)
 
@@ -85,10 +79,6 @@ function checkNumber(num) {
   }
 }
 ```
-
-এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
-
-{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
 ### টাইম কমপ্লেক্সিটি (2)
 
@@ -120,7 +110,7 @@ function checkNumber(num) {
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা (3)
 
-আমদের ইনপুট হিসাবে num একটি নাম্বার দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে num জোড় না বিজোড়।
+আমদের ইনপুট হিসাবে `num` একটি নাম্বার দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে `num` জোড় না বিজোড়।
 
 ## সমাধান (3)
 
@@ -140,10 +130,6 @@ function checkOddEven(num) {
   return result;
 }
 ```
-
-এখানে কোডটি রান করে নিজেও অউটপুট দেখতে পারবে।
-
-{% CodeEditor template="test-runner-js" boilerplateCategory="course"  boilerplate="learn-problem-solving-basic:2-is-unique" /%}
 
 ### টাইম কমপ্লেক্সিটি (3)
 
