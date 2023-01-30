@@ -30,16 +30,12 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title:
-          'মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-c`,
+          'মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর, একটি অ্যারেতে প্রথম উপাদানটি ফেরত',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/3-convertMinToSec`,
       },
       {
         title: 'দুটি সংখ্যা অদলবদল',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/5-swap`,
-      },
-      {
-        title: 'একটি অ্যারেতে প্রথম উপাদানটি ফেরত',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/is-unique`,
       },
       {
         title: 'অ্যারের সংমিশ্রণ',
