@@ -39,7 +39,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'অ্যারের সংমিশ্রণ',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/4-mixArray`,
       },
       {
         title: 'বিপরীত অ্যারে',
