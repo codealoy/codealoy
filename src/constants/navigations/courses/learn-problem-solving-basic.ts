@@ -43,11 +43,11 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'বিপরীত অ্যারে',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/6-reverseArray`,
       },
       {
         title: 'বিপরীত স্ট্রিং',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/7-reverseString`,
       },
       {
         title: 'সংখ্যাগুলিকে সংখ্যায় ভাগ',
