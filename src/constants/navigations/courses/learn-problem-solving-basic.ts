@@ -51,7 +51,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'সংখ্যাগুলিকে সংখ্যায় ভাগ',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/8-splitIntoArray`,
       },
       {
         title: 'একটি সংখ্যা বিপরীত',
