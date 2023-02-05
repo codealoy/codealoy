@@ -55,11 +55,11 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'একটি সংখ্যা বিপরীত',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/9-reverseNumber`,
       },
       {
         title: 'সাজানো অ্যারে মার্জ করুন',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/10-mergeArray`,
       },
       {
         title: 'n x n বক্স প্রিন্ট করুন',
@@ -72,23 +72,23 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
     links: [
       {
         title: 'অঙ্কের যোগফল',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-g`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/11-sumDigit`,
       },
       {
         title: 'অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-h`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/13-minMaxValueArray`,
       },
       {
         title: 'অ্যারেতে একটি উপাদানের অবস্থান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-i`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/14-findElement`,
       },
       {
         title: 'দুই সমষ্টি',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-j`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/15-twoSum`,
       },
       {
         title: 'সাজানো অ্যারে থেকে সদৃশ সরান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-k`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/16-deleteElement`,
       },
       {
         title: 'একক সংখ্যা',
