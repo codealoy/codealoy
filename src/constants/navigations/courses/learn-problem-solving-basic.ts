@@ -63,7 +63,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'n x n বক্স প্রিন্ট করুন',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-f`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/23-pattern`,
       },
     ],
   },
@@ -92,23 +92,23 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'একক সংখ্যা',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/17-singleNumber`,
       },
       {
         title: 'একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/18-largeUnique`,
       },
       {
         title: 'একটি সাজানো অ্যারের বর্গক্ষেত্র',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/19-squaresArray`,
       },
       {
         title: 'একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/20-countVowel`,
       },
       {
         title: 'ফিবোনাচি সিরিজ',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-l`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/12-fibonacci`,
       },
     ],
   },
@@ -117,11 +117,11 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
     links: [
       {
         title: 'প্যালিনড্রোম নম্বর',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-m`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/21-palindrome`,
       },
       {
         title: 'একটি সংখ্যার গুণনীয়ক',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-n`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/22-factorNumber`,
       },
     ],
   },

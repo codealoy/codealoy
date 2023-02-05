@@ -56,27 +56,49 @@ var singleNumber = function (nums) {
 ## সমাধান (2)
 
 ```js
-const findElement = (nums, target) => {
-  let lo = 0,
-    hi = nums.length;
-  while (lo < hi) {
-    let mid = lo + Math.floor((hi - lo) / 2);
-    if (target > nums[mid]) {
-      lo = mid + 1;
-    } else {
-      hi = mid;
+function singleNumber(nums: number[]): number {
+  if (nums.length === 1) return nums[0];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
+      return nums[i];
     }
   }
-  return lo;
-};
+  return null;
+}
 ```
 
 ### টাইম কমপ্লেক্সিটি (2)
 
-> O(log n)
+> O(n)
 
 ### স্পেস কমপ্লেক্সিটি (2)
 
 > O(1)
 
 ---
+
+# সমাধান (3)
+
+```js
+var singleNumber = function (nums) {
+  const hashMap = new Map();
+
+  nums.forEach((value) => {
+    if (hashMap.has(value)) hashMap.set(value, hashMap.get(value) + 1);
+    else hashMap.set(value, 1);
+  });
+
+  for (let [key, value] of hashMap) {
+    if (value === 1) return key;
+  }
+};
+```
+
+### টাইম কমপ্লেক্সিটি (3)
+
+> O(n)
+
+### স্পেস কমপ্লেক্সিটি (3)
+
+> O(1)
