@@ -24,8 +24,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
     title: 'সহজ সমস্যা',
     links: [
       {
-        title:
-          'দুটি স্ট্রিং এর তুলনা, ধনাত্মক সংখ্যা, ঋণাত্মক সংখ্যা এবং বিজোড় বা জোড় সমস্যা',
+        title: 'দুটি শব্দের তুলনা, ধনাত্মক, ঋণাত্মক, জোড়, বিজোড় সংখা নির্নয়',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/2-twoString`,
       },
       {
