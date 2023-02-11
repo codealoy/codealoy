@@ -1,12 +1,12 @@
 ---
 pageTitle: একটি সংখ্যা বিপরীত - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
-title: একটি সংখ্যা বিপরীত
+title: একটি সংখ্যাকে বিপরীত করতে হবে
 description: Learn to determine uniqueness of all characters in a string.
 ---
 
 ## প্রোগ্রামিং সমস্যা
 
-আমাদের একটি সংখ্যা দেওয়া হবে। আমদের কাজ হল 'সংখ্যা' এর বিপরীত খুঁজে বের করা।
+আমাদের একটি সংখ্যা দেওয়া হবে। আমদের কাজ হল 'সংখ্যা' এর বিপরীত সংখ্যাতটি বের করা।
 
 **ইনপুট**: `451`
 
@@ -19,6 +19,8 @@ description: Learn to determine uniqueness of all characters in a string.
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
 আমদের ইনপুট হিসাবে একটি সংখ্যা দেওয়া হবে। এই সংখ্যাটিকে উল্টোদিক থেকে প্রিন্ট করতে হবে। এখন যদি আমরা ইনপুট হিসাবে `451` নেয়। তাহলে অউটপুট হবে `154`।
+
+- ইনপুট সংখ্যাটিকে বিপরীত দিক থেকে প্রিন্ট করাতে হবে।
 
 ## সমাধান (1)
 
@@ -45,9 +47,10 @@ function reverseNumber(number) {
 ## সমাধান (2)
 
 ```js
-function reverseNumber(num) {
+function reverseNumber(number) {
   return (
-    parseFloat(num.toString().split('').reverse().join('')) * Math.sign(num)
+    parseFloat(number.toString().split('').reverse().join('')) *
+    Math.sign(number)
   );
 }
 ```

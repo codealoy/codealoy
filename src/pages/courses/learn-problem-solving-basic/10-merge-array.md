@@ -1,6 +1,6 @@
 ---
-pageTitle: সাজানো অ্যারে মার্জ করুন - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
-title: সাজানো অ্যারে মার্জ করুন
+pageTitle: সাজানো অ্যারে মার্জ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
+title: সাজানো অ্যারে মার্জ করতে হবে
 description: Learn to determine uniqueness of all characters in a string.
 ---
 
@@ -18,7 +18,9 @@ description: Learn to determine uniqueness of all characters in a string.
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
-আমদের ইনপুট হিসাবে একটি সংখ্যা দেওয়া হবে। এই সংখ্যাটিকে উল্টোদিক থেকে প্রিন্ট করতে হবে। এখন যদি আমরা ইনপুট হিসাবে `451` নেয়। তাহলে অউটপুট হবে `154`।
+আমদের ইনপুট হিসাবে দুইটি অ্যারে দেওয়া হয়েছে।
+
+- এই প্রোগ্রামের অউটপুট হবে ইনপুট দুইটি অ্যারে সকল উপাদান (elements) নিয়ে ক্রম আনুসারে সাজানো একটি নতুন অ্যারে।
 
 ## সমাধান (1)
 
@@ -63,18 +65,18 @@ const mergeSortedArrays = (arr1, arr2) => {
 ## সমাধান (2)
 
 ```js
-function mergeSortedArray(a, b) {
+function mergeSortedArray(array1, array2) {
   var tempArray = [];
-  while (a.length || b.length) {
-    if (typeof a[0] === 'undefined') {
+  while (array1.length || array2.length) {
+    if (typeof array1[0] === 'undefined') {
       tempArray.push(b[0]);
-      b.splice(0, 1);
-    } else if (a[0] > b[0]) {
-      tempArray.push(b[0]);
-      b.splice(0, 1);
+      array2.splice(0, 1);
+    } else if (array1[0] > array2[0]) {
+      tempArray.push(array2[0]);
+      array2.splice(0, 1);
     } else {
-      tempArray.push(a[0]);
-      a.splice(0, 1);
+      tempArray.push(array1[0]);
+      array1.splice(0, 1);
     }
   }
   return tempArray;
@@ -94,8 +96,8 @@ function mergeSortedArray(a, b) {
 ## সমাধান (3)
 
 ```js
-function mergeSortedArray(a, b) {
-  let newArray = [...a, ...b].sort();
+function mergeSortedArray(array1, array2) {
+  let newArray = [...array1, ...array2].sort();
   return newArray;
 }
 ```

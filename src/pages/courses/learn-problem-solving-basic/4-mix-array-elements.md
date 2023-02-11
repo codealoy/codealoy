@@ -18,13 +18,15 @@ N উপাদানগুলির একটি অ্যারে দেওয
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
-আমদের ইনপুট হিসাবে একটি অ্যারে (array) দেওয়া হবে। ওই অ্যারের সব উপাদান গুলোকে অনুলিপি (copy) করে অ্যারে ভেতর রাখতে হবে। এখন যদি আমরা ইনপুট হিসাবে [1,3,2,1] অ্যারে নেয়। তাহলে অউতপুট হবে [1,3,2,1,1,3,2,1]।
+আমদের ইনপুট হিসাবে একটি অ্যারে (array) দেওয়া হবে। ওই অ্যারের সব উপাদান গুলোকে অনুলিপি (copy) করে অ্যারে ভেতর রাখতে হবে। এখন যদি আমরা ইনপুট হিসাবে [1,3,2,1] অ্যারে নেয়। তাহলে অউটপুট হবে [1,3,2,1,1,3,2,1]।
+
+- এই প্রোগ্রাম একটি অ্যারের প্রতিটি উপাদানকে (element) কে ক্রম আনুসারে কপি করে ঐ অ্যারের মধ্যে নিয়ে (push) নতুন একটি অ্যারে রিটার্ন করবে।
 
 ## সমাধান (1)
 
 ```js
-function getConcatenation(nums) {
-  let ans = [...nums, ...nums];
+function getConcatenation(array) {
+  let ans = [...array, ...array];
   return ans;
 }
 ```
@@ -42,11 +44,11 @@ function getConcatenation(nums) {
 ## সমাধান (2)
 
 ```js
-let getConcatenation = function (nums) {
+let getConcatenation = function (array) {
   const result = [];
-  for (let i = 0; i < nums.length; i++) {
-    result[i] = nums[i];
-    result[i + nums.length] = nums[i];
+  for (let i = 0; i < array.length; i++) {
+    result[i] = array[i];
+    result[i + array.length] = array[i];
   }
   return result;
 };

@@ -25,12 +25,12 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
     links: [
       {
         title: 'দুটি শব্দের তুলনা, ধনাত্মক, ঋণাত্মক, জোড়, বিজোড় সংখা নির্নয়',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/2-twoString`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/2-two-string`,
       },
       {
         title:
           'মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর, একটি অ্যারেতে প্রথম উপাদানটি ফেরত',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/3-convertMinToSec`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/3-convert-min-sec`,
       },
       {
         title: 'দুটি সংখ্যা অদলবদল',
@@ -38,27 +38,27 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'অ্যারের সংমিশ্রণ',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/4-mixArray`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/4-mix-array-elements`,
       },
       {
         title: 'বিপরীত অ্যারে',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/6-reverseArray`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/6-reverse-array`,
       },
       {
         title: 'বিপরীত স্ট্রিং',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/7-reverseString`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/7-reverse-string`,
       },
       {
         title: 'সংখ্যাগুলিকে সংখ্যায় ভাগ',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/8-splitIntoArray`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/8-split-digit`,
       },
       {
         title: 'একটি সংখ্যা বিপরীত',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/9-reverseNumber`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/9-reverse-number`,
       },
       {
         title: 'সাজানো অ্যারে মার্জ করুন',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/10-mergeArray`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/10-merge-array`,
       },
       {
         title: 'n x n বক্স প্রিন্ট করুন',

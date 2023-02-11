@@ -20,11 +20,13 @@ description: Learn to determine uniqueness of all characters in a string.
 
 আমদের ইনপুট হিসাবে একটি স্ট্রিং (string) দেওয়া হবে। ওই স্ট্রিংকে বিপরীত দিক থেকে প্রিন্ট করতে হবে। এখন যদি আমরা ইনপুট হিসাবে `flipkart` নেয়। তাহলে অউটপুট হবে `trakpilf`।
 
+- এই প্রোগ্রামের আউটপুট হবে ইনপুট স্ট্রিং এর বিপরীত স্ট্রিং
+
 ## সমাধান (1)
 
 ```js
-function reverseString(str) {
-  return str.split('').reverse().join('');
+function reverseString(string) {
+  return string.split('').reverse().join('');
 }
 reverseString('hello');
 ```

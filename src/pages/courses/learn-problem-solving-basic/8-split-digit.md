@@ -1,6 +1,6 @@
 ---
-pageTitle: সংখ্যাগুলিকে সংখ্যায় ভাগ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
-title: সংখ্যাগুলিকে সংখ্যায় ভাগ
+pageTitle: সংখ্যাগুলিকে পৃথক সংখ্যায় ভাগ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
+title: সংখ্যাগুলিকে পৃথক সংখ্যায় ভাগ করতে হবে
 description: Learn to determine uniqueness of all characters in a string.
 ---
 
@@ -20,13 +20,15 @@ description: Learn to determine uniqueness of all characters in a string.
 
 আমদের ইনপুট হিসাবে একটি সংখ্যা দেওয়া হবে। ওই সংখ্যাকে আলাদা করে প্রিন্ট করতে হবে। এখন যদি আমরা ইনপুট হিসাবে `12` নেয়। তাহলে অউটপুট হবে `1 2`।
 
+- ইনপুট দুইটি ডিজিটের একটি সংখ্যা হবে এবং প্রোগ্রামের অউটপুট হবে আলাদা দুইটি ডিজিট।
+
 ## সমাধান (1)
 
 ```js
-function splitIntoArray(str) {
+function splitIntoArray(string) {
   const arr = String(number)
     .split('')
-    .map((str) => Number(str));
+    .map((string) => Number(string));
   return arr;
 }
 ```
