@@ -1,7 +1,7 @@
 ---
 pageTitle: সাজানো অ্যারে মার্জ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: সাজানো অ্যারে মার্জ করতে হবে
-description: Learn to determine uniqueness of all characters in a string.
+description: আমাদের দুটি সাজানো অ্যারে দেওয়া হয়েছে, আমদের এই দুইটি অ্যারেকে একত্রিত করতে হবে।
 ---
 
 ## প্রোগ্রামিং সমস্যা

@@ -1,7 +1,7 @@
 ---
 pageTitle: বিপরীত স্ট্রিং - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
-title: বিপরীত স্ট্রিং
-description: Learn to determine uniqueness of all characters in a string.
+title: একটি স্ট্রিং বিপরীত স্ট্রিং এ রূপান্তর
+description: আমদের একটি স্ট্রিং (string) দেওয়া হবে। আমদের কাজ হল স্ট্রিংকে বিপরীত করা এবং এটি মুদ্রণ করা।
 ---
 
 ## প্রোগ্রামিং সমস্যা

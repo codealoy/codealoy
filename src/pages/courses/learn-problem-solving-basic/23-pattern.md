@@ -1,7 +1,7 @@
 ---
 pageTitle: n x n বক্স প্রিন্ট - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: n x n বক্স প্রিন্ট
-description: Learn to determine uniqueness of all characters in a string.
+description: আমদের ইনপুট হিসাবে একটি \* এর প্যাটান দেওয়া থাকবে।n x n বক্স প্রিন্ট
 ---
 
 ## প্রোগ্রামিং সমস্যা

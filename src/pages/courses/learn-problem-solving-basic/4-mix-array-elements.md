@@ -1,7 +1,7 @@
 ---
 pageTitle: অ্যারের সংমিশ্রণ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: অ্যারের সংমিশ্রণ
-description: Learn to determine uniqueness of all characters in a string.
+description: আমদের ইনপুট হিসাবে একটি অ্যারে (array) দেওয়া হবে। ওই অ্যারের সব উপাদান গুলোকে অনুলিপি (copy) করে অ্যারে ভেতর রাখতে হবে।
 ---
 
 ## প্রোগ্রামিং সমস্যা

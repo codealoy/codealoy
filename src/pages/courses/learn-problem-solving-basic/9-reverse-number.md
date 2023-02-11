@@ -1,7 +1,7 @@
 ---
 pageTitle: একটি সংখ্যা বিপরীত - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: একটি সংখ্যাকে বিপরীত করতে হবে
-description: Learn to determine uniqueness of all characters in a string.
+description: আমাদের একটি সংখ্যা দেওয়া হবে। আমদের কাজ হল 'সংখ্যা' এর বিপরীত সংখ্যাতটি বের করা।
 ---
 
 ## প্রোগ্রামিং সমস্যা

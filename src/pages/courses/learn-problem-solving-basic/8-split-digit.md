@@ -1,7 +1,7 @@
 ---
 pageTitle: সংখ্যাগুলিকে পৃথক সংখ্যায় ভাগ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: সংখ্যাগুলিকে পৃথক সংখ্যায় ভাগ করতে হবে
-description: Learn to determine uniqueness of all characters in a string.
+description: সংখ্যাগুলিকে পৃথক সংখ্যায় ভাগ করতে হবে
 ---
 
 ## প্রোগ্রামিং সমস্যা

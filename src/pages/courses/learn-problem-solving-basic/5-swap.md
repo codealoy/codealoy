@@ -1,7 +1,7 @@
 ---
 pageTitle: দুটি সংখ্যা অদলবদল - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: দুটি      সংখ্যা         অদলবদল
-description: Learn to determine uniqueness of all characters in a string.
+description: দুটি  সংখ্যা দেওয়া হয়েছে, প্রদত্ত সংখ্যাগুলি অদলবদল করার জন্য একটি প্রোগ্রাম লেখতে হবে।
 ---
 
 ## প্রোগ্রামিং সমস্যা
