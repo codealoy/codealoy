@@ -1,64 +1,44 @@
 ---
-pageTitle: Welcome - Learn Problem Solving with JavaScript - Basic
-title: Welcome
-description: Welcome to basic course to learn problem solving with javascript!
+pageTitle: স্বাগতম - Learn Problem Solving with JavaScript - Basic
+title: স্বাগতম
+description: প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি কোর্সে স্বাগতম
 ---
 
 {% $markdoc.frontmatter.description %} {% .lead %}
 
-## Goals
+## আমাদের উদ্দেশ্য
 
-This course focuses on teaching problem-solving strategies geared towards helping you expertly answer many software engineering interview questions.
+আমরা স্বপ্ন দেখি, বাংলা ভাষাভাষী লক্ষ্য লক্ষ্য তরুণ তরুণী দেশে এবং দেশের বাইরের বিভিন্ন সফটওয়্যার কোম্পানিতে গর্বের সাথে তাদের মেধার পরিচয় দিবে। এই স্বপ্ন পূরণে গুরুত্বপূর্ণ একটি ধাপ তাদের ইন্টারভিউের জন্য প্রস্তত করা। যেকোনো ইন্টারভিউে অপ্রতিরোধ্য হতে হলে কমপক্ষে কিছু প্রোগ্রামিং সমস্যা এবং সমাধানের পদ্ধতি সম্বন্ধে বেশ ভালো ধারণা থাকা খুবই প্রয়োজন। প্রোগ্রামিং শিক্ষার্থীদের এই কঠিন ধাপটি সহজ, উপভোগ্য এবং বাস্তবসম্মত উদাহরণের সাথে উপস্থাপন করা আমাদের প্রোগ্রামিং সমস্যা সমাধানের হাতে খড়ি কোর্সের উদ্দেশ্য।
 
-Almost all of these problems are variations on questions I have been asked or that others I know have been asked in interviews. They've been curated in a way that will allow us to go over several problem-solving strategies.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam.
-
-Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis.
+এই কোর্সটি আমরা সহ আরো অনেকের দেশী বিদেশী বিভিন্ন কোম্পানিতে ইন্টারভিউ দেওয়া এবং ইন্টারভিউ নেওয়ার অভিজ্ঞতার আলোকে তৈরি। আমরা বেশ ভালোভাবে অবগত একটি শিক্ষার্থী প্রোগ্রামিং সমস্যা সমাধানের সময় কোথায় সমস্যার সম্মুখীন হয় । এই কোর্সে আমরা আন্তরিকভাবে চেষ্টা করেছি সেসব সমস্যার সমাধান করতে এবং বাস্তবসম্মত উধারনের মাধ্যমে খুব সহজভাবে সমস্যাকে বুঝতে এবং তা সমাধান করার বেশ কয়েকটি পদ্ধতি নিয়ে আলোচনা করতে।
 
 ## The Problems
 
-At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+নতুন প্রোগ্রামিং শিক্ষার্থীদের কাছে প্রোগ্রামিং সমস্যা সমাধান একটি আতঙ্কের বিষয়। অনেক শিক্ষার্থী প্রোগ্রামিং সমস্যাটি ভালোভাবে বুঝতে পারে না। তার কারণে প্রোগ্রামিং সমস্যাটি সমাধান তার কাছে বেশ কঠিন এবং হতাশার জনক মনে হয়।
 
-Eget sit amet tellus cras adipiscing enim eu. Morbi tristique senectus et netus. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Augue mauris augue neque gravida in fermentum et. Justo laoreet sit amet cursus sit amet dictum sit amet. Donec enim diam vulputate ut pharetra sit amet aliquam id. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Parturient montes nascetur ridiculus mus.
-
-At imperdiet dui accumsan sit amet nulla facilisi. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Interdum posuere lorem ipsum dolor sit. Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Sed nisi lacus sed viverra.
+তাই এই কোর্সে আমরা চেষ্টা করেছি একটি সমস্যাকে বিস্তারিত ধাপে ধাপে বুঝতে এবং বাস্তব জীবনের সাথে সমস্যাটির মিল খুঁজে বের করতে। সমাধান করার সময় প্রোগ্রামিং দিয়ে সমস্যাটি সমাধানের আগে বাস্তব জীবনের সমস্যাটি কিভাবে সমাধান করা যায় এবং সেই সমাধান কে কিভাবে প্রোগ্রামিং রূপান্তরিত করা যায় তা নিয়ে খুবই উপভোগ্য পদ্ধতিতে প্রত্যেকটি সমস্যা এবং সমাধান আলোচনা করা হয়েছে।
 
 ## What You'll Get
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet.
+এই কোর্সটি শেষে আমরা শিখব কিভাবে একটি প্রোগ্রামের সমস্যাকে ধাপে ধাপে বিভক্ত করে চিন্তা করতে হয় এবং তার সহজ সমাধান বের করতে হয়। এখানে একটি সমস্যার বেশ কিছু সমাধান দেওয়া হয়েছে। প্রোগ্রামিং এর দুনিয়ায় কোন সমস্যা বিভিন্নভাবে সমাধান করা যায় এবং এই সমাধান গুলো কিভাবে চিন্তা করতে হয় তা আমরা শিখব আমাদের এই প্রোগ্রামিং সমস্যার সমাধানের হাতে খড়ি কোর্সে।
 
-Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+ভিন্নভাবে একটা সমস্যার সমাধানের পাশাপাশি কিভাবে সবচেয়ে ভালো সমাধানটি বেছে নিতে হয় তা আমরা শিখব। আমরা প্রতিটি সমাধানের টাইম কমপ্লিক্সিটি এবং স্পেস কমপ্লেক্সিটি নিয়ে আলোচনার করব।
 
 ## Format
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam.
-
-Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet.
-
-```javascript
-const a = 10;
-const a = 10;
-const a = 10;
-const a = 10;
-const a = 10;
-const a = 10;
-const a = 10;
-const a = 10;
-```
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo.
+- প্রোগ্রামিং সমস্যা বিভাগে সমস্যাটি উল্লেখ করা হয়েছে
+- ইনপুট আউটপুট বিভাগে ইনপুট এবং আউটপুট এর উদাহরণ দেওয়া হয়েছে। আমাদের সঠিক প্রোগ্রামিং সমাধানটিতে কোন ইনপুট দিলে কোন আউট আসবে তা আমরা এই সেখান থেকে বুঝতে পারব
+- প্রোগ্রামিং সমস্যা বিস্তারিত ব্যাখ্যা বিভাগে প্রোগ্রামিং সমস্যাটি নিয়ে বিস্তারিত আলোচনা করা হয়েছে
+- সমাধান সেকশনে প্রোগ্রামিং সমাধান দেওয়া হয়েছে
+- তার পরের সেকশনে সমাধানের বিস্তারিত ব্যাখ্যা দেওয়া হয়েছে
+- টাইম কমপ্লেক্সিটি এবং স্পেস কমপ্লিক্সিটি সেকশনে সমাধানের টাইম কমপ্লিক্সিটি এবং স্পেস কমপ্লিক্সিটি নিয়ে আলোচনা করা হয়েছে
 
 ## Expectations
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque.
+প্রত্যেকটি শিক্ষার্থীকে বিশেষ করে যারা প্রোগ্রামিং জগতে নতুন তাদের ক্রমানুসারে প্রতিটি সমস্যা সমাধানের চেষ্টা করা উচিত। ক্রম অনুসারে না দেখে হঠাৎ করে কোন সমস্যা শুরু করলে, সমাধানের বেসিক কিছু জিনিস না বুঝার সম্ভাবনা রয়েছে । যা হয়তো পূর্বের কোন সমস্যাই বিস্তার আলোচনা করা হয়েছে।
 
-Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis.
+আমাদের পরামর্শ থাকবে প্রতিটি সমস্যা বুঝে প্রথমে নিজে চেষ্টা করা, পরে আমাদের সমাধান পর্যবেক্ষণ করা। প্রত্যেকটি সমস্যার সমাধানের কোড নিজে রান করে পর্যবেক্ষণ করতে হবে। প্রয়োজনে আমাদের দেওয়া কোডের ভিতর "console.log" করে কোন ধাপে কি মান আসছে তার একটা ধারনা নেওয়া যেতে পারে।
 
-At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+এই কোর্স করার সময় কোন সমস্যার সম্মুখীন হলে আমাদের ফেসবুক গ্রুপ বা গিটহাবের ডিসকাসন বিভাগে সমস্যাটি বিস্তারিত লিখে উল্লেখ করতে হবে। আমাদের গ্রুপ সদস্যরা খুব অল্প সময়ে সমস্যার সমাধান করবে।
 
-- [Lorem ipsum](#)
-
-- [Nisi lacus sed facilisi cras fermentum odio?](#)
+তোমাদের সবার জন্য শুভ কামনা।
