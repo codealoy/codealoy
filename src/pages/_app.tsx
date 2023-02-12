@@ -1,9 +1,9 @@
 import 'focus-visible';
-import 'nprogress/nprogress.css';
 import Head from 'next/head';
 import superjson from 'superjson';
 import { Baloo_Da_2 } from '@next/font/google';
 
+import 'nprogress/nprogress.css';
 import '../styles/globals.css';
 import '../styles/tailwind.css';
 
@@ -27,7 +27,7 @@ import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
 import { getNavigationItems } from '../utils/getNavigationItems';
 import { BlogLayout } from '../layouts/BlogLayout';
-import ProgressBar from '../components/ProgressBar';
+import { ProgressBar } from '../components/ProgressBar';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',

@@ -12,4 +12,4 @@ const ProgressBar = () => {
   return null;
 };
 
-export default ProgressBar;
+export { ProgressBar };
