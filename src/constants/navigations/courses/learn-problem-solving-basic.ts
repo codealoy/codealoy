@@ -71,39 +71,39 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
     links: [
       {
         title: 'অঙ্কের যোগফল',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/11-sumDigit`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/11-sum-digit`,
       },
       {
         title: 'অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/13-minMaxValueArray`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/13-min-max-value-array`,
       },
       {
         title: 'অ্যারেতে একটি উপাদানের অবস্থান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/14-findElement`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/14-find-element`,
       },
       {
         title: 'দুই সমষ্টি',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/15-twoSum`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/15-two-sum`,
       },
       {
         title: 'সাজানো অ্যারে থেকে সদৃশ সরান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/16-deleteElement`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/16-delete-element`,
       },
       {
         title: 'একক সংখ্যা',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/17-singleNumber`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/17-single-number`,
       },
       {
         title: 'একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/18-largeUnique`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/18-large-unique`,
       },
       {
         title: 'একটি সাজানো অ্যারের বর্গক্ষেত্র',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/19-squaresArray`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/19-squares-array`,
       },
       {
         title: 'একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/20-countVowel`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/20-count-vowel`,
       },
       {
         title: 'ফিবোনাচি সিরিজ',
@@ -120,7 +120,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'একটি সংখ্যার গুণনীয়ক',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/22-factorNumber`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/22-factor-number`,
       },
     ],
   },
