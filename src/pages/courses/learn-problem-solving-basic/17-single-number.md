@@ -1,7 +1,7 @@
 ---
 pageTitle: একক সংখ্যা  - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: একক সংখ্যা
-description: Learn to determine uniqueness of all characters in a string.
+description: একটি অ্যারের মধ্যে একক সংখ্যা বের করতে হবে।
 ---
 
 ## প্রোগ্রামিং সমস্যা
@@ -16,14 +16,25 @@ description: Learn to determine uniqueness of all characters in a string.
 
 **আউটপুট**: `4`
 
+## ইনপুট আউটপুট
+
+```json
+ইনপুটঃ [2,2,1]
+আউটপুটঃ 1
+
+ইনপুটঃ [4,1,2,1,2]`
+আউটপুটঃ 4
+
+```
+
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
-আমদের ইনপুট হিসাবে একটি অ্যারে দেওয়া থাকবে। ওই অ্যারের মধ্যে একক সংখ্যা বের করতে হবে।
+আমদের ইনপুট হিসাবে একটি অ্যারে দেওয়া থাকবে। ওই অ্যারের মধ্যে যে উপাদানটি শুধুমাত্র একবার আছে টা ফেরত দিতে হবে।
 
 ## সমাধান (1)
 
 ```js
-var singleNumber = function (nums) {
+var singleNumber = (nums) => {
   if (nums.length < 2) return nums[0];
   nums = nums.sort((a, b) => a - b);
 
@@ -56,7 +67,7 @@ var singleNumber = function (nums) {
 ## সমাধান (2)
 
 ```js
-function singleNumber(nums: number[]): number {
+cosnt singleNumber= (nums) => {
   if (nums.length === 1) return nums[0];
 
   for (let i = 0; i < nums.length; i++) {
@@ -81,7 +92,7 @@ function singleNumber(nums: number[]): number {
 # সমাধান (3)
 
 ```js
-var singleNumber = function (nums) {
+var singleNumber = (nums) => {
   const hashMap = new Map();
 
   nums.forEach((value) => {

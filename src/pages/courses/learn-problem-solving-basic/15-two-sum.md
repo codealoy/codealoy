@@ -1,7 +1,7 @@
 ---
 pageTitle: দুই সমষ্টি - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: অ্যারেতে একটি উপাদানের অবস্থান
-description: Learn to determine uniqueness of all characters in a string.
+description: একটি অ্যারে এবং একটি সংখ্যা দেওয়া থাকবে। অ্যারের কোন দুইটি এলেমেন্ট যোগ করে ইনপুট এ দেওয়া সংখ্যার সমান হবে, তা বের করতে হবে। আমরা অনুমান করতে পারি যে প্রতিটি ইনপুটে ঠিক একটি সমাধান থাকবে এবং একই উপাদান দুবার ব্যবহার করতে পারব না ।
 ---
 
 ## প্রোগ্রামিং সমস্যা
@@ -9,13 +9,16 @@ description: Learn to determine uniqueness of all characters in a string.
 একটি অ্যারে এবং একটি সংখ্যা দেওয়া থাকবে। অ্যারের কোন দুইটি এলেমেন্ট যোগ করে ইনপুট এ দেওয়া সংখ্যার সমান হবে, তা বের করতে হবে।
 আমরা অনুমান করতে পারি যে প্রতিটি ইনপুটে ঠিক একটি সমাধান থাকবে এবং একই উপাদান দুবার ব্যবহার করতে পারব না ।
 
-**ইনপুট**: `nums = [2,7,11,15], target = 9`
+### ইনপুট আউটপুট
 
-**আউটপুট**: `[0,1]`
+```json
+ইনপুটঃ nums = [2,7,11,15], target = 9
+আউটপুটঃ [0,1]
 
-**ইনপুট**: `nums = [3,2,4], target = 6`
+ইনপুটঃ nums = [3,2,4], target = 6
+আউটপুটঃ [1,2]
 
-**আউটপুট**: `[1,2]`
+```
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
@@ -24,7 +27,7 @@ description: Learn to determine uniqueness of all characters in a string.
 ## সমাধান (1)
 
 ```js
-var twoSum = function (nums, target) {
+const twoSum = (nums, target) => {
   let currentIndex = 0;
   while (currentIndex !== nums.length - 1) {
     for (let i = currentIndex + 1; i < nums.length; i++) {
@@ -50,7 +53,7 @@ var twoSum = function (nums, target) {
 ## সমাধান (2)
 
 ```js
-var twoSum = function (nums, target) {
+const twoSum = (nums, target) => {
   const arr = nums;
 
   for (var i = 0; i < arr.length; i++) {
@@ -80,7 +83,7 @@ var twoSum = function (nums, target) {
 ## সমাধান (3)
 
 ```js
-var twoSum = function (nums, target) {
+const twoSum = (nums, target) => {
   for (var i = 0; i < nums.length; i++) {
     for (var j = i + 1; j < nums.length; j++) {
       var sum = 0;
