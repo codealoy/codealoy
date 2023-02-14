@@ -99,7 +99,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title: 'একটি সাজানো অ্যারের বর্গক্ষেত্র',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/19-squares-array`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/19-square-array`,
       },
       {
         title: 'একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা',

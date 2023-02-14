@@ -8,14 +8,6 @@ description: একটি অ্যারের মধ্যে একক সং
 
 একটি অ্যারের মধ্যে একক সংখ্যা বের করতে হবে।
 
-**ইনপুট**: `[2,2,1]`
-
-**আউটপুট**: `1`
-
-**ইনপুট**: `[4,1,2,1,2]`
-
-**আউটপুট**: `4`
-
 ## ইনপুট আউটপুট
 
 ```json
@@ -35,7 +27,9 @@ description: একটি অ্যারের মধ্যে একক সং
 
 ```js
 var singleNumber = (nums) => {
-  if (nums.length < 2) return nums[0];
+  if (nums.length < 2) {
+    return nums[0];
+  }
   nums = nums.sort((a, b) => a - b);
 
   for (let i = 0; i < nums.length; i++) {
@@ -68,7 +62,9 @@ var singleNumber = (nums) => {
 
 ```js
 cosnt singleNumber= (nums) => {
-  if (nums.length === 1) return nums[0];
+  if (nums.length === 1) {
+    return nums[0];
+  }
 
   for (let i = 0; i < nums.length; i++) {
     if (nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
@@ -96,12 +92,17 @@ var singleNumber = (nums) => {
   const hashMap = new Map();
 
   nums.forEach((value) => {
-    if (hashMap.has(value)) hashMap.set(value, hashMap.get(value) + 1);
-    else hashMap.set(value, 1);
+    if (hashMap.has(value)) {
+      hashMap.set(value, hashMap.get(value) + 1);
+    } else {
+      hashMap.set(value, 1);
+    }
   });
 
   for (let [key, value] of hashMap) {
-    if (value === 1) return key;
+    if (value === 1) {
+      return key;
+    }
   }
 };
 ```

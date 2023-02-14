@@ -1,16 +1,23 @@
 ---
 pageTitle: একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান   - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
 title: একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান
-description: Learn to determine uniqueness of all characters in a string.
+description: একটি অ্যারে দেওয়া হবে, আমদের বৃহত্তম তিনটি উপাদান বের করতে হবে।
 ---
 
 ## প্রোগ্রামিং সমস্যা
 
 একটি অ্যারে দেওয়া হবে, আমদের বৃহত্তম তিনটি উপাদান বের করতে হবে।
 
-**ইনপুট**: `[10, 4, 3, 50, 23, 90]`
+### ইনপুট আউটপুট
 
-**আউটপুট**: `[90, 50, 23]`
+```json
+ইনপুটঃ [10, 4, 3, 50, 23, 90]
+আউটপুটঃ [90, 50, 23]
+
+ইনপুটঃ [9, 20, 10, 41, 34, 71]`
+আউটপুটঃ [71, 41, 34]
+
+```
 
 ## সমস্যার বিস্তারিত ব্যাখ্যা:
 
@@ -19,7 +26,7 @@ description: Learn to determine uniqueness of all characters in a string.
 ## সমাধান (1)
 
 ```js
-function print3largest(arr) {
+function find3largest(arr) {
   let n = arr.length;
   let first, second, third;
 
