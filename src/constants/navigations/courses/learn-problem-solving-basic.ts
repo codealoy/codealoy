@@ -18,6 +18,10 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
         title: 'স্বাগতম',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/1-welcome`,
       },
+      {
+        title: 'টাইম কমপ্লেক্সিটি',
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/24-time-complexity`,
+      },
     ],
   },
   {
