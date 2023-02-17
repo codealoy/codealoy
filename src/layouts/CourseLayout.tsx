@@ -187,7 +187,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                 </h2>
                 <ul className="mt-4 space-y-3 text-sm">
                   {tableOfContents.map((section: any) => (
-                    <li key={section.id}>
+                    <li key={section.title}>
                       <h3>
                         <Link
                           href={`#${section.id}`}
@@ -203,7 +203,7 @@ export const CourseLayout: React.FC<CourseLayoutProps> = ({
                       {section.children.length > 0 && (
                         <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
                           {section.children.map((subSection) => (
-                            <li key={subSection.id}>
+                            <li key={subSection.title}>
                               <Link
                                 href={`#${subSection.id}`}
                                 className={
