@@ -1,4 +1,4 @@
-# Contribution Guidelines
+# Contribution Guidelines: How to Contribute to Codealoy Project
 
 When contributing to `Codealoy`, whether on GitHub or in other community spaces:
 
@@ -7,7 +7,7 @@ When contributing to `Codealoy`, whether on GitHub or in other community spaces:
 
 ---
 
-## How to Contribute
+## Step 1: Setup Local Dev Environment
 
 ## Prerequisites
 
@@ -64,7 +64,9 @@ npm run dev
 
 After the server started, you can visit the site at [http://localhost:3000](http://localhost:3000)
 
-### Implement your changes
+---
+
+### Step 2: Implement your changes
 
 This project is built on top of the _"T3 Stack"_. To learn more about the _"T3 Stack"_, you can visit the official GitHub repo](https://github.com/t3-oss/create-t3-app).
 
@@ -84,7 +86,9 @@ When making commits, make sure to follow the [conventional commit](https://www.c
 git add <file> && git commit -m "feat/fix/chore/docs: commit message"
 ```
 
-### When you're done
+---
+
+### Step 3: When you're done
 
 Check that your code follows the project's style guidelines by running:
 
@@ -98,7 +102,9 @@ Please also make a manual, functional test of your changes. When all that's done
 
 Fill out the title and body appropriately. Again, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines for your title.
 
-### Use custom domain (optional)
+---
+
+### Step 4: Use custom domain (optional)
 
 You can optionally use `https://codealoy.localhost` instead of `http://localhost:3000` as the domain name of the Codealoy server during development. As an extra benefit, this will automatically add an `SSL` certificate to the local domain, so you can use `HTTPS` with the domain. Here are the custom domain setup instructions:
 
