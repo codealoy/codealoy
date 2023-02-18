@@ -30,7 +30,7 @@ export const Announcement: React.FC<{
               onClick={hideAnnouncement}
             >
               <span className="hidden text-sm md:inline md:text-base ">
-                Dismiss
+                বন্ধ করুন
               </span>
               <XMarkIcon
                 className="h-6 w-6 text-white md:hidden"
