@@ -90,7 +90,7 @@
   "homepage": "https://github.com/codealoy/codealoy#readme",
   "author": "Codealoy Team<team@codealoy.com>",
   "volta": {
-    "node": "18",
-    "npm": "9"
+    "node": "18.14.1",
+    "npm": "9.5.0"
   }
 }
