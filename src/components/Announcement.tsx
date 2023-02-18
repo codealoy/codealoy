@@ -11,7 +11,9 @@ export const Announcement: React.FC<{
         <div className="flex flex-wrap items-center justify-center space-x-2">
           <div className="flex items-center space-x-1">
             <p className="truncate text-sm font-medium text-white md:text-base">
-              <span className="md:hidden">We announced a new product!</span>
+              <span className="md:hidden">
+                কোডালয় গিটহাব কোডবেস - এ ⭐ দিন।
+              </span>
               <span className="hidden md:inline">
                 কোডালয় প্রজেক্টটি সম্পূর্ণ ফ্রি এবং ওপেনসোর্স। গিটহাব - এ ⭐
                 দিয়ে সাপোর্ট করুন।
