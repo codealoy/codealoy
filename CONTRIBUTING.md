@@ -5,43 +5,64 @@ When contributing to `Codealoy`, whether on GitHub or in other community spaces:
 - Be respectful, civil, and open-minded.
 - Before opening a new pull request, try searching through the [issue tracker](https://github.com/codealoy/codealoy/issues) for known issues or fixes.
 
+---
+
 ## How to Contribute
 
-### Prerequisites
+## Prerequisites
 
 To save time and resources by not implementing changes that have already been declined, or are generally not needed, start by [opening an issue](https://github.com/codealoy/codealoy/issues/new) describing the problem you would like to solve.
 
-### Setup your environment
+## Setup your environment
 
-Clone the project
+### Clone the project
 
 ```bash
 git clone https://github.com/codealoy/codealoy
 ```
 
-Go to the project directory
+### Go to the project directory
 
 ```bash
 cd codealoy
 ```
 
-Install dependencies
+### Ensure required version of `nodejs` and `npm`
+
+Required versions:
+
+```
+node >= 18 (LTS)
+npm >= 9
+```
+
+- Check nodejs version: `node --version`
+- Check npm version: `npm --version`
+
+If your system versions are not meet the required versions above, then you need to update the versions.
+
+- To update nodejs, we can download the latest **LTS** version from the [official nodejs site](https://nodejs.org/en/) or use any type of node package manager like [Volta JS](https://volta.sh/) (preferred), [fnm](https://github.com/Schniz/fnm) or [nvm](https://github.com/nvm-sh/nvm).
+- To update npm version, we can use: `npm i -g npm`
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-Copy `.env.example` to `.env` file, and fill up necessary values
+### Copy `.env.example` to `.env` file, and fill up necessary values. You can just copy/paste manually or use the following terminal command.
 
 ```bash
 cp .env.sample .env
 ```
 
-Start the server
+### Start the server
 
 ```bash
 npm run dev
 ```
+
+After the server started, you can visit the site at [http://localhost:3000](http://localhost:3000)
 
 ### Implement your changes
 
