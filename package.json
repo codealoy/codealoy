@@ -88,5 +88,9 @@
     "url": "https://github.com/codealoy/codealoy/issues"
   },
   "homepage": "https://github.com/codealoy/codealoy#readme",
-  "author": "Codealoy Team<team@codealoy.com>"
+  "author": "Codealoy Team<team@codealoy.com>",
+  "volta": {
+    "node": "18",
+    "npm": "9"
+  }
 }
