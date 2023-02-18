@@ -13,7 +13,8 @@ export const Announcement: React.FC<{
             <p className="truncate text-sm font-medium text-white md:text-base">
               <span className="md:hidden">We announced a new product!</span>
               <span className="hidden md:inline">
-                Big news! We&apos;re excited to announce a brand new product!
+                কোডালয় প্রজেক্টটি সম্পূর্ণ ফ্রি এবং ওপেনসোর্স। গিটহাব - এ ⭐
+                দিয়ে সাপোর্ট করুন।
               </span>
             </p>
             <Link href="#">
