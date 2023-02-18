@@ -17,9 +17,9 @@ export const Announcement: React.FC<{
                 দিয়ে সাপোর্ট করুন।
               </span>
             </p>
-            <Link href="#">
+            <Link href="https://github.com/codealoy/codealoy" target="_blank">
               <span className="text-sm font-medium text-white underline underline-offset-2 hover:decoration-2 md:text-base">
-                Read More.
+                গিটহাব কোডবেস
               </span>
             </Link>
           </div>
