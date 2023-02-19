@@ -6,7 +6,7 @@ export const Announcement: React.FC<{
   hideAnnouncement: () => void;
 }> = ({ hideAnnouncement }) => {
   return (
-    <div className="z-50 bg-indigo-600">
+    <div className="z-50 bg-gradient-to-r from-[#3c1ea0] via-[#681462] to-[#3c1ea0]">
       <div className="mx-auto max-w-7xl py-2">
         <div className="flex flex-wrap items-center justify-center space-x-2">
           <div className="flex items-center space-x-1">
