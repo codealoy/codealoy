@@ -33,7 +33,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
       },
       {
         title:
-          'মিনিটকে সেকেন্ডে রূপান্তর, সংখ্যাটি মৌলিক সংখ্যা কি না, লিপ ইয়ার চেক কর, একটি অ্যারেতে প্রথম উপাদানটি ফেরত',
+          'মিনিটকে সেকেন্ডে রূপান্তর, লিপ ইয়ার, একটি অ্যারেতে প্রথম উপাদানটি ফেরত, সংখ্যাটি মৌলিক সংখ্যা কি না নির্ণয়',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/3-convert-min-sec`,
       },
       {
@@ -61,7 +61,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/9-reverse-number`,
       },
       {
-        title: 'সাজানো অ্যারে মার্জ করুন',
+        title: 'সাজানো অ্যারে মার্জ',
         href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/10-merge-array`,
       },
       {
