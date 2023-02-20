@@ -51,7 +51,9 @@ function compareStrings(string1, string2) {
 
 ### আনুষাঙ্গিক রিসোর্সসমুহ
 
-- [Google](https://google.com)
+- [Compare Strings](https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/compare-strings-1-1cb66e03/)
+- [Comparing two strings ](https://www.geeksforgeeks.org/comparing-two-strings-cpp/)
+- [Javascript == vs ===](https://www.youtube.com/watch?v=a0S1iG3TgP0)
 
 ---
 
@@ -104,6 +106,12 @@ function checkNumber(number) {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+- [Javascript Math.sign() Function](https://www.geeksforgeeks.org/javascript-math-sign-function/)
+- [Check if Value is Negative or Positive Number in JavaScript ](https://bobbyhadz.com/blog/javascript-check-if-value-is-negative-number)
+- [iven number is Negative or Positive in JavaScript](https://www.encodedna.com/javascript/how-to-check-if-a-number-positive-or-negative-in-javascript.htm)
+
 ---
 
 ## বিজোড় জোড় নির্নয় (3)
@@ -155,3 +163,9 @@ function checkOddEven(number) {
 ### স্পেস কমপ্লেক্সিটি (3)
 
 > O(1)
+
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+- [How to determine if a number is odd or even in JavaScript?](https://www.tutorialspoint.com/How-to-determine-if-a-number-is-odd-or-even-in-JavaScript)
+- [Testing whether a value is odd or even](https://stackoverflow.com/questions/6211613/testing-whether-a-value-is-odd-or-even)
+- [JavaScript Program to Check a Number for Even or Odd](https://www.youtube.com/watch?v=NmIbmXTDbUc)
