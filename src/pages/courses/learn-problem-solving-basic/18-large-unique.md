@@ -88,4 +88,17 @@ function find3largest(arr) {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Single Number](https://leetcode.com/problems/single-number/)
+- [Single Number](https://dev.to/akhilpokle/single-number-166f)
+- [Find Single Number](https://javascript.plainenglish.io/leetcode-algorithm-challenges-single-number-302e14e08a66)
+
+#### Videos:
+
+- [Single Number | JavaScript Solution](https://www.youtube.com/watch?v=4niJ0_SUi-c)
+- [SINGLE NUMBER](https://www.youtube.com/watch?v=XzQSPg6LFyY)
+
 ---

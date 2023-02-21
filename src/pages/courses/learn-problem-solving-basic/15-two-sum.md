@@ -104,4 +104,17 @@ const twoSum = (nums, target) => {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Two Sum](https://leetcode.com/problems/two-sum/)
+- [Two sum problem](https://coderbyte.com/algorithm/two-sum-problem)
+- [Check if a pair exists with given sum in given array](https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/)
+
+#### Videos:
+
+- [TWO SUM ](https://www.youtube.com/watch?v=mq6ZQv_apmc)
+- [Two Sum Solution](https://www.youtube.com/watch?v=_CoCO62fn_E)
+
 ---

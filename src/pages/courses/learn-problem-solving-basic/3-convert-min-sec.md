@@ -45,7 +45,17 @@ function convertToSeconds(minutes) {
 
 > O(1)
 
----
+### আনুষাঙ্গিক রিসোর্সসমুহ (1)
+
+#### Blogs:
+
+- [JavaScript Algorithm: Convert Minutes into Seconds](https://levelup.gitconnected.com/javascript-algorithm-convert-minutes-into-seconds-4d4a0d750b6c)
+- [Convert Seconds to Minutes and Seconds in JavaScript](https://bobbyhadz.com/blog/javascript-convert-seconds-to-minutes-and-seconds)
+
+#### Videos:
+
+- [Convert Minutes to Seconds ](https://www.youtube.com/watch?v=PGS7-6FEjrk)
+- [JavaScript Program to Check a Number for Even or Odd](https://www.youtube.com/watch?v=NmIbmXTDbUc)
 
 ---
 
@@ -128,7 +138,17 @@ let isPrime = (number) => {
 
 > O(1)
 
----
+### আনুষাঙ্গিক রিসোর্সসমুহ (2)
+
+#### Blogs:
+
+- [JavaScript: Check a number is prime or not](https://www.w3resource.com/javascript-exercises/javascript-function-exercise-8.php)
+- [Javascript Program for Prime Numbers](https://bobbyhadz.com/blog/javascript-convert-seconds-to-minutes-and-seconds)
+
+#### Videos:
+
+- [Convert Minutes to Seconds ](https://www.youtube.com/watch?v=PGS7-6FEjrk)
+- [JavaScript Program to Check a Number for Even or Odd](https://www.youtube.com/watch?v=NmIbmXTDbUc)
 
 ---
 
@@ -190,7 +210,17 @@ function leapyear(year) {
 
 > O(1)
 
----
+### আনুষাঙ্গিক রিসোর্সসমুহ (3)
+
+#### Blogs:
+
+- [JavaScript Program to Check Leap Year](https://www.programiz.com/javascript/examples/check-leap-year)
+- [JavaScript: Check whether a given year is a leap year](https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-6.php)
+
+#### Videos:
+
+- [Leap year Problem Solution using JavaScript](https://www.youtube.com/watch?v=xGC5DaY_TSE)
+- [Leap Year Calculation in JavaScript](https://www.youtube.com/watch?v=r7FsTifBgSE)
 
 ---
 
@@ -256,3 +286,15 @@ const findFirstElement = (arr) => {
 ### স্পেস কমপ্লেক্সিটি (2)
 
 > O(1)
+
+### আনুষাঙ্গিক রিসোর্সসমুহ (4)
+
+#### Blogs:
+
+- [Return the First Element in an Array](https://edabit.com/challenge/QaApgtePE6QrCZ64o)
+- [JavaScript: Get the first element of an array](https://www.w3resource.com/javascript-exercises/javascript-array-exercise-3.php)
+
+#### Videos:
+
+- [Javascript Problem: First element in an Array](https://www.youtube.com/watch?v=jpT1bOZ8tk4)
+- [Find First & Last Element in Array in JavaScript](https://www.youtube.com/watch?v=dqkvTSbujCE)

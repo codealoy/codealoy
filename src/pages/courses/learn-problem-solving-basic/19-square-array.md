@@ -79,4 +79,17 @@ const sortedSquares = (nums) => {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+- [Sort array after converting elements to their squares](https://www.geeksforgeeks.org/sort-array-converting-elements-squares/)
+- [Squares of a Sorted Array](https://dev.to/cod3pineapple/leetcode-977-squares-of-a-sorted-array-javascript-solution-1o33)
+
+#### Videos:
+
+- [SQUARES OF A SORTED ARRAY](https://www.youtube.com/watch?v=mwDKqAVVr6c)
+- [Squares of Sorted Array](https://www.youtube.com/watch?v=fikdT0AI5z4)
+
 ---

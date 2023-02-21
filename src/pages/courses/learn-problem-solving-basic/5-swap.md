@@ -136,4 +136,18 @@ swap(10, 20);
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Javascript program to swap two numbers without using temporary variable](https://www.geeksforgeeks.org/javascript-program-to-swap-two-numbers-without-using-temporary-variable/)
+- [4 Ways to Swap Variables in JavaScript](https://dmitripavlutin.com/swap-variables-javascript/)
+- [How to swap two variables in JavaScript](https://stackoverflow.com/questions/16201656/how-to-swap-two-variables-in-javascript)
+
+#### Videos:
+
+- [Swap two variables without using a third](https://www.youtube.com/watch?v=QByHja4dm9c)
+- [Swap Two Numbers Using temporary Variable & Without Temporary Variable](https://www.youtube.com/watch?v=uuIh9oD9Fck)
+- [How to swap two numbers with temporary variable using c](https://www.youtube.com/watch?v=da64tXRWRQA)
+
 ---

@@ -63,4 +63,18 @@ for (var i = 0; i < str.length; i++) {
 
 > O(n)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [JavaScript Number Split into individual digits](https://stackoverflow.com/questions/7784620/javascript-number-split-into-individual-digits)
+- [How to split JavaScript Number into individual digits?](https://www.tutorialspoint.com/How-to-split-JavaScript-Number-into-individual-digits)
+- [Split a number into individual digits using JavaScript](https://www.geeksforgeeks.org/split-a-number-into-individual-digits-using-javascript/)
+
+#### Videos:
+
+- [Split Method | String Object In JavaScript](https://www.youtube.com/watch?v=couYPD-SYww)
+- [Split Method in JavaScript](https://www.youtube.com/watch?v=pw-abDbp_IU)
+- [9 ways to convert string into a number in JavaScript | JavaScript Tutorials](https://www.youtube.com/watch?v=GNB92jM8-7o)
+
 ---

@@ -74,4 +74,17 @@ function getVowels(string) {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Program to count vowels in a string (Iterative and Recursive)](https://www.geeksforgeeks.org/program-count-vowels-string-iterative-recursive/)
+- [Counting number of vowels in a string with JavaScript](https://stackoverflow.com/questions/29450399/counting-number-of-vowels-in-a-string-with-javascript)
+- [Counts the number of vowels within a string](https://www.w3resource.com/javascript-exercises/javascript-function-exercise-7.php)
+
+#### Videos:
+
+- [Write A Function That Will Count Vowels in a String](https://www.youtube.com/watch?v=zvaUUDQec18)
+- [Counting Number of Vowels in a String with JavaScript](https://www.youtube.com/watch?v=QXQ7bKvUWcQ)
+
 ---

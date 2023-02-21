@@ -69,4 +69,17 @@ function reverseElements(array) {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Write a program to reverse an array or string](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
+- [JavaScript Array reverse()](https://www.w3schools.com/jsref/jsref_reverse.asp)
+- [How can I reverse an array in JavaScript without using libraries?](https://stackoverflow.com/questions/10168034/how-can-i-reverse-an-array-in-javascript-without-using-libraries)
+
+#### Videos:
+
+- [6 ways to Reverse Array in JavaScript](https://www.youtube.com/watch?v=0TylewLMA5A)
+- [How to Reverse a String in JavaScript Without Using the Reverse Array Method](https://www.youtube.com/watch?v=GqlaV-n5dP0)
+
 ---

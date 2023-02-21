@@ -11,10 +11,10 @@ description: আমাদের একটি অ্যারের মধ্য�
 ### ইনপুট আউটপুট
 
 ```json
-ইনপুটঃ 5 8 10 3 2 6
+ইনপুটঃ [5 8 10 3 2 6]
 আউটপুটঃ [10, 2]
 
-ইনপুটঃ 6 100 56 74 2 99 44
+ইনপুটঃ [6 100 56 74 2 99 44]
 আউটপুটঃ [100, 6]
 
 ```
@@ -60,5 +60,19 @@ const minMax = (arr) => {
   return arr1;
 };
 ```
+
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [How to get largest and smallest number in an Array?](https://www.geeksforgeeks.org/how-to-get-largest-and-smallest-number-in-an-array/)
+- [Find the smallest and largest value in an array with JavaScript](https://stackoverflow.com/questions/38256170/find-the-smallest-and-largest-value-in-an-array-with-javascript)
+- [How to get the highest and lowest number from an array in JavaScript?](https://dev.to/melvin2016/how-to-get-the-highest-and-lowest-number-from-an-array-in-javascript-21ml)
+
+#### Videos:
+
+- [Finding the Minimum or Maximum Value in an Array : JavaScript](https://www.youtube.com/watch?v=tPCOYESqQiY)
+- [Find the Largest & Smallest Elem in an Array in JavaScript](https://www.youtube.com/watch?v=zahHrBdwRKY)
+- [Find the largest number in an array](https://www.youtube.com/watch?v=fOFSmCjvcFY)
 
 ---

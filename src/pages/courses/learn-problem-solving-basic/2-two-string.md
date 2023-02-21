@@ -49,10 +49,15 @@ function compareStrings(string1, string2) {
 
 > O(1)
 
-### আনুষাঙ্গিক রিসোর্সসমুহ
+### আনুষাঙ্গিক রিসোর্সসমুহ (1)
+
+#### Blogs:
 
 - [Compare Strings](https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/compare-strings-1-1cb66e03/)
 - [Comparing two strings ](https://www.geeksforgeeks.org/comparing-two-strings-cpp/)
+
+#### Videos:
+
 - [Javascript == vs ===](https://www.youtube.com/watch?v=a0S1iG3TgP0)
 
 ---
@@ -82,7 +87,7 @@ function compareStrings(string1, string2) {
 - অথবা `number` যদি ধনাত্মক (positive) বা শূন্য থেকে ছোট হয়, তাহলে রিটার্ন করবে: `negative`
 - অথবা `number` যদি শূন্য (zero) হয়, তাহলে রিটার্ন করবে: `zero`
 
-### সমাধান (২)
+### সমাধান (1)
 
 ```js
 function checkNumber(number) {
@@ -96,21 +101,23 @@ function checkNumber(number) {
 }
 ```
 
-### টাইম কমপ্লেক্সিটি (2)
+### টাইম কমপ্লেক্সিটি (1)
 
 একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-### স্পেস কমপ্লেক্সিটি (2)
+### স্পেস কমপ্লেক্সিটি (1)
 
 > O(1)
 
-### আনুষাঙ্গিক রিসোর্সসমুহ
+### আনুষাঙ্গিক রিসোর্সসমুহ (2)
+
+#### Blogs:
 
 - [Javascript Math.sign() Function](https://www.geeksforgeeks.org/javascript-math-sign-function/)
 - [Check if Value is Negative or Positive Number in JavaScript ](https://bobbyhadz.com/blog/javascript-check-if-value-is-negative-number)
-- [iven number is Negative or Positive in JavaScript](https://www.encodedna.com/javascript/how-to-check-if-a-number-positive-or-negative-in-javascript.htm)
+- [Given number is Negative or Positive in JavaScript](https://www.encodedna.com/javascript/how-to-check-if-a-number-positive-or-negative-in-javascript.htm)
 
 ---
 
@@ -134,7 +141,7 @@ function checkNumber(number) {
 
 আমদের ইনপুট হিসাবে একটি নাম্বার `number` দেওয়া হবে। আমদের একটি প্রোগ্রাম লিখতে হবে যা রিটার্ন করবে `number` জোড় (even) নাকি বিজোড় (odd)।
 
-### সমাধান (3)
+### সমাধান (1)
 
 ```js
 function checkOddEven(number) {
@@ -154,18 +161,23 @@ function checkOddEven(number) {
 }
 ```
 
-### টাইম কমপ্লেক্সিটি (3)
+### টাইম কমপ্লেক্সিটি (1)
 
 একটু লক্ষ্য করলে আমরা দেখতে পাব, আমরা এখনে কোন লুপ ব্যবহার করি নি। এই সমাধানে শুধু মান অ্যাসাইন করেছি।
 
 > O(1)
 
-### স্পেস কমপ্লেক্সিটি (3)
+### স্পেস কমপ্লেক্সিটি (1)
 
 > O(1)
 
-### আনুষাঙ্গিক রিসোর্সসমুহ
+### আনুষাঙ্গিক রিসোর্সসমুহ (3)
+
+#### Blogs:
 
 - [How to determine if a number is odd or even in JavaScript?](https://www.tutorialspoint.com/How-to-determine-if-a-number-is-odd-or-even-in-JavaScript)
 - [Testing whether a value is odd or even](https://stackoverflow.com/questions/6211613/testing-whether-a-value-is-odd-or-even)
+
+#### Videos:
+
 - [JavaScript Program to Check a Number for Even or Odd](https://www.youtube.com/watch?v=NmIbmXTDbUc)

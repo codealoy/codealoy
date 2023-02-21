@@ -102,8 +102,18 @@ function mergeSortedArray = (array1, array2) => {
 }
 ```
 
-### টাইম কমপ্লেক্সিটি (3)
+### আনুষাঙ্গিক রিসোর্সসমুহ
 
->
+#### Blogs:
+
+- [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)
+- [JavaScript Array concat()](https://www.w3schools.com/jsref/jsref_concat_array.asp)
+- [3 Ways to Merge Arrays in JavaScript](https://dmitripavlutin.com/javascript-merge-arrays/)
+
+#### Videos:
+
+- [Array concat() method](https://www.youtube.com/watch?v=aUqpld_h1j8)
+- [Concatenation of Array](https://www.youtube.com/watch?v=tcFx0t3p6as)
+- [JavaScript Array Concat & Join](https://www.youtube.com/watch?v=0O5XeSCe5QM)
 
 ---

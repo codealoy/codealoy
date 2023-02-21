@@ -75,4 +75,17 @@ const findElement = (nums, target) => {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Search Insert Position](https://leetcode.com/problems/search-insert-position/)
+- [Search insert position of K in a sorted array](https://www.geeksforgeeks.org/search-insert-position-of-k-in-a-sorted-array/)
+- [Search insert position problem from LeetCode](https://www.educative.io/answers/search-insert-position-problem-from-leetcode)
+
+#### Videos:
+
+- [Search Insert Position ](https://www.youtube.com/watch?v=_GuSAPmgl48)
+- [Search Insert Position LeetCode Solution](https://www.youtube.com/watch?v=_90ITG5H7Ew)
+
 ---

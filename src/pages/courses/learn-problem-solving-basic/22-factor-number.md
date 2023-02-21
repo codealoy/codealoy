@@ -54,6 +54,17 @@ const isPowerOfTwo = (n) => {
 
 > O(1)
 
----
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [JavaScript Program to Find the Factors of a Number](https://www.programiz.com/javascript/examples/factors-number)
+- [Compute the factors of a positive integer](https://www.w3resource.com/javascript-exercises/javascript-function-exercise-13.php)
+- [Find factors of a number in JS](https://stackoverflow.com/questions/22130043/trying-to-find-factors-of-a-number-in-js)
+
+#### Videos:
+
+- [Factorialize a Number in JavaScript](https://www.youtube.com/watch?v=GILypEIcMQM)
+- [JavaScript Program to Find the Factorial of a Number ](https://www.youtube.com/watch?v=oYc8EpNIiZA)
 
 ---

@@ -73,4 +73,17 @@ const getSum = (n) => {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Program for Sum of the digits of a given number](https://www.geeksforgeeks.org/program-for-sum-of-the-digits-of-a-given-number/)
+- [JavaScript Program to Add Digits of a Number](https://www.scaler.com/topics/sum-of-digits-in-javascript/)
+- [Sum all the digits of a number Javascript](https://stackoverflow.com/questions/38334652/sum-all-the-digits-of-a-number-javascript)
+
+#### Videos:
+
+- [Sum Of Digits](https://www.youtube.com/watch?v=q0N5Kro96kI)
+- [Find Sum of Digits of a Number in JavaScript using While loop](https://www.youtube.com/watch?v=9QdF47ejKLM)
+
 ---

@@ -50,6 +50,16 @@ const patternStar = () => {
 
 > O(1)
 
----
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Star Pattern in javascript](https://www.tutorialstonight.com/js/javascript-star-pattern)
+- [Star pattern program in JavaScript](https://www.etutorialspoint.com/index.php/678-star-pattern-program-in-javascript)
+
+#### Videos:
+
+- [Printing Patterns in Javascript](https://www.youtube.com/watch?v=Phderdi6VqU)
+- [JavaScript Star Pattern](https://www.youtube.com/watch?v=O7E1WXuKh1U)
 
 ---

@@ -87,4 +87,17 @@ function removeDuplicates(arr) {
 }
 ```
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+- [Remove duplicates from sorted array](https://www.geeksforgeeks.org/remove-duplicates-sorted-array/)
+- [Remove Duplicates from Sorted Array](https://favtutor.com/blogs/remove-duplicates-from-sorted-array)
+
+#### Videos:
+
+- [Remove Duplicates from Sorted Array](https://www.youtube.com/watch?v=VtX4oVMXaMM)
+- [Remove Duplicates from Sorted Array](https://www.youtube.com/watch?v=czmqWvTeR-Y)
+
 ---

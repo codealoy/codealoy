@@ -67,4 +67,16 @@ function reverseNumber(number) {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Write a program to reverse an array or string](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
+- [Write a program to reverse digits of a number](https://www.geeksforgeeks.org/write-a-program-to-reverse-digits-of-a-number/)
+
+#### Videos:
+
+- [JavaScript Coding Challenge: Reverse a number](https://www.youtube.com/watch?v=lzixNqKWBEg)
+- [Program to Reverse the Integer Number in JavaScript](https://www.youtube.com/watch?v=jKvTfEnshNo)
+
 ---

@@ -76,4 +76,18 @@ function fibonacci(num) {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [JavaScript Program to Print the Fibonacci Sequence](https://www.programiz.com/javascript/examples/fibonacci-series)
+- [Fibonacci series in JavaScript](https://www.javatpoint.com/fibonacci-series-in-javascript)
+- [JavaScript: Get the first n Fibonacci numbers](https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-6.php)
+
+#### Videos:
+
+- [Fibonacci Sequence](https://www.youtube.com/watch?v=tQjd29Rmo_A)
+- [How to Print Fibonacci Series in JavaScript | For Loop & Array](https://www.youtube.com/watch?v=99K-Y4uoWFk)
+- [JavaScript Program to Print the Fibonacci Sequence](https://www.youtube.com/watch?v=0XfA55007Bk)
+
 ---

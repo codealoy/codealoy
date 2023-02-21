@@ -101,4 +101,17 @@ var isPalindrome = (x) => {
 
 > O(1)
 
+### আনুষাঙ্গিক রিসোর্সসমুহ
+
+#### Blogs:
+
+- [Palindrome Number](https://leetcode.com/problems/palindrome-number/)
+- [JavaScript Program to Check Whether a String is Palindrome or Not](https://www.programiz.com/javascript/examples/palindrome)
+- [Check number is palindrome or not in JavaScript](https://www.includehelp.com/code-snippets/check-number-is-palindrome-or-not-in-javascript.aspx)
+
+#### Videos:
+
+- [Palindrome Number | JavaScript Solution](https://www.youtube.com/watch?v=GILypEIcMQM)
+- [Program to find whether a Value is Palindrome in JavaScript](https://www.youtube.com/watch?v=7DCEd7e9o4Q)
+
 ---
