@@ -57,19 +57,14 @@ const TestResultTable = ({ editorOutput }) => {
       </div>
       <div className="h-48 overflow-auto">
         <table className="m-0 min-w-full table-auto  ">
-          <thead className="sticky top-0 border-l-0 border-b-0 bg-gray-100 dark:bg-slate-800/60  dark:backdrop-blur-xl">
+          <thead className="sticky top-0 border-l-0 border-b-0 bg-gray-100 dark:bg-slate-800/60 dark:backdrop-blur-xl">
             <tr>
               {resultTableColumns.map((column) => (
                 <th
                   key={column.key}
                   scope="col"
-                  className="border-gray-200 p-2 text-center text-xs text-slate-600
-                  after:absolute after:top-0 after:left-0 after:h-8  
-                  after:w-full after:border after:border-l-0 after:border-r-0 after:border-gray-200 after:content-[''] 
-                  dark:border-slate-600/80
-                  dark:text-slate-400 
-                  after:dark:border-slate-600/80"
-                 >
+                  className="border-gray-200 p-2 text-center text-xs text-slate-600 after:absolute after:top-0 after:left-0 after:h-8 after:w-full after:border after:border-l-0 after:border-r-0 after:border-gray-200 after:content-[''] dark:border-slate-600/80 dark:text-slate-400 after:dark:border-slate-600/80"
+                >
                   {column.title}
                 </th>
               ))}
