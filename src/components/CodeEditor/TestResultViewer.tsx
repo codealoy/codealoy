@@ -56,18 +56,20 @@ const TestResultTable = ({ editorOutput }) => {
         )}
       </div>
       <div className="h-48 overflow-auto">
-        <table className="m-0 min-w-full table-auto border dark:border-slate-800/60">
-          <thead className="bg-white sticky top-0 dark:bg-slate-800/60">
-            <tr >
+        <table className="m-0 min-w-full table-auto  ">
+          <thead className="sticky top-0 border-l-0 border-b-0 bg-gray-100 dark:bg-slate-800/60  dark:backdrop-blur-xl">
+            <tr>
               {resultTableColumns.map((column) => (
                 <th
                   key={column.key}
                   scope="col"
-                  className=" border-gray-200 p-2 text-center text-xs text-slate-600 dark:border-slate-600/80 dark:text-slate-400 after:content-[''] after:absolute  after:top-0 after:left-0  after:w-full after:h-8 after:border after:border-gray-200 
-                  after:dark:border-slate-600/80
-                  "
-
-                >
+                  className="border-gray-200 p-2 text-center text-xs text-slate-600
+                  after:absolute after:top-0 after:left-0 after:h-8  
+                  after:w-full after:border after:border-l-0 after:border-r-0 after:border-gray-200 after:content-[''] 
+                  dark:border-slate-600/80
+                  dark:text-slate-400 
+                  after:dark:border-slate-600/80"
+                 >
                   {column.title}
                 </th>
               ))}
@@ -78,10 +80,13 @@ const TestResultTable = ({ editorOutput }) => {
               return (
                 <tr
                   key={data.key}
-                  className="text-center font-medium text-slate-600 dark:text-slate-300"
+                  className="border-l-0 border-b text-center font-medium text-slate-600 dark:text-slate-300"
                 >
                   {resultTableColumns.map((column) => (
-                    <td key={`${data.key}-${column.key}`} className="px-2">
+                    <td
+                      key={`${data.key}-${column.key}`}
+                      className="px-2 odd:border-t-0  "
+                    >
                       <span>
                         {column.key === 'serialNumber'
                           ? index + 1
