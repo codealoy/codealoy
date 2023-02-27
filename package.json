@@ -36,6 +36,7 @@
     "lodash": "^4.17.21",
     "next": "^13.0.6",
     "next-auth": "^4.17.0",
+    "nprogress": "^0.2.0",
     "postcss-focus-visible": "^7.1.0",
     "postcss-import": "^15.0.0",
     "prism-react-renderer": "^1.3.5",
@@ -54,6 +55,7 @@
     "@types/lodash": "^4.14.187",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "18.11.3",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
@@ -77,7 +79,7 @@
   },
   "engines": {
     "node": ">=18",
-    "npm": ">=8"
+    "npm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -87,5 +89,9 @@
     "url": "https://github.com/codealoy/codealoy/issues"
   },
   "homepage": "https://github.com/codealoy/codealoy#readme",
-  "author": "Codealoy Team<team@codealoy.com>"
+  "author": "Codealoy Team<team@codealoy.com>",
+  "volta": {
+    "node": "18.14.1",
+    "npm": "9.5.0"
+  }
 }

@@ -14,6 +14,8 @@ This is a full-featured boilerplate for a creating a documentation website using
 
 ## Instructions
 
+![Tux, the Linux mascot](/static/images/courses/learn-problem-solving-basic/1-welcome-1.jpg)
+
 Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae. Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis.
 
 **Input**: String

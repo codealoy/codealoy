@@ -1,9 +1,9 @@
 import 'focus-visible';
-
 import Head from 'next/head';
 import superjson from 'superjson';
 import { Baloo_Da_2 } from '@next/font/google';
 
+import 'nprogress/nprogress.css';
 import '../styles/globals.css';
 import '../styles/tailwind.css';
 
@@ -27,6 +27,7 @@ import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
 import { getNavigationItems } from '../utils/getNavigationItems';
 import { BlogLayout } from '../layouts/BlogLayout';
+import { ProgressBar } from '../components/ProgressBar';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',
@@ -52,7 +53,7 @@ const MyApp: AppType<MyAppProps> = ({
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
-  const [showAnnouncement, setShowAnnouncement] = useState(false);
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
 
   const renderLayout = () => {
     if (isCourseDetailPage) {
@@ -84,7 +85,7 @@ const MyApp: AppType<MyAppProps> = ({
   };
 
   const hideAnnouncement = () => {
-    setShowAnnouncement(false);
+    setShowAnnouncement(true);
   };
 
   return (
@@ -95,6 +96,7 @@ const MyApp: AppType<MyAppProps> = ({
             <title>{pageTitle}</title>
             {description && <meta name="description" content={description} />}
           </Head>
+          <ProgressBar />
           <main className={`${fontBengali.variable} font-sans`}>
             {showAnnouncement && (
               <Announcement hideAnnouncement={hideAnnouncement} />
