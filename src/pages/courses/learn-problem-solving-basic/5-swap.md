@@ -60,7 +60,7 @@ swap(10, 20);
 - y এর মান x এ রাখবো
 - temp মান y এ রাখবো
 
-//image
+![image-1](/static/images/courses/learn-problem-solving-basic/5-swap-1.png)
 
 এখন আমরাই ধাপগুলো প্রোগ্রামিং এ করার চেষ্টা করব,
 
@@ -110,7 +110,7 @@ swap(10, 20);
 
   `x = x-y = 30 - 10 = 20`
 
-//image
+![image-2](/static/images/courses/learn-problem-solving-basic/5-swap-2.png)
 
 এখন যদি আমরা এই ধাপগুলোকে কোডে পরিবর্তন করি,
 
