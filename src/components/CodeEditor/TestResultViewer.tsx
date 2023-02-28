@@ -80,7 +80,7 @@ const TestResultTable = ({ editorOutput }) => {
                   {resultTableColumns.map((column) => (
                     <td
                       key={`${data.key}-${column.key}`}
-                      className="px-2 odd:border-t-0  "
+                      className="px-2 odd:border-t-0"
                     >
                       <span>
                         {column.key === 'serialNumber'
