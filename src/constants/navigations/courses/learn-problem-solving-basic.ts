@@ -133,7 +133,7 @@ export const LEARN_PROBLEM_SOLVING_BASIC_NAV_ITEMS = [
     links: [
       {
         title: 'অভিনন্দন',
-        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/welcome-q`,
+        href: `${LEARN_PROBLEM_SOLVING_BASIC_BASE_URL}/25-congratulation`,
       },
     ],
   },
