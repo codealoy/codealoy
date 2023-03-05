@@ -15,8 +15,6 @@ const IndexPage = () => {
   return (
     <>
       <Head>
-        <meta key="twitter:title" name="twitter:title" content={SITE_TITLE} />
-        <meta key="og:title" property="og:title" content={SITE_TITLE} />
         <title>{SITE_TITLE}</title>
       </Head>
 
