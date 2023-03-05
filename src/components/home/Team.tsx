@@ -115,6 +115,7 @@ export const Team = () => {
               </li>
             ))}
           </ul>
+          <p>test ci/cd</p>
         </div>
       </div>
     </section>
