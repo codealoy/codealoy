@@ -1,9 +1,9 @@
-name: Continuous Integration
+name: Deploy to production
 
 on:
   push:
     branches:
-      - '*'
+      - 'main'
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -38,4 +38,3 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      
