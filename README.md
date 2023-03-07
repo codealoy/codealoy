@@ -1,5 +1,11 @@
 # Codealoy's codebase and curriculum
 
+![Website](https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fwww.codealoy.com%2F)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/codealoy/codealoy/deploy-to-production.yml?style=flat-square)
+![GitHub contributors](https://img.shields.io/github/contributors/codealoy/codealoy?style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/codealoy/codealoy?style=flat-square)
+![GitHub](https://img.shields.io/github/license/codealoy/codealoy?style=flat-square)
+
 Codealoy is an open-source interactive learning web platform that intend to make learning programming & web development easier in **Bangla** (Bengali Language).
 
 ## Tech Stack
