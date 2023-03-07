@@ -117,6 +117,7 @@ export const Team = () => {
           </ul>
           <p>test ci/cd</p>
         </div>
+        <p>CI/CD testing</p>
       </div>
     </section>
   );
