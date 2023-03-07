@@ -30,18 +30,9 @@ description: দুটি শব্দের তুলনা, ধনাত্ম
 ### নিজে সমাধান করি
 
 প্রথমে আমরা সমস্যাটির সমাধান নিজে করার চেষ্টা করি নীচের কোড এডিটরে।
+{% CodeEditor title="নিজে সমাধান করি" template="test-runner-js" boilerplateCategory="course" boilerplate="learn-problem-solving-basic:2-two-string-problem-1"/%}
 
 ### সমাধান (1)
-
-```js
-function compareStrings(string1, string2) {
-  if (string1 === string2) {
-    return 'Yes';
-  } else {
-    return 'No';
-  }
-}
-```
 
 {% CodeEditor title="সমাধান (1)" template="test-runner-js" boilerplateCategory="course" boilerplate="learn-problem-solving-basic:2-two-string-solution-1"/%}
 

@@ -1,0 +1,5 @@
+function compareStrings(string1, string2) {
+  // এখান থেকে কোড লেখা শুরু করি
+}
+
+export default compareStrings;
