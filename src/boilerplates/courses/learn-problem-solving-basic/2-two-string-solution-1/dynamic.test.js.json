@@ -1,0 +1,38 @@
+[
+  {
+    "title": "cake শব্দটি cake এর সাথে তুলনা | yes | cake, cake",
+    "input": "'cake', 'cake'",
+    "output": "'yes'",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "god শব্দটি dog এর সাথে তুলনা | yes | god, dog",
+    "input": "'god', 'dog'",
+    "output": "'no'",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "apple শব্দটি apple এর সাথে তুলনা | yes | apple, apple",
+    "input": "'apple', 'apple'",
+    "output": "'yes'",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "apple শব্দটি orange এর সাথে তুলনা | no | apple, orange",
+    "input": "'apple', 'orange'",
+    "output": "'no'",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "javascript শব্দটি JavaScript এর সাথে তুলনা | no | javascript, JavaScript",
+    "input": "'javascript', 'JavaScript'",
+    "output": "'no'",
+    "compareFunctionName": "toBe"
+  },
+  {
+    "title": "1 শব্দটি `1` এর সাথে তুলনা | no | 1, `1`",
+    "input": "1, '1'",
+    "output": "'no'",
+    "compareFunctionName": "toBe"
+  }
+]

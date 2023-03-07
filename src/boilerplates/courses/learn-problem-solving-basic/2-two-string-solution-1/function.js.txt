@@ -1,0 +1,9 @@
+function compareStrings(string1, string2) {
+  if (string1 === string2) {
+    return 'yes';
+  } else {
+    return 'no';
+  }
+}
+
+export default compareStrings;
