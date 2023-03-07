@@ -13,6 +13,19 @@ interface BlogPostsProps {
   limit?: number;
 }
 
+const authorList = {
+  mukit: {
+    name: 'মুকিতুল ইসলাম মুকিত',
+    href: 'https://github.com/mimukit',
+    avatarImageUrl: imageOfMukit,
+  },
+  sumon: {
+    name: 'আল-আমিন শাহেদ সুমন',
+    href: 'https://github.com/alaminsahed',
+    avatarImageUrl: imageOfShahed,
+  },
+};
+
 const posts = [
   {
     title: 'হ্যালো ওয়ার্ল্ড',
@@ -22,18 +35,7 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1633989464004-1aada5ed6702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '৫ মিনিট',
-    author: [
-      {
-        name: 'আল-আমিন শাহেদ সুমন',
-        href: 'https://github.com/alaminsahed',
-        avatarImageUrl: imageOfShahed,
-      },
-      {
-        name: 'মুকিতুল ইসলাম মুকিত',
-        href: 'https://github.com/mimukit',
-        avatarImageUrl: imageOfMukit,
-      },
-    ],
+    author: [authorList.sumon, authorList.mukit],
     publishedAt: '2022-12-01',
     isPublished: true,
   },
@@ -45,13 +47,7 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১২ মিনিট',
-    author: [
-      {
-        name: 'মুকিতুল ইসলাম মুকিত',
-        href: 'https://github.com/mimukit',
-        avatarImageUrl: imageOfMukit,
-      },
-    ],
+    author: [authorList.mukit],
     publishedAt: 'TBD',
     isPublished: false,
   },
@@ -63,13 +59,7 @@ const posts = [
     coverImageUrl:
       'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
     readingTime: '১০ মিনিট',
-    author: [
-      {
-        name: 'মুকিতুল ইসলাম মুকিত',
-        href: 'https://github.com/mimukit',
-        avatarImageUrl: imageOfMukit,
-      },
-    ],
+    author: [authorList.mukit],
     publishedAt: 'TBD',
     isPublished: false,
   },
