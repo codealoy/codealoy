@@ -1,5 +1,5 @@
 import target from './function';
 
-test('Exported the function properly | function | exported value', () => {
+test('কোড থেকে একটি ফাংশন এক্সপোর্ট করা হয়েছে | function | exported value', () => {
   expect(typeof target).toBe('function')
 });
