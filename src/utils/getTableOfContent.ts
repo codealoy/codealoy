@@ -1,5 +1,5 @@
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
-import { slugifyWithCounter } from '@sindresorhus/slugify';
+import { slug } from 'github-slugger';
 
 const getNodeText = (node) => {
   let text = '';
@@ -13,7 +13,7 @@ const getNodeText = (node) => {
 };
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
-const collectHeadings = (nodes: any, slugify = slugifyWithCounter()) => {
+const collectHeadings = (nodes: any, slug) => {
   const sections: any = [];
 
   if (nodes.length) {
@@ -21,7 +21,7 @@ const collectHeadings = (nodes: any, slugify = slugifyWithCounter()) => {
       if (/^h[23]$/.test(node.name)) {
         const title = getNodeText(node);
         if (title) {
-          const id = slugify(title);
+          const id = slug(title);
           node.attributes.id = id;
           if (node.name === 'h3') {
             sections[sections.length - 1].children.push({
@@ -34,7 +34,7 @@ const collectHeadings = (nodes: any, slugify = slugifyWithCounter()) => {
         }
       }
 
-      sections.push(...collectHeadings(node.children ?? [], slugify));
+      sections.push(...collectHeadings(node.children ?? [], slug));
     }
   }
   return sections;
@@ -52,6 +52,7 @@ export const getTableOfContent = ({ markdoc }: MarkdocNextJsPageProps) => {
       isMarkdocContentObject
         ? [markdocContent]
         : [...(markdocContent as Array<any>)],
+      slug,
     );
   }
 
