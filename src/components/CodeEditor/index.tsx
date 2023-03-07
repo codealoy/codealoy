@@ -28,7 +28,7 @@ interface CodeEditorProps {
 }
 
 const CodeEditor = ({
-  title = 'Write your solution',
+  title = 'কোড এডিটর',
   template,
   boilerplate,
   boilerplateCategory,
