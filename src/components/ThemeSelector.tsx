@@ -16,7 +16,7 @@ const themes = [
   { name: 'লাইট থিম', value: 'light', icon: SunIcon },
   { name: 'ডার্ক থিম', value: 'dark', icon: MoonIcon },
 ];
-
+ 
 const ThemeSelectorIcon = () => (
   <>
     <span className="dark:hidden">

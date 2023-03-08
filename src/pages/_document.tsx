@@ -3,7 +3,7 @@ import { COLORS } from '../constants/site-settings';
 
 const themeScript = `
 function updateTheme() {
-  let theme = "light";
+  let theme = "dark";
   try {
     const savedTheme = window.localStorage?.storageArea?.theme || window.localStorage?.theme;
     if (savedTheme === "dark") {
@@ -13,12 +13,12 @@ function updateTheme() {
       theme = "light";
       document.documentElement.classList.remove("dark");
     } else {
-      theme = "light";
-      document.documentElement.classList.remove("dark");
+      theme = "dark";
+      document.documentElement.classList.add("dark");
     }
   } catch {
-    theme = "light";
-    document.documentElement.classList.remove("dark");
+    theme = "dark";
+    document.documentElement.classList.add("dark");
   }
   return theme;
 }
