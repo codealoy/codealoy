@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useState, useEffect, createContext } from 'react';
 
-const DEFAULT_THEME = 'light';
+const DEFAULT_THEME = 'dark';
 
 interface ThemeContext {
   currentTheme: string;
@@ -11,7 +11,7 @@ interface ThemeContext {
 
 export const ThemeContext = createContext<ThemeContext>({
   currentTheme: DEFAULT_THEME,
-  isDarkTheme: false,
+  isDarkTheme: true,
   setTheme: () => {},
 });
 
