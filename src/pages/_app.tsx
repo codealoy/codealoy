@@ -85,7 +85,7 @@ const MyApp: AppType<MyAppProps> = ({
   };
 
   const hideAnnouncement = () => {
-    setShowAnnouncement((preve) => !preve);
+    setShowAnnouncement((previousValue) => !previousValue);
   };
 
   return (
