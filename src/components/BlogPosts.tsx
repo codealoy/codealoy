@@ -67,11 +67,39 @@ const posts = [
 
 export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
   const [filteredPosts, setFilteredPosts] = React.useState<typeof posts>([]);
+  const [hoveredAuthorId, setHoveredAuthorId] = React.useState<number | null>(
+    null,
+  );
+  const [hoveredPostHref, setHoveredPostHref] = React.useState<string | null>(
+    null,
+  );
 
   React.useEffect(() => {
     const newFilteredPosts = limit ? posts.slice(0, limit) : posts;
     setFilteredPosts(newFilteredPosts);
   }, [limit]);
+
+  const onAuthorMouseEnter = (args: {
+    authorIndex: number;
+    postHref: string;
+  }) => {
+    setHoveredAuthorId(args.authorIndex);
+    setHoveredPostHref(args.postHref);
+  };
+
+  const onAuthorMouseLeave = () => {
+    setHoveredAuthorId(null);
+    setHoveredPostHref(null);
+  };
+
+  const isHoveredAuthorOfPost = (args: {
+    index: number;
+    post: (typeof posts)[0];
+  }) => {
+    const { index, post } = args;
+
+    return index === hoveredAuthorId && post.href === hoveredPostHref;
+  };
 
   return (
     <div className="mx-auto grid max-w-lg place-items-center gap-10 md:max-w-none md:grid-cols-2 lg:grid-cols-3">
@@ -108,7 +136,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
               </Link>
             </div>
             <div className="mt-6 flex items-center justify-between">
-              <div className="flex">
+              <div className="flex items-center">
                 <span className="flex -space-x-4">
                   {post.author.map((author, index) => (
                     <Link
@@ -116,12 +144,23 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                       href={author.href}
                       target="_blank"
                       rel="noreferrer"
+                      onMouseEnter={() =>
+                        onAuthorMouseEnter({
+                          authorIndex: index,
+                          postHref: post.href,
+                        })
+                      }
+                      onMouseLeave={() => onAuthorMouseLeave()}
                     >
                       <Image
                         className={clsx([
-                          'relative h-10 w-10 transform cursor-pointer rounded-full border border-slate-200 object-cover grayscale transition duration-300 ease-in-out hover:z-50 hover:scale-110 hover:grayscale-0',
-                          index === 0 && 'z-40',
-                          index === 1 && 'z-30',
+                          'relative h-10 w-10 transform cursor-pointer rounded-full border border-slate-200 object-cover grayscale transition duration-300 ease-in-out',
+                          ,
+                          isHoveredAuthorOfPost({ index, post })
+                            ? 'z-50 scale-110 grayscale-0'
+                            : index === 0
+                            ? 'z-40'
+                            : 'z-30',
                         ])}
                         src={author.avatarImageUrl}
                         alt={author.name}
@@ -136,7 +175,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                   ))}
                 </span>
                 <span className="ml-3">
-                  {post.author.map((author) => (
+                  {post.author.map((author, index) => (
                     <p
                       key={author.href}
                       className="text-sm font-medium text-slate-900 dark:text-slate-400"
@@ -145,7 +184,17 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({ limit }) => {
                         href={author.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="hover:text-white"
+                        className={clsx([
+                          isHoveredAuthorOfPost({ index, post }) &&
+                            'text-white',
+                        ])}
+                        onMouseEnter={() =>
+                          onAuthorMouseEnter({
+                            authorIndex: index,
+                            postHref: post.href,
+                          })
+                        }
+                        onMouseLeave={() => onAuthorMouseLeave()}
                       >
                         {author.name}
                       </Link>
