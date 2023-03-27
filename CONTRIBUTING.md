@@ -82,7 +82,7 @@ Here are some useful scripts for when you are developing:
 | `npm run lint`        | Lints the code                                                             |
 | `npm run postinstall` | Generate prisma client codes. Automatically runs after every `npm install` |
 
-When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with prefixes like ` feat``,  `fix`, `chore`, `docs`, etc... You can use `git status` to double-check which files have not yet been staged for commit:
+When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with prefixes like `feat, fix, chore, docs`, etc... You can use `git status` to double-check which files have not yet been staged for commit:
 
 ```bash
 git add <file> && git commit -m "feat/fix/chore/docs: commit message"
