@@ -5,7 +5,12 @@ import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
 
 import imageOfMukit from '../../images/home/codealoy-team-mukit.png';
 import imageOfShahed from '../../images/home/codealoy-team-shahed.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import axios from 'axios';
+import {QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
+const queryClient =new QueryClient();
 const teamMembers = [
   {
     name: `মুকিতুল ইসলাম মুকিত`,
@@ -64,7 +69,14 @@ const SocialLinks = ({
 };
 
 export const Team = () => {
+ const {data} = useQuery('teamMember',() => {
+    return axios.get('https://api.github.com/repos/codealoy/codealoy/contributors')
+  })
+  const filteredMember = data?.data.filter(
+    (name: any) => name.login !== 'mimukit' && name.login !== 'alaminsahed' && name.login !== 'codealoyteam'
+   );
   return (
+    <QueryClientProvider client={queryClient}>
     <section id="meet-team" className="bg-white dark:bg-slate-900">
       <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12">
@@ -117,6 +129,51 @@ export const Team = () => {
           </ul>
         </div>
       </div>
+      <div className="bg-dark">
+        <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+          <div className="space-y-8 sm:space-y-12">
+            <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
+              <p className="text-2xl font-bold tracking-tight text-white ">
+                কন্ট্রিবিউটর
+              </p>
+            </div>
+            <ul
+              role="list"
+              className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6"
+            >
+              {filteredMember && filteredMember.map((person: any) => (
+                  <li key={person.id}>
+                    <div className="space-y-4">
+                      <LazyLoadImage
+                        className="blue mx-auto h-20 w-20 rounded-full grayscale lg:h-24 lg:w-24"
+                        src={person.avatar_url}
+                        alt="person image"
+                      />
+                      <div className="space-y-2 text-xl font-medium text-white lg:text-sm">
+                        <h3>{person.login}</h3>
+                        <p className="text-sm text-indigo-600 dark:text-indigo-400">
+                          কন্ট্রিবিউটর
+                        </p>
+                        <p className="text-sm font-normal text-slate-700 dark:text-slate-300">
+                          সফটওয়্যার ইঞ্জিনিয়ার
+                        </p>
+                        <a
+                          href={person.html_url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex justify-center"
+                        >
+                          <FaGithubSquare />
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
+    </QueryClientProvider>
   );
 };
