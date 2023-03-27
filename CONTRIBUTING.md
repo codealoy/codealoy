@@ -50,7 +50,9 @@ If your system versions are not meet the required versions above, then you need 
 npm install
 ```
 
-### Copy `.env.example` to `.env` file, and fill up necessary values. You can just copy/paste manually or use the following terminal command.
+### Configure `.env` file
+
+Copy `.env.example` to `.env` file, and fill up necessary values. You can just copy/paste manually or use the following terminal command.
 
 ```bash
 cp .env.sample .env
