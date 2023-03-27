@@ -129,7 +129,7 @@ export const Team = () => {
           </ul>
         </div>
       </div>
-      <div className="bg-dark">
+      <div className="bg-white dark:bg-slate-900">
         <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-8 sm:space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
@@ -139,7 +139,7 @@ export const Team = () => {
             </div>
             <ul
               role="list"
-              className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6"
+              className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-4"
             >
               {filteredMember && filteredMember.map((person: any) => (
                   <li key={person.id}>
@@ -149,8 +149,8 @@ export const Team = () => {
                         src={person.avatar_url}
                         alt="person image"
                       />
-                      <div className="space-y-2 text-xl font-medium text-white lg:text-sm">
-                        <h3>{person.login}</h3>
+                      <div className="space-y-2 text-xl font-medium text-white lg:text-sm ">
+                        <h3 className="text-xl font-semibold leading-10 text-slate-800 dark:text-slate-100">{person.login}</h3>
                         <p className="text-sm text-indigo-600 dark:text-indigo-400">
                           কন্ট্রিবিউটর
                         </p>
@@ -161,7 +161,7 @@ export const Team = () => {
                           href={person.html_url}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex justify-center"
+                          className="flex justify-center text-slate-400 hover:text-slate-500"
                         >
                           <FaGithubSquare />
                         </a>
