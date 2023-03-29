@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
-import { COLORS } from '../constants/site-settings';
+import { COLORS, SITE_TITLE } from '../constants/site-settings';
 
 const themeScript = `
 function updateTheme() {
@@ -79,6 +79,24 @@ export default function Document() {
           content="/static/favicon/browserconfig.xml"
         />
         <meta name="theme-color" content={COLORS.PRIMARY} />
+
+        <meta property="og:title" content={SITE_TITLE} />
+        <meta property="og:site_name" content="কোডালয় | Codealoy" />
+        <meta property="og:url" content="https://www.codealoy.com" />
+        <meta
+          property="og:description"
+          content="মাতৃভাষা বাংলায় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার সম্পূর্ণ ফ্রি, এবং ওপেনসোর্স প্লাটফর্ম"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="/static/images/og/codealoy-social-card-6654c734ccab8f440ff0825eb443dc7f.png"
+        />
+        <meta property="og:image:width" content="1479" />
+        <meta property="og:image:height" content="832" />
+        <meta key="twitter:title" name="twitter:title" content={SITE_TITLE} />
+        <meta key="og:title" property="og:title" content={SITE_TITLE} />
+
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>
       <body className="bg-white antialiased dark:bg-slate-900">

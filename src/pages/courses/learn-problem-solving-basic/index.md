@@ -1,75 +1,78 @@
 ---
-pageTitle: Overview - Learn Problem Solving with JavaScript - Basic
-title: Learn Problem Solving with JavaScript - Basic
-description: Practice 20 carefully curated interview questions and solutions to getting started with basics of Mastering JavaScript Interview.
-level: Beginner Level
-estimation: 2 Hours
-lessons: 22 Lessons
-challenges: 51 Challenges
-playgrounds: 9 Playgrounds
-illustrations: 10 Illustrations
+pageTitle: বিবরণ - প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
+title: প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
+description: প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি
+level: প্রাথমিক স্তর
+estimation: ২ ঘন্টা
+lessons: ২৩ অধ্যায়
+challenges: ৩০ চ্যালেঞ্জ
+playgrounds: ২৩ প্লেগ্রউন্ড
+illustrations: ৫ ইলাস্ট্রেশন
 ---
 
 {% $markdoc.frontmatter.description %} {% .lead %}
 
-## Course Overview
+## কোর্সের সংক্ষিপ্ত বিবরণ
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Quam quisque id diam vel quam. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Nunc sed velit dignissim sodales ut eu sem integer vitae.
+সফটওয়্যার ইঞ্জিনিয়ারিং জবের জন্য কিছু প্রোগ্রামিং সমস্যা সম্বন্ধে ধারনা থাকা বেশ জরুরি। জবের ইন্টারভিউে কোন ফ্রেশারের, তার দক্ষতা পরিমাপ করার জন্য প্রোগ্রামিং সমস্যা নিয়ে আলোচনা করা বেশ প্রচলিত প্রথা। কিন্তু প্রোগ্রামিং সমস্যার দুনিয়াটি বেশ প্রশস্ত। তাই কোথায় থেকে শুরু করতে হবে এবং কোন প্রকারের জবের জন্য কতটুকু শিখতে হবে তা নিয়ে অনেকেই বেশ দ্বিধার মধ্যে থাকে। এই সমস্যার সমাধানের জন্য আমরা নিয়ে এসেছি আমদের **প্রোগ্রামিং সমস্যা সমাধানের হাতেখড়ি** কোর্সটি।
 
-Nascetur ridiculus mus mauris vitae ultricies leo. Malesuada fames ac turpis egestas integer eget aliquet. Nunc sed velit dignissim sodales ut eu sem integer. Sagittis orci a scelerisque purus semper eget duis. Sed faucibus turpis in eu mi bibendum. Orci sagittis eu volutpat odio facilisis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Nisi lacus sed viverra tellus in. Enim lobortis scelerisque fermentum dui faucibus in. Vel fringilla est ullamcorper eget nulla facilisi etiam. Nulla facilisi cras fermentum odio. Sed egestas egestas fringilla phasellus.
+ফ্রেশারদের জন্য প্রায়ই ইন্টারভিউে জিজ্ঞাসা করা বেশ কিছু প্রোগ্রামিং সমস্যা এবং তার সমাধান নিয়ে আলোচনা করা হয়েছে আমদের এই কোর্সটিতে। কোন প্রোগ্রামিং সমস্যাকে বোঝার পাশাপাশি একটি সমস্যাকে কিভাবে বিভিন্ন উপায়ে সমাধার করা যায় তা আমরা আলোচনা করার চেষ্টা করেছি। আমরা প্রতিটি সমাধানের **টাইম কমপ্লেক্সিটি** এবং **স্পেস কমপ্লেক্সিটি** নিয়ে আলোচনা করেছি। যা শিক্ষার্থীদের কোন সমস্যার সবচেয়ে ভাল সমাধানটি বের করতে শিখাবে। শিক্ষার্থীরা প্রতিটি সমাধান আমদের কোর্সের মধ্যেই রান করে কাঙ্ক্ষিত ফালাফল দেখতে পারবে।
 
-## How You'll Learn
+এই কোর্সের মাধ্যমে আমদের শিক্ষার্থীরা প্রোগ্রামিং সমস্যার ভীতি দূর করে, যেকোনো ইন্টারভিউে সবার থেকে এগিয়ে থাকবে বলেই আমদের বিশ্বাস।
+
+## আপনি কিভাবে শিখবেন
 
 {% LinkGrid %}
 
-{% LinkGridLink title="Installation" icon="installation" href="/docs/installation" description="Step-by-step guides to setting up your system and installing the library." /%}
+{% LinkGridLink title="ইনস্টলেশন" icon="installation" href="/docs/installation" description="আপনার সিস্টেম সেট আপ এবং লাইব্রেরি ইনস্টল করার জন্য ধাপে ধাপে নির্দেশিকা।" /%}
 
-{% LinkGridLink title="Architecture guide" icon="presets" href="/docs/architecture-guide" description="Learn how the internals work and contribute." /%}
+{% LinkGridLink title="আর্কিটেকচার গাইড" icon="presets" href="/docs/architecture-guide" description="জানুন কিভাবে অভ্যন্তরীণ কাজ করে এবং অবদান রাখে।" /%}
 
-{% LinkGridLink title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
+{% LinkGridLink title="প্লাগইন" icon="plugins" href="/" description="তৃতীয় পক্ষের প্লাগইনগুলির সাহায্যে লাইব্রেরি প্রসারিত করুন বা আপনার নিজের লিখুন৷" /%}
 
-{% LinkGridLink title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
+{% LinkGridLink title="API রেফারেন্স" icon="theming" href="/" description="আপনার ব্র্যান্ডের সাথে মানানসই করার জন্য আপনার অ্যাপের ভিজ্যুয়াল ডিজাইন সহজেই কাস্টমাইজ এবং পরিবর্তন করতে শিখুন।" /%}
 
 {% /LinkGrid %}
 
-## Course Contents
+## কোর্সের বিষয়বস্তু
 
-### Introduction
+### ভূমিকা
 
-- [Welcome](/courses/)
+- [স্বাগতম](/courses/)
+- [টাইম কমপ্লেক্সিটি](/courses/)
 
-### Strings & Arrays
+### সহজ সমস্যা
 
-- [Is Unique](/courses/)
-- [Flatten Array](/courses/)
-- [Remove Dupes](/courses/)
-- [Highest Frequency](/courses/)
-- [String Rotation](/courses/)
+- [দুটি শব্দের তুলনা, ধনাত্মক, ঋণাত্মক, জোড়, বিজোড় সংখা নির্নয়](/courses/)
+- [মিনিটকে সেকেন্ডে রূপান্তর, লিপ ইয়ার, একটি অ্যারেতে প্রথম উপাদানটি ফেরত, সংখ্যাটি মৌলিক সংখ্যা কি না নির্ণয়](/courses/)
+- [দুটি সংখ্যা অদলবদল](/courses/)
+- [একটি অ্যারেতে প্রথম উপাদানটি ফেরত](/courses/)
+- [অ্যারের সংমিশ্রণ](/courses/)
+- [বিপরীত অ্যারে](/courses/)
+- [বিপরীত স্ট্রিং](/courses/)
+- [সংখ্যাগুলিকে সংখ্যায় ভাগ](/courses/)
+- [একটি সংখ্যা বিপরীত](/courses/)
+- [সাজানো অ্যারে মার্জ](/courses/)
+- [n x n বক্স প্রিন্ট করুন](/courses/)
 
-### Advanced Strings & Arrays
+### মধ্যম কঠিন সমস্যা
 
-- [Array Subset](/courses/)
-- [Maximum Profits](/courses/)
-- [Single Mutation](/courses/)
-- [All Anagrams](/courses/)
-- [Rotate Matrix](/courses/)
-- [Rotate Matrix, Advanced](/courses/)
+- [অঙ্কের যোগফল](/courses/)
+- [অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান](/courses/)
+- [অ্যারেতে একটি উপাদানের অবস্থান](/courses/)
+- [দুই সমষ্টি](/courses/)
+- [সাজানো অ্যারে থেকে সদৃশ সরান](/courses/)
+- [একক সংখ্যা](/courses/)
+- [একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান](/courses/)
+- [একটি সাজানো অ্যারের বর্গক্ষেত্র](/courses/)
+- [একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা](/courses/)
+- [ফিবোনাচি সিরিজ](/courses/)
 
-### Algorithms & Data Structures
+### কঠিন সমস্যা
 
-- [Sorted Search](/courses/)
-- [Balanced Brackets](/courses/)
-- [Creating a Queue with O(1) Operations](/courses/)
-- [Creating a Queue with Limited Data Structures](/courses/)
-- [Linked List Cycles](/courses/)
+- [প্যালিনড্রোম নম্বর](/courses/)
+- [একটি সংখ্যার গুণনীয়ক](/courses/)
 
-### JavaScript Mastery
+### উপসংহার
 
-- [Deep Equals](/courses/)
-- [Memoized Fibonacci](/courses/)
-- [Function Bind](/courses/)
-- [Versatile Add](/courses/)
-
-### Conclusion
-
-- [Congratulations](/courses/)
+- [অভিনন্দন](/courses/)
