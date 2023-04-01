@@ -38,41 +38,40 @@ illustrations: ৫ ইলাস্ট্রেশন
 
 ### ভূমিকা
 
-- [স্বাগতম](/courses/)
-- [টাইম কমপ্লেক্সিটি](/courses/)
+- [স্বাগতম](/courses/learn-problem-solving-basic/1-welcome)
+- [টাইম কমপ্লেক্সিটি](/courses/learn-problem-solving-basic/24-time-complexity)
 
 ### সহজ সমস্যা
 
-- [দুটি শব্দের তুলনা, ধনাত্মক, ঋণাত্মক, জোড়, বিজোড় সংখা নির্নয়](/courses/)
-- [মিনিটকে সেকেন্ডে রূপান্তর, লিপ ইয়ার, একটি অ্যারেতে প্রথম উপাদানটি ফেরত, সংখ্যাটি মৌলিক সংখ্যা কি না নির্ণয়](/courses/)
-- [দুটি সংখ্যা অদলবদল](/courses/)
-- [একটি অ্যারেতে প্রথম উপাদানটি ফেরত](/courses/)
-- [অ্যারের সংমিশ্রণ](/courses/)
-- [বিপরীত অ্যারে](/courses/)
-- [বিপরীত স্ট্রিং](/courses/)
-- [সংখ্যাগুলিকে সংখ্যায় ভাগ](/courses/)
-- [একটি সংখ্যা বিপরীত](/courses/)
-- [সাজানো অ্যারে মার্জ](/courses/)
-- [n x n বক্স প্রিন্ট করুন](/courses/)
+- [দুটি শব্দের তুলনা, ধনাত্মক, ঋণাত্মক, জোড়, বিজোড় সংখা নির্নয়](/courses/learn-problem-solving-basic/2-two-string)
+- [মিনিটকে সেকেন্ডে রূপান্তর, লিপ ইয়ার, একটি অ্যারেতে প্রথম উপাদানটি ফেরত, সংখ্যাটি মৌলিক সংখ্যা কি না নির্ণয়](/courses/learn-problem-solving-basic/3-convert-min-sec/3-convert-min-sec)
+- [দুটি সংখ্যা অদলবদল](/courses/learn-problem-solving-basic/5-swap)
+- [অ্যারের সংমিশ্রণ](/courses/learn-problem-solving-basic/4-mix-array-elements)
+- [বিপরীত অ্যারে](/courses/learn-problem-solving-basic/6-reverse-array)
+- [বিপরীত স্ট্রিং](/courses/learn-problem-solving-basic/7-reverse-string)
+- [সংখ্যাগুলিকে সংখ্যায় ভাগ](/courses/learn-problem-solving-basic/8-split-digit)
+- [একটি সংখ্যা বিপরীত](/courses/learn-problem-solving-basic/9-reverse-number)
+- [সাজানো অ্যারে মার্জ](/courses/learn-problem-solving-basic/10-merge-array)
+- [n x n বক্স প্রিন্ট করুন](/courses/learn-problem-solving-basic/23-pattern)
 
 ### মধ্যম কঠিন সমস্যা
 
-- [অঙ্কের যোগফল](/courses/)
-- [অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান](/courses/)
-- [অ্যারেতে একটি উপাদানের অবস্থান](/courses/)
-- [দুই সমষ্টি](/courses/)
-- [সাজানো অ্যারে থেকে সদৃশ সরান](/courses/)
-- [একক সংখ্যা](/courses/)
-- [একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান](/courses/)
-- [একটি সাজানো অ্যারের বর্গক্ষেত্র](/courses/)
-- [একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা](/courses/)
-- [ফিবোনাচি সিরিজ](/courses/)
+- [অঙ্কের যোগফল](/courses/learn-problem-solving-basic/11-sum-digit)
+- [অ্যারের সবচেয়ে বড় এবং ক্ষুদ্রতম উপাদান](/courses/learn-problem-solving-basic/13-min-max-value-array)
+- [অ্যারেতে একটি উপাদানের অবস্থান](/courses/learn-problem-solving-basic/14-find-element)
+- [দুই সমষ্টি](/courses/learn-problem-solving-basic/15-two-sum)
+- [সাজানো অ্যারে থেকে সদৃশ সরান](/courses/learn-problem-solving-basic/16-delete-element)
+- [একক সংখ্যা](/courses/learn-problem-solving-basic/17-single-number)
+- [একটি অ্যারের মধ্যে বৃহত্তম তিনটি স্বতন্ত্র উপাদান](/courses/learn-problem-solving-basic/18-large-unique)
+- [একটি সাজানো অ্যারের বর্গক্ষেত্র](/courses/learn-problem-solving-basic/19-square-array)
+- [একটি স্ট্রিং মধ্যে স্বরবর্ণ গণনা](/courses/learn-problem-solving-basic/20-count-vowel)
+- [ফিবোনাচি সিরিজ](/courses/learn-problem-solving-basic/12-fibonacci)
 
 ### কঠিন সমস্যা
 
-- [প্যালিনড্রোম নম্বর](/courses/)
-- [একটি সংখ্যার গুণনীয়ক](/courses/)
+- [প্যালিনড্রোম নম্বর](/courses/learn-problem-solving-basic/21-palindrome)
+- [একটি সংখ্যার গুণনীয়ক](/courses/learn-problem-solving-basic/22-factor-number)
 
 ### উপসংহার
 
-- [অভিনন্দন](/courses/)
+- [অভিনন্দন](/courses/learn-problem-solving-basic/25-congratulation)
