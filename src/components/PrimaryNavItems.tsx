@@ -11,13 +11,13 @@ export const PrimaryNavItems = () => {
   const [active, setActive] = useState(0);
   return (
     <>
-      {navigationItems.map((navigationItem, i) => (
+      {navigationItems.map((navigationItem, index) => (
         <li key={navigationItem.title}>
           <Link href={navigationItem.href!}>
             <span
-              onClick={() => setActive(i)}
+              onClick={() => setActive(index)}
               className={`${
-                active === i ? 'text-sky-500' : 'none'
+                active === index ? 'text-sky-500' : 'none'
               }  hover:text-sky-500 dark:hover:text-sky-400`}
             >
               {navigationItem.title}
