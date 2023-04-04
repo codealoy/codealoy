@@ -1,14 +1,15 @@
+import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGithubSquare, FaLinkedin, FaFacebookSquare } from 'react-icons/fa';
-import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
+import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
 import imageOfMukit from '../../images/home/codealoy-team-mukit.png';
 import imageOfShahed from '../../images/home/codealoy-team-shahed.png';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import axios from 'axios';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 
 const queryClient = new QueryClient();
 const teamMembers = [
