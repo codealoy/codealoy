@@ -2,9 +2,9 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  * This is especially useful for Docker builds.
  */
-!process.env.SKIP_ENV_VALIDATION && (await import('./src/env.mjs'));
+!process.env.SKIP_ENV_VALIDATION && import('./src/env.mjs');
 
-import withMarkdoc from '@markdoc/next.js';
+const withMarkdoc = require('@markdoc/next.js');
 
 /** @type {import('next').NextConfig} */
 
@@ -20,7 +20,7 @@ function defineNextConfig(config) {
   return config;
 }
 
-export default withMarkdoc({
+module.exports = withMarkdoc({
   schemaPath: './src/markdoc',
 })(
   defineNextConfig({
