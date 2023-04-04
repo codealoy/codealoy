@@ -1,6 +1,6 @@
 import 'focus-visible';
 import Head from 'next/head';
-import { Baloo_Da_2 } from '@next/font/google';
+import { Baloo_Da_2 } from 'next/font/google';
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -91,7 +91,7 @@ const MyApp: AppType<MyAppProps> = ({
             {description && <meta name="description" content={description} />}
           </Head>
           <ProgressBar />
-          <main className={`${fontBengali.variable} font-sans`}>
+          <main className={fontBengali.className}>
             {showAnnouncement && (
               <Announcement hideAnnouncement={hideAnnouncement} />
             )}
