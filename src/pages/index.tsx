@@ -1,3 +1,4 @@
+import { type NextPage } from 'next';
 import Head from 'next/head';
 
 import { CTA } from '../components/home/CTA';
@@ -11,7 +12,7 @@ import { SITE_TITLE } from '../constants/site-settings';
 import { Hero } from '../components/home/Hero';
 import { LatestCourses } from '../components/home/LatestCourses';
 
-const IndexPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <>
       <Head>

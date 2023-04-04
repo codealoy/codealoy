@@ -1,33 +1,27 @@
 import 'focus-visible';
 import Head from 'next/head';
-import superjson from 'superjson';
 import { Baloo_Da_2 } from '@next/font/google';
-
-import 'nprogress/nprogress.css';
-import '../styles/globals.css';
-import '../styles/tailwind.css';
-
-import type { Session } from 'next-auth';
-import type { AppType } from 'next/app';
-import type { AppRouter } from '../server/router';
-
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
-import { httpBatchLink } from '@trpc/client/links/httpBatchLink';
-import { loggerLink } from '@trpc/client/links/loggerLink';
-import { withTRPC } from '@trpc/next';
-import { SessionProvider } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { SessionProvider } from 'next-auth/react';
+
+import type { AppType } from 'next/app';
+import type { Session } from 'next-auth';
+
+import 'nprogress/nprogress.css';
+import '~/styles/globals.css';
+import '~/styles/tailwind.css';
 
 import { Announcement } from '../components/Announcement';
 import { ThemeContextProvider } from '../contexts/ThemeContext';
 import { CourseLayout } from '../layouts/CourseLayout';
 import { Layout } from '../layouts/Layout';
-import { getBaseUrl } from '../utils/getBaseUrl';
 import { getPageTitle } from '../utils/getPageTitle';
 import { getNavigationItems } from '../utils/getNavigationItems';
 import { BlogLayout } from '../layouts/BlogLayout';
 import { ProgressBar } from '../components/ProgressBar';
+import { api } from '~/utils/api';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',
@@ -109,42 +103,4 @@ const MyApp: AppType<MyAppProps> = ({
   );
 };
 
-export default withTRPC<AppRouter>({
-  config() {
-    const url = `${getBaseUrl()}/api/trpc`;
-
-    return {
-      links: [
-        loggerLink({
-          enabled: (opts) =>
-            process.env.NODE_ENV === 'development' ||
-            (opts.direction === 'down' && opts.result instanceof Error),
-        }),
-        httpBatchLink({ url }),
-      ],
-      url,
-      transformer: superjson,
-      /**
-       * @link https://react-query.tanstack.com/reference/QueryClient
-       */
-      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
-
-      // To use SSR properly you need to forward the client's headers to the server
-      // headers: () => {
-      //   if (ctx?.req) {
-      //     const headers = ctx?.req?.headers;
-      //     delete headers?.connection;
-      //     return {
-      //       ...headers,
-      //       "x-ssr": "1",
-      //     };
-      //   }
-      //   return {};
-      // }
-    };
-  },
-  /**
-   * @link https://trpc.io/docs/ssr
-   */
-  ssr: false,
-})(MyApp);
+export default api.withTRPC(MyApp);
