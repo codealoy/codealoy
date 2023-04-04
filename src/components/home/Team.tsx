@@ -11,7 +11,30 @@ import coverImageBlurDataUrl from '../../images/common/cover-image-blur';
 import imageOfMukit from '../../images/home/codealoy-team-mukit.png';
 import imageOfShahed from '../../images/home/codealoy-team-shahed.png';
 
+interface Contributor {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  contributions: number;
+}
+
 const queryClient = new QueryClient();
+
 const teamMembers = [
   {
     name: `মুকিতুল ইসলাম মুকিত`,
@@ -69,18 +92,30 @@ const SocialLinks = ({
   );
 };
 
+const excludedContributiorList = ['mimukit', 'alaminsahed', 'codealoyteam'];
+
+const getFilteredContributorList = (args: {
+  contributorList: Contributor[];
+}) => {
+  const { contributorList } = args;
+
+  return contributorList.filter(
+    (contributor: Contributor) =>
+      !excludedContributiorList.includes(contributor?.login || ''),
+  );
+};
+
 export const Team = () => {
-  const { data } = useQuery('teamMember', () => {
+  const { data: contributorList } = useQuery('projectContributors', () => {
     return axios.get(
       'https://api.github.com/repos/codealoy/codealoy/contributors',
     );
   });
-  const filteredMember = data?.data.filter(
-    (name: any) =>
-      name.login !== 'mimukit' &&
-      name.login !== 'alaminsahed' &&
-      name.login !== 'codealoyteam',
-  );
+
+  const filteredContributorList = getFilteredContributorList({
+    contributorList: contributorList?.data || [],
+  });
+
   return (
     <QueryClientProvider client={queryClient}>
       <section id="meet-team" className="bg-white dark:bg-slate-900">
@@ -135,30 +170,31 @@ export const Team = () => {
             </ul>
           </div>
         </div>
-        <div className="bg-white dark:bg-slate-900">
-          <div className="mx-auto max-w-7xl px-4 pb-12 text-center sm:px-6 lg:px-8 lg:pb-24">
-            <div className="space-y-8 sm:space-y-12">
-              <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-                <p className="text-3xl font-bold tracking-tight text-white ">
-                  অন্যান্য সদস্যবৃন্দ
-                </p>
-              </div>
-              <ul
-                role="list"
-                className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-4"
-              >
-                {filteredMember &&
-                  filteredMember.map((person: any) => (
-                    <li key={person.id}>
+
+        {filteredContributorList.length === 0 ? null : (
+          <div className="bg-white dark:bg-slate-900">
+            <div className="mx-auto max-w-7xl px-4 pb-12 text-center sm:px-6 lg:px-8 lg:pb-24">
+              <div className="space-y-8 sm:space-y-12">
+                <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
+                  <p className="text-3xl font-bold tracking-tight text-white ">
+                    অন্যান্য সদস্যবৃন্দ
+                  </p>
+                </div>
+                <ul
+                  role="list"
+                  className="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-4"
+                >
+                  {filteredContributorList.map((contributor: Contributor) => (
+                    <li key={contributor.id}>
                       <div className="space-y-4">
                         <LazyLoadImage
                           className="blue mx-auto h-20 w-20 rounded-full grayscale lg:h-24 lg:w-24"
-                          src={person.avatar_url}
-                          alt="person image"
+                          src={contributor.avatar_url}
+                          alt={'contributor ' + contributor.login}
                         />
                         <div className="space-y-2 text-xl font-medium text-white lg:text-sm ">
                           <h3 className="text-xl font-semibold leading-10 text-slate-800 dark:text-slate-100">
-                            {person.login}
+                            {contributor.login}
                           </h3>
                           <p className="text-sm text-indigo-600 dark:text-indigo-400">
                             কন্ট্রিবিউটর
@@ -167,7 +203,7 @@ export const Team = () => {
                             সফটওয়্যার ইঞ্জিনিয়ার
                           </p>
                           <a
-                            href={person.html_url}
+                            href={contributor.html_url}
                             target="_blank"
                             rel="noreferrer"
                             className="flex justify-center text-slate-400 hover:text-slate-500"
@@ -178,10 +214,11 @@ export const Team = () => {
                       </div>
                     </li>
                   ))}
-              </ul>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
     </QueryClientProvider>
   );
