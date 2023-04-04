@@ -14,7 +14,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { ControllerButtons } from './ControllerButtons';
 import { TestResultViewer } from './TestResultViewer';
 import { getBoilerpate } from '../../utils/getBoilerpate';
-import {
+import type {
   CodeEditorBoilerplateCategoires,
   CodeEditorBoilerplates,
   CodeEditorTempates,
