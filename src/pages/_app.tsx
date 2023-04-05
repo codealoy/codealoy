@@ -21,7 +21,7 @@ import { getPageTitle } from '../utils/getPageTitle';
 import { getNavigationItems } from '../utils/getNavigationItems';
 import { BlogLayout } from '../layouts/BlogLayout';
 import { ProgressBar } from '../components/ProgressBar';
-import { api } from '~/utils/api';
+import { api } from '~/server/api';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',
