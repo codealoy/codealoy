@@ -8,10 +8,10 @@ import {
 
 export const exampleRouter = createTRPCRouter({
   hello: publicProcedure
-    .input(z.object({ text: z.string() }))
+    .input(z.object({ text: z.string().optional() }).optional())
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input.text}`,
+        greeting: input?.text ? `Hello ${input?.text}` : `Hello world`,
       };
     }),
 
