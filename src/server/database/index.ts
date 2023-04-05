@@ -1,5 +1,6 @@
 import { connect } from '@planetscale/database';
 import { drizzle } from 'drizzle-orm/planetscale-serverless';
+import * as expressions from 'drizzle-orm/expressions';
 
 import { schemaMigration } from './schema';
 
@@ -17,6 +18,7 @@ const db = {
   models: {
     schemaMigration,
   },
+  exp: expressions,
 };
 
 export { db };
