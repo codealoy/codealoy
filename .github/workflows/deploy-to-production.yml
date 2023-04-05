@@ -5,6 +5,9 @@ on:
     branches:
       - 'main'
 
+env:
+  SKIP_ENV_VALIDATION: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
