@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "postinstall": "prisma generate",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "clean": "rimraf .next node_modules"
   },
@@ -68,6 +67,7 @@
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "autoprefixer": "^10.4.14",
+    "dbmate": "^2.2.0",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
     "eslint-config-prettier": "^8.5.0",
