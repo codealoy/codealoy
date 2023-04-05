@@ -74,13 +74,12 @@ This project is built on top of the _"T3 Stack"_. To learn more about the _"T3 S
 
 Here are some useful scripts for when you are developing:
 
-| Command               | Description                                                                |
-| --------------------- | -------------------------------------------------------------------------- |
-| `npm run dev`         | Starts the development server with HMR                                     |
-| `npm run build`       | Build the projet                                                           |
-| `npm run start`       | Start the project built version                                            |
-| `npm run lint`        | Lints the code                                                             |
-| `npm run postinstall` | Generate prisma client codes. Automatically runs after every `npm install` |
+| Command         | Description                            |
+| --------------- | -------------------------------------- |
+| `npm run dev`   | Starts the development server with HMR |
+| `npm run build` | Build the projet                       |
+| `npm run start` | Start the project built version        |
+| `npm run lint`  | Lints the code                         |
 
 When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with prefixes like `feat, fix, chore, docs`, etc... You can use `git status` to double-check which files have not yet been staged for commit:
 
