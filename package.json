@@ -16,6 +16,7 @@
     "db:migration:down": "dbmate -e DATABASE_MIGRATION_URL rollback",
     "db:migration:status": "dbmate -e DATABASE_MIGRATION_URL status",
     "db:migration:dump": "dbmate -e DATABASE_MIGRATION_URL dump",
+    "db:schema:generate": "npx zx ./scripts/introspect-database-schema.mjs",
     "clean": "rimraf .next node_modules"
   },
   "lint-staged": {
