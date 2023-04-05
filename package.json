@@ -10,6 +10,12 @@
     "lint": "next lint",
     "prepare": "husky install",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
+    "dbmate": "dbmate -e DATABASE_MIGRATION_URL",
+    "db:migration:new": "dbmate new",
+    "db:migration:up": "dbmate -e DATABASE_MIGRATION_URL migrate",
+    "db:migration:down": "dbmate -e DATABASE_MIGRATION_URL rollback",
+    "db:migration:status": "dbmate -e DATABASE_MIGRATION_URL status",
+    "db:migration:dump": "dbmate -e DATABASE_MIGRATION_URL dump",
     "clean": "rimraf .next node_modules"
   },
   "lint-staged": {
