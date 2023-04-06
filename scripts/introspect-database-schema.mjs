@@ -6,9 +6,9 @@ dotenv.config();
 
 const steps = {
   1: 'Introspect the database schema',
-  2: 'Copy the generated schema to the server folder',
-  3: 'Format the schema file with prettier',
-  4: 'Delete the drizzle folder',
+  2: 'Copy the generated schema file to the server/database folder',
+  3: 'Format the schema file',
+  4: 'Delete the unnecessary generated schema folder',
 };
 
 // introspect the database schema
