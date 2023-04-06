@@ -84,6 +84,7 @@
     "eslint-plugin-sonarjs": "^0.16.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
+    "ora": "^6.3.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.6",
     "prettier-plugin-organize-imports": "^3.2.2",
