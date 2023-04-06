@@ -20,7 +20,6 @@ Here are the building blocks of Codealoy:
 - [Sandpack by Codesandbox](https://sandpack.codesandbox.io/)
 - [tRPC](https://trpc.io)
 - [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
 - [TypeScript](https://typescriptlang.org)
 
 To learn more about the _"T3 Stack"_, you can visit the official [github repo](https://github.com/t3-oss/create-t3-app).

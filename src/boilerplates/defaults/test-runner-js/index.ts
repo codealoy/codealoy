@@ -2,7 +2,7 @@
  * @hidden
  */
 
-import { SandpackProviderProps } from '@codesandbox/sandpack-react';
+import type { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
 // @ts-ignore
 import tsconfigCode from './tsconfig.json.txt';

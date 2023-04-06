@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es5",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "checkJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,7 +17,10 @@
     "jsx": "preserve",
     "incremental": true,
     "noUncheckedIndexedAccess": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -24,10 +28,8 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
+    ".eslintrc.cjs",
     "src/markdoc/tags.js"
   ],
-  "exclude": ["node_modules"],
-  "paths": {
-    "@/*": ["./src/*"]
-  }
+  "exclude": ["node_modules"]
 }

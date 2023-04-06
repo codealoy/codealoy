@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import {
   ClipboardDocumentCheckIcon,
   ClipboardDocumentListIcon,
 } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import { Fragment, useContext, useState } from 'react';
 
 import Highlight, { defaultProps } from 'prism-react-renderer';
@@ -12,7 +12,7 @@ import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { useCopyToClipboard } from '../hooks/useCopyToClipboard';
 
-const CopyButton = ({ content }) => {
+const CopyButton = ({ content }: { content: string }) => {
   const [isCopied, setIsCopied] = useState(false);
   const [, copy] = useCopyToClipboard();
 
@@ -23,7 +23,8 @@ const CopyButton = ({ content }) => {
         setTimeout(() => {
           setIsCopied(false);
         }, 1500),
-      );
+      )
+      .catch((e) => console.error(e));
   };
 
   return (
@@ -51,7 +52,7 @@ const CopyButton = ({ content }) => {
   );
 };
 
-export const Fence = ({ children, language }) => {
+export const Fence = ({ children, language }: any) => {
   const siteTheme = useContext(ThemeContext);
   const codeContent = children.trimEnd();
 
