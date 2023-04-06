@@ -15,7 +15,7 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 -- GTID state at the beginning of the backup
 --
 
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '6eba27c0-ce3f-11ed-ac37-fab6f0745dd3:1-430';
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '6eba27c0-ce3f-11ed-ac37-fab6f0745dd3:1-492';
 
 --
 -- Table structure for table `schemaMigration`
@@ -25,7 +25,7 @@ SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '6eba27c0-ce3f-11ed-ac37-fab6f0745dd3:1-
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `schemaMigration` (
   `version` varchar(128) NOT NULL,
-  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
