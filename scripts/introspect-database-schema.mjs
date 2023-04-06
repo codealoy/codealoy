@@ -1,31 +1,44 @@
 #!/usr/bin/env zx
 import * as dotenv from 'dotenv';
+import ora from 'ora';
 import 'zx/globals';
 dotenv.config();
 
-// introspect the database schema
-console.log(chalk.green('🚀 Introspect the database schema...'));
+const steps = {
+  1: 'Introspect the database schema',
+  2: 'Copy the generated schema to the server folder',
+  3: 'Format the schema file with prettier',
+  4: 'Delete the drizzle folder',
+};
 
-await $`npx drizzle-kit introspect:mysql --out=drizzle/ --connectionString=${process.env.DATABASE_URL}`;
+// introspect the database schema
+const spinner = ora(steps[1]).start();
+await $`npx drizzle-kit introspect:mysql --out=drizzle/ --connectionString=${process.env.DATABASE_URL} > /dev/null`.quiet();
+
+spinner.succeed(steps[1]);
 
 // copy the generated schema to the server folder
+spinner.text = steps[2];
 if (fs.existsSync('./drizzle/schema.ts')) {
-  console.log(
-    chalk.green('\n\n🚀 Copy the generated schema to the server folder...'),
-  );
-  await $`cp ./drizzle/schema.ts ./src/server/database/schema.generated.ts`;
+  await $`cp ./drizzle/schema.ts ./src/server/database/schema.generated.ts`.quiet();
+  spinner.succeed(steps[2]);
+} else {
+  spinner.fail(steps[2]);
+  console.log(chalk.red('\n❌ Failed! The schema file does not exist'));
+  process.exit(1);
 }
 
 // format the schema file with prettier
-
-console.log(chalk.green('\n🚀 Format the schema file with prettier...'));
-await $`npx prettier --write ./src/server/database/schema.generated.ts --loglevel=silent`;
+spinner.text = steps[3];
+await $`npx prettier --write ./src/server/database/schema.generated.ts --loglevel=silent`.quiet();
+spinner.succeed(steps[3]);
 
 // delete the drizzle folder if it exists
-console.log(chalk.green('\n🚀 Delete the drizzle folder...'));
+spinner.text = steps[4];
 if (fs.existsSync('./drizzle')) {
-  await $`rm -rf ./drizzle`;
+  await $`rm -rf ./drizzle`.quiet();
 }
+spinner.succeed(steps[4]).stop();
 
 // done
-console.log(chalk.green('\n\n✅ Done!'));
+console.log(chalk.green('\n✅ Done!'));
