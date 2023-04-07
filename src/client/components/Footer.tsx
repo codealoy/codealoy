@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { HiOutlineUserGroup } from 'react-icons/hi';
 
+import { SUPPORT_EMAIL } from '~/configs/client.configs';
+
 const navigation = {
   main: [
     { name: 'কোর্সসমুহ', href: '/courses' },
@@ -14,7 +16,7 @@ const navigation = {
     },
     {
       name: 'যোগাযোগ',
-      href: 'mailto:support@codealoy.com',
+      href: SUPPORT_EMAIL,
       target: '_blank',
     },
   ],

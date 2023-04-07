@@ -2,7 +2,7 @@ import { CodeEditor as CodeEditorComponent } from '~/client/components/CodeEdito
 import {
   CODE_EDITOR_BOILERPLATE_CATEGORIES_ARRAY,
   CODE_EDITOR_TEMPLATES_ARRAY,
-} from '~/client/constants/code-editor';
+} from '~/configs/client.configs';
 
 export const CodeEditor = {
   render: CodeEditorComponent,

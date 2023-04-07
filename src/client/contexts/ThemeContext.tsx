@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-
-const DEFAULT_THEME = 'dark';
+import { DEFAULT_THEME } from '~/configs/client.configs';
 
 interface ThemeContextType {
   currentTheme: string;

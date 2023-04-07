@@ -1,5 +1,6 @@
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
-import { SITE_TITLE } from '~/client/constants/site-settings';
+
+import { SITE_TITLE } from '~/configs/client.configs';
 
 export const getPageTitle = ({ markdoc }: MarkdocNextJsPageProps) => {
   if (markdoc) {

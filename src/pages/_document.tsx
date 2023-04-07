@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
-import { COLORS, SITE_TITLE } from '~/client/constants/site-settings';
+import { SITE_COLORS, SITE_TITLE } from '~/configs/client.configs';
 
 const themeScript = `
 function updateTheme() {
@@ -70,15 +70,15 @@ export default function Document() {
         <link
           rel="mask-icon"
           href="/static/favicon/safari-pinned-tab.svg"
-          color={COLORS.PRIMARY}
+          color={SITE_COLORS.PRIMARY}
         />
         <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
-        <meta name="msapplication-TileColor" content={COLORS.PRIMARY} />
+        <meta name="msapplication-TileColor" content={SITE_COLORS.PRIMARY} />
         <meta
           name="msapplication-config"
           content="/static/favicon/browserconfig.xml"
         />
-        <meta name="theme-color" content={COLORS.PRIMARY} />
+        <meta name="theme-color" content={SITE_COLORS.PRIMARY} />
 
         <meta property="og:title" content={SITE_TITLE} />
         <meta property="og:site_name" content="কোডালয় | Codealoy" />
