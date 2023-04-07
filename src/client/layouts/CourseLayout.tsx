@@ -66,7 +66,7 @@ const CourseTags: React.FC<{ tags: Record<string, any> }> = ({ tags }) => {
     <div className="mr-2">
       {tagList.map((tag, index) => (
         <Tag
-          key={index}
+          key={String(tag)}
           className={index !== tagList.length - 1 ? 'mr-2' : ''}
         >{`${tag}`}</Tag>
       ))}

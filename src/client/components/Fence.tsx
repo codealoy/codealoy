@@ -70,9 +70,12 @@ export const Fence = ({ children, language }: any) => {
           <pre className={className} style={style}>
             <code>
               {tokens.map((line, index) => (
-                <React.Fragment key={index}>
-                  {line.map((token, index) => (
-                    <span key={index} {...getTokenProps({ token })} />
+                <React.Fragment key={`${line[0]?.content}_${index}`}>
+                  {line.map((token, idx) => (
+                    <span
+                      key={`${token.content}_${idx}`}
+                      {...getTokenProps({ token })}
+                    />
                   ))}
                   {'\n'}
                 </React.Fragment>
