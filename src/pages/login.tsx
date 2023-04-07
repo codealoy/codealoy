@@ -1,37 +1,24 @@
 import Image from 'next/image';
 import codealoyLogo from '../images/Codealoy.png';
 
-const login = () => {
+const LoginPage = () => {
   return (
     <>
-      <div className="flex min-h-screen  flex-col items-center justify-center">
+      <div className="flex min-h-screen -mt-[124px] flex-col items-center justify-center">
         <Image
           src={codealoyLogo}
           alt="Codealoy-Logo"
           className="mb-5 h-20 w-20 rounded-full"
         />
-        <p className="text-2xl font-bold text-slate-700 dark:text-slate-500">
-          Login to Codealoy
+        <p className="text-2xl font-bold text-slate-700 dark:text-slate-100">
+          লগইন অথবা রেজিস্ট্রেশন করুন
         </p>
-        <p className="font-light text-slate-700 dark:text-slate-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, earum!
+        <p className="mt-4 font-light text-slate-700 dark:text-slate-400">
+          আপনার আকাউন্টে লগইন করুন, যদি আপনার কোন আকাউন্ট না থাকে তাহলে আকাউন্ট
+          রেজিস্ট্রেশন করুন
         </p>
         <div className="mt-5 flex flex-col">
-          <button className="text-l focus:shadow-outline m-2 flex h-12 w-80 select-none items-center justify-center rounded border p-2 font-bold   text-slate-500  shadow hover:bg-violet-600 hover:text-white focus:outline-none focus:ring focus:ring-violet-300 active:bg-violet-700">
-            <span className="mr-5 inline-flex ">
-              <svg
-                className="h-4 w-4"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 488 512"
-              >
-                <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
-              </svg>
-            </span>
-            Continue with google
-          </button>
-
-          <button className="text-l focus:shadow-outline m-2 mt-2 flex h-12 w-80 select-none items-center justify-center rounded border p-2 font-bold   text-slate-500  shadow hover:bg-violet-600 hover:text-white focus:outline-none focus:ring focus:ring-violet-300 active:bg-violet-700 ">
+          <button className="text-l focus:shadow-outline m-2 mt-2 flex h-12 w-80 select-none items-center justify-center rounded border p-2 font-bold text-slate-500 shadow hover:bg-violet-600 hover:text-white focus:outline-none focus:ring focus:ring-violet-300 active:bg-violet-700">
             <span className="mr-5 inline-flex">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -41,11 +28,26 @@ const login = () => {
                 />
               </svg>
             </span>
-            Continue with github
+            গিটহাব অ্যাকাউন্ট ব্যবহার করুন
+          </button>
+
+          <button className="focus:shadow-outline m-2 flex h-12 w-80 select-none items-center justify-center rounded border p-2 font-bold text-slate-500 shadow hover:bg-violet-600 hover:text-white focus:outline-none focus:ring focus:ring-violet-300 active:bg-violet-700 text-l">
+            <span className="mr-5 inline-flex">
+              <svg
+                className="h-4 w-4"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 488 512"
+              >
+                <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+              </svg>
+            </span>
+            গুগল অ্যাকাউন্ট ব্যবহার করুন
           </button>
         </div>
       </div>
     </>
   );
 };
-export default login;
+
+export default LoginPage;
