@@ -1,5 +1,3 @@
-import React, { useContext } from 'react';
-import clsx from 'clsx';
 import {
   SandpackCodeEditor,
   SandpackLayout,
@@ -9,16 +7,18 @@ import {
 } from '@codesandbox/sandpack-react';
 import { aquaBlue, nightOwl } from '@codesandbox/sandpack-themes';
 import { Tab } from '@headlessui/react';
+import clsx from 'clsx';
+import React, { useContext } from 'react';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { ControllerButtons } from './ControllerButtons';
-import { TestResultViewer } from './TestResultViewer';
-import { getBoilerpate } from '../../utils/getBoilerpate';
 import type {
   CodeEditorBoilerplateCategoires,
   CodeEditorBoilerplates,
   CodeEditorTempates,
 } from '../../types/code-editor-types';
+import { getBoilerpate } from '../../utils/getBoilerpate';
+import { ControllerButtons } from './ControllerButtons';
+import { TestResultViewer } from './TestResultViewer';
 
 interface CodeEditorProps {
   title?: string;

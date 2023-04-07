@@ -1,6 +1,6 @@
 import { connect } from '@planetscale/database';
-import { drizzle } from 'drizzle-orm/planetscale-serverless';
 import * as expressions from 'drizzle-orm/expressions';
+import { drizzle } from 'drizzle-orm/planetscale-serverless';
 
 import { schemaMigration } from './schema';
 

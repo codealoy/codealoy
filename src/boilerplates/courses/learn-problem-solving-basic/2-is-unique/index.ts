@@ -6,8 +6,8 @@ import type { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
 import dynamicTests from './dynamic.test.js.json';
 
-import { generateDynamicTestsContent } from '../../../../utils/generateDynamicTestsContent';
 import type { CodeEditorTestList } from '../../../../types/code-editor-tests';
+import { generateDynamicTestsContent } from '../../../../utils/generateDynamicTestsContent';
 
 // @ts-ignore
 import functionCode from './function.js.txt';

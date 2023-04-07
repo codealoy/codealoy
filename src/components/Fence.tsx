@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import {
   ClipboardDocumentCheckIcon,
   ClipboardDocumentListIcon,
 } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import { Fragment, useContext, useState } from 'react';
 
 import Highlight, { defaultProps } from 'prism-react-renderer';
