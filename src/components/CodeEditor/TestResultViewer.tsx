@@ -1,4 +1,3 @@
-import React from 'react';
 import { getEditorResultParser } from 'src/utils/getEditorResultParser';
 
 import { LoadingSpinner } from '../LoadingSpinner';

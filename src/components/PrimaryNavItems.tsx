@@ -1,4 +1,6 @@
+import clsx from 'clsx';
 import Link from 'next/link';
+import { useState } from 'react';
 import { getNavigationItems } from '../utils/getNavigationItems';
 
 const navigationItems = getNavigationItems({
@@ -6,12 +8,20 @@ const navigationItems = getNavigationItems({
 });
 
 export const PrimaryNavItems = () => {
+  const [active, setActive] = useState(0);
+
   return (
     <>
-      {navigationItems.map((navigationItem) => (
+      {navigationItems.map((navigationItem, index) => (
         <li key={navigationItem.title}>
           <Link href={navigationItem.href!}>
-            <span className="hover:text-sky-500 dark:hover:text-sky-400">
+            <span
+              onClick={() => setActive(index)}
+              className={clsx([
+                'hover:text-sky-500 dark:hover:text-sky-400',
+                active === index && 'text-sky-500',
+              ])}
+            >
               {navigationItem.title}
             </span>
           </Link>

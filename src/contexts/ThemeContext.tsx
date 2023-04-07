@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { useState, useEffect, createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const DEFAULT_THEME = 'dark';
 

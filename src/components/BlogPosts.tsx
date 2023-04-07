@@ -1,8 +1,8 @@
+import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import clsx from 'clsx';
-import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 import coverImageBlurDataUrl from '../images/common/cover-image-blur';
 import imageOfMukit from '../images/home/codealoy-team-mukit.png';
