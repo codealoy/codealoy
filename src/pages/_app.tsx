@@ -1,5 +1,6 @@
 import 'focus-visible';
 import Head from 'next/head';
+import React from 'react';
 
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import {
@@ -11,7 +12,6 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { SessionProvider } from 'next-auth/react';
 import { Baloo_Da_2 } from 'next/font/google';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 
 import type { Session } from 'next-auth';
 import type { AppType } from 'next/app';
@@ -44,7 +44,7 @@ const MyApp: AppType<MyAppProps> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = React.useState(() => new QueryClient());
   const router = useRouter();
 
   // INFO: this will only match "/couses/courseName/moduleName" pattern, but not "/courses"
@@ -56,7 +56,7 @@ const MyApp: AppType<MyAppProps> = ({
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showAnnouncement, setShowAnnouncement] = React.useState(true);
 
   const renderLayout = () => {
     if (isCourseDetailPage) {

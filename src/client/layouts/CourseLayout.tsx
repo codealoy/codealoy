@@ -1,8 +1,9 @@
-import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import clsx from 'clsx';
 import Link from 'next/link';
+import React from 'react';
+
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
 
 import { Header } from '~/client/components/Header';
 import { MobileCourseNav } from '~/client/components/MobileCourseNav';
@@ -21,9 +22,11 @@ interface CourseLayoutProps extends MarkdocNextJsPageProps {
 const CourseContent: React.FC<{ content: any }> = ({ content }) => {
   const router = useRouter();
 
-  const [lastScrolledPath, setLastScrolledPath] = useState(router.pathname);
+  const [lastScrolledPath, setLastScrolledPath] = React.useState(
+    router.pathname,
+  );
 
-  useEffect(() => {
+  React.useEffect(() => {
     const shouldScrollToSubSection = router.asPath.includes('#');
     if (!shouldScrollToSubSection) {
       setTimeout(() => {
@@ -32,7 +35,7 @@ const CourseContent: React.FC<{ content: any }> = ({ content }) => {
     }
   }, [lastScrolledPath, router.asPath]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const currentFilePath = router.pathname;
     if (currentFilePath !== lastScrolledPath) {
       setLastScrolledPath(currentFilePath);

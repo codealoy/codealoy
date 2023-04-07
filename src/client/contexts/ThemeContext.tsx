@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { createContext, useEffect, useState } from 'react';
+import React from 'react';
 
 const DEFAULT_THEME = 'dark';
 
-interface ThemeContext {
+interface ThemeContextType {
   currentTheme: string;
   isDarkTheme: boolean;
   setTheme: (themeType: string) => void;
 }
 
-export const ThemeContext = createContext<ThemeContext>({
+export const ThemeContext = React.createContext<ThemeContextType>({
   currentTheme: DEFAULT_THEME,
   isDarkTheme: true,
   setTheme: () => {},
@@ -24,9 +24,9 @@ const getCurrentThemePreference = () => {
 };
 
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(DEFAULT_THEME);
+  const [theme, setTheme] = React.useState(DEFAULT_THEME);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTheme(getCurrentThemePreference());
   }, []);
 
@@ -34,14 +34,17 @@ const ThemeContextProvider = ({ children }) => {
     setTheme(themeType);
   };
 
+  const themeContextValue = React.useMemo(
+    () => ({
+      currentTheme: theme,
+      isDarkTheme: theme === 'dark',
+      setTheme: setThemeHandler,
+    }),
+    [theme],
+  );
+
   return (
-    <ThemeContext.Provider
-      value={{
-        currentTheme: theme,
-        isDarkTheme: theme === 'dark',
-        setTheme: setThemeHandler,
-      }}
-    >
+    <ThemeContext.Provider value={themeContextValue}>
       {children}
     </ThemeContext.Provider>
   );

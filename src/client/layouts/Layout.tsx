@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Footer } from '~/client/components/Footer';
 import { Header } from '~/client/components/Header';
+
 interface LayoutProps {
   navigation?: any;
   children?: React.ReactNode;

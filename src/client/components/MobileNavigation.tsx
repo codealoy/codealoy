@@ -1,16 +1,17 @@
-import { Dialog } from '@headlessui/react';
 import Link from 'next/link';
+import React from 'react';
+
+import { Dialog } from '@headlessui/react';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
 import { Logo } from './Logo';
 import { Navigation } from './Navigation';
 
 export function MobileNavigation({ navigation }) {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isOpen) return;
 
     function onRouteChange() {

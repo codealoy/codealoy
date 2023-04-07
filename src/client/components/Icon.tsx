@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useId } from 'react';
+import React from 'react';
 
 import { InstallationIcon } from './icons/InstallationIcon';
 import { LightbulbIcon } from './icons/LightbulbIcon';
@@ -24,7 +24,7 @@ const iconStyles = {
 };
 
 export function Icon({ color = 'blue', icon, className, ...props }) {
-  const id = useId();
+  const id = React.useId();
   const IconComponent = icons[icon];
 
   return (

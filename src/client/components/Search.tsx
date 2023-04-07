@@ -1,7 +1,8 @@
-import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react';
 import Link from 'next/link';
 import Router from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
+import React from 'react';
+
+import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react';
 import { createPortal } from 'react-dom';
 
 const docSearchConfig = {
@@ -19,20 +20,20 @@ function Hit({ hit, children }) {
 }
 
 export function Search() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [modifierKey, setModifierKey] = useState('Ctrl ');
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [modifierKey, setModifierKey] = React.useState('Ctrl ');
 
-  const onOpen = useCallback(() => {
+  const onOpen = React.useCallback(() => {
     setIsOpen(true);
   }, [setIsOpen]);
 
-  const onClose = useCallback(() => {
+  const onClose = React.useCallback(() => {
     setIsOpen(false);
   }, [setIsOpen]);
 
   useDocSearchKeyboardEvents({ isOpen, onOpen, onClose });
 
-  useEffect(() => {
+  React.useEffect(() => {
     setModifierKey(
       /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl ',
     );

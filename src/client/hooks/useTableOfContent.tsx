@@ -1,9 +1,11 @@
-import { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 
 export const useTableOfContents = (tableOfContents) => {
-  const [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id);
+  const [currentSection, setCurrentSection] = React.useState(
+    tableOfContents[0]?.id,
+  );
 
-  const getHeadings = useCallback(() => {
+  const getHeadings = React.useCallback(() => {
     function* traverse(node) {
       if (Array.isArray(node)) {
         for (const child of node) {
@@ -28,7 +30,7 @@ export const useTableOfContents = (tableOfContents) => {
     return Array.from(traverse(tableOfContents));
   }, [tableOfContents]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const headings = getHeadings();
     if (tableOfContents.length === 0 || headings.length === 0) return;
     function onScroll() {
@@ -36,11 +38,13 @@ export const useTableOfContents = (tableOfContents) => {
         .concat([])
         .sort((a: any, b: any) => a.top - b.top);
 
-      const top = window.pageYOffset;
+      const top = window.scrollY;
+
       let current = sortedHeadings[0].id;
-      for (let i = 0; i < sortedHeadings.length; i++) {
-        if (top >= sortedHeadings[i].top) {
-          current = sortedHeadings[i].id;
+
+      for (const element of sortedHeadings) {
+        if (top >= element.top) {
+          current = element.id;
         }
       }
       setCurrentSection(current);

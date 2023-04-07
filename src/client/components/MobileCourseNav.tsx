@@ -1,15 +1,16 @@
-import { Dialog } from '@headlessui/react';
 import clsx from 'clsx';
+import React from 'react';
+
+import { Dialog } from '@headlessui/react';
 import { Router } from 'next/router';
-import { useEffect, useState } from 'react';
 
 import { Navigation } from './Navigation';
 
 export const MobileCourseNav = ({ navigationItems, section }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [navIsOpen, setNavIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [navIsOpen, setNavIsOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     function onScroll() {
       setIsScrolled(window.scrollY > 0);
     }
@@ -20,7 +21,7 @@ export const MobileCourseNav = ({ navigationItems, section }) => {
     };
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!navIsOpen) return;
     function handleRouteChange() {
       setNavIsOpen(false);

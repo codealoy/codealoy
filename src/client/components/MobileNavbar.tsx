@@ -1,16 +1,16 @@
 import clsx from 'clsx';
+import Link from 'next/link';
+import React from 'react';
 
 import { Dialog } from '@headlessui/react';
-import Link from 'next/link';
 import { Router } from 'next/router';
-import { useEffect, useState } from 'react';
 import { PrimaryNavItems } from './PrimaryNavItems';
 import { ThemeSelector } from './ThemeSelector';
 
 export function MobileNavbar({ display = 'lg:hidden', className, ...props }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isOpen) return;
     function handleRouteChange() {
       setIsOpen(false);

@@ -162,4 +162,4 @@ const CourseList: React.FC<CourseListProps> = ({ searchQuery, limit }) => {
   );
 };
 
-export default CourseList;
+export { CourseList };

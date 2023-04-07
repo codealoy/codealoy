@@ -1,8 +1,8 @@
 import clsx from 'clsx';
+import React from 'react';
 
 import { Listbox } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { useContext, useEffect, useState } from 'react';
 
 import { MoonIcon } from '~/client/components/icons/MoonIcon';
 import { SunIcon } from '~/client/components/icons/SunIcon';
@@ -19,8 +19,8 @@ interface Theme {
 }
 
 const themes: Theme[] = [
-  { name: 'লাইট থিম', value: 'light', icon: SunIcon },
   { name: 'ডার্ক থিম', value: 'dark', icon: MoonIcon },
+  { name: 'লাইট থিম', value: 'light', icon: SunIcon },
 ];
 
 const ThemeSelectorIcon = () => (
@@ -37,12 +37,12 @@ const ThemeSelectorIcon = () => (
 export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
   iconOnly = true,
 }) => {
-  const [selectedTheme, setSelectedTheme] = useState<(typeof themes)[0]>(
-    themes[1] as Theme,
+  const [selectedTheme, setSelectedTheme] = React.useState<(typeof themes)[0]>(
+    themes[0] as Theme,
   );
-  const siteTheme = useContext(ThemeContext);
+  const siteTheme = React.useContext(ThemeContext);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (selectedTheme) {
       document.documentElement.setAttribute('data-theme', selectedTheme.value);
     } else {

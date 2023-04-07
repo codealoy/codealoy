@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import CourseList from '~/client/components/CourseList';
+import { CourseList } from '~/client/components/CourseList';
 
 export const LatestCourses = () => {
   return (

@@ -1,15 +1,17 @@
-import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-import Link from 'next/link';
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
+
 import { BlogPosts } from '~/client/components/BlogPosts';
 import { Divider } from '~/client/components/Divider';
 import { Footer } from '~/client/components/Footer';
 import { Header } from '~/client/components/Header';
 import { Prose } from '~/client/components/Prose';
-import coverImageBlurDataUrl from '~/client/images/common/cover-image-blur';
 import { dayjs } from '~/client/utils/dayjs';
+
+import coverImageBlurDataUrl from '~/client/images/common/cover-image-blur';
 
 interface BlogLayoutProps extends MarkdocNextJsPageProps {
   children?: React.ReactNode;

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+import React from 'react';
 
-import { useState } from 'react';
 import { getNavigationItems } from '~/client/utils/getNavigationItems';
 
 const navigationItems = getNavigationItems({
@@ -9,7 +9,7 @@ const navigationItems = getNavigationItems({
 });
 
 export const PrimaryNavItems = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = React.useState(0);
 
   return (
     <>
