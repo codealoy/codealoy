@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import codealoyLogo from '../images/Codealoy.png';
+import codealoyLogo from '~/client/images/Codealoy.png';
 
 const LoginPage = () => {
   return (

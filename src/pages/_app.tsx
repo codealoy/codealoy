@@ -17,18 +17,18 @@ import type { Session } from 'next-auth';
 import type { AppType } from 'next/app';
 
 import 'nprogress/nprogress.css';
-import '~/styles/globals.css';
-import '~/styles/tailwind.css';
+import '~/client/styles/globals.css';
+import '~/client/styles/tailwind.css';
 
+import { Announcement } from '~/client/components/Announcement';
+import { ProgressBar } from '~/client/components/ProgressBar';
+import { ThemeContextProvider } from '~/client/contexts/ThemeContext';
+import { BlogLayout } from '~/client/layouts/BlogLayout';
+import { CourseLayout } from '~/client/layouts/CourseLayout';
+import { Layout } from '~/client/layouts/Layout';
+import { getNavigationItems } from '~/client/utils/getNavigationItems';
+import { getPageTitle } from '~/client/utils/getPageTitle';
 import { api } from '~/server/api';
-import { Announcement } from '../components/Announcement';
-import { ProgressBar } from '../components/ProgressBar';
-import { ThemeContextProvider } from '../contexts/ThemeContext';
-import { BlogLayout } from '../layouts/BlogLayout';
-import { CourseLayout } from '../layouts/CourseLayout';
-import { Layout } from '../layouts/Layout';
-import { getNavigationItems } from '../utils/getNavigationItems';
-import { getPageTitle } from '../utils/getPageTitle';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',

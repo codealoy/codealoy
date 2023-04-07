@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
-import { COLORS, SITE_TITLE } from '../constants/site-settings';
+import { COLORS, SITE_TITLE } from '~/client/constants/site-settings';
 
 const themeScript = `
 function updateTheme() {

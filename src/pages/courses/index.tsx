@@ -1,7 +1,7 @@
-import React from 'react';
 import { Disclosure } from '@headlessui/react';
+import React from 'react';
 
-import CourseList from '../../components/CourseList';
+import CourseList from '~/client/components/CourseList';
 
 type searchData = string | null;
 

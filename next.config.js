@@ -21,7 +21,7 @@ function defineNextConfig(config) {
 }
 
 module.exports = withMarkdoc({
-  schemaPath: './src/markdoc',
+  schemaPath: './src/client/markdoc',
 })(
   defineNextConfig({
     reactStrictMode: true,
