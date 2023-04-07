@@ -12,7 +12,13 @@ interface ThemeSelectorProps {
   iconOnly?: boolean;
 }
 
-const themes = [
+interface Theme {
+  name: string;
+  value: string;
+  icon: typeof SunIcon | typeof MoonIcon;
+}
+
+const themes: Theme[] = [
   { name: 'লাইট থিম', value: 'light', icon: SunIcon },
   { name: 'ডার্ক থিম', value: 'dark', icon: MoonIcon },
 ];
@@ -31,7 +37,9 @@ const ThemeSelectorIcon = () => (
 export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
   iconOnly = true,
 }) => {
-  const [selectedTheme, setSelectedTheme] = useState<(typeof themes)[0]>();
+  const [selectedTheme, setSelectedTheme] = useState<(typeof themes)[0]>(
+    themes[1] as Theme,
+  );
   const siteTheme = useContext(ThemeContext);
 
   useEffect(() => {
@@ -43,7 +51,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
           theme.value === document.documentElement.getAttribute('data-theme'),
       );
 
-      setSelectedTheme(selectedTheme);
+      setSelectedTheme(selectedTheme as Theme);
     }
   }, [selectedTheme]);
 

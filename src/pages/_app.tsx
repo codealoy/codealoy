@@ -1,8 +1,15 @@
-import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import 'focus-visible';
+import Head from 'next/head';
+
+import { MarkdocNextJsPageProps } from '@markdoc/next.js';
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { SessionProvider } from 'next-auth/react';
 import { Baloo_Da_2 } from 'next/font/google';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -30,12 +37,14 @@ const fontBengali = Baloo_Da_2({
 
 interface MyAppProps extends MarkdocNextJsPageProps {
   session: Session | null;
+  dehydratedState: unknown;
 }
 
 const MyApp: AppType<MyAppProps> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+  const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
 
   // INFO: this will only match "/couses/courseName/moduleName" pattern, but not "/courses"
@@ -86,17 +95,24 @@ const MyApp: AppType<MyAppProps> = ({
     <>
       <ThemeContextProvider>
         <SessionProvider session={session}>
-          <Head>
-            <title>{pageTitle}</title>
-            {description && <meta name="description" content={description} />}
-          </Head>
-          <ProgressBar />
-          <main className={fontBengali.className}>
-            {showAnnouncement && (
-              <Announcement hideAnnouncement={hideAnnouncement} />
-            )}
-            {renderLayout()}
-          </main>
+          <QueryClientProvider client={queryClient}>
+            <Hydrate state={pageProps.dehydratedState}>
+              <Head>
+                <title>{pageTitle}</title>
+                {description && (
+                  <meta name="description" content={description} />
+                )}
+              </Head>
+              <ProgressBar />
+              <main className={fontBengali.className}>
+                {showAnnouncement && (
+                  <Announcement hideAnnouncement={hideAnnouncement} />
+                )}
+                {renderLayout()}
+              </main>
+            </Hydrate>
+            <ReactQueryDevtools initialIsOpen={false} />
+          </QueryClientProvider>
         </SessionProvider>
       </ThemeContextProvider>
     </>
