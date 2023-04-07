@@ -112,7 +112,7 @@ export const Team = () => {
   const { data: contributorList } = useQuery({
     queryKey: ['contributors'],
     queryFn: () => axios.get(GITHUB_CONTRIBUTOS_API),
-    cacheTime: 1 * 1000 * 60 * 2,
+    staleTime: ONE_DAY_IN_MILLISECONDS,
   });
 
   const filteredContributorList = getFilteredContributorList({
