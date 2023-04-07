@@ -2,12 +2,12 @@
  * @hidden
  */
 
-import { SandpackProviderProps } from '@codesandbox/sandpack-react';
+import type { SandpackProviderProps } from '@codesandbox/sandpack-react';
 
 import dynamicTests from './dynamic.test.js.json';
 
+import type { CodeEditorTestList } from '../../../../types/code-editor-tests';
 import { generateDynamicTestsContent } from '../../../../utils/generateDynamicTestsContent';
-import { CodeEditorTestList } from '../../../../types/code-editor-tests';
 
 // @ts-ignore
 import functionCode from './function.js.txt';

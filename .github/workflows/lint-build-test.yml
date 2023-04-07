@@ -1,0 +1,31 @@
+name: Run lint, build & tests
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+
+env:
+  SKIP_ENV_VALIDATION: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Compile code
+        run: npm run build

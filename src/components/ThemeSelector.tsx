@@ -31,7 +31,7 @@ const ThemeSelectorIcon = () => (
 export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
   iconOnly = true,
 }) => {
-  const [selectedTheme, setSelectedTheme] = useState<typeof themes[0]>();
+  const [selectedTheme, setSelectedTheme] = useState<(typeof themes)[0]>();
   const siteTheme = useContext(ThemeContext);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
     }
   }, [selectedTheme]);
 
-  const selectThemeHandler = (selectedTheme: typeof themes[0]) => {
+  const selectThemeHandler = (selectedTheme: (typeof themes)[0]) => {
     setSelectedTheme(selectedTheme);
     siteTheme.setTheme(selectedTheme.value);
   };
