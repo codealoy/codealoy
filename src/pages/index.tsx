@@ -1,16 +1,17 @@
-import { type NextPage } from 'next';
 import Head from 'next/head';
 
-import { CTA } from '../components/home/CTA';
-// import { FAQ } from '../components/home/FAQ';
-import { Divider } from '../components/Divider';
-import { FeatureGrid } from '../components/home/FeatureGrid';
-import { Hero } from '../components/home/Hero';
-import { HighlightedFeatures } from '../components/home/HighlightedFeatures';
-import { LatestBlogPosts } from '../components/home/LatestBlogPosts';
-import { LatestCourses } from '../components/home/LatestCourses';
-import { Team } from '../components/home/Team';
-import { SITE_TITLE } from '../constants/site-settings';
+import { type NextPage } from 'next';
+
+// import { FAQ } from '~/components/home/FAQ';
+import { Divider } from '~/client/components/Divider';
+import { CTA } from '~/client/components/home/CTA';
+import { FeatureGrid } from '~/client/components/home/FeatureGrid';
+import { Hero } from '~/client/components/home/Hero';
+import { HighlightedFeatures } from '~/client/components/home/HighlightedFeatures';
+import { LatestBlogPosts } from '~/client/components/home/LatestBlogPosts';
+import { LatestCourses } from '~/client/components/home/LatestCourses';
+import { Team } from '~/client/components/home/Team';
+import { SITE_TITLE } from '~/configs/client.configs';
 
 const IndexPage: NextPage = () => {
   return (

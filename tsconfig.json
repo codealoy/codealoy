@@ -29,7 +29,7 @@
     "**/*.cjs",
     "**/*.mjs",
     ".eslintrc.cjs",
-    "src/markdoc/tags.js"
+    "src/client/markdoc/tags.js"
   ],
   "exclude": ["node_modules"]
 }

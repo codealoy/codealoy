@@ -1,6 +1,7 @@
-import { ChevronRightIcon } from '@heroicons/react/24/solid';
-import { BookOpenIcon, RssIcon, HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+
+import { BookOpenIcon, HomeIcon, RssIcon } from '@heroicons/react/24/outline';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 
 const links = [
   {
@@ -48,9 +49,9 @@ const ErrorPage = () => {
               role="list"
               className="mt-4 divide-y divide-slate-200 dark:divide-slate-800"
             >
-              {links.map((link, linkIdx) => (
+              {links.map((link) => (
                 <li
-                  key={linkIdx}
+                  key={link.title}
                   className="relative flex items-start space-x-4 py-6"
                 >
                   <div className="flex-shrink-0">

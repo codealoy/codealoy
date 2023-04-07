@@ -1,5 +1,6 @@
 import 'focus-visible';
 import Head from 'next/head';
+import React from 'react';
 
 import { MarkdocNextJsPageProps } from '@markdoc/next.js';
 import {
@@ -11,24 +12,23 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { SessionProvider } from 'next-auth/react';
 import { Baloo_Da_2 } from 'next/font/google';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 
 import type { Session } from 'next-auth';
 import type { AppType } from 'next/app';
 
 import 'nprogress/nprogress.css';
-import '~/styles/globals.css';
-import '~/styles/tailwind.css';
+import '~/client/styles/globals.css';
+import '~/client/styles/tailwind.css';
 
+import { Announcement } from '~/client/components/Announcement';
+import { ProgressBar } from '~/client/components/ProgressBar';
+import { ThemeContextProvider } from '~/client/contexts/ThemeContext';
+import { BlogLayout } from '~/client/layouts/BlogLayout';
+import { CourseLayout } from '~/client/layouts/CourseLayout';
+import { Layout } from '~/client/layouts/Layout';
+import { getNavigationItems } from '~/client/utils/getNavigationItems';
+import { getPageTitle } from '~/client/utils/getPageTitle';
 import { api } from '~/server/api';
-import { Announcement } from '../components/Announcement';
-import { ProgressBar } from '../components/ProgressBar';
-import { ThemeContextProvider } from '../contexts/ThemeContext';
-import { BlogLayout } from '../layouts/BlogLayout';
-import { CourseLayout } from '../layouts/CourseLayout';
-import { Layout } from '../layouts/Layout';
-import { getNavigationItems } from '../utils/getNavigationItems';
-import { getPageTitle } from '../utils/getPageTitle';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',
@@ -44,7 +44,7 @@ const MyApp: AppType<MyAppProps> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = React.useState(() => new QueryClient());
   const router = useRouter();
 
   // INFO: this will only match "/couses/courseName/moduleName" pattern, but not "/courses"
@@ -56,7 +56,7 @@ const MyApp: AppType<MyAppProps> = ({
   const pageTitle = getPageTitle(pageProps);
   const description = pageProps.markdoc?.frontmatter.description;
 
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showAnnouncement, setShowAnnouncement] = React.useState(true);
 
   const renderLayout = () => {
     if (isCourseDetailPage) {
