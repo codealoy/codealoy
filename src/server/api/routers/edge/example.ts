@@ -1,17 +1,15 @@
 import { z } from 'zod';
-import {
-  createTRPCRouter,
-  protectedProcedure,
-  publicProcedure,
-} from '~/server/api/trpc';
+import { createTRPCRouter, publicProcedure } from '~/server/api/trpc';
 import { db } from '~/server/database';
 
-export const exampleRouter = createTRPCRouter({
+export const exampleEdgeRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string().optional() }).optional())
     .query(({ input }) => {
       return {
-        greeting: input?.text ? `Hello ${input?.text}` : `Hello world`,
+        greeting: input?.text
+          ? `Hello ${input?.text}`
+          : `Hello world from edge`,
       };
     }),
 
@@ -36,8 +34,4 @@ export const exampleRouter = createTRPCRouter({
         )
         .limit(1);
     }),
-
-  getSecretMessage: protectedProcedure.query(() => {
-    return 'you can now see this secret message!';
-  }),
 });

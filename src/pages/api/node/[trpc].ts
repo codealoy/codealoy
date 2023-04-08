@@ -1,7 +1,7 @@
 import { createNextApiHandler } from '@trpc/server/adapters/next';
 
 import { env } from '~/configs/env.mjs';
-import { appRouter } from '~/server/api/root';
+import { appNodeRouter } from '~/server/api/root';
 import { createTRPCContext } from '~/server/api/trpc';
 
 export const config = {
@@ -10,7 +10,7 @@ export const config = {
 
 // export API handler
 export default createNextApiHandler({
-  router: appRouter,
+  router: appNodeRouter,
   createContext: createTRPCContext,
   onError:
     env.NODE_ENV === 'development'
