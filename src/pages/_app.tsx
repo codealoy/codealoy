@@ -119,4 +119,4 @@ const MyApp: AppType<MyAppProps> = ({
   );
 };
 
-export default api.withTRPC(MyApp);
+export default api.edge.withTRPC(MyApp);
