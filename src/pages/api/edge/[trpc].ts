@@ -1,6 +1,6 @@
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 import { NextRequest } from 'next/server';
-import { appEdgeRouter } from '~/server/api/root';
+import { appEdgeRouter } from '~/server/api/routers/root';
 
 export const config = {
   runtime: 'edge',
