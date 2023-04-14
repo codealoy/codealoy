@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ChallengeDetails from '~/client/components/ChallengeDetails';
 import ChallengePage2 from '~/client/components/ChallengePage2';
 import ChallengePage3 from '~/client/components/ChallengePage3';

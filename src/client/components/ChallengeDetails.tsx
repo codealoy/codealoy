@@ -72,7 +72,7 @@ export default function ChallengeDetails() {
           </div>
           <div className=" mt-16  overflow-hidden lg:mt-8">
             <img
-              className=" w-[500px] h-[390px]"
+              className=" w-[500px] h-[390px] "
               src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
               alt="App screenshot"
               width={1824}

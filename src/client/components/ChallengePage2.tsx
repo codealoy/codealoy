@@ -118,7 +118,7 @@ export default function ChallengePage2() {
                 <p>HTML file with pre-written content</p>
               </div>
             </div>
-            {/* Second Card */}
+            {/* Second Card section*/}
             <div className="col-span-1 rounded-lg shadow-md bg-white dark:text-white dark:bg-gray-900 dark:border dark:border-slate-500 h-80 py-8 px-8  space-y-2">
               <div>
                 <h1 className=" text-2xl font-medium">

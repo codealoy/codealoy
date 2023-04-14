@@ -34,7 +34,7 @@ const faqs = [
     answer:
       'We launch a new challenge every two weeks. We alternate between free and premium challenge launches, so we launch one free and one premium challenge each month.',
   },
-  // More questions...
+  // More questions..
 ];
 
 export default function ChallengePage3() {
