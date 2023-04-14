@@ -12,7 +12,6 @@ const DetailsPage = () => {
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
-
   return (
     <div className=" mt-20 relative mx-auto mb-20 min-h-screen max-w-7xl bg-white px-4 dark:bg-slate-900 sm:px-6 lg:px-8 xl:px-12">
       <ChallengeDetails />
