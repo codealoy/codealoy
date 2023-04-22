@@ -12,5 +12,5 @@ create table announcements (
 );
 
 -- migrate:down
-drop table announcements
+drop table announcements;
 
