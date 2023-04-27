@@ -2,7 +2,7 @@ import { connect } from '@planetscale/database';
 import * as expressions from 'drizzle-orm/expressions';
 import { drizzle } from 'drizzle-orm/planetscale-serverless';
 
-import { schemaMigration } from './schema';
+import { schemaMigration, solution, solutionTag, tag } from './schema';
 
 // create the connection
 const connection = connect({
@@ -17,6 +17,9 @@ const db = {
   query: drizzleClient,
   models: {
     schemaMigration,
+    tag,
+    solution,
+    solutionTag,
   },
   exp: expressions,
 };
