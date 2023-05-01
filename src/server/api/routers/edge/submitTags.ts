@@ -6,7 +6,7 @@ export const submitTagsEdgeRouter = createTRPCRouter({
   submitTags: publicProcedure
     .input(
       z.object({
-        id: z.bigInt(),
+        id: z.bigint(),
         tagMaskId: z.string(),
         title: z.string(),
       }),

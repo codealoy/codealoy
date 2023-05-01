@@ -6,9 +6,9 @@ export const solutionTagsEdgeRouter = createTRPCRouter({
   solutionTags: publicProcedure
     .input(
       z.object({
-        id: z.bigInt(),
-        solutionId: z.bigInt(),
-        tagId: z.bigInt(),
+        id: z.bigint(),
+        solutionId: z.bigint(),
+        tagId: z.bigint(),
       }),
     )
     .mutation(async ({ input }) => {

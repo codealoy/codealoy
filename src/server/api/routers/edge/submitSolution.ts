@@ -6,7 +6,7 @@ export const submitSolutionEdgeRouter = createTRPCRouter({
   submitSolution: publicProcedure
     .input(
       z.object({
-        id: z.bigInt(),
+        id: z.bigint(),
         solutionMaskId: z.string(),
         title: z.string(),
         repositoryUrl: z.string(),
