@@ -1,4 +1,4 @@
-import { datetime, mysqlTable, varchar } from 'drizzle-orm/mysql-core';
+import { datetime, mysqlTable, serial, varchar } from 'drizzle-orm/mysql-core';
 import { sql } from 'drizzle-orm/sql';
 
 export const schemaMigration = mysqlTable('schemaMigration', {
