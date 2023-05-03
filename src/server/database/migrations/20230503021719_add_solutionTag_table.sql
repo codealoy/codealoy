@@ -7,10 +7,10 @@ CREATE TABLE solutionTag (
   updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE UNIQUE INDEX idx_uni_solutionTag ON solutionTag (solutionId, tagId);
+CREATE INDEX idx_solutionId ON solutionTag (solutionId);
+CREATE INDEX idx_tagId ON solutionTag (tagId);
 
 -- migrate:down
-DROP INDEX idx_uni_solutionTag ON solutionTag;
+DROP INDEX IF EXISTS idx_solutionId ON solutionTag;
+DROP INDEX IF EXISTS idx_tagId ON solutionTag;
 DROP TABLE IF EXISTS solutionTag;
-
-

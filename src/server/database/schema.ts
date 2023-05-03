@@ -1,4 +1,11 @@
-import { datetime, mysqlTable, serial, varchar } from 'drizzle-orm/mysql-core';
+import {
+  datetime,
+  int,
+  mysqlTable,
+  serial,
+  text,
+  varchar,
+} from 'drizzle-orm/mysql-core';
 import { sql } from 'drizzle-orm/sql';
 
 export const schemaMigration = mysqlTable('schemaMigration', {
@@ -68,10 +75,8 @@ export const solutionTag = mysqlTable(
   },
   (table) => {
     return {
-      idxUniSolutionTag: uniqueIndex('idx_uni_solutionTag').on(
-        table.solutionId,
-        table.tagId,
-      ),
+      idxSolutionId: index('idx_solutionId').on(table.solutionId),
+      idxTagId: index('idx_tagId').on(table.tagId),
     };
   },
 );

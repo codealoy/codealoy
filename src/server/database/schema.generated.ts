@@ -137,10 +137,8 @@ export const solutionTag = mysqlTable(
   },
   (table) => {
     return {
-      idxUniSolutionTag: uniqueIndex('idx_uni_solutionTag').on(
-        table.solutionId,
-        table.tagId,
-      ),
+      idxSolutionId: index('idx_solutionId').on(table.solutionId),
+      idxTagId: index('idx_tagId').on(table.tagId),
     };
   },
 );
