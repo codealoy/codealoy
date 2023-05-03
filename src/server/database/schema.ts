@@ -69,7 +69,7 @@ export const solutionTag = mysqlTable(
     createdAt: datetime('createdAt', { mode: 'date' })
       .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
-    updatedAt: datetime('updatedAt', { mode: 'date' })
+    updatedAt: datetime('updatedAt', { mode: 'datetime' })
       .default('CURRENT_TIMESTAMP')
       .notNull(),
   },
