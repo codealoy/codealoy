@@ -15,26 +15,6 @@ export const schemaMigration = mysqlTable('schemaMigration', {
     .notNull(),
 });
 
-export const tag = mysqlTable(
-  'tag',
-  {
-    id: serial('id').primaryKey().notNull(),
-    tagMaskId: varchar('tagMaskId', { length: 30 }).notNull(),
-    title: varchar('title', { length: 255 }).notNull(),
-    createdAt: datetime('createdAt', { mode: 'date' })
-      .default(sql`(CURRENT_TIMESTAMP)`)
-      .notNull(),
-    updatedAt: datetime('updatedAt', { mode: 'date' })
-      .default('CURRENT_TIMESTAMP')
-      .notNull(),
-  },
-  (table) => {
-    return {
-      idxUniTagMaskId: uniqueIndex('idx_uni_tagMaskId').on(table.tagMaskId),
-    };
-  },
-);
-
 export const solution = mysqlTable(
   'solution',
   {
@@ -56,6 +36,26 @@ export const solution = mysqlTable(
       idxUniSolutionMaskId: uniqueIndex('idx_uni_solutionMaskId').on(
         table.solutionMaskId,
       ),
+    };
+  },
+);
+
+export const tag = mysqlTable(
+  'tag',
+  {
+    id: serial('id').primaryKey().notNull(),
+    tagMaskId: varchar('tagMaskId', { length: 30 }).notNull(),
+    title: varchar('title', { length: 255 }).notNull(),
+    createdAt: datetime('createdAt', { mode: 'date' })
+      .default(sql`(CURRENT_TIMESTAMP)`)
+      .notNull(),
+    updatedAt: datetime('updatedAt', { mode: 'date' })
+      .default('CURRENT_TIMESTAMP')
+      .notNull(),
+  },
+  (table) => {
+    return {
+      idxUniTagMaskId: uniqueIndex('idx_uni_tagMaskId').on(table.tagMaskId),
     };
   },
 );
