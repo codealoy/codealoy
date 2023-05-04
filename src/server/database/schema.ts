@@ -1,9 +1,11 @@
 import {
   datetime,
+  index,
   int,
   mysqlTable,
   serial,
   text,
+  uniqueIndex,
   varchar,
 } from 'drizzle-orm/mysql-core';
 import { sql } from 'drizzle-orm/sql';
@@ -28,7 +30,7 @@ export const solution = mysqlTable(
       .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
     updatedAt: datetime('updatedAt', { mode: 'date' })
-      .default('CURRENT_TIMESTAMP')
+      .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
   },
   (table) => {
@@ -50,7 +52,7 @@ export const tag = mysqlTable(
       .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
     updatedAt: datetime('updatedAt', { mode: 'date' })
-      .default('CURRENT_TIMESTAMP')
+      .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
   },
   (table) => {
@@ -70,7 +72,7 @@ export const solutionTag = mysqlTable(
       .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
     updatedAt: datetime('updatedAt', { mode: 'date' })
-      .default('CURRENT_TIMESTAMP')
+      .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
   },
   (table) => {

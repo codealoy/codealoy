@@ -11,6 +11,13 @@ export const submitSolutionEdgeRouter = createTRPCRouter({
         repositoryUrl: z.string(),
         liveUrl: z.string(),
         questions: z.string(),
+        tags: z.array(
+          z.object({
+            id: z.number().optional(),
+            tagMaskId: z.string(),
+            title: z.string(),
+          }),
+        ),
       }),
     )
     .mutation(async ({ input }) => {
@@ -21,7 +28,7 @@ export const submitSolutionEdgeRouter = createTRPCRouter({
         liveUrl: input.liveUrl,
         questions: input.questions,
       });
-      return db.query
+      const solutionIdResponse = await db.query
         .select({
           id: db.models.solution.id,
         })
@@ -29,44 +36,41 @@ export const submitSolutionEdgeRouter = createTRPCRouter({
         .where(
           db.exp.eq(db.models.solution.solutionMaskId, input.solutionMaskId),
         );
-    }),
-  submitSolutionTags: publicProcedure
-    .input(
-      z.object({
-        tagMaskId: z.string(),
-        title: z.string(),
-      }),
-    )
-    .mutation(async ({ input }) => {
-      await db.query.insert(db.models.tag).values({
-        tagMaskId: input.tagMaskId,
-        title: input.title,
+
+      const solutionId = solutionIdResponse[0]?.id;
+
+      const { tags } = input;
+
+      tags.forEach(async (tag): void => {
+        if (tag.id !== undefined) {
+          await db.query.insert(db.models.solutionTag).values({
+            solutionId: solutionId,
+            tagId: tag.id,
+          });
+        } else {
+          await db.query.insert(db.models.tag).values({
+            tagMaskId: tag.tagMaskId,
+            title: tag.title,
+          });
+
+          const tagIdResponse = await db.query
+            .select({
+              id: db.models.tag.id,
+            })
+            .from(db.models.tag)
+            .where(db.exp.eq(db.models.tag.tagMaskId, tag.tagMaskId));
+
+          const tagId = tagIdResponse[0]?.id;
+
+          await db.query.insert(db.models.solutionTag).values({
+            solutionId: solutionId,
+            tagId: tagId,
+          });
+        }
       });
-      return db.query
-        .select({
-          id: db.models.tag.id,
-        })
-        .from(db.models.tag)
-        .where(db.exp.eq(db.models.tag.tagMaskId, input.tagMaskId));
     }),
 
-  submitSolutionTagRelations: publicProcedure
-    .input(
-      z.object({
-        solutionId: z.number(),
-        tagId: z.number(),
-      }),
-    )
-    .mutation(async ({ input }) => {
-      await db.query.insert(db.models.solutionTag).values({
-        solutionId: input.solutionId,
-        tagId: input.tagId,
-      });
-      return db.query
-        .select({
-          id: db.models.solutionTag.id,
-        })
-        .from(db.models.solutionTag)
-        .where(db.exp.eq(db.models.solutionTag.solutionId, input.solutionId));
-    }),
+  getAllTags: publicProcedure.query(async () => {
+    return await db.query.select().from(db.models.tag);
+  }),
 });
