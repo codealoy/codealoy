@@ -40,34 +40,43 @@ export const submitSolutionEdgeRouter = createTRPCRouter({
       const solutionId = solutionIdResponse[0]?.id;
 
       const { tags } = input;
+      console.log('tags: ', tags);
 
-      tags.forEach(async (tag): void => {
-        if (tag.id !== undefined) {
-          await db.query.insert(db.models.solutionTag).values({
-            solutionId: solutionId,
-            tagId: tag.id,
-          });
-        } else {
-          await db.query.insert(db.models.tag).values({
-            tagMaskId: tag.tagMaskId,
-            title: tag.title,
-          });
+      try {
+        await Promise.all(
+          tags.map(async (tag): Promise<any> => {
+            if (tag.id !== undefined && solutionId !== undefined) {
+              await db.query.insert(db.models.solutionTag).values({
+                solutionId: solutionId,
+                tagId: tag.id,
+              });
+            } else {
+              await db.query.insert(db.models.tag).values({
+                tagMaskId: tag.tagMaskId,
+                title: tag.title,
+              });
 
-          const tagIdResponse = await db.query
-            .select({
-              id: db.models.tag.id,
-            })
-            .from(db.models.tag)
-            .where(db.exp.eq(db.models.tag.tagMaskId, tag.tagMaskId));
+              const tagIdResponse = await db.query
+                .select({
+                  id: db.models.tag.id,
+                })
+                .from(db.models.tag)
+                .where(db.exp.eq(db.models.tag.tagMaskId, tag.tagMaskId));
 
-          const tagId = tagIdResponse[0]?.id;
+              const tagId = tagIdResponse[0]?.id;
 
-          await db.query.insert(db.models.solutionTag).values({
-            solutionId: solutionId,
-            tagId: tagId,
-          });
-        }
-      });
+              if (tagId !== undefined && solutionId !== undefined) {
+                await db.query.insert(db.models.solutionTag).values({
+                  solutionId: solutionId,
+                  tagId: tagId,
+                });
+              }
+            }
+          }),
+        );
+      } catch (error) {
+        console.error('Error inserting tags: ', error);
+      }
     }),
 
   getAllTags: publicProcedure.query(async () => {
