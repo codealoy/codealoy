@@ -3,6 +3,7 @@ const path = require('path');
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
+  ignorePatterns: ['postcss.config.mjs', '.eslintrc.cjs', 'next.config.mjs'],
   overrides: [
     {
       extends: [
