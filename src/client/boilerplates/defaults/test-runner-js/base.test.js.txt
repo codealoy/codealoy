@@ -1,5 +1,0 @@
-import target from './function';
-
-test('Exported the function properly | function | exported value', () => {
-  expect(typeof target).toBe('function')
-});
