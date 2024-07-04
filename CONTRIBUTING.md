@@ -27,27 +27,29 @@ git clone https://github.com/codealoy/codealoy
 cd codealoy
 ```
 
-### Ensure required version of `nodejs` and `npm`
+### Ensure required version of `nodejs` and `pnpm`. We use `pnpm` as the package manager for this project
 
 Required versions:
 
 ```
-node >= 18 (LTS)
-npm >= 9
+node >= 20 (LTS)
+pnpm >= 9
 ```
 
 - Check nodejs version: `node --version`
-- Check npm version: `npm --version`
+- Check npm version: `pnpm --version`
 
 If your system versions are not meet the required versions above, then you need to update the versions.
 
-- To update nodejs, we can download the latest **LTS** version from the [official nodejs site](https://nodejs.org/en/) or use any type of node package manager like [Volta JS](https://volta.sh/) (preferred), [fnm](https://github.com/Schniz/fnm) or [nvm](https://github.com/nvm-sh/nvm).
-- To update npm version, we can use: `npm i -g npm`
+- To update nodejs, we can download the latest **LTS** version from the [official nodejs site](https://nodejs.org/en/) or use any type of node package manager like [nvm](https://github.com/nvm-sh/nvm), [fnm](https://github.com/Schniz/fnm) or [Volta JS](https://volta.sh/).
+- To update pnpm version, we can use: `npm i -g pnpm`
+
+_Note: if you don't already have `pnpm` installed, you can follow the [official documentation](https://pnpm.io/installation) for installation guide._
 
 ### Install dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Configure `.env` file
@@ -55,13 +57,13 @@ npm install
 Copy `.env.example` to `.env` file, and fill up necessary values. You can just copy/paste manually or use the following terminal command.
 
 ```bash
-cp .env.sample .env
+cp .env.example .env
 ```
 
 ### Start the server
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 After the server started, you can visit the site at [http://localhost:3000](http://localhost:3000)
@@ -69,8 +71,6 @@ After the server started, you can visit the site at [http://localhost:3000](http
 ---
 
 ### Step 2: Implement your changes
-
-This project is built on top of the _"T3 Stack"_. To learn more about the _"T3 Stack"_, you can visit the official GitHub repo](https://github.com/t3-oss/create-t3-app).
 
 Here are some useful scripts for when you are developing:
 
@@ -80,6 +80,8 @@ Here are some useful scripts for when you are developing:
 | `npm run build` | Build the projet                       |
 | `npm run start` | Start the project built version        |
 | `npm run lint`  | Lints the code                         |
+
+Other scripts can be found in the `package.json` file.
 
 When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with prefixes like `feat, fix, chore, docs`, etc... You can use `git status` to double-check which files have not yet been staged for commit:
 
@@ -94,7 +96,7 @@ git add <file> && git commit -m "feat/fix/chore/docs: commit message"
 Check that your code follows the project's style guidelines by running:
 
 ```bash
-npm run lint
+pnpm run lint
 ```
 
 Please also make a manual, functional test of your changes. When all that's done, it's time to file a pull request to the upstream.
@@ -107,7 +109,7 @@ Fill out the title and body appropriately. Again, make sure to follow the [conve
 
 ### Step 4: Use custom domain (optional)
 
-You can optionally use `https://codealoy.localhost` instead of `http://localhost:3000` as the domain name of the Codealoy server during development. As an extra benefit, this will automatically add an `SSL` certificate to the local domain, so you can use `HTTPS` with the domain. Here are the custom domain setup instructions:
+You can optionally use `https://codealoy.local` instead of `http://localhost:3000` as the domain name of the Codealoy server during development. As an extra benefit, this will automatically add an `SSL` certificate to the local domain, so you can use `HTTPS` with the domain. Here are the custom domain setup instructions:
 
 - Install [Caddy Server](https://caddyserver.com/docs/install) on your machine
 
@@ -115,8 +117,8 @@ You can optionally use `https://codealoy.localhost` instead of `http://localhost
 
   > This will start the server at `http://localhost:3000`
 
-- Start Caddy server: `caddy reverse-proxy --change-host-header --from codealoy.localhost --to http://localhost:3000`
+- Start Caddy server: `caddy reverse-proxy --change-host-header --from codealoy.local --to http://localhost:3000`
 
-  > This will start a reverse proxy at `codealoy.localhost` domain, which will forward requests to `localhost:3000`
+  > This will start a reverse proxy at `codealoy.local` domain, which will forward requests to `localhost:3000`
 
-- Done. Now you can visit the site from your browser using `https://codealoy.localhost`
+- Done. Now you can visit the site from your browser using `https://codealoy.local`
