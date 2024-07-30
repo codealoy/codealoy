@@ -13,7 +13,7 @@ export const HomeCta = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
         <BottomSkewBoxPattern />
       </div>
-      <div className="container relative z-10">
+      <div className="relative z-10 px-5">
         <div className="mx-auto text-center">
           <h2 className="text-5xl font-semibold">
             Start Your Free <br />
