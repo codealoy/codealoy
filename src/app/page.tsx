@@ -1,12 +1,20 @@
-import { Hero } from '@/components/home/Hero';
-import { HomeCta } from '@/components/home/HomeCTA';
-import { Testimonial } from '@/components/home/Testimonial';
+import {
+  Counter,
+  FeatureGrid,
+  Hero,
+  HighlightedFeatures,
+  HomeCta,
+  Team,
+} from '@/components/home';
 
 export default function HomePage() {
   return (
     <>
-      {/* <Hero /> */}
-      {/* <Testimonial /> */}
+      <Hero />
+      <FeatureGrid />
+      <Counter />
+      <HighlightedFeatures />
+      <Team />
       <HomeCta />
     </>
   );
