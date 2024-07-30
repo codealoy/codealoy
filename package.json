@@ -73,6 +73,7 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@t3-oss/env-nextjs": "^0.10.1",
+    "@tanstack/react-query-devtools": "^5.51.15",
     "@types/node": "^20",
     "@types/prettier": "^2.7.3",
     "@types/react": "^18",
