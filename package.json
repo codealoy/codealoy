@@ -40,6 +40,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tailwindcss/typography": "^0.5.13",
+    "@tanstack/react-query": "^5.51.15",
     "bright": "^0.8.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
