@@ -18,7 +18,8 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pretty-quick": "pretty-quick"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
