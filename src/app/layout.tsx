@@ -1,10 +1,12 @@
 import '@/styles/globals.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import { type Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Baloo_Da_2 } from 'next/font/google';
 
-import { Providers } from '@/app/providers';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
+import { Providers } from '@/components/providers';
+import { SITE_METADATA_GLOBAL, SITE_VIEWPORT_GLOBAL } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 const fontBengali = Baloo_Da_2({
@@ -12,13 +14,8 @@ const fontBengali = Baloo_Da_2({
   subsets: ['bengali'],
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s - Codealoy',
-    default:
-      'Codealoy - Programming and Web Development Learning Platform in Bangla',
-  },
-};
+export const metadata: Metadata = SITE_METADATA_GLOBAL;
+export const viewport: Viewport = SITE_VIEWPORT_GLOBAL;
 
 export default async function RootLayout({
   children,
@@ -26,18 +23,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html
+      lang="bn"
+      className="h-full scroll-smooth antialiased"
+      suppressHydrationWarning
+    >
       <body
         className={cn(
-          'flex min-h-full bg-white antialiased dark:bg-zinc-900',
+          'relative overflow-x-hidden bg-white text-base dark:bg-dark-deep',
           fontBengali.className,
         )}
       >
         <Providers>
-          <div className="w-full">
-            {/* <DefaultLayout>{children}</DefaultLayout> */}
-            {children}
-          </div>
+          <DefaultLayout>{children}</DefaultLayout>
         </Providers>
       </body>
     </html>
