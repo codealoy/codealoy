@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rimraf .next node_modules",
+    "commitlint": "commitlint --edit",
     "db:check": "drizzle-kit check",
     "db:drop": "drizzle-kit drop",
     "db:generate": "drizzle-kit generate",
