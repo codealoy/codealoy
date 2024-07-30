@@ -9,7 +9,18 @@ const nextConfig = {
     defaultLocale: 'bn-BD',
   },
   images: {
-    domains: ['images.unsplash.com', 'avatars.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+      },
+    ],
   },
   webpack: (config) => {
     config.externals.push('@node-rs/argon2', '@node-rs/bcrypt');
