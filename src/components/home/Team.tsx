@@ -123,7 +123,7 @@ export const Team = () => {
                     </div>
                     <div className="space-y-3">
                       <div className="space-y-3">
-                        <p className="text-2xl font-semibold leading-10 text-slate-600 dark:text-slate-200">
+                        <p className="text-2xl font-bold leading-10 text-slate-700 dark:text-slate-200">
                           {member.name}
                         </p>
                         <p className="font-medium text-primary">
@@ -171,7 +171,7 @@ export const Team = () => {
                         />
                       </div>
                       <div className="space-y-2 text-xl font-medium text-white lg:text-sm">
-                        <p className="text-lg font-semibold text-slate-700 dark:text-slate-300/80">
+                        <p className="text-lg font-semibold text-slate-600 dark:text-slate-300">
                           {contributor.login}
                         </p>
                         <p className="text-sm text-primary">কন্ট্রিবিউটর</p>
