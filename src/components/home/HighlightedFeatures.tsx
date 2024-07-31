@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+import { motion } from 'framer-motion';
 import { HiOutlineTerminal } from 'react-icons/hi';
 import {
   HiOutlineComputerDesktop,
@@ -11,6 +12,7 @@ import {
 import { OptimizedImage } from '@/components/default/OptimizedImage';
 import { LeftSkewBoxPattern, RightSkewBoxPattern } from '@/components/patterns';
 import { BottomWavePattern } from '@/components/patterns/BottomWavePattern';
+import { fadeFromRightAnimation } from '@/config/animation';
 import { useWhileInView } from '@/hooks/useWhileInView';
 
 export const HighlightedFeatures = () => {
@@ -61,7 +63,7 @@ export const HighlightedFeatures = () => {
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden border border-primary/30 bg-white/10 px-6 py-20 shadow-lg sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24 dark:border-gray-700/15 dark:bg-dark-light/30">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
-            <div className="lg:row-start-2 lg:max-w-md">
+            <div className="lg:row-start-1 lg:max-w-md">
               <p className="font-medium leading-normal text-primary">
                 ক্লাউড বেইজড
               </p>
@@ -79,15 +81,23 @@ export const HighlightedFeatures = () => {
               </p>
             </div>
 
-            <OptimizedImage
-              src="/images/features/codealoy-live-coding-editor-aFeXuDEnv2.avif"
-              alt="Live coding editor"
-              className="relative -z-20 min-w-full max-w-xs rounded-xl shadow-xl ring-1 ring-primary/15 lg:row-span-4 lg:w-[64rem] lg:max-w-none xl:w-[74rem]"
-              width={2360}
-              height={1321}
-            />
+            <motion.div
+              className="lg:row-span-2"
+              ref={ref3}
+              initial="initial"
+              animate={controlAnimation3}
+              variants={fadeFromRightAnimation}
+            >
+              <OptimizedImage
+                src="/images/features/codealoy-live-coding-editor-aFeXuDEnv2.avif"
+                alt="Live coding editor"
+                className="relative -z-10 min-w-full max-w-xs rounded-xl shadow-xl ring-1 ring-primary/15 lg:w-[64rem] lg:max-w-none xl:w-[74rem]"
+                width={2360}
+                height={1321}
+              />
+            </motion.div>
 
-            <div className="lg:border-priamry/10 max-w-xl border-dashed lg:row-start-3 lg:mt-10 lg:max-w-md lg:border-t lg:pt-10">
+            <div className="lg:border-priamry/10 max-w-xl border-dashed lg:row-start-2 lg:mt-10 lg:max-w-md lg:border-t lg:pt-10">
               <dl className="max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
                 {liveCodingEditorFeatures.map((feature) => (
                   <div key={feature.name} className="relative">
