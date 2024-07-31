@@ -17,7 +17,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 flex items-center">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto p-4">
           <h1 className="text-center text-4xl font-extrabold tracking-tight text-slate-800 sm:text-5xl lg:text-6xl dark:text-slate-200">
             কোড + বিদ্যালয় = <span className="text-primary">কোডালয়</span>
           </h1>
