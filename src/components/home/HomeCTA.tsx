@@ -17,8 +17,8 @@ export const HomeCta = () => {
       </div>
       <div className="relative z-10 px-5">
         <div className="mx-auto text-center">
-          <h2 className="text-4xl font-semibold leading-tight text-slate-700 lg:text-5xl dark:text-slate-200">
-            আজ থেকেই শুরু হোক <br /> নতুন পথচলা
+          <h2 className="mx-auto max-w-[17ch] text-4xl font-semibold leading-tight text-slate-700 lg:text-5xl lg:leading-tight dark:text-slate-200">
+            আজ থেকেই শুরু হোক নতুন পথচলা
           </h2>
           <p className="mx-auto mt-6 max-w-sm lg:max-w-full">
             সফটওয়্যার ডেভেলপার হিসাবে ক্যারিয়ার গড়ে তোলার এখনই উপযুক্ত সময়
