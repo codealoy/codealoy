@@ -1,22 +1,23 @@
 'use client';
 
 import axios from 'axios';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { useQuery } from '@tanstack/react-query';
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { SectionContent } from '@/components/default/SectionContent';
-import { SectionHeading } from '@/components/default/SectionHeading';
-import { CircleBlur } from '@/components/patterns';
 import { defaultImageBlurDataUrl } from '@/config/defaultImageBlur';
+import { fallbackContributorsData, teamMembersData } from '@/config/data';
 import {
   GITHUB_CONTRIBUTOS_API_LINK,
   ONE_DAY_IN_MILLISECONDS,
 } from '@/config/site';
-import { fallbackContributorsData, teamMembersData } from '@/config/data';
+
+import { SectionContent } from '@/components/default/SectionContent';
+import { SectionHeading } from '@/components/default/SectionHeading';
+import { CircleBlur } from '@/components/patterns';
+import { OptimizedImage } from '@/components/default/OptimizedImage';
 
 interface Contributor {
   id: number;
@@ -114,7 +115,7 @@ export const Team = () => {
                 <li key={member.name}>
                   <div className="space-y-6">
                     <div className="relative mx-auto h-40 w-40 scale-100 overflow-hidden rounded-full border border-green-500 grayscale transition-all duration-300 hover:scale-105 hover:grayscale-0 xl:h-56 xl:w-56">
-                      <Image
+                      <OptimizedImage
                         src={member.image}
                         alt={member.name}
                         placeholder="blur"
