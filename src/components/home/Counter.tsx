@@ -37,11 +37,13 @@ export const Counter = () => {
               <p className="text-xs text-slate-600 dark:text-slate-400">
                 {item.subText}
               </p>
-              <h2 className="text-5xl font-bold text-primary">
+              <p className="text-5xl font-bold text-primary">
                 <span>{item.number}</span>
                 <span>+</span>
-              </h2>
-              <p className="text-slate-700 dark:text-slate-300">{item.text}</p>
+              </p>
+              <h4 className="text-slate-700 dark:text-slate-300">
+                {item.text}
+              </h4>
             </div>
           ))}
         </div>
