@@ -6,10 +6,10 @@ import { Header } from '@/components/default/Header';
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-hidden">
+    <div className="flex min-h-dvh flex-col">
       <Announcement />
       <Header />
-      <main className="flex-auto">{children}</main>
+      <main className="flex-auto overflow-x-hidden">{children}</main>
       <Footer />
     </div>
   );

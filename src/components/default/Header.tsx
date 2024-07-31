@@ -14,11 +14,7 @@ export const Header: React.FC<any> = () => {
   const isHomePage = true;
 
   return (
-    <header
-      className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white/10 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-lg transition-all duration-500 sm:px-6 lg:px-8 dark:bg-dark/95 dark:shadow-white/5 dark:[@supports(backdrop-filter:blur(0))]:bg-dark/75',
-      )}
-    >
+    <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white/10 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-lg transition-all duration-500 sm:px-6 lg:px-8 dark:bg-dark/95 dark:shadow-white/5 dark:[@supports(backdrop-filter:blur(0))]:bg-dark/75">
       <div className="relative flex flex-grow basis-0 items-center overflow-hidden">
         <Link href="/">
           <Logo varient="text" className="h-7" />
