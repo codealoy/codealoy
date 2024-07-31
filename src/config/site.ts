@@ -75,22 +75,22 @@ export const SITE_METADATA_GLOBAL: Metadata = {
   },
   description: SITE_DESCRIPTION,
   icons: {
-    apple: `${BASE_URL}/favicon/apple-touch-icon.png`,
+    apple: `${BASE_URL}/favicon/apple-touch-icon.png?v=2`,
     icon: [
       {
-        url: `${BASE_URL}/favicon/favicon-32x32.png`,
+        url: `${BASE_URL}/favicon/favicon-32x32.png?v=2`,
         sizes: '32x32',
         type: 'image/png',
       },
       {
-        url: `${BASE_URL}/favicon/favicon-16x16.png`,
+        url: `${BASE_URL}/favicon/favicon-16x16.png?v=2`,
         sizes: '16x16',
         type: 'image/png',
       },
     ],
-    shortcut: `${BASE_URL}/favicon/favicon.ico`,
+    shortcut: `${BASE_URL}/favicon/favicon.ico?v=2`,
   },
-  manifest: `${BASE_URL}/favicon/site.webmanifest`,
+  manifest: `${BASE_URL}/favicon/site.webmanifest?v=2`,
   openGraph: {
     title: SITE_TITLE,
     siteName: OG_SITE_NAME,
