@@ -1,5 +1,4 @@
 import '@/styles/globals.css';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Baloo_Da_2 } from 'next/font/google';
@@ -30,7 +29,7 @@ export default async function RootLayout({
     >
       <body
         className={cn(
-          'relative overflow-x-hidden bg-white text-base dark:bg-dark-deep',
+          'relative overflow-x-hidden bg-white text-base text-slate-600 dark:bg-dark-deep dark:text-slate-300',
           fontBengali.className,
         )}
       >
