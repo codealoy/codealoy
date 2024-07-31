@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 import { useQuery } from '@tanstack/react-query';
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { defaultImageBlurDataUrl } from '@/config/defaultImageBlur';
 import { fallbackContributorsData, teamMembersData } from '@/config/data';
@@ -114,7 +113,7 @@ export const Team = () => {
               return (
                 <li key={member.name}>
                   <div className="space-y-6">
-                    <div className="relative mx-auto h-40 w-40 scale-100 overflow-hidden rounded-full border border-green-500 grayscale transition-all duration-300 hover:scale-105 hover:grayscale-0 xl:h-56 xl:w-56">
+                    <div className="relative mx-auto h-40 w-40 scale-100 overflow-hidden rounded-full border border-slate-200 shadow-lg grayscale transition-all duration-300 hover:scale-105 hover:border-green-500 hover:grayscale-0 xl:h-56 xl:w-56 dark:border-slate-800">
                       <OptimizedImage
                         src={member.image}
                         alt={member.name}
@@ -163,12 +162,12 @@ export const Team = () => {
                   <li key={contributor.id}>
                     <div className="space-y-4">
                       <div className="mx-auto h-20 w-20 scale-100 overflow-hidden rounded-full transition-all duration-300 hover:scale-110 hover:border hover:border-green-500 lg:h-24 lg:w-24">
-                        <LazyLoadImage
+                        <OptimizedImage
                           className="h-20 w-20 rounded-full object-cover grayscale hover:grayscale-0 lg:h-24 lg:w-24"
                           src={contributor.avatar_url}
-                          effect="blur"
+                          height={80}
+                          width={80}
                           alt={'contributor ' + contributor.login}
-                          placeholderSrc={defaultImageBlurDataUrl}
                         />
                       </div>
                       <div className="space-y-2 text-xl font-medium text-white lg:text-sm">
