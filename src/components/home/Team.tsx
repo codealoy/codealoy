@@ -123,9 +123,9 @@ export const Team = () => {
                     </div>
                     <div className="space-y-3">
                       <div className="space-y-3">
-                        <h3 className="text-2xl font-semibold leading-10 text-slate-600 dark:text-slate-200">
+                        <p className="text-2xl font-semibold leading-10 text-slate-600 dark:text-slate-200">
                           {member.name}
-                        </h3>
+                        </p>
                         <p className="font-medium text-primary">
                           {member.role}
                         </p>
@@ -171,9 +171,9 @@ export const Team = () => {
                         />
                       </div>
                       <div className="space-y-2 text-xl font-medium text-white lg:text-sm">
-                        <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300/80">
+                        <p className="text-lg font-semibold text-slate-700 dark:text-slate-300/80">
                           {contributor.login}
-                        </h3>
+                        </p>
                         <p className="text-sm text-primary">কন্ট্রিবিউটর</p>
                         <p className="text-sm font-normal text-slate-700 dark:text-slate-300">
                           সফটওয়্যার ইঞ্জিনিয়ার
