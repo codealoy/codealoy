@@ -16,13 +16,9 @@ import { fadeFromRightAnimation } from '@/config/animation';
 import { useWhileInView } from '@/hooks/useWhileInView';
 
 export const HighlightedFeatures = () => {
-  const ref1 = React.useRef(null);
-  const ref2 = React.useRef(null);
-  const ref3 = React.useRef(null);
+  const ref = React.useRef(null);
 
-  const controlAnimation1 = useWhileInView(ref1);
-  const controlAnimation2 = useWhileInView(ref2);
-  const controlAnimation3 = useWhileInView(ref3);
+  const controlAnimation = useWhileInView(ref);
 
   const liveCodingEditorFeatures = [
     {
@@ -83,9 +79,9 @@ export const HighlightedFeatures = () => {
 
             <motion.div
               className="lg:row-span-2"
-              ref={ref3}
+              ref={ref}
               initial="initial"
-              animate={controlAnimation3}
+              animate={controlAnimation}
               variants={fadeFromRightAnimation}
             >
               <OptimizedImage
