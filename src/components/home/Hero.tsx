@@ -9,10 +9,16 @@ import { GITHUB_REPO_LINK } from '@/config/site';
 export const Hero = () => {
   return (
     <section className="relative flex min-h-[90dvh] items-center justify-center overflow-hidden bg-gray dark:bg-dark">
-      <div className="absolute left-1/2 top-0 -translate-x-1/2">
+      <div
+        className="absolute left-1/2 top-0 -translate-x-1/2"
+        aria-hidden="true"
+      >
         <TopSkewBoxPattern />
       </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
+      >
         <BottomSkewBoxPattern />
       </div>
 

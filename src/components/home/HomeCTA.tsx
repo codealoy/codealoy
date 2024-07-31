@@ -9,10 +9,16 @@ import { Button } from '@/components/ui/button';
 export const HomeCta = () => {
   return (
     <section className="relative overflow-hidden bg-gray py-36 dark:bg-dark">
-      <div className="absolute left-1/2 top-0 -translate-x-1/2">
+      <div
+        className="absolute left-1/2 top-0 -translate-x-1/2"
+        aria-hidden="true"
+      >
         <TopSkewBoxPattern />
       </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
+      >
         <BottomSkewBoxPattern />
       </div>
       <div className="relative z-10 px-5">
