@@ -109,7 +109,9 @@ export const HighlightedFeatures = () => {
                       {feature.name}
                     </dt>
                     <br />
-                    <dd className="mt-4">{feature.description}</dd>
+                    <dd className="mt-4 text-sm text-slate-600 dark:text-slate-300">
+                      {feature.description}
+                    </dd>
                   </div>
                 ))}
               </dl>
