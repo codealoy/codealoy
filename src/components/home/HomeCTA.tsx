@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { FaRegCircleCheck } from 'react-icons/fa6';
+
 import { BottomSkewBoxPattern } from '@/components/patterns/BottomSkewBoxPattern';
 import { TopSkewBoxPattern } from '@/components/patterns/TopSkewBoxPattern';
 import { Button } from '@/components/ui/button';
@@ -15,79 +17,31 @@ export const HomeCta = () => {
       </div>
       <div className="relative z-10 px-5">
         <div className="mx-auto text-center">
-          <h2 className="text-5xl font-semibold">
-            Start Your Free <br />
-            Trial Today.
+          <h2 className="text-4xl font-semibold leading-tight text-slate-700 lg:text-5xl dark:text-slate-200">
+            আজ থেকেই শুরু হোক <br /> নতুন পথচলা
           </h2>
-          <p className="mx-auto mt-5 max-w-sm">
-            By creating a custom Web design for your business, we can bring your
-            vision to life.
+          <p className="mx-auto mt-6 max-w-sm lg:max-w-full">
+            সফটওয়্যার ডেভেলপার হিসাবে ক্যারিয়ার গড়ে তোলার এখনই উপযুক্ত সময়
           </p>
-          <div className="mt-10">
-            <Button variant="default" size="lg">
-              Get started
-            </Button>
+          <div className="mt-10 lg:mt-14">
+            <Link href="/courses">
+              <Button variant="default" size="lg">
+                শেখা শুরু করুন
+              </Button>
+            </Link>
           </div>
-          <ul className="mx-auto mt-20 flex max-w-[815px] items-center justify-between max-lg:mt-5 max-md:flex-col max-md:gap-5">
+          <ul className="mx-auto mt-10 flex max-w-screen-sm flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0 lg:mt-20 lg:max-w-screen-md">
             <li className="flex items-center">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="mr-3"
-              >
-                <path
-                  d="M14.125 7.75L8.62497 13L5.875 10.375M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
-                  stroke=""
-                  className="stroke-paragraph dark:stroke-primary"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <p>No Credit Card Required</p>
+              <FaRegCircleCheck className="mr-3 h-5 w-5 text-primary" />
+              <p>বাস্তবসম্মত প্রজেক্টস</p>
             </li>
             <li className="flex items-center">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="mr-3"
-              >
-                <path
-                  d="M14.125 7.75L8.62497 13L5.875 10.375M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
-                  stroke=""
-                  className="stroke-paragraph dark:stroke-primary"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <p>Free For 30 Day Trial.</p>
+              <FaRegCircleCheck className="mr-3 h-5 w-5 text-primary" />
+              <p>হাতে কলমে শিক্ষা</p>
             </li>
             <li className="flex items-center">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="mr-3"
-              >
-                <path
-                  d="M14.125 7.75L8.62497 13L5.875 10.375M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
-                  stroke=""
-                  className="stroke-paragraph dark:stroke-primary"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <p>Money Back Guarente.</p>
+              <FaRegCircleCheck className="mr-3 h-5 w-5 text-primary" />
+              <p>ফ্রি এবং ওপেনসোর্স</p>
             </li>
           </ul>
         </div>
