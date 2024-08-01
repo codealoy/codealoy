@@ -3,7 +3,8 @@ import React from 'react';
 
 import { GITHUB_REPO_LINK } from '@/config/site';
 
-import { HiX, HiOutlineArrowRight } from 'react-icons/hi';
+import { Button } from '@/components/ui/button';
+import { HiOutlineArrowRight, HiX } from 'react-icons/hi';
 
 export const Announcement = () => {
   const [hideAnnouncement, setHideAnnouncement] = React.useState(false);
@@ -50,12 +51,17 @@ export const Announcement = () => {
         </div>
       </div>
       <div className="mr-3 flex flex-shrink-0 items-center">
-        <button type="button" onClick={handleHideAnnouncement}>
+        <Button
+          variant="icon"
+          size="icon"
+          aria-label="Hide Announcement"
+          onClick={handleHideAnnouncement}
+        >
           <HiX
-            className="h-5 w-5 scale-100 hover:scale-110 active:scale-90"
+            className="h-5 w-5 scale-100 transition-all duration-200 hover:scale-125 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-primary active:scale-90"
             aria-hidden="true"
           />
-        </button>
+        </Button>
       </div>
     </div>
   );
