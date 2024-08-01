@@ -1,7 +1,10 @@
-import { Button } from '@/components/ui/button';
+'use client';
+
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { LuMoonStar, LuSun } from 'react-icons/lu';
+
+import { Button } from '@/components/ui/button';
 
 export function ThemeToggle() {
   let { resolvedTheme, setTheme } = useTheme();

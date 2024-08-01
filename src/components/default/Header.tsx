@@ -1,14 +1,13 @@
-import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
 
 import { FaGithub } from 'react-icons/fa';
 
 import { Logo } from '@/components/default/Logo';
+import { MobileNavbar } from '@/components/default/MobileNavbar';
 import { PrimaryNavItems } from '@/components/default/PrimaryNavItems';
 import { ThemeToggle } from '@/components/default/ThemeToggle';
 import { GITHUB_REPO_LINK } from '@/config/site';
-import { MobileNavbar } from '@/components/default/MobileNavbar';
 
 export const Header: React.FC<any> = () => {
   return (

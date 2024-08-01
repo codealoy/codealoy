@@ -6,17 +6,17 @@ import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 
-import { defaultImageBlurDataUrl } from '@/config/defaultImageBlur';
 import { fallbackContributorsData, teamMembersData } from '@/config/data';
+import { defaultImageBlurDataUrl } from '@/config/defaultImageBlur';
 import {
   GITHUB_CONTRIBUTOS_API_LINK,
   ONE_DAY_IN_MILLISECONDS,
 } from '@/config/site';
 
+import { OptimizedImage } from '@/components/default/OptimizedImage';
 import { SectionContent } from '@/components/default/SectionContent';
 import { SectionHeading } from '@/components/default/SectionHeading';
 import { CircleBlur } from '@/components/patterns';
-import { OptimizedImage } from '@/components/default/OptimizedImage';
 
 interface Contributor {
   id: number;

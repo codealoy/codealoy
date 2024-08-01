@@ -1,5 +1,3 @@
-'use client';
-
 import { Footer } from '@/components/default/Footer';
 import { Announcement } from '@/components/default/Announcement';
 import { Header } from '@/components/default/Header';

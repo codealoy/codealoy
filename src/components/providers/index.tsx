@@ -1,5 +1,3 @@
-'use client';
-
 import { QueryClientProvider } from '@/components/providers/QueryClientProvider';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
