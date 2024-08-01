@@ -1,8 +1,9 @@
 import { fileURLToPath } from 'node:url';
 import createJiti from 'jiti';
-const jiti = createJiti(fileURLToPath(import.meta.url));
+import { withContentCollections } from '@content-collections/next';
 
 // Import env here to validate during build. Using jiti we can import .ts files :)
+const jiti = createJiti(fileURLToPath(import.meta.url));
 jiti('./src/config/env.ts');
 
 /** @type {import('next').NextConfig} */
@@ -35,4 +36,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withContentCollections(nextConfig);
