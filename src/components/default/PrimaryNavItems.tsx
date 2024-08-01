@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
 
 import { PRIMARY_NAV_ITEMS } from '@/config/navigations/primary';
+import { cn } from '@/lib/utils';
 
 const navigationItems = PRIMARY_NAV_ITEMS;
 
@@ -12,17 +12,16 @@ export const PrimaryNavItems = () => {
   return (
     <>
       {navigationItems.map((navigationItem, index) => (
-        <li key={navigationItem.title}>
+        <li
+          key={navigationItem.title}
+          onClick={() => setActive(index)}
+          className={cn([
+            'hover:text-primary',
+            active === index && 'text-primary',
+          ])}
+        >
           <Link href={navigationItem.href as string}>
-            <span
-              onClick={() => setActive(index)}
-              className={clsx([
-                'hover:text-primary',
-                active === index && 'text-primary',
-              ])}
-            >
-              {navigationItem.title}
-            </span>
+            <span className="inline-block w-full">{navigationItem.title}</span>
           </Link>
         </li>
       ))}
