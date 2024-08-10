@@ -22,7 +22,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
         '--tw-prose-th-borders': theme('colors.slate.300'),
         '--tw-prose-td-borders': theme('colors.slate.200'),
 
-        '--tw-prose-invert-body': theme('colors.slate.400'),
+        '--tw-prose-invert-body': theme('colors.slate.300'),
         '--tw-prose-invert-headings': theme('colors.white'),
         '--tw-prose-invert-links': theme('colors.emerald.400'),
         '--tw-prose-invert-links-hover': theme('colors.emerald.500'),
