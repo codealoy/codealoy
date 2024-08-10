@@ -67,8 +67,8 @@ const CourseNavbarList = () => {
 
 export const CourseNavbar = () => {
   return (
-    <aside className="sticky border-r border-dashed border-primary/15">
-      <ScrollArea className="relative h-[90dvh]">
+    <aside className="border-r border-dashed border-primary/15">
+      <ScrollArea className="sticky h-[90dvh]">
         <nav className="w-64 lg:text-sm xl:w-72">
           <CourseNavbarList />
         </nav>
