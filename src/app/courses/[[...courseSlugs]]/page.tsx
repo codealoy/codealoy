@@ -29,6 +29,8 @@ const getCoursePageNavigationTree = (page: any) => {
   return navigationTree;
 };
 
+const getSeparatorName = (navTree: any) => {};
+
 export default function CoursePage({
   params,
 }: {
@@ -51,13 +53,22 @@ export default function CoursePage({
   }
 
   return (
-    <article className="min-h-full px-6 py-12">
-      <MDXContent
-        code={page?.data.body}
-        components={{
-          Link,
-        }}
-      />
-    </article>
+    <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+      <article>
+        <header className="mb-9 space-y-4">
+          <h1 className="font-display text-3xl tracking-tight">
+            {page?.data.title}
+          </h1>
+          <p className="text-base">{page?.data.description}</p>
+        </header>
+        <hr className="border-t border-primary/25 border-dashed my-12" />
+        <MDXContent
+          code={page?.data.body}
+          components={{
+            Link,
+          }}
+        />
+      </article>
+    </div>
   );
 }
