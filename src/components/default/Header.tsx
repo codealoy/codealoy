@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import React from 'react';
-
 import { FaGithub } from 'react-icons/fa';
 
 import { Logo } from '@/components/default/Logo';
 import { MobileNavbar } from '@/components/default/MobileNavbar';
 import { PrimaryNavItems } from '@/components/default/PrimaryNavItems';
 import { ThemeToggle } from '@/components/default/ThemeToggle';
+
 import { GITHUB_REPO_LINK } from '@/config/site';
 
 export const Header: React.FC<any> = () => {
   return (
-    <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white/10 px-3 py-3 shadow-md shadow-slate-900/5 backdrop-blur-lg transition-all duration-500 md:px-6 lg:px-8 dark:bg-dark/95 dark:shadow-white/5 dark:[@supports(backdrop-filter:blur(0))]:bg-dark/75">
+    <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white/90 px-3 py-3 shadow-md shadow-primary/10 backdrop-blur-lg transition-all duration-500 md:px-6 lg:px-8 dark:bg-dark/95 dark:[@supports(backdrop-filter:blur(0))]:bg-dark/75">
       <MobileNavbar className="absolute left-2" />
       <div className="relative flex flex-grow basis-0 items-center justify-center overflow-hidden md:ml-0 md:justify-start">
         <Link href="/">
