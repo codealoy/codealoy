@@ -1,3 +1,4 @@
+import { AtomProvider } from '@/components/providers/AtomProvider';
 import { QueryClientProvider } from '@/components/providers/QueryClientProvider';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
@@ -7,8 +8,10 @@ interface ProvidersProps {
 
 export const Providers: React.FC<ProvidersProps> = ({ children }) => {
   return (
-    <ThemeProvider>
-      <QueryClientProvider>{children}</QueryClientProvider>
-    </ThemeProvider>
+    <AtomProvider>
+      <ThemeProvider>
+        <QueryClientProvider>{children}</QueryClientProvider>
+      </ThemeProvider>
+    </AtomProvider>
   );
 };
