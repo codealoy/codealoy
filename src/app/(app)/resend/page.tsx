@@ -1,8 +1,10 @@
 'use client';
+
 import Link from 'next/link';
-import { emailSchema } from '@/lib/email/utils';
 import { useRef, useState } from 'react';
 import { z } from 'zod';
+
+import { emailSchema } from '@/lib/email/utils';
 
 type FormInput = z.infer<typeof emailSchema>;
 type Errors = { [K in keyof FormInput]: string[] };
@@ -20,7 +22,6 @@ export default function Home() {
         name: nameInputRef.current?.value,
         email: emailInputRef.current?.value,
       });
-      console.log(payload);
       const req = await fetch('/api/email', {
         method: 'POST',
         body: JSON.stringify(payload),
