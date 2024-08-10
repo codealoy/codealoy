@@ -1,14 +1,13 @@
-import dayjs from 'dayjs';
 import Link from 'next/link';
+import { footerNavigationData } from '@/config/data';
+import dayjs from 'dayjs';
 
 import { Logo } from '@/components/default/Logo';
 import { CircleBlur } from '@/components/patterns/CircleBlur';
 
-import { footerNavigationData } from '@/config/data';
-
 export const Footer = () => {
   return (
-    <div className="-z-50 bg-white shadow-inner shadow-primary/10 dark:bg-dark">
+    <div className="shadow-inner shadow-primary/10">
       <footer className="relative mx-auto w-full max-w-screen-xl space-y-10 overflow-hidden pb-16 lg:max-w-5xl">
         <div className="flex flex-col items-center justify-between gap-5 pt-8 sm:flex-row">
           <div className="mx-auto max-w-7xl overflow-hidden px-4 py-10 sm:px-6 lg:px-8">
