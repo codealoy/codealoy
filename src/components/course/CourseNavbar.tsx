@@ -1,9 +1,9 @@
 'use client';
 
-import { useAtomValue } from 'jotai';
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react';
+import { useAtomValue } from 'jotai';
 
 import {
   coursePageNavigationAtom,
@@ -20,10 +20,10 @@ const LinkItem = ({ item }: { item: CoursePageNavigationTreeItem }) => {
     <Link href={item.url} target={item.external ? '_blank' : '_self'}>
       <span
         className={cn(
-          'inline-block w-full pl-5 text-sm text-primary before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full font-semibold hover:before:block',
+          'inline-block w-full pl-5 text-sm font-semibold text-primary before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full hover:before:block',
           pathname === item.url
             ? 'text-primary before:block before:bg-primary'
-            : 'before:hidden text-slate-500 before:bg-slate-400 hover:text-slate-600 dark:text-slate-300 dark:before:bg-slate-300 dark:hover:text-slate-200',
+            : 'text-slate-500 before:hidden before:bg-slate-400 hover:text-slate-600 dark:text-slate-300 dark:before:bg-slate-300 dark:hover:text-slate-200',
         )}
       >
         {item.name}
@@ -33,7 +33,7 @@ const LinkItem = ({ item }: { item: CoursePageNavigationTreeItem }) => {
 };
 
 const SeparatorItem = ({ item }: { item: CoursePageNavigationTreeItem }) => (
-  <h3 className="font-bold text-sm px-4 py-2 -ml-2 my-0">{item.name}</h3>
+  <h3 className="my-0 -ml-2 px-4 py-2 text-sm font-bold">{item.name}</h3>
 );
 
 const CourseNavbarList = () => {
@@ -49,8 +49,8 @@ const CourseNavbarList = () => {
   }
 
   return (
-    <div className="py-10 px-6">
-      <ul className="mt-2 space-y-2 border-l border-primary/25 border-dashed p-0 lg:mt-4 lg:space-y-4">
+    <div className="px-6 py-10">
+      <ul className="mt-2 space-y-2 border-l border-dashed border-primary/25 p-0 lg:mt-4 lg:space-y-4">
         {coursePageNavigationTree.children?.map((item) => (
           <li className="relative list-none" key={item.name}>
             {item.type === 'separator' ? (
@@ -67,8 +67,8 @@ const CourseNavbarList = () => {
 
 export const CourseNavbar = () => {
   return (
-    <aside className="border-r border-dashed border-primary/15">
-      <ScrollArea className="sticky h-[90dvh]">
+    <aside className="my-1 rounded-r-lg border-b border-r border-t border-dashed border-primary/15">
+      <ScrollArea className="h-[89dvh]">
         <nav className="w-64 lg:text-sm xl:w-72">
           <CourseNavbarList />
         </nav>

@@ -1,13 +1,16 @@
 'use client';
 
+import { notFound } from 'next/navigation';
 import { MDXContent } from '@content-collections/mdx/react';
 import Link from 'fumadocs-core/link';
 import { useSetAtom } from 'jotai';
-import { notFound } from 'next/navigation';
 import slugify from 'slugify';
 
 import { getPage, pageTree } from '@/lib/mdx/source';
 import { coursePageNavigationAtom } from '@/lib/store/atom';
+
+import { CourseNavbar } from '@/components/course/CourseNavbar';
+import { ScrollArea } from '@/components/ui/ScrollArea';
 
 // FIX: page type
 const getCoursePageNavigationTree = (page: any) => {
@@ -28,8 +31,6 @@ const getCoursePageNavigationTree = (page: any) => {
 
   return navigationTree;
 };
-
-const getSeparatorName = (navTree: any) => {};
 
 export default function CoursePage({
   params,
@@ -53,22 +54,32 @@ export default function CoursePage({
   }
 
   return (
-    <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
-      <article>
-        <header className="mb-9 space-y-4">
-          <h1 className="font-display text-3xl tracking-tight">
-            {page?.data.title}
-          </h1>
-          <p className="text-base">{page?.data.description}</p>
-        </header>
-        <hr className="border-t border-primary/25 border-dashed my-12" />
-        <MDXContent
-          code={page?.data.body}
-          components={{
-            Link,
-          }}
-        />
-      </article>
-    </div>
+    <section className="grid max-w-full grid-cols-1 lg:grid-cols-[300px_1fr]">
+      <div className="hidden lg:block">
+        <CourseNavbar />
+      </div>
+
+      <ScrollArea className="max-h-[90dvh]">
+        <div className="max-w-[100dvw] px-4 py-16 md:max-w-full lg:px-8 xl:px-16">
+          <article>
+            <header className="mb-9 space-y-4">
+              <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+                {page?.data.title}
+              </h1>
+              <p className="text-base">{page?.data.description}</p>
+            </header>
+            <hr className="my-12 border-t border-dashed border-primary/25" />
+            <div className="prose dark:prose-invert">
+              <MDXContent
+                code={page?.data.body}
+                components={{
+                  Link,
+                }}
+              />
+            </div>
+          </article>
+        </div>
+      </ScrollArea>
+    </section>
   );
 }
