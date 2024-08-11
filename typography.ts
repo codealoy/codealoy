@@ -160,6 +160,8 @@ export default function typographyStyles({ theme }: PluginUtils) {
           marginTop: theme('spacing.8'),
           marginBottom: theme('spacing.8'),
           paddingLeft: theme('spacing.5'),
+          backgroundColor: 'var(--tw-prose-code-bg)',
+          borderRadius: '2px 8px 8px 2px',
         },
         'blockquote p:first-of-type::before': {
           content: 'open-quote',
