@@ -4,6 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAtomValue } from 'jotai';
+import {
+  TbLayoutSidebarLeftCollapse,
+  TbLayoutSidebarLeftExpand,
+} from 'react-icons/tb';
 
 import {
   coursePageNavigationAtom,
@@ -11,6 +15,7 @@ import {
 } from '@/lib/store/atom';
 import { cn } from '@/lib/utils';
 
+import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/ScrollArea';
 
 const LinkItem = ({ item }: { item: CoursePageNavigationTreeItem }) => {
@@ -65,14 +70,40 @@ const CourseNavbarList = () => {
   );
 };
 
-export const CourseNavbar = () => {
+export const CourseNavbar = (props: {
+  isCourseNavbarOpen: boolean;
+  setIsCourseNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const { isCourseNavbarOpen, setIsCourseNavbarOpen } = props;
+
   return (
-    <aside className="my-1 rounded-r-lg border-b border-r border-t border-dashed border-primary/15">
-      <ScrollArea className="h-[89dvh]">
-        <nav className="w-64 lg:text-sm xl:w-72">
-          <CourseNavbarList />
-        </nav>
-      </ScrollArea>
-    </aside>
+    <div className="relative">
+      <aside className="my-1 rounded-r-lg border-b border-r border-t border-dashed border-primary/15">
+        <ScrollArea className="h-[89dvh]">
+          <nav className="w-64 lg:text-sm xl:w-72">
+            <CourseNavbarList />
+          </nav>
+        </ScrollArea>
+      </aside>
+      <div
+        className={cn(
+          'absolute top-2 z-30 flex size-10 cursor-pointer items-center justify-center rounded transition-all duration-500',
+          isCourseNavbarOpen ? 'right-0' : '-right-9',
+        )}
+      >
+        <Button
+          aria-label="Toggle sidebar"
+          variant="icon"
+          size="icon"
+          onClick={() => setIsCourseNavbarOpen(!isCourseNavbarOpen)}
+        >
+          {isCourseNavbarOpen ? (
+            <TbLayoutSidebarLeftCollapse className="size-8 stroke-1 text-primary" />
+          ) : (
+            <TbLayoutSidebarLeftExpand className="size-8 stroke-1 text-primary" />
+          )}
+        </Button>
+      </div>
+    </div>
   );
 };
