@@ -5,12 +5,11 @@ import {
   transformMDX,
   TransformOptions,
 } from '@fumadocs/content-collections/configuration';
-import { rehypeCode } from 'fumadocs-core/mdx-plugins';
 
 const transformMDXOptions: TransformOptions = {
   rehypeCodeOptions: {
     themes: {
-      light: 'catppuccin-frappe',
+      light: 'catppuccin-latte',
       dark: 'catppuccin-mocha',
     },
   },
