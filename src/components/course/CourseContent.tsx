@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDXContent } from '@content-collections/mdx/react';
-import Link from 'fumadocs-core/link';
+
+import { MDX_COMPONENT_MAP } from '@/lib/mdx';
 
 import { CourseHeader } from '@/components/course/CourseHeader';
 import { ScrollArea } from '@/components/ui/ScrollArea';
@@ -21,12 +22,7 @@ export const CourseContent = (props: {
           />
           <hr className="my-12 border-t border-dashed border-primary/25" />
           <div className="prose dark:prose-invert">
-            <MDXContent
-              code={page?.data.body}
-              components={{
-                Link,
-              }}
-            />
+            <MDXContent code={page?.data.body} components={MDX_COMPONENT_MAP} />
           </div>
         </article>
       </div>

@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { useSetAtom } from 'jotai';
 
-import { getPage, pageTree } from '@/lib/mdx/source';
+import { getPage, pageTree } from '@/lib/mdx';
 import { coursePageNavigationAtom } from '@/lib/store/atom';
 import {
   cn,

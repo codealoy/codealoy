@@ -3,11 +3,12 @@ import '@/styles/codeblocks.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Baloo_Da_2 } from 'next/font/google';
+import { SITE_METADATA_GLOBAL, SITE_VIEWPORT_GLOBAL } from '@/config/site';
+
+import { cn } from '@/lib/utils';
 
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { Providers } from '@/components/providers';
-import { SITE_METADATA_GLOBAL, SITE_VIEWPORT_GLOBAL } from '@/config/site';
-import { cn } from '@/lib/utils';
 
 const fontBengali = Baloo_Da_2({
   variable: '--font-bengali',
