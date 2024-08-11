@@ -12,7 +12,7 @@ const runMigrate = async () => {
 
   const db = drizzle(connection);
 
-  console.log('⏳ Running migrations...');
+  console.info('⏳ Running migrations...');
 
   const start = Date.now();
 
@@ -20,7 +20,7 @@ const runMigrate = async () => {
 
   const end = Date.now();
 
-  console.log('✅ Migrations completed in', end - start, 'ms');
+  console.info('✅ Migrations completed in', end - start, 'ms');
 
   process.exit(0);
 };
