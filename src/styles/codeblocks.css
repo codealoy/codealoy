@@ -1,0 +1,30 @@
+/* Codeblock basic styles */
+.shiki {
+  @apply my-6 overflow-x-auto rounded-xl border border-primary/30 bg-gray/30 p-6 shadow-md dark:border-primary/15 dark:bg-dark-light/30 dark:shadow-lg;
+}
+
+/* Light theme */
+html.light .shiki,
+html.light .shiki span {
+  color: var(--shiki-light) !important;
+  /* background-color: var(--shiki-light-bg) !important; */
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-light-font-style) !important;
+  font-weight: var(--shiki-light-font-weight) !important;
+  text-decoration: var(--shiki-light-text-decoration) !important;
+}
+
+/* Dark theme */
+html.dark .shiki,
+html.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  /* background-color: var(--shiki-dark-bg) !important; */
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+code:not(.shiki code) {
+  @apply mx-1 rounded border border-primary/30 bg-gray/30 px-1.5 py-1 text-xs font-semibold text-slate-600 shadow-sm dark:bg-dark-light/30 dark:text-slate-300;
+}

@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/codeblocks.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Baloo_Da_2 } from 'next/font/google';
