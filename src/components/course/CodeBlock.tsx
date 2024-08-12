@@ -12,9 +12,10 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-export const CodeBlock = (
-  props: JSX.IntrinsicElements['pre'] & { icon: JSX.IntrinsicElements['svg'] },
-) => {
+export const CodeBlock = (props: {
+  children: React.ReactNode;
+  icon: JSX.IntrinsicElements['svg'];
+}) => {
   const { children, icon, ...restProps } = props;
 
   const [ref, hovering] = useHover();
@@ -35,7 +36,9 @@ export const CodeBlock = (
                 if (isCopied) return;
 
                 // copy the text content of the code block from children
-                const codeString = extractCodeTextFromRawObject(children);
+                const codeString = extractCodeTextFromRawObject(
+                  children as any,
+                );
 
                 if (!codeString) return;
 

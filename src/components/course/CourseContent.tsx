@@ -6,6 +6,7 @@ import { MDX_COMPONENT_MAP } from '@/lib/mdx';
 import { CourseHeader } from '@/components/course/CourseHeader';
 import { ScrollArea } from '@/components/ui/ScrollArea';
 
+// FIX: page type
 export const CourseContent = (props: {
   page: any;
   coursePageGroupSeparatorName: string;
@@ -22,7 +23,10 @@ export const CourseContent = (props: {
           />
           <hr className="my-12 border-t border-dashed border-primary/25" />
           <div className="prose dark:prose-invert">
-            <MDXContent code={page?.data.body} components={MDX_COMPONENT_MAP} />
+            <MDXContent
+              code={page?.data.body}
+              components={MDX_COMPONENT_MAP as any}
+            />
           </div>
         </article>
       </div>
