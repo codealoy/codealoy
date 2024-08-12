@@ -3,16 +3,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useAtomValue } from 'jotai';
+import {
+  CoursePageNavigationTree,
+  CoursePageNavigationTreeItem,
+} from '@/types';
+import { useWindowSize } from '@uidotdev/usehooks';
 import {
   TbLayoutSidebarLeftCollapse,
   TbLayoutSidebarLeftExpand,
 } from 'react-icons/tb';
 
-import {
-  coursePageNavigationAtom,
-  CoursePageNavigationTreeItem,
-} from '@/lib/store/atom';
 import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
@@ -41,17 +41,10 @@ const SeparatorItem = ({ item }: { item: CoursePageNavigationTreeItem }) => (
   <h3 className="my-0 -ml-2 px-4 py-2 text-sm font-bold">{item.name}</h3>
 );
 
-const CourseNavbarList = () => {
-  const coursePageNavigationTree = useAtomValue(coursePageNavigationAtom);
-
-  // TODO: add loading component
-  if (
-    !coursePageNavigationTree ||
-    !coursePageNavigationTree?.name ||
-    coursePageNavigationTree.children?.length === 0
-  ) {
-    return <p>Loading...</p>;
-  }
+const CourseNavbarList = (props: {
+  coursePageNavigationTree: CoursePageNavigationTree;
+}) => {
+  const { coursePageNavigationTree } = props;
 
   return (
     <div className="px-6 py-10">
@@ -71,17 +64,31 @@ const CourseNavbarList = () => {
 };
 
 export const CourseNavbar = (props: {
-  isCourseNavbarOpen: boolean;
-  setIsCourseNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  coursePageNavigationTree: CoursePageNavigationTree;
 }) => {
-  const { isCourseNavbarOpen, setIsCourseNavbarOpen } = props;
+  const { coursePageNavigationTree } = props;
+
+  const { width } = useWindowSize();
+  const [isCourseNavbarOpen, setIsCourseNavbarOpen] = React.useState(true);
+  React.useEffect(() => {
+    if (width && width < 1024) {
+      setIsCourseNavbarOpen(false);
+    }
+  }, [width]);
 
   return (
-    <div className="relative">
+    <div
+      className={cn(
+        'relative transition-all duration-500',
+        isCourseNavbarOpen ? 'w-[300px]' : 'w-0',
+      )}
+    >
       <aside className="my-1 rounded-r-lg border-b border-r border-t border-dashed border-primary/15">
         <ScrollArea className="h-[89dvh]">
           <nav className="w-64 lg:text-sm xl:w-72">
-            <CourseNavbarList />
+            <CourseNavbarList
+              coursePageNavigationTree={coursePageNavigationTree}
+            />
           </nav>
         </ScrollArea>
       </aside>

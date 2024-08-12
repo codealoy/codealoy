@@ -20,16 +20,16 @@ export const getCoursePageNavigationTree = ({ page, pageTree }: any) => {
 };
 
 export const getCoursePageGroupSeparatorName = ({
-  coursePageNavigationtree,
+  coursePageNavigationtree: coursePageNavigationTree,
   pageTitle,
 }: any) => {
   let separatorName = '';
 
   if (
-    coursePageNavigationtree &&
-    coursePageNavigationtree.children?.length > 0
+    coursePageNavigationTree &&
+    coursePageNavigationTree.children?.length > 0
   ) {
-    for (const item of coursePageNavigationtree.children) {
+    for (const item of coursePageNavigationTree.children) {
       if (item.type === 'separator') {
         separatorName = item.name;
       }
@@ -43,9 +43,9 @@ export const getCoursePageGroupSeparatorName = ({
 };
 
 const extractStringLine = (
-  obj: {
-    props: { children: React.ReactNode | React.ReactNode[] };
-  } & React.ReactNode,
+  obj: React.ReactNode & {
+    props: React.PropsWithChildren;
+  },
 ): string => {
   let lineString = '';
 
@@ -67,8 +67,8 @@ const extractStringLine = (
 };
 
 export const extractCodeTextFromRawObject = (
-  rawObject: JSX.IntrinsicElements['code'] & {
-    props: { children: React.ReactNode[] };
+  rawObject: React.ReactNode & {
+    props: React.PropsWithChildren;
     type: string;
   },
 ): string => {

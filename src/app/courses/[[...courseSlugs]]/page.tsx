@@ -1,14 +1,8 @@
-'use client';
-
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { useWindowSize } from '@uidotdev/usehooks';
-import { useSetAtom } from 'jotai';
 
 import { getPage, pageTree } from '@/lib/mdx';
-import { coursePageNavigationAtom } from '@/lib/store/atom';
 import {
-  cn,
   getCoursePageGroupSeparatorName,
   getCoursePageNavigationTree,
 } from '@/lib/utils';
@@ -20,47 +14,27 @@ export default function CoursePage({
 }: {
   params: { courseSlugs?: string[] };
 }) {
-  const { width } = useWindowSize();
-  const [isCourseNavbarOpen, setIsCourseNavbarOpen] = React.useState(true);
   const page = getPage(params.courseSlugs);
+
+  console.log(`🐞🐞🐞 courseSlugs`, params.courseSlugs);
 
   if (!page) {
     notFound();
   }
 
-  React.useEffect(() => {
-    if (width && width < 1024) {
-      setIsCourseNavbarOpen(false);
-    }
-  }, [width]);
-
-  const coursePageNavigationtree = getCoursePageNavigationTree({
+  const coursePageNavigationTree = getCoursePageNavigationTree({
     page,
     pageTree,
   }) as any;
 
-  const setCoursePageNavigationTree = useSetAtom(coursePageNavigationAtom);
-
-  if (coursePageNavigationtree) {
-    setCoursePageNavigationTree(coursePageNavigationtree);
-  }
-
   const coursePageGroupSeparatorName = getCoursePageGroupSeparatorName({
-    coursePageNavigationtree,
+    coursePageNavigationTree: coursePageNavigationTree,
     pageTitle: page?.data.title,
   });
 
   return (
-    <section
-      className={cn(
-        'grid max-w-full transition-all duration-500',
-        isCourseNavbarOpen ? 'grid-cols-[300px,1fr]' : 'grid-cols-[0,1fr]',
-      )}
-    >
-      <CourseNavbar
-        isCourseNavbarOpen={isCourseNavbarOpen}
-        setIsCourseNavbarOpen={setIsCourseNavbarOpen}
-      />
+    <section className="grid max-w-full auto-cols-auto grid-flow-col">
+      <CourseNavbar coursePageNavigationTree={coursePageNavigationTree} />
       <CourseContent
         page={page}
         coursePageGroupSeparatorName={coursePageGroupSeparatorName}
