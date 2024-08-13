@@ -27,10 +27,10 @@ const LinkItem = ({ item }: { item: CoursePageNavigationTreeItem }) => {
     <Link href={item.url} target={item.external ? '_blank' : '_self'}>
       <span
         className={cn(
-          'inline-block w-full pl-5 text-sm font-semibold text-primary before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full hover:before:block',
+          'inline-block w-full pl-10 text-sm font-normal text-primary before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full hover:before:block',
           pathname === item.url
             ? 'text-primary before:block before:bg-primary'
-            : 'text-slate-500 before:hidden before:bg-slate-400 hover:text-slate-600 dark:text-slate-300 dark:before:bg-slate-300 dark:hover:text-slate-200',
+            : 'text-slate-600 before:hidden before:bg-slate-400 hover:text-slate-800 dark:text-slate-400 dark:before:bg-slate-300 dark:hover:text-slate-100',
         )}
       >
         {item.name}
@@ -43,7 +43,7 @@ const SeparatorItem = ({
   item,
 }: {
   item: CoursePageNavigationTreeSeparator;
-}) => <h3 className="my-0 -ml-2 px-4 py-2 text-sm font-bold">{item.name}</h3>;
+}) => <h3 className="my-0 px-4 py-2 text-sm font-extrabold">{item.name}</h3>;
 
 const CourseNavbarList = (props: {
   coursePageNavigationTree: CoursePageNavigationTreeFolder;
