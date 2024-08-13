@@ -42,3 +42,6 @@ yarn-error.log*
 
 # generated files by content-collections
 .content-collections
+
+# generated files by turbo
+.turbo

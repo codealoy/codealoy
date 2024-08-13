@@ -21,7 +21,11 @@
     "db:studio": "drizzle-kit studio",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "prepare": "husky",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick",
+    "turbo": "turbo",
+    "turbo:build": "turbo build",
+    "turbo:dev": "turbo dev",
+    "turbo:lint": "turbo lint"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -32,6 +36,7 @@
   "engines": {
     "node": ">=20"
   },
+  "packageManager": "pnpm@9.7.0",
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^2.1.1",
@@ -117,6 +122,7 @@
     "shiki": "^1.12.1",
     "tailwindcss": "^3.4.4",
     "tsx": "^4.16.2",
+    "turbo": "^2.0.12",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.1.0"
   },
