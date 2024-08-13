@@ -10,16 +10,33 @@ import {
 
 import { CourseContent, CourseNavbar } from '@/components/course';
 
+interface CoursePageProps {
+  params: {
+    courseSlugs?: string[];
+  };
+}
+
 // Get all course pages slugs on build time to generate static pages
 export function generateStaticParams() {
   return getAllCoursePagesSlugs();
 }
 
-export default function CoursePage({
-  params,
-}: {
-  params: { courseSlugs?: string[] };
-}) {
+// Generate metadata for each course page
+export async function generateMetadata({ params }: CoursePageProps) {
+  const { courseSlugs } = params;
+  const page = getPage(courseSlugs);
+
+  if (page && page.data.title && page.data.description) {
+    return {
+      title: page.data.title,
+      description: page.data.description,
+    };
+  }
+  // Return empty object to use default metadata
+  return {};
+}
+
+export default function CoursePage({ params }: CoursePageProps) {
   const { courseSlugs } = params;
 
   const page = getPage(courseSlugs);

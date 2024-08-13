@@ -71,7 +71,7 @@ export const CODE_EDITOR_BOILERPLATE_CATEGORIES = {
 
 export const SITE_METADATA_GLOBAL: Metadata = {
   title: {
-    template: '%s - Codealoy',
+    template: '%s - কোডালয় | Codealoy',
     default: SITE_TITLE,
   },
   description: SITE_DESCRIPTION,
