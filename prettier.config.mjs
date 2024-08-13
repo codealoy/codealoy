@@ -14,12 +14,12 @@ const config = {
     '@ianvs/prettier-plugin-sort-imports',
     'prettier-plugin-tailwindcss',
   ],
-  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
-  importOrderTypeScriptVersion: '5.0.0',
   importOrder: [
     '^react$',
     '^next(.*)$',
     '<THIRD_PARTY_MODULES>',
+    '',
+    '^@/types$',
     '',
     '^@/lib/(.*)$',
     '',
@@ -28,7 +28,3 @@ const config = {
 };
 
 export default config;
-
-// /** @type {import("prettier").Config} */
-// export default config = {
-// };
