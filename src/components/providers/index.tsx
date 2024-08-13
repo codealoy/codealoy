@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AtomProvider } from '@/components/providers/AtomProvider';
+import { ProgressBarProvider } from '@/components/providers/ProgressBarProvider';
 import { QueryClientProvider } from '@/components/providers/QueryClientProvider';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
@@ -11,9 +12,11 @@ interface ProvidersProps {
 export const Providers = ({ children }: ProvidersProps) => {
   return (
     <AtomProvider>
-      <ThemeProvider>
-        <QueryClientProvider>{children}</QueryClientProvider>
-      </ThemeProvider>
+      <ProgressBarProvider>
+        <ThemeProvider>
+          <QueryClientProvider>{children}</QueryClientProvider>
+        </ThemeProvider>
+      </ProgressBarProvider>
     </AtomProvider>
   );
 };
