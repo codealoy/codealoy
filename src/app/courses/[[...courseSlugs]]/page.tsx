@@ -3,11 +3,17 @@ import { notFound } from 'next/navigation';
 
 import { getPage, pageTree } from '@/lib/mdx';
 import {
+  getAllCoursePagesSlugs,
   getCoursePageGroupSeparatorName,
   getCoursePageNavigationTree,
 } from '@/lib/utils';
 
 import { CourseContent, CourseNavbar } from '@/components/course';
+
+// Get all course pages slugs on build time to generate static pages
+export function generateStaticParams() {
+  return getAllCoursePagesSlugs(pageTree);
+}
 
 export default function CoursePage({
   params,
@@ -15,8 +21,6 @@ export default function CoursePage({
   params: { courseSlugs?: string[] };
 }) {
   const page = getPage(params.courseSlugs);
-
-  console.log(`🐞🐞🐞 courseSlugs`, params.courseSlugs);
 
   if (!page) {
     notFound();
