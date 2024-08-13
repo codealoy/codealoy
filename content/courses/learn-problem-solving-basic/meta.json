@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "pages": [
+    "---শেখা শুরু করুন---",
+    "0-index",
+
+    "---ভূমিকা---",
+    "1-welcome",
+
+    "---সহজ সমস্যা---",
+    "2-two-string",
+    "3-convert-min-sec",
+    "4-mix-array-elements",
+    "6-reverse-array",
+    "7-reverse-string",
+    "8-split-digit",
+    "9-reverse-number",
+    "10-merge-array",
+    "11-pattern",
+
+    "---মধ্যম কঠিন সমস্যা---",
+    "12-sum-digit",
+    "13-min-max-value-array",
+    "14-find-element",
+    "15-two-sum",
+    "16-delete-element",
+    "17-single-number",
+    "18-large-unique",
+    "19-square-array",
+    "20-count-vowel",
+    "21-fibonacci",
+
+    "---কঠিন সমস্যা---",
+    "22-palindrome",
+    "23-factor-number",
+
+    "---উপসংহার---",
+    "24-congratulation"
+  ]
+}
