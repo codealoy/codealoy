@@ -1,4 +1,6 @@
+import React from 'react';
 import UserSettings from './UserSettings';
+
 import { checkAuth, getUserAuth } from '@/lib/auth/utils';
 
 export default async function Account() {

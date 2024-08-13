@@ -1,5 +1,5 @@
+import React from 'react';
 import Link from 'next/link';
-
 import SidebarItems from './SidebarItems';
 import { Avatar, AvatarFallback } from './ui/avatar';
 

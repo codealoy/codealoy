@@ -1,13 +1,13 @@
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
+
+import { GITHUB_REPO_LINK } from '@/config/site';
 
 import { Logo } from '@/components/default/Logo';
 import { MobileNavbar } from '@/components/default/MobileNavbar';
 import { PrimaryNavItems } from '@/components/default/PrimaryNavItems';
 import { ThemeToggle } from '@/components/default/ThemeToggle';
-
-import { GITHUB_REPO_LINK } from '@/config/site';
 
 export const Header: React.FC<any> = () => {
   return (
@@ -15,7 +15,7 @@ export const Header: React.FC<any> = () => {
       <MobileNavbar className="absolute left-2" />
       <div className="relative flex flex-grow basis-0 items-center justify-center overflow-hidden md:ml-0 md:justify-start">
         <Link href="/">
-          <Logo varient="text" className="h-7" />
+          <Logo variant="text" className="h-7" />
         </Link>
       </div>
       <div className="relative ml-auto hidden items-center md:flex lg:flex">

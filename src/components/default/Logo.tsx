@@ -1,6 +1,9 @@
+import React from 'react';
+
 interface LogoProps extends React.SVGAttributes<LogoProps> {
-  varient?: 'icon' | 'text';
+  variant?: 'icon' | 'text';
 }
+
 const LogoIcon = (props: React.SVGAttributes<any>) => (
   <svg
     data-name="Layer 2"
@@ -317,8 +320,8 @@ const LogoText = (props: React.SVGAttributes<any>) => (
   </svg>
 );
 
-export const Logo = ({ varient = 'text', ...props }: LogoProps) => {
-  if (varient === 'icon') {
+export const Logo = ({ variant = 'text', ...props }: LogoProps) => {
+  if (variant === 'icon') {
     return <LogoIcon {...props} />;
   }
 

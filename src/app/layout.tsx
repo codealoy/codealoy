@@ -1,8 +1,10 @@
 import '@/styles/globals.css';
 import '@/styles/codeblocks.css';
 
+import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Baloo_Da_2 } from 'next/font/google';
+
 import { SITE_METADATA_GLOBAL, SITE_VIEWPORT_GLOBAL } from '@/config/site';
 
 import { cn } from '@/lib/utils';

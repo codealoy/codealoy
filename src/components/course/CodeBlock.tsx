@@ -18,7 +18,7 @@ export const CodeBlock = (props: {
   children: React.ReactNode;
   icon: JSX.IntrinsicElements['svg'];
 }) => {
-  const { children, icon, ...restProps } = props;
+  const { children, icon: _icon, ...restProps } = props;
 
   const [ref, hovering] = useHover();
   const [isCopied, setIsCopied] = React.useState(false);

@@ -1,7 +1,7 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
 import { z } from 'zod';
 
 import { emailSchema } from '@/lib/email/utils';
@@ -10,10 +10,10 @@ type FormInput = z.infer<typeof emailSchema>;
 type Errors = { [K in keyof FormInput]: string[] };
 
 export default function Home() {
-  const [sending, setSending] = useState(false);
-  const [errors, setErrors] = useState<Errors | null>(null);
-  const nameInputRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
+  const [sending, setSending] = React.useState(false);
+  const [errors, setErrors] = React.useState<Errors | null>(null);
+  const nameInputRef = React.useRef<HTMLInputElement>(null);
+  const emailInputRef = React.useRef<HTMLInputElement>(null);
   const sendEmail = async () => {
     setSending(true);
     setErrors(null);
@@ -93,7 +93,7 @@ export default function Home() {
             name="name"
             ref={nameInputRef}
             className={`w-full rounded-md border px-3 py-2 text-sm focus:outline-neutral-700 ${
-              !!errors?.name ? 'border-red-700' : 'border-neutral-200'
+              errors?.name ? 'border-red-700' : 'border-neutral-200'
             }`}
           />
         </div>
@@ -105,7 +105,7 @@ export default function Home() {
             name="email"
             ref={emailInputRef}
             className={`w-full rounded-md border px-3 py-2 text-sm focus:outline-neutral-700 ${
-              !!errors?.email ? 'border-red-700' : 'border-neutral-200'
+              errors?.email ? 'border-red-700' : 'border-neutral-200'
             }`}
           />
         </div>

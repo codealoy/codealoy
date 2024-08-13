@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function AuthFormError({ state }: { state: { error: string } }) {
   if (state.error)
     return (

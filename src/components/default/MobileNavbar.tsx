@@ -1,6 +1,9 @@
+import React from 'react';
+import Link from 'next/link';
+import { PrimaryNavItems } from './PrimaryNavItems';
 import clsx from 'clsx';
-
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
+import { HiOutlineXMark } from 'react-icons/hi2';
 
 import { Logo } from '@/components/default/Logo';
 import { Button } from '@/components/ui/button';
@@ -10,9 +13,6 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import Link from 'next/link';
-import { HiOutlineXMark } from 'react-icons/hi2';
-import { PrimaryNavItems } from './PrimaryNavItems';
 
 interface MobileNavbarProps {
   display?: string;
@@ -36,7 +36,7 @@ export function MobileNavbar({
         <DrawerContent className="top-0 my-1 max-w-xs rounded-r-lg bg-gray/90 p-6 text-base font-semibold text-slate-900 shadow-2xl dark:bg-dark/95 dark:text-slate-400">
           <div className="mx-auto flex w-full items-center justify-between">
             <Link href="/">
-              <Logo varient="text" className="h-7" />
+              <Logo variant="text" className="h-7" />
             </Link>
             <DrawerClose asChild>
               <Button variant="icon" size="icon">

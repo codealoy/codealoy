@@ -1,11 +1,12 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
-
 import { motion } from 'framer-motion';
 
-import { Button } from '@/components/ui/button';
 import { fadeUpAnimation } from '@/config/animation';
+
+import { Button } from '@/components/ui/button';
 
 const NotFound = () => {
   return (

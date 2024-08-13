@@ -1,5 +1,8 @@
-import SignOutBtn from '@/components/auth/SignOutBtn';
+import React from 'react';
+
 import { getUserAuth } from '@/lib/auth/utils';
+
+import SignOutBtn from '@/components/auth/SignOutBtn';
 
 export default async function Home() {
   const { session } = await getUserAuth();

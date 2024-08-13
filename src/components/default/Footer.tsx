@@ -1,6 +1,8 @@
+import React from 'react';
 import Link from 'next/link';
-import { footerNavigationData } from '@/config/data';
 import dayjs from 'dayjs';
+
+import { footerNavigationData } from '@/config/data';
 
 import { Logo } from '@/components/default/Logo';
 import { CircleBlur } from '@/components/patterns/CircleBlur';
@@ -12,7 +14,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-5 pt-8 sm:flex-row">
           <div className="mx-auto max-w-7xl overflow-hidden px-4 py-10 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center">
-              <Logo varient="icon" className="h-16" />
+              <Logo variant="icon" className="h-16" />
             </div>
             <nav
               className="mt-8 flex flex-wrap justify-center"

@@ -1,16 +1,16 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { AlignRight } from 'lucide-react';
+
+import { defaultLinks } from '@/config/nav';
 
 import { Button } from '@/components/ui/button';
 
-import { AlignRight } from 'lucide-react';
-import { defaultLinks } from '@/config/nav';
-
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
   return (
     <div className="mb-4 w-full border-b pb-2 md:hidden">

@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 export const SectionContent = ({ children }: React.ComponentProps<'div'>) => {
   return (

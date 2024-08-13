@@ -2,20 +2,19 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-
-import { Argon2id } from 'oslo/password';
 import { lucia, validateRequest } from '../auth/lucia';
-import { generateId } from 'lucia';
-import { eq } from 'drizzle-orm';
-import { db } from '@/lib/db/index';
-
 import {
   genericError,
+  getUserAuth,
   setAuthCookie,
   validateAuthFormData,
-  getUserAuth,
 } from '../auth/utils';
-import { users, updateUserSchema } from '../db/schema/auth';
+import { updateUserSchema, users } from '../db/schema/auth';
+import { eq } from 'drizzle-orm';
+import { generateId } from 'lucia';
+import { Argon2id } from 'oslo/password';
+
+import { db } from '@/lib/db/index';
 
 interface ActionResult {
   error: string;
@@ -54,7 +53,7 @@ export async function signInAction(
     setAuthCookie(sessionCookie);
 
     return redirect('/dashboard');
-  } catch (e) {
+  } catch {
     return genericError;
   }
 }
@@ -76,7 +75,7 @@ export async function signUpAction(
       email: data.email,
       hashedPassword,
     });
-  } catch (e) {
+  } catch {
     return genericError;
   }
 
@@ -127,7 +126,7 @@ export async function updateUser(
       .where(eq(users.id, session.user.id));
     revalidatePath('/account');
     return { success: true, error: '' };
-  } catch (e) {
+  } catch {
     return genericError;
   }
 }

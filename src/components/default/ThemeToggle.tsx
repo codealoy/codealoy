@@ -1,17 +1,17 @@
 'use client';
 
+import React from 'react';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 import { LuMoonStar, LuSun } from 'react-icons/lu';
 
 import { Button } from '@/components/ui/button';
 
 export function ThemeToggle() {
-  let { resolvedTheme, setTheme } = useTheme();
-  let otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
-  let [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
+  const [mounted, setMounted] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setMounted(true);
   }, []);
 

@@ -1,6 +1,7 @@
-import { env } from '@/config/env';
 import type { Viewport } from 'next';
 import { Metadata } from 'next';
+
+import { env } from '@/config/env';
 
 // Site Configs
 export const BASE_URL =
@@ -37,7 +38,7 @@ export const DEFAULT_THEME = 'dark';
 
 // Related Links
 export const GITHUB_REPO_LINK = 'https://github.com/codealoy/codealoy';
-export const GITHUB_CONTRIBUTOS_API_LINK =
+export const GITHUB_CONTRIBUTORS_API_LINK =
   'https://api.github.com/repos/codealoy/codealoy/contributors';
 
 export const FORUM_LINK = 'https://github.com/codealoy/codealoy/discussions';

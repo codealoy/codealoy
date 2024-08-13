@@ -1,15 +1,15 @@
 'use client';
 
-import axios from 'axios';
+import React from 'react';
 import Link from 'next/link';
-
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 
 import { fallbackContributorsData, teamMembersData } from '@/config/data';
 import { defaultImageBlurDataUrl } from '@/config/defaultImageBlur';
 import {
-  GITHUB_CONTRIBUTOS_API_LINK,
+  GITHUB_CONTRIBUTORS_API_LINK,
   ONE_DAY_IN_MILLISECONDS,
 } from '@/config/site';
 
@@ -42,6 +42,10 @@ const SocialLinks = ({
   githubUrl = '#',
   linkedInUrl = '#',
   facebookUrl = '#',
+}: {
+  githubUrl: string;
+  linkedInUrl: string;
+  facebookUrl: string;
 }) => {
   const socialLinks = [
     { key: 'github', title: 'Github', url: githubUrl, icon: FaGithubSquare },
@@ -76,7 +80,7 @@ const SocialLinks = ({
 export const Team = () => {
   const { data: contributorList } = useQuery({
     queryKey: ['contributors'],
-    queryFn: () => axios.get(GITHUB_CONTRIBUTOS_API_LINK),
+    queryFn: () => axios.get(GITHUB_CONTRIBUTORS_API_LINK),
     staleTime: ONE_DAY_IN_MILLISECONDS,
     placeholderData: {
       data: fallbackContributorsData,

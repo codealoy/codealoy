@@ -55,7 +55,7 @@ const extractStringLine = (
 
   if (obj?.props?.children && typeof obj.props.children === 'object') {
     if (Array.isArray(obj.props.children)) {
-      for (let child of obj.props.children) {
+      for (const child of obj.props.children) {
         const result = extractStringLine(child as any);
         if (result) lineString += result;
       }

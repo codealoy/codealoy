@@ -1,6 +1,9 @@
 'use client';
-import UpdateNameCard from './UpdateNameCard';
+
+import React from 'react';
 import UpdateEmailCard from './UpdateEmailCard';
+import UpdateNameCard from './UpdateNameCard';
+
 import { AuthSession } from '@/lib/auth/utils';
 
 export default function UserSettings({

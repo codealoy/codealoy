@@ -1,7 +1,11 @@
+import React from 'react';
+
 import { checkAuth } from '@/lib/auth/utils';
-import { Toaster } from '@/components/ui/sonner';
+
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
+import { Toaster } from '@/components/ui/sonner';
+
 export default async function AppLayout({
   children,
 }: {

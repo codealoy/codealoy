@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import React from 'react';
 
 export function GridPattern({
   width,
@@ -14,7 +14,7 @@ export function GridPattern({
   y: string | number;
   squares: Array<[x: number, y: number]>;
 }) {
-  let patternId = useId();
+  const patternId = React.useId();
 
   return (
     <svg aria-hidden="true" {...props}>

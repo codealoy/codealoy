@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const TopSkewBoxPattern = (
   props: React.ComponentPropsWithoutRef<'svg'>,
 ) => {

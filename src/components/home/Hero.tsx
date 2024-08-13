@@ -1,8 +1,10 @@
+import React from 'react';
 import Link from 'next/link';
+
+import { GITHUB_REPO_LINK } from '@/config/site';
 
 import { BottomSkewBoxPattern, TopSkewBoxPattern } from '@/components/patterns';
 import { Button } from '@/components/ui/button';
-import { GITHUB_REPO_LINK } from '@/config/site';
 
 export const Hero = () => {
   return (

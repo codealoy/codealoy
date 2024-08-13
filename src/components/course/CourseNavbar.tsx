@@ -3,15 +3,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  CoursePageNavigationTree,
-  CoursePageNavigationTreeItem,
-} from '@/types';
 import { useWindowSize } from '@uidotdev/usehooks';
 import {
   TbLayoutSidebarLeftCollapse,
   TbLayoutSidebarLeftExpand,
 } from 'react-icons/tb';
+
+import {
+  CoursePageNavigationTree,
+  CoursePageNavigationTreeItem,
+} from '@/types';
 
 import { cn } from '@/lib/utils';
 
