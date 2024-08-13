@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+
+import { ProgressBar } from '@/components/default/ProgressBar';
 
 export const ProgressBarProvider = ({
   children,
@@ -11,12 +12,7 @@ export const ProgressBarProvider = ({
   return (
     <>
       {children}
-      <ProgressBar
-        height="4px"
-        color="#22E087"
-        options={{ showSpinner: false }}
-        shallowRouting
-      />
+      <ProgressBar />
     </>
   );
 };
