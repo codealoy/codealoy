@@ -20,7 +20,9 @@ export default function CoursePage({
 }: {
   params: { courseSlugs?: string[] };
 }) {
-  const page = getPage(params.courseSlugs);
+  const { courseSlugs } = params;
+
+  const page = getPage(courseSlugs);
 
   if (!page) {
     notFound();

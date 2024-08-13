@@ -1,8 +1,9 @@
 {
+  "title": "learn-problem-solving-basic",
   "root": true,
   "pages": [
     "---শেখা শুরু করুন---",
-    "0-index",
+    "index",
 
     "---ভূমিকা---",
     "1-welcome",
