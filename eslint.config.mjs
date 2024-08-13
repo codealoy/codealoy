@@ -44,6 +44,35 @@ const config = [
       '.next/',
     ],
   },
+  {
+    rules: {
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-floating-promises': 'off',
+      '@typescript-eslint/restrict-plus-operands': 'off',
+      '@typescript-eslint/restrict-template-expressions': 'off',
+      '@typescript-eslint/consistent-type-imports': 'off',
+
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+    },
+  },
+  {
+    files: ['src/components/ui/**/*.{ts,tsx}'],
+    rules: {
+      'react/prop-types': 'off',
+    },
+  },
 ];
 
 export default config;
