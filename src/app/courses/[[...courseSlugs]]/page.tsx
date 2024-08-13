@@ -10,6 +10,8 @@ import {
 
 import { CourseContent, CourseNavbar } from '@/components/course';
 
+const getPageCached = React.cache(getPage);
+
 interface CoursePageProps {
   params: {
     courseSlugs?: string[];
@@ -24,7 +26,7 @@ export function generateStaticParams() {
 // Generate metadata for each course page
 export async function generateMetadata({ params }: CoursePageProps) {
   const { courseSlugs } = params;
-  const page = getPage(courseSlugs);
+  const page = getPageCached(courseSlugs);
 
   if (page && page.data.title && page.data.description) {
     return {
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }: CoursePageProps) {
 export default function CoursePage({ params }: CoursePageProps) {
   const { courseSlugs } = params;
 
-  const page = getPage(courseSlugs);
+  const page = getPageCached(courseSlugs);
 
   if (!page) {
     notFound();
