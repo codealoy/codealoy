@@ -25,7 +25,7 @@ export default function CoursePage({
   const coursePageNavigationTree = getCoursePageNavigationTree({
     page,
     pageTree,
-  }) as any;
+  });
 
   const coursePageGroupSeparatorName = getCoursePageGroupSeparatorName({
     coursePageNavigationTree: coursePageNavigationTree,
@@ -33,7 +33,7 @@ export default function CoursePage({
   });
 
   return (
-    <section className="grid max-w-full auto-cols-auto grid-flow-col">
+    <section className="grid max-w-full grid-flow-col grid-cols-[auto_1fr]">
       <CourseNavbar coursePageNavigationTree={coursePageNavigationTree} />
       <CourseContent
         page={page}
