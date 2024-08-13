@@ -1,7 +1,7 @@
 import React from 'react';
 import slugify from 'slugify';
 
-import { CoursePage, CoursePageNavigationTree } from '@/types';
+import { CoursePage, CoursePageNavigationTreeFolder } from '@/types';
 
 import { pageTree } from '@/lib/mdx';
 
@@ -29,7 +29,11 @@ export const getAllCoursePagesSlugs = () => {
   return allCoursePagesSlugs;
 };
 
-export const getCoursePageNavigationTree = ({ page }: { page: CoursePage }) => {
+export const getCoursePageNavigationTree = ({
+  page,
+}: {
+  page: CoursePage;
+}): CoursePageNavigationTreeFolder | null => {
   if (!page) {
     return null;
   }
@@ -41,17 +45,17 @@ export const getCoursePageNavigationTree = ({ page }: { page: CoursePage }) => {
   }
 
   const navigationTree = pageTree.children.find(
-    (item: any) =>
+    (item) =>
       item.type === 'folder' &&
       typeof item.name === 'string' &&
       slugify(item.name.toLowerCase()) === folderName,
   );
 
-  return navigationTree;
+  return navigationTree as CoursePageNavigationTreeFolder;
 };
 
 export const getCoursePageGroupSeparatorName = (props: {
-  coursePageNavigationTree: CoursePageNavigationTree;
+  coursePageNavigationTree: CoursePageNavigationTreeFolder;
   pageTitle: string;
 }) => {
   const { coursePageNavigationTree, pageTitle } = props;
@@ -62,8 +66,8 @@ export const getCoursePageGroupSeparatorName = (props: {
     coursePageNavigationTree.children?.length > 0
   ) {
     for (const item of coursePageNavigationTree.children) {
-      if (item.type === 'separator') {
-        separatorName = item.name;
+      if (item.type === 'separator' && item.name) {
+        separatorName = item.name as string;
       }
       // Break loop when page title is found
       if (item.type === 'page' && item.name === pageTitle) {

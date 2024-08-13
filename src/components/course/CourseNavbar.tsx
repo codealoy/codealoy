@@ -10,8 +10,8 @@ import {
 } from 'react-icons/tb';
 
 import {
+  CoursePageNavigationTreeFolder,
   CoursePageNavigationTreeItem,
-  CoursePageNavigationTreeRoot,
   CoursePageNavigationTreeSeparator,
 } from '@/types';
 
@@ -46,7 +46,7 @@ const SeparatorItem = ({
 }) => <h3 className="my-0 -ml-2 px-4 py-2 text-sm font-bold">{item.name}</h3>;
 
 const CourseNavbarList = (props: {
-  coursePageNavigationTree: CoursePageNavigationTreeRoot;
+  coursePageNavigationTree: CoursePageNavigationTreeFolder;
 }) => {
   const { coursePageNavigationTree } = props;
 
@@ -68,7 +68,7 @@ const CourseNavbarList = (props: {
 };
 
 export const CourseNavbar = (props: {
-  coursePageNavigationTree: CoursePageNavigationTreeRoot;
+  coursePageNavigationTree: CoursePageNavigationTreeFolder;
 }) => {
   const { coursePageNavigationTree } = props;
 

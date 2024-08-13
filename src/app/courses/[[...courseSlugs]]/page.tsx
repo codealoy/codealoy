@@ -35,7 +35,7 @@ export default function CoursePage({
   }
 
   const coursePageGroupSeparatorName = getCoursePageGroupSeparatorName({
-    coursePageNavigationTree: coursePageNavigationTree,
+    coursePageNavigationTree,
     pageTitle: page?.data.title,
   });
 
