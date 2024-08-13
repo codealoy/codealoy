@@ -1,6 +1,32 @@
 import React from 'react';
 import slugify from 'slugify';
 
+interface coursePageSlug {
+  courseSlugs: string[];
+}
+
+export const getAllCoursePagesSlugs = (pageTree: any) => {
+  const allCoursePagesSlugs: coursePageSlug[] = [];
+
+  pageTree.children.forEach((folder: any) => {
+    if (folder.type === 'folder' && folder.children.length > 0) {
+      folder.children.forEach((item: any) => {
+        if (item.type === 'page' && item.url && !item.external) {
+          allCoursePagesSlugs.push({
+            courseSlugs: item.url
+              .split('/')
+              .filter((part: string) => part !== '' && part !== 'courses'),
+          });
+        }
+      });
+    } else {
+      allCoursePagesSlugs.push({ courseSlugs: folder.slug });
+    }
+  });
+
+  return allCoursePagesSlugs;
+};
+
 // FIX: page type
 export const getCoursePageNavigationTree = ({ page, pageTree }: any) => {
   const folderName = page.file.dirname || '';
