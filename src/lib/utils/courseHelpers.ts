@@ -1,34 +1,39 @@
 import React from 'react';
 import slugify from 'slugify';
 
+import { CoursePage, CoursePageNavigationTree } from '@/types';
+
+import { pageTree } from '@/lib/mdx';
+
 interface coursePageSlug {
   courseSlugs: string[];
 }
 
-export const getAllCoursePagesSlugs = (pageTree: any) => {
+export const getAllCoursePagesSlugs = () => {
   const allCoursePagesSlugs: coursePageSlug[] = [];
 
-  pageTree.children.forEach((folder: any) => {
-    if (folder.type === 'folder' && folder.children.length > 0) {
-      folder.children.forEach((item: any) => {
-        if (item.type === 'page' && item.url && !item.external) {
+  pageTree.children.forEach((rootItem) => {
+    if (rootItem.type === 'folder' && rootItem.children.length > 0) {
+      rootItem.children.forEach((childItem) => {
+        if (childItem.type === 'page' && childItem.url && !childItem.external) {
           allCoursePagesSlugs.push({
-            courseSlugs: item.url
+            courseSlugs: childItem.url
               .split('/')
               .filter((part: string) => part !== '' && part !== 'courses'),
           });
         }
       });
-    } else {
-      allCoursePagesSlugs.push({ courseSlugs: folder.slug });
     }
   });
 
   return allCoursePagesSlugs;
 };
 
-// FIX: page type
-export const getCoursePageNavigationTree = ({ page, pageTree }: any) => {
+export const getCoursePageNavigationTree = ({ page }: { page: CoursePage }) => {
+  if (!page) {
+    return null;
+  }
+
   const folderName = page.file.dirname || '';
 
   if (!folderName) {
@@ -45,10 +50,11 @@ export const getCoursePageNavigationTree = ({ page, pageTree }: any) => {
   return navigationTree;
 };
 
-export const getCoursePageGroupSeparatorName = ({
-  coursePageNavigationtree: coursePageNavigationTree,
-  pageTitle,
-}: any) => {
+export const getCoursePageGroupSeparatorName = (props: {
+  coursePageNavigationTree: CoursePageNavigationTree;
+  pageTitle: string;
+}) => {
+  const { coursePageNavigationTree, pageTitle } = props;
   let separatorName = '';
 
   if (

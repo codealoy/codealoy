@@ -1,7 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 
-import { getPage, pageTree } from '@/lib/mdx';
+import { getPage } from '@/lib/mdx';
 import {
   getAllCoursePagesSlugs,
   getCoursePageGroupSeparatorName,
@@ -12,7 +12,7 @@ import { CourseContent, CourseNavbar } from '@/components/course';
 
 // Get all course pages slugs on build time to generate static pages
 export function generateStaticParams() {
-  return getAllCoursePagesSlugs(pageTree);
+  return getAllCoursePagesSlugs();
 }
 
 export default function CoursePage({
@@ -28,8 +28,11 @@ export default function CoursePage({
 
   const coursePageNavigationTree = getCoursePageNavigationTree({
     page,
-    pageTree,
   });
+
+  if (!coursePageNavigationTree) {
+    throw new Error('Course page navigation tree not found');
+  }
 
   const coursePageGroupSeparatorName = getCoursePageGroupSeparatorName({
     coursePageNavigationTree: coursePageNavigationTree,

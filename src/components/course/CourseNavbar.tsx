@@ -10,8 +10,9 @@ import {
 } from 'react-icons/tb';
 
 import {
-  CoursePageNavigationTree,
   CoursePageNavigationTreeItem,
+  CoursePageNavigationTreeRoot,
+  CoursePageNavigationTreeSeparator,
 } from '@/types';
 
 import { cn } from '@/lib/utils';
@@ -38,12 +39,14 @@ const LinkItem = ({ item }: { item: CoursePageNavigationTreeItem }) => {
   );
 };
 
-const SeparatorItem = ({ item }: { item: CoursePageNavigationTreeItem }) => (
-  <h3 className="my-0 -ml-2 px-4 py-2 text-sm font-bold">{item.name}</h3>
-);
+const SeparatorItem = ({
+  item,
+}: {
+  item: CoursePageNavigationTreeSeparator;
+}) => <h3 className="my-0 -ml-2 px-4 py-2 text-sm font-bold">{item.name}</h3>;
 
 const CourseNavbarList = (props: {
-  coursePageNavigationTree: CoursePageNavigationTree;
+  coursePageNavigationTree: CoursePageNavigationTreeRoot;
 }) => {
   const { coursePageNavigationTree } = props;
 
@@ -51,8 +54,8 @@ const CourseNavbarList = (props: {
     <div className="px-6 py-10">
       <ul className="mt-2 space-y-2 border-l border-dashed border-primary/25 p-0 lg:mt-4 lg:space-y-4">
         {coursePageNavigationTree.children?.map((item) => (
-          <li className="relative list-none" key={item.name}>
-            {item.type === 'separator' ? (
+          <li className="relative list-none" key={item.name as string}>
+            {item.type === 'folder' ? null : item.type === 'separator' ? (
               <SeparatorItem item={item} />
             ) : (
               <LinkItem item={item} />
@@ -65,7 +68,7 @@ const CourseNavbarList = (props: {
 };
 
 export const CourseNavbar = (props: {
-  coursePageNavigationTree: CoursePageNavigationTree;
+  coursePageNavigationTree: CoursePageNavigationTreeRoot;
 }) => {
   const { coursePageNavigationTree } = props;
 
