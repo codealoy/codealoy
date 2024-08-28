@@ -37,12 +37,12 @@ pnpm >= 9
 ```
 
 - Check nodejs version: `node --version`
-- Check npm version: `pnpm --version`
+- Check pnpm version: `pnpm --version`
 
 If your system versions are not meet the required versions above, then you need to update the versions.
 
 - To update nodejs, we can download the latest **LTS** version from the [official nodejs site](https://nodejs.org/en/) or use any type of node package manager like [nvm](https://github.com/nvm-sh/nvm), [fnm](https://github.com/Schniz/fnm) or [Volta JS](https://volta.sh/).
-- To update pnpm version, we can use: `npm i -g pnpm`
+- To update pnpm version, we can use: `pnpm self-update`
 
 _Note: if you don't already have `pnpm` installed, you can follow the [official documentation](https://pnpm.io/installation) for installation guide._
 
@@ -74,12 +74,12 @@ After the server started, you can visit the site at [http://localhost:3000](http
 
 Here are some useful scripts for when you are developing:
 
-| Command         | Description                            |
-| --------------- | -------------------------------------- |
-| `npm run dev`   | Starts the development server with HMR |
-| `npm run build` | Build the projet                       |
-| `npm run start` | Start the project built version        |
-| `npm run lint`  | Lints the code                         |
+| Command          | Description                            |
+| ---------------- | -------------------------------------- |
+| `pnpm run dev`   | Starts the development server with HMR |
+| `pnpm run build` | Build the projet                       |
+| `pnpm run start` | Start the project built version        |
+| `pnpm run lint`  | Lints the code                         |
 
 Other scripts can be found in the `package.json` file.
 
@@ -107,13 +107,33 @@ Fill out the title and body appropriately. Again, make sure to follow the [conve
 
 ---
 
-### Step 4: Use custom domain (optional)
+### Step 4: Update hosts file (only for custom domain; optional otherwise)
+
+#### MacOS:
+
+- Run this on your terminal
+
+  ```bash
+  sudo nano /etc/hosts
+  ```
+
+- Add this line
+
+  ```
+  127.0.0.1 codealoy.local
+  ```
+
+- Save and Exit
+
+---
+
+### Step 5: Use custom domain (optional)
 
 You can optionally use `https://codealoy.local` instead of `http://localhost:3000` as the domain name of the Codealoy server during development. As an extra benefit, this will automatically add an `SSL` certificate to the local domain, so you can use `HTTPS` with the domain. Here are the custom domain setup instructions:
 
 - Install [Caddy Server](https://caddyserver.com/docs/install) on your machine
 
-- Start Codealoy server: `npm run dev`
+- Start Codealoy server: `pnpm run dev`
 
   > This will start the server at `http://localhost:3000`
 
