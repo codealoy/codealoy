@@ -6,10 +6,10 @@ on:
       - 'main'
 
 env:
-  NODE_ENV: ${{ secrets.NODE_ENV }
-  DATABASE_URL: ${{ secrets.DATABASE_URL }
-  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }
-  NEXT_PUBLIC_RUNTIME_ENV: ${{ secrets.NEXT_PUBLIC_RUNTIME_ENV }
+  NODE_ENV: ${{ secrets.NODE_ENV }}
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+  NEXT_PUBLIC_RUNTIME_ENV: ${{ secrets.NEXT_PUBLIC_RUNTIME_ENV }}
 
 jobs:
   build:
