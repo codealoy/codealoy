@@ -6,7 +6,8 @@ on:
       - 'main'
 
 env:
-  SKIP_ENV_VALIDATION: true
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
 jobs:
   build:
