@@ -7,10 +7,10 @@ import { motion } from 'framer-motion';
 import { fadeUpAnimation } from '@/config/animation';
 import { featuresData } from '@/config/data';
 
-import { AdaptiveCard } from '@/components/AdaptiveCard';
 import { SectionContent } from '@/components/default/SectionContent';
 import { SectionHeading } from '@/components/default/SectionHeading';
 import { CircleBlur } from '@/components/patterns/CircleBlur';
+import { Card } from '@/components/ui/card';
 
 export const FeatureGrid = () => {
   const ref = React.useRef(null);
@@ -37,10 +37,10 @@ export const FeatureGrid = () => {
             ref={ref}
           >
             {featuresData?.map((featureItem) => (
-              <AdaptiveCard
-                variant="feature"
-                data={featureItem}
+              <Card
                 key={featureItem.id}
+                variant="feature"
+                data={{ ...featureItem }}
               />
             ))}
           </motion.div>
