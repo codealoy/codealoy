@@ -55,25 +55,8 @@ const FeatureCardLayout = ({
   );
 };
 
-const DefaultCardLayout = ({ title, description }: any) => {
-  return (
-    <>
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-slate-700 dark:text-slate-200">
-          {title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-base text-slate-700 dark:text-slate-300">
-          {description}
-        </p>
-      </CardContent>
-    </>
-  );
-};
-
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, data, ...props }, ref) => {
+  ({ className, variant, data, children, ...props }, ref) => {
     const result = cardPropsSchema.safeParse({ variant, data });
 
     if (!result.success) {
@@ -86,7 +69,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           return <FeatureCardLayout {...data} />;
 
         default:
-          return <DefaultCardLayout {...data} />;
+          return children;
       }
     };
 
