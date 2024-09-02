@@ -40,7 +40,11 @@ export const FeatureGrid = () => {
               <Card
                 key={featureItem.id}
                 variant="feature"
-                data={{ ...featureItem }}
+                data={{
+                  title: featureItem.title,
+                  description: featureItem.description,
+                  icon: featureItem.icon,
+                }}
               />
             ))}
           </motion.div>

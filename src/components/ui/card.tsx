@@ -4,27 +4,40 @@ import { z } from 'zod';
 
 import { cn } from '@/lib/utils';
 
-const VARIANT_ENUM = ['feature'] as const;
-
-const baseCardDataSchema = z.object({
-  title: z.string().optional(),
-  description: z.string().optional(),
+const BaseCardDataSchema = z.object({
+  title: z.string(),
+  description: z.string(),
 });
 
-const featureCardDataSchema = baseCardDataSchema.extend({
-  icon: z.custom<IconType>().optional(),
+const FeatureCardDataSchema = BaseCardDataSchema.extend({
+  icon: z.custom<IconType>(),
 });
 
-const cardPropsSchema = z.object({
-  variant: z.enum(VARIANT_ENUM).optional(),
-  data: featureCardDataSchema.optional(),
-});
+type FeatureCardData = z.infer<typeof FeatureCardDataSchema>;
 
-type FeatureCardData = z.infer<typeof featureCardDataSchema>;
+type CardPropsWithFeature = {
+  variant: 'feature';
+  data: FeatureCardData;
+};
 
-type InferredCardProps = z.infer<typeof cardPropsSchema>;
+type CardPropsWithoutVariant = {
+  variant?: undefined;
+  data?: undefined;
+};
 
-type CardProps = InferredCardProps & React.HTMLAttributes<HTMLDivElement>;
+const CardPropsSchema = z.union([
+  z.object({
+    variant: z.literal('feature'),
+    data: FeatureCardDataSchema,
+  }),
+  z.object({
+    variant: z.undefined(),
+    data: z.undefined(),
+  }),
+]);
+
+type CombinedCardProps = CardPropsWithFeature | CardPropsWithoutVariant;
+type CardProps = CombinedCardProps & React.HTMLAttributes<HTMLDivElement>;
 
 const FeatureCardLayout = ({
   title,
@@ -57,10 +70,10 @@ const FeatureCardLayout = ({
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, data, children, ...props }, ref) => {
-    const result = cardPropsSchema.safeParse({ variant, data });
+    const result = CardPropsSchema.safeParse({ variant, data });
 
     if (!result.success) {
-      console.error('🚀 Card:', result.error.errors);
+      console.error('🚀 ~ Card:', result.error.errors);
     }
 
     const renderCardLayout = () => {
