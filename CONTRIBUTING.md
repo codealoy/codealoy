@@ -31,7 +31,7 @@ cd codealoy
 
 Required versions:
 
-```
+```bash
 node >= 20 (LTS)
 pnpm >= 9
 ```
@@ -109,7 +109,7 @@ Fill out the title and body appropriately. Again, make sure to follow the [conve
 
 ### Step 4: Update hosts file (only for custom domain; optional otherwise)
 
-#### MacOS:
+#### MacOS
 
 - Run this on your terminal
 
@@ -119,7 +119,7 @@ Fill out the title and body appropriately. Again, make sure to follow the [conve
 
 - Add this line
 
-  ```
+  ```bash
   127.0.0.1 codealoy.local
   ```
 
