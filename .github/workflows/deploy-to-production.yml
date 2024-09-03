@@ -12,7 +12,7 @@ env:
   RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
 
     steps:
