@@ -1,10 +1,8 @@
-import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-
-import { type Cookie } from 'lucia';
-
+import { redirect } from 'next/navigation';
+import { authenticationSchema, UsernameAndPassword } from '../db/schema/auth';
 import { validateRequest } from './lucia';
-import { UsernameAndPassword, authenticationSchema } from '../db/schema/auth';
+import { type Cookie } from 'lucia';
 
 export type AuthSession = {
   session: {
@@ -16,6 +14,7 @@ export type AuthSession = {
     };
   } | null;
 };
+
 export const getUserAuth = async (): Promise<AuthSession> => {
   const { session, user } = await validateRequest();
   if (!session) return { session: null };

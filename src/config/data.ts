@@ -1,14 +1,5 @@
-import imageOfMukit from '~/public/images/team/codealoy-team-mukit.png';
-import imageOfShahed from '~/public/images/team/codealoy-team-shahed.png';
-
-import {
-  FACEBOOK_GROUP_LINK,
-  FACEBOOK_PAGE_LINK,
-  FORUM_LINK,
-  GITHUB_REPO_LINK,
-  SUPPORT_EMAIL,
-  TWITTER_PAGE_LINK,
-} from '@/config/site';
+import imageOfMukit from '~/public/images/team/codealoy-team-mukit-yiu0yn8teti9f2nnnp1nk.webp';
+import imageOfShahed from '~/public/images/team/codealoy-team-shahed-eql2q62sebdvpba1uk6fd.webp';
 import {
   FaFacebook,
   FaGithub,
@@ -24,6 +15,15 @@ import {
   HiOutlineDesktopComputer,
   HiOutlineUserGroup,
 } from 'react-icons/hi';
+
+import {
+  FACEBOOK_GROUP_LINK,
+  FACEBOOK_PAGE_LINK,
+  FORUM_LINK,
+  GITHUB_REPO_LINK,
+  SUPPORT_EMAIL,
+  TWITTER_PAGE_LINK,
+} from '@/config/site';
 
 export const featuresData = [
   {

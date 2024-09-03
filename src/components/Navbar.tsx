@@ -7,7 +7,7 @@ import { AlignRight } from 'lucide-react';
 
 import { defaultLinks } from '@/config/nav';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
