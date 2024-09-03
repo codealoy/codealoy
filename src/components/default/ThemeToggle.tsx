@@ -4,7 +4,7 @@ import React from 'react';
 import { useTheme } from 'next-themes';
 import { LuMoonStar, LuSun } from 'react-icons/lu';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();

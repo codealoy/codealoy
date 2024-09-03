@@ -7,8 +7,7 @@ import { toast } from 'sonner';
 
 import { updateUser } from '@/lib/actions/users';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button, Input } from '@/components/ui';
 
 export default function UpdateNameCard({ name }: { name: string }) {
   const [state, formAction] = useFormState(updateUser, {

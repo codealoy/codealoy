@@ -6,13 +6,13 @@ import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { HiOutlineXMark } from 'react-icons/hi2';
 
 import { Logo } from '@/components/default/Logo';
-import { Button } from '@/components/ui/button';
 import {
+  Button,
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerTrigger,
-} from '@/components/ui/drawer';
+} from '@/components/ui';
 
 interface MobileNavbarProps {
   display?: string;

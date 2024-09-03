@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui';
 
 interface AccountCardProps {
   params: {

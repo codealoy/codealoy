@@ -7,9 +7,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { signInAction } from '@/lib/actions/users';
 
 import AuthFormError from '@/components/auth/AuthFormError';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Button, Input, Label } from '@/components/ui';
 
 export default function SignInPage() {
   const [state, formAction] = useFormState(signInAction, {

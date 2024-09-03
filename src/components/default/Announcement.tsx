@@ -1,12 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import { HiOutlineArrowRight, HiX } from 'react-icons/hi';
 
 import { GITHUB_REPO_LINK } from '@/config/site';
 
-import { Button } from '@/components/ui/button';
-import { HiOutlineArrowRight, HiX } from 'react-icons/hi';
+import { Button } from '@/components/ui';
 
 export const Announcement = () => {
   const [hideAnnouncement, setHideAnnouncement] = React.useState(false);

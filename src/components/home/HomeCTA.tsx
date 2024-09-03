@@ -4,7 +4,7 @@ import { FaRegCircleCheck } from 'react-icons/fa6';
 
 import { BottomSkewBoxPattern } from '@/components/patterns/BottomSkewBoxPattern';
 import { TopSkewBoxPattern } from '@/components/patterns/TopSkewBoxPattern';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 
 export const HomeCta = () => {
   return (

@@ -6,7 +6,7 @@ import { CoursePage } from '@/types';
 import { MDX_COMPONENT_MAP } from '@/lib/mdx';
 
 import { CourseHeader } from '@/components/course/CourseHeader';
-import { ScrollArea } from '@/components/ui/ScrollArea';
+import { ScrollArea } from '@/components/ui';
 
 export const CourseContent = (props: {
   page: CoursePage;

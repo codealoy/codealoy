@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { GITHUB_REPO_LINK } from '@/config/site';
 
 import { BottomSkewBoxPattern, TopSkewBoxPattern } from '@/components/patterns';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 
 export const Hero = () => {
   return (
@@ -21,7 +21,6 @@ export const Hero = () => {
       >
         <BottomSkewBoxPattern />
       </div>
-
       <div className="relative z-10 flex items-center">
         <div className="mx-auto p-4">
           <h1 className="text-center text-4xl font-extrabold tracking-tight text-slate-800 sm:text-5xl lg:text-6xl dark:text-slate-200">

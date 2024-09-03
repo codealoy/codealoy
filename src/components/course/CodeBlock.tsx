@@ -6,13 +6,13 @@ import { LuClipboardCheck, LuClipboardList } from 'react-icons/lu';
 
 import { extractCodeTextFromRawObject } from '@/lib/utils';
 
-import { Button } from '@/components/ui/button';
 import {
+  Button,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/components/ui';
 
 export const CodeBlock = (props: {
   children: React.ReactNode;

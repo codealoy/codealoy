@@ -17,8 +17,7 @@ import {
 
 import { cn } from '@/lib/utils';
 
-import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/ScrollArea';
+import { Button, ScrollArea } from '@/components/ui';
 
 const LinkItem = ({ item }: { item: CoursePageNavigationTreeItem }) => {
   const pathname = usePathname();

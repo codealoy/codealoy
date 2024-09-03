@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import { fadeUpAnimation } from '@/config/animation';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 
 const NotFound = () => {
   return (

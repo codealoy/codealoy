@@ -4,7 +4,7 @@ import { checkAuth } from '@/lib/auth/utils';
 
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@/components/ui';
 
 export default async function AppLayout({
   children,
