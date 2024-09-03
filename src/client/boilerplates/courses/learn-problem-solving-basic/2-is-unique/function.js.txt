@@ -1,3 +1,0 @@
-const addNew = (a, b) => a + b;
-
-export default addNew;

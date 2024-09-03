@@ -1,25 +1,14 @@
 {
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#6e72e1",
-    "activityBar.background": "#6e72e1",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#efb0b2",
-    "activityBarBadge.foreground": "#15202b",
-    "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#6e72e1",
-    "statusBar.background": "#4449d8",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#6e72e1",
-    "statusBarItem.remoteBackground": "#4449d8",
-    "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#4449d8",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#4449d899",
-    "titleBar.inactiveForeground": "#e7e7e799"
-  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#22e087",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverForeground": "#15202b",
+    "statusBarItem.hoverBackground": "#19b56c",
+    "statusBarItem.remoteBackground": "#22e087",
+    "statusBarItem.remoteForeground": "#15202b"
+  }
 }

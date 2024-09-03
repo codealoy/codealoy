@@ -4,7 +4,6 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "ms-azuretools.vscode-docker",
-    "mohitsingh.markdoc",
-    "sonarsource.sonarlint-vscode"
+    "mohitsingh.markdoc"
   ]
 }
