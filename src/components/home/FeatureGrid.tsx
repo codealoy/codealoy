@@ -10,7 +10,7 @@ import { featuresData } from '@/config/data';
 import { SectionContent } from '@/components/default/SectionContent';
 import { SectionHeading } from '@/components/default/SectionHeading';
 import { CircleBlur } from '@/components/patterns/CircleBlur';
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui';
 
 export const FeatureGrid = () => {
   const ref = React.useRef(null);
