@@ -1,15 +1,16 @@
 'use client';
 
 import React from 'react';
-
+import { useWhileInView } from '@/hooks/useWhileInView';
 import { motion } from 'framer-motion';
+
+import { fadeUpAnimation } from '@/config/animation';
+import { featuresData } from '@/config/data';
 
 import { SectionContent } from '@/components/default/SectionContent';
 import { SectionHeading } from '@/components/default/SectionHeading';
 import { CircleBlur } from '@/components/patterns/CircleBlur';
-import { fadeUpAnimation } from '@/config/animation';
-import { featuresData } from '@/config/data';
-import { useWhileInView } from '@/hooks/useWhileInView';
+import { Card } from '@/components/ui/card';
 
 export const FeatureGrid = () => {
   const ref = React.useRef(null);
@@ -36,25 +37,15 @@ export const FeatureGrid = () => {
             ref={ref}
           >
             {featuresData?.map((featureItem) => (
-              <div
-                className="relative scale-100 rounded-lg border border-primary/30 bg-white/10 p-3 shadow-lg transition-transform duration-500 hover:scale-105 dark:border-primary/15 dark:bg-dark-light/30"
+              <Card
                 key={featureItem.id}
-              >
-                <div className="h-full rounded-md border border-dashed border-gray-300 p-10 text-center lg:p-5 dark:border-gray-700">
-                  <span className="inline-flex items-center justify-center rounded-md bg-slate-100/10 p-3 shadow-lg dark:bg-slate-500/10">
-                    <featureItem.icon
-                      className="h-6 w-6 fill-primary/30 text-primary"
-                      aria-hidden="true"
-                    />
-                  </span>
-                  <h3 className="mt-8 text-xl font-bold text-slate-700 dark:text-slate-200">
-                    {featureItem.title}
-                  </h3>
-                  <p className="mt-5 text-base text-slate-700 dark:text-slate-300">
-                    {featureItem.description}
-                  </p>
-                </div>
-              </div>
+                variant="feature"
+                data={{
+                  title: featureItem.title,
+                  description: featureItem.description,
+                  icon: featureItem.icon,
+                }}
+              />
             ))}
           </motion.div>
         </div>
