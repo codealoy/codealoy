@@ -9,10 +9,10 @@ export const PRIMARY_NAV_ITEMS = [
   },
   {
     title: 'ব্লগ',
-    href: '/blog',
+    href: '#',
   },
   {
     title: 'লগইন',
-    href: '/login',
+    href: '#',
   },
 ];
