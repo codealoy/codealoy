@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-
+import { useWhileInView } from '@/hooks/useWhileInView';
 import { motion } from 'framer-motion';
 import { HiOutlineTerminal } from 'react-icons/hi';
 import {
@@ -9,11 +9,11 @@ import {
   HiOutlineRocketLaunch,
 } from 'react-icons/hi2';
 
+import { fadeFromRightAnimation } from '@/config/animation';
+
 import { OptimizedImage } from '@/components/default/OptimizedImage';
 import { LeftSkewBoxPattern, RightSkewBoxPattern } from '@/components/patterns';
 import { BottomWavePattern } from '@/components/patterns/BottomWavePattern';
-import { fadeFromRightAnimation } from '@/config/animation';
-import { useWhileInView } from '@/hooks/useWhileInView';
 
 export const HighlightedFeatures = () => {
   const ref = React.useRef(null);
@@ -85,7 +85,7 @@ export const HighlightedFeatures = () => {
               variants={fadeFromRightAnimation}
             >
               <OptimizedImage
-                src="/images/features/codealoy-live-coding-editor-aFeXuDEnv2.avif"
+                src="/images/features/codealoy-live-coding-editor-2K6qzfcYzU9t.webp"
                 alt="Live coding editor"
                 className="relative -z-10 min-w-full max-w-xs rounded-xl shadow-xl ring-1 ring-primary/15 lg:w-[64rem] lg:max-w-none xl:w-[74rem]"
                 width={2360}
