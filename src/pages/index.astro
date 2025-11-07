@@ -1,16 +1,9 @@
 ---
-import '@/styles/global.css';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Codealoy</title>
-  </head>
-  <body>
-    <h1>Codealoy</h1>
-  </body>
-</html>
+<DefaultLayout>
+  <main>
+    <h1 class="text-2xl font-bold text-red-500">Codealoy</h1>
+  </main>
+</DefaultLayout>
