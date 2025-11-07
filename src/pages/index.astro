@@ -1,11 +1,13 @@
 ---
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
+import FeatureGrid from '@/components/home/FeatureGrid';
 import Hero from '@/components/home/Hero';
 ---
 
 <DefaultLayout>
-  <main>
+  <Fragment>
     <Hero />
-  </main>
+    <FeatureGrid client:idle />
+  </Fragment>
 </DefaultLayout>
