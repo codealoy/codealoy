@@ -2,6 +2,8 @@
  * @see https://prettier.io/docs/en/configuration.html
  * @type {import("prettier").Config}
  */
+
+/** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
 const config = {
   printWidth: 80,
   useTabs: false,
@@ -11,8 +13,8 @@ const config = {
   semi: true,
   singleQuote: true,
   plugins: [
-    'prettier-plugin-astro',
     '@ianvs/prettier-plugin-sort-imports',
+    'prettier-plugin-astro',
     'prettier-plugin-tailwindcss',
   ],
   overrides: [

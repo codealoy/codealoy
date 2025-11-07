@@ -10,6 +10,9 @@
     "typescript", // Enable .ts
     "typescriptreact" // Enable .tsx
   ],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
   "workbench.colorCustomizations": {
     "statusBar.background": "#22e087",
     "statusBar.foreground": "#15202b",
@@ -17,5 +20,5 @@
     "statusBarItem.hoverBackground": "#19b56c",
     "statusBarItem.remoteBackground": "#22e087",
     "statusBarItem.remoteForeground": "#15202b"
-  },
+  }
 }
