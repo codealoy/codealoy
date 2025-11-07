@@ -1,6 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "./types/jsx.d.ts"
-  ]
+  "include": ["./types/jsx.d.ts"]
 }
