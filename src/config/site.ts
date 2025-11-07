@@ -1,10 +1,5 @@
-import { NODE_ENV, PORT } from 'astro:env/server';
-
 // Site Configs
-export const BASE_URL =
-  NODE_ENV === 'production'
-    ? 'https://www.codealoy.com'
-    : `http://localhost:${PORT}`;
+export const BASE_URL = 'https://www.codealoy.com';
 
 export const SITE_TITLE =
   'Codealoy - Web Development Learning Platform in Bangla';
