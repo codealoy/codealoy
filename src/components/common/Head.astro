@@ -1,0 +1,115 @@
+---
+import { SEO } from 'astro-seo';
+
+import {
+  BASE_URL,
+  EDUCATIONAL_ORGANIZATION_SCHEMA,
+  OG_IMAGE,
+  OG_IMAGE_ALT,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_WIDTH,
+  OG_SITE_NAME,
+  ORGANIZATION_SCHEMA,
+  SITE_COLORS,
+  SITE_DESCRIPTION,
+  SITE_TITLE,
+  TWITTER_USER_NAME,
+  WEB_SITE_SCHEMA,
+} from '@/config/site';
+
+const { pageTitle = SITE_TITLE, pageDescription = SITE_DESCRIPTION } =
+  Astro.props;
+---
+
+<!-- Meta Tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<meta name="robots" content="noindex, nofollow" />
+
+<SEO
+  title={pageTitle}
+  description={pageDescription}
+  openGraph={{
+    basic: {
+      title: pageTitle,
+      type: 'website',
+      image: OG_IMAGE,
+      url: BASE_URL,
+    },
+    optional: {
+      description: pageDescription,
+      locale: 'bn_BD',
+      siteName: OG_SITE_NAME,
+    },
+    image: {
+      width: Number(OG_IMAGE_WIDTH),
+      height: Number(OG_IMAGE_HEIGHT),
+      alt: OG_IMAGE_ALT,
+    },
+  }}
+  twitter={{
+    card: 'summary',
+    site: `@${TWITTER_USER_NAME}`,
+    title: pageTitle,
+    description: pageDescription,
+    image: OG_IMAGE,
+    imageAlt: OG_IMAGE_ALT,
+    creator: `@${TWITTER_USER_NAME}`,
+  }}
+  extend={{
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon/favicon-96x96.png',
+        sizes: '96x96',
+      },
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: '/favicon/favicon.svg',
+      },
+      {
+        rel: 'shortcut icon',
+        href: '/favicon/favicon.ico',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/favicon/apple-touch-icon.png',
+      },
+      {
+        rel: 'manifest',
+        href: '/favicon/site.webmanifest',
+      },
+    ],
+    meta: [
+      {
+        name: 'apple-mobile-web-app-title',
+        content: 'Codealoy',
+      },
+      {
+        name: 'theme-color',
+        content: SITE_COLORS.PRIMARY,
+      },
+      {
+        name: 'color-scheme',
+        content: 'dark light',
+      },
+    ],
+  }}
+/>
+
+<!-- Schema Markup -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(EDUCATIONAL_ORGANIZATION_SCHEMA)}
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify(WEB_SITE_SCHEMA)} />
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(ORGANIZATION_SCHEMA)}
+/>
