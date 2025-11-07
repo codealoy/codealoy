@@ -35,8 +35,13 @@
   "packageManager": "pnpm@10.20.0",
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
     "@tailwindcss/vite": "^4.1.17",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "astro": "^5.15.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
