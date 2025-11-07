@@ -4,6 +4,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
 import Counter from '@/components/home/Counter';
 import FeatureGrid from '@/components/home/FeatureGrid';
 import Hero from '@/components/home/Hero';
+import HighlightedFeatures from '@/components/home/HighlightedFeatures';
 ---
 
 <DefaultLayout>
@@ -11,5 +12,6 @@ import Hero from '@/components/home/Hero';
     <Hero />
     <FeatureGrid client:idle />
     <Counter client:visible />
+    <HighlightedFeatures client:visible />
   </Fragment>
 </DefaultLayout>
