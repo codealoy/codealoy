@@ -39,6 +39,7 @@
     "@fontsource-variable/baloo-da-2": "^5.2.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/vite": "^4.1.17",
+    "@tanstack/react-query": "^5.90.7",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "astro": "^5.15.4",
