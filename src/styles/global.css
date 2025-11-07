@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'Baloo Da 2 Variable';
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   font-weight: 400 800;
   src: url(@fontsource-variable/baloo-da-2/files/baloo-da-2-bengali-wght-normal.woff2)
     format('woff2-variations');
