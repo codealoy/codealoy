@@ -35,7 +35,9 @@
   "packageManager": "pnpm@10.20.0",
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "astro": "^5.15.4"
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.4",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
