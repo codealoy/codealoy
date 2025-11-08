@@ -6,15 +6,15 @@ import { Button } from '@/components/ui/button';
 
 export default function HomeCta() {
   return (
-    <section className="relative overflow-hidden py-36">
+    <section className="relative overflow-hidden py-44 lg:py-56">
       <div
-        className="absolute top-0 left-1/2 w-screen -translate-x-1/2"
+        className="absolute top-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
       >
         <TopSkewBoxPattern />
       </div>
       <div
-        className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2"
+        className="absolute bottom-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
       >
         <BottomSkewBoxPattern />

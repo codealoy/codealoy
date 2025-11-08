@@ -6,7 +6,7 @@ import { CircleBlur } from '@/components/patterns/CircleBlur';
 export default function Footer() {
   return (
     <div className="shadow-primary/10 shadow-inner">
-      <footer className="relative mx-auto w-full max-w-7xl space-y-10 overflow-hidden pb-16 lg:max-w-5xl">
+      <footer className="relative mx-auto w-full max-w-7xl space-y-10 overflow-hidden py-16 lg:max-w-5xl">
         <div className="flex flex-col items-center justify-between gap-5 pt-8 sm:flex-row">
           <div className="mx-auto max-w-7xl overflow-hidden px-4 py-10 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center">
