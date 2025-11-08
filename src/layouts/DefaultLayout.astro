@@ -3,19 +3,22 @@ import '@/styles/global.css';
 
 import Announcement from '@/components/common/Announcement';
 import Footer from '@/components/common/Footer';
-import Head from '@/components/common/Head.astro';
+import Header from '@/components/common/Header';
+import MetaTags from '@/components/common/MetaTags.astro';
+import ThemeScript from '@/components/common/ThemeScript.astro';
 ---
 
 <html lang="bn" class="h-full scroll-smooth antialiased">
   <head>
-    <Head />
+    <MetaTags />
+    <ThemeScript />
   </head>
   <body
-    class="dark:bg-dark-deep relative overflow-x-hidden bg-white text-base text-slate-600 dark:text-slate-300"
+    class="text-foreground bg-background relative overflow-x-hidden text-base"
   >
     <div class="flex min-h-dvh flex-col">
       <Announcement client:idle />
-      <!-- <Header /> -->
+      <Header client:idle />
       <main class="flex-auto overflow-x-hidden">
         <slot />
       </main>
