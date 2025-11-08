@@ -242,12 +242,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@layer utilities {
-  .stop-color {
-    stop-color: theme('colors.gray.200');
-  }
-  .stop-color-dark {
-    stop-color: theme('colors.gray.800');
-  }
-}
