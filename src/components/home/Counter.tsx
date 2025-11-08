@@ -19,7 +19,7 @@ export default function Counter() {
       animate={controlAnimation}
       variants={fadeUpAnimation}
       ref={ref}
-      className="relative z-10 mx-5 -mb-20"
+      className="relative z-10 mx-5 -translate-y-1/2"
     >
       <div className="border-primary/30 dark:border-primary/15 bg-card mx-auto h-40 max-w-3xl rounded-3xl border p-3 shadow-lg">
         <div

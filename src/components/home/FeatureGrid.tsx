@@ -17,7 +17,7 @@ export default function FeatureGrid() {
   const controlAnimation = useWhileInView(ref);
 
   return (
-    <section className="relative">
+    <section className="bg-muted/50 relative pb-20 md:pb-24 lg:pb-32">
       <SectionContent>
         <SectionHeading
           heading="বৈশিষ্টসমূহ"
