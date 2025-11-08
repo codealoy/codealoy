@@ -3,6 +3,8 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, envField } from 'astro/config';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   env: {
@@ -24,10 +26,12 @@ export default defineConfig({
       }),
     },
   },
+
   vite: {
     // @ts-ignore - Type incompatibility between @tailwindcss/vite and Astro's Vite types
     plugins: [tailwindcss()],
   },
 
   integrations: [react()],
+  adapter: cloudflare(),
 });
