@@ -1,0 +1,13 @@
+<script>
+  // Prioritize localStorage theme value if it exists
+  if ('theme' in localStorage) {
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } else {
+    // Default to dark mode if no preference is stored
+    document.documentElement.classList.add('dark');
+  }
+</script>
