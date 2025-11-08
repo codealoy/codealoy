@@ -32,8 +32,8 @@ export default function Header() {
         {/* Desktop Navigation */}
         <div
           className={cn(
-            'bg-background/50 mx-auto mt-2 max-w-7xl rounded-xl px-6 backdrop-blur-md transition-all duration-300 lg:px-12',
-            isScrolled && 'border-primary/10 max-w-4xl border lg:px-5',
+            'bg-background/50 mx-auto mt-2 max-w-7xl rounded-xl px-6 backdrop-blur-md transition-all duration-500 lg:px-12',
+            isScrolled && 'border-primary/10 -mt-6 max-w-4xl border lg:px-5',
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
