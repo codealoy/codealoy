@@ -6,6 +6,8 @@ import { defineConfig, envField } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.codealoy.com',
+  trailingSlash: 'never',
   env: {
     schema: {
       NODE_ENV: envField.string({
