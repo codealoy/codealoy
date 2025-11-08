@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
-
+import { useWhileInView } from '@/hooks/useWhileInView';
 import { motion } from 'framer-motion';
 
 import { fadeUpAnimation } from '@/config/animation';
 import { counterData } from '@/config/data';
-import { useWhileInView } from '@/hooks/useWhileInView';
+
 import { cn } from '@/lib/utils';
 
-export const Counter = () => {
-  const ref = React.useRef(null);
+export default function Counter() {
+  const ref = React.useRef<HTMLDivElement>(null!);
   const controlAnimation = useWhileInView(ref);
 
   return (
@@ -19,13 +19,13 @@ export const Counter = () => {
       animate={controlAnimation}
       variants={fadeUpAnimation}
       ref={ref}
-      className="relative z-10 mx-5 -mb-20"
+      className="relative z-10 mx-5 -translate-y-1/2"
     >
-      <div className="mx-auto h-40 max-w-screen-md rounded-3xl border border-primary/30 bg-white/90 p-3 shadow-lg dark:border-primary/15 dark:bg-dark-light/80">
+      <div className="border-primary/30 dark:border-primary/15 bg-card mx-auto h-40 max-w-3xl rounded-3xl border p-3 shadow-lg">
         <div
           className={cn(
             'grid h-full grid-cols-3 items-center gap-y-10 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600',
-            '[&>*:not(:last-child)]:border-r [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-primary',
+            '[&>*:not(:last-child)]:border-primary [&>*:not(:last-child)]:border-r [&>*:not(:last-child)]:border-dashed',
           )}
           id="counter"
         >
@@ -37,7 +37,7 @@ export const Counter = () => {
               <p className="text-xs text-slate-600 dark:text-slate-400">
                 {item.subText}
               </p>
-              <p className="text-5xl font-bold text-primary">
+              <p className="text-primary text-5xl font-bold">
                 <span>{item.number}</span>
                 <span>+</span>
               </p>
@@ -50,4 +50,4 @@ export const Counter = () => {
       </div>
     </motion.section>
   );
-};
+}

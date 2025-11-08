@@ -8,11 +8,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-next-env.d.ts
-
 # production
 /build
 
@@ -40,8 +35,11 @@ yarn-error.log*
 # drizzle
 /drizzle
 
-# generated files by content-collections
-.content-collections
+## astro
+# build output
+dist/
+# generated types
+.astro/
 
-# generated files by turbo
-.turbo
+# jetbrains setting folder
+.idea/

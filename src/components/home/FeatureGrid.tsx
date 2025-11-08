@@ -7,17 +7,17 @@ import { motion } from 'framer-motion';
 import { fadeUpAnimation } from '@/config/animation';
 import { featuresData } from '@/config/data';
 
-import { SectionContent } from '@/components/default/SectionContent';
-import { SectionHeading } from '@/components/default/SectionHeading';
+import { SectionContent } from '@/components/common/SectionContent';
+import { SectionHeading } from '@/components/common/SectionHeading';
 import { CircleBlur } from '@/components/patterns/CircleBlur';
-import { Card } from '@/components/ui';
+import { Card } from '@/components/ui/card';
 
-export const FeatureGrid = () => {
-  const ref = React.useRef(null);
+export default function FeatureGrid() {
+  const ref = React.useRef<HTMLDivElement>(null!);
   const controlAnimation = useWhileInView(ref);
 
   return (
-    <section className="relative">
+    <section className="bg-muted/50 relative py-36 md:py-24 lg:py-32">
       <SectionContent>
         <SectionHeading
           heading="বৈশিষ্টসমূহ"
@@ -25,7 +25,7 @@ export const FeatureGrid = () => {
           tagline="সবচেয়ে কম সময়ে প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শিখুন"
         />
         <div className="relative z-10">
-          <div className="absolute left-1/2 top-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-1/2 left-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2">
             <CircleBlur />
             <CircleBlur className="lg:-ml-44" />
           </div>
@@ -40,6 +40,7 @@ export const FeatureGrid = () => {
               <Card
                 key={featureItem.id}
                 variant="feature"
+                className="bg-transparent"
                 data={{
                   title: featureItem.title,
                   description: featureItem.description,
@@ -52,4 +53,4 @@ export const FeatureGrid = () => {
       </SectionContent>
     </section>
   );
-};
+}

@@ -1,0 +1,28 @@
+---
+import '@/styles/global.css';
+
+import Announcement from '@/components/common/Announcement';
+import Footer from '@/components/common/Footer';
+import Header from '@/components/common/Header';
+import MetaTags from '@/components/common/MetaTags.astro';
+import ThemeScript from '@/components/common/ThemeScript.astro';
+---
+
+<html lang="bn" class="h-full scroll-smooth antialiased">
+  <head>
+    <MetaTags />
+    <ThemeScript />
+  </head>
+  <body
+    class="text-foreground bg-background relative overflow-x-hidden text-base"
+  >
+    <div class="flex min-h-dvh flex-col">
+      <Announcement client:idle />
+      <Header client:idle />
+      <main class="flex-auto overflow-x-hidden">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

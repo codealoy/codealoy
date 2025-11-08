@@ -11,12 +11,11 @@ import {
 
 import { fadeFromRightAnimation } from '@/config/animation';
 
-import { OptimizedImage } from '@/components/default/OptimizedImage';
 import { LeftSkewBoxPattern, RightSkewBoxPattern } from '@/components/patterns';
 import { BottomWavePattern } from '@/components/patterns/BottomWavePattern';
 
-export const HighlightedFeatures = () => {
-  const ref = React.useRef(null);
+export default function HighlightedFeatures() {
+  const ref = React.useRef<HTMLDivElement>(null!);
 
   const controlAnimation = useWhileInView(ref);
 
@@ -42,25 +41,25 @@ export const HighlightedFeatures = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gray py-48 dark:bg-dark">
+    <section className="relative -mt-40 overflow-hidden py-0 md:py-40 lg:py-60">
       <div
-        className="absolute left-0 top-1/2 max-w-[1612px] -translate-y-1/2 max-md:hidden"
+        className="absolute inset-y-0 left-0 hidden h-full w-auto lg:block"
         aria-hidden="true"
       >
         <LeftSkewBoxPattern />
       </div>
       <div
-        className="absolute right-0 top-1/2 max-w-[1612px] -translate-y-1/2 max-md:hidden"
+        className="absolute inset-y-0 right-0 hidden h-full w-auto lg:block"
         aria-hidden="true"
       >
         <RightSkewBoxPattern />
       </div>
 
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="relative isolate overflow-hidden border border-primary/30 bg-white/10 px-6 py-20 shadow-lg sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24 dark:border-gray-700/15 dark:bg-dark-light/30">
+        <div className="border-primary/30 bg-card relative isolate overflow-hidden border px-6 py-48 shadow-lg sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24 dark:border-gray-700/15">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:row-start-1 lg:max-w-md">
-              <p className="font-medium leading-normal text-primary">
+              <p className="text-primary leading-normal font-medium">
                 ক্লাউড বেইজড
               </p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-700 sm:text-4xl dark:text-slate-200">
@@ -84,10 +83,10 @@ export const HighlightedFeatures = () => {
               animate={controlAnimation}
               variants={fadeFromRightAnimation}
             >
-              <OptimizedImage
+              <img
                 src="/images/features/codealoy-live-coding-editor-2K6qzfcYzU9t.webp"
                 alt="Live coding editor"
-                className="relative -z-10 min-w-full max-w-xs rounded-xl shadow-xl ring-1 ring-primary/15 lg:w-[64rem] lg:max-w-none xl:w-[74rem]"
+                className="ring-primary/15 relative -z-10 max-w-xs min-w-full rounded-xl shadow-xl ring-1 lg:w-5xl lg:max-w-none xl:w-296"
                 width={2360}
                 height={1321}
               />
@@ -99,7 +98,7 @@ export const HighlightedFeatures = () => {
                   <div key={feature.name} className="relative">
                     <dt className="ml-8 inline-block font-semibold text-slate-700 dark:text-slate-200">
                       <feature.icon
-                        className="absolute left-0 top-1 h-5 w-5 text-primary"
+                        className="text-primary absolute top-1 left-0 h-5 w-5"
                         aria-hidden="true"
                       />
                       {feature.name}
@@ -118,4 +117,4 @@ export const HighlightedFeatures = () => {
       </div>
     </section>
   );
-};
+}

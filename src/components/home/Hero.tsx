@@ -1,22 +1,19 @@
-import React from 'react';
-import Link from 'next/link';
-
 import { GITHUB_REPO_LINK } from '@/config/site';
 
 import { BottomSkewBoxPattern, TopSkewBoxPattern } from '@/components/patterns';
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/button';
 
-export const Hero = () => {
+export default function Hero() {
   return (
-    <section className="relative flex min-h-[90dvh] items-center justify-center overflow-hidden bg-gray dark:bg-dark">
+    <section className="relative flex min-h-[90dvh] items-center justify-center overflow-hidden">
       <div
-        className="absolute left-1/2 top-0 -translate-x-1/2"
+        className="absolute top-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
       >
         <TopSkewBoxPattern />
       </div>
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2"
+        className="absolute bottom-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
       >
         <BottomSkewBoxPattern />
@@ -29,9 +26,9 @@ export const Hero = () => {
           <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-slate-600 dark:text-slate-400">
             মাতৃভাষা বাংলায় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার
             <br />
-            <span className="font-medium text-primary"> সম্পূর্ণ ফ্রি</span>,
+            <span className="text-primary font-medium"> সম্পূর্ণ ফ্রি</span>,
             এবং{' '}
-            <span className="font-medium text-primary hover:underline hover:underline-offset-4">
+            <span className="text-primary font-medium hover:underline hover:underline-offset-4">
               <a
                 href={GITHUB_REPO_LINK}
                 target="_blank"
@@ -43,14 +40,14 @@ export const Hero = () => {
             প্লাটফর্ম
           </p>
           <div className="mt-6 flex justify-center space-x-6 text-sm sm:mt-10">
-            <Link href="/courses">
+            <a href="/courses">
               <Button variant="default" size="lg">
                 শেখা শুরু করুন
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}

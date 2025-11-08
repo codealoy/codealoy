@@ -1,0 +1,21 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import Counter from '@/components/home/Counter';
+import FeatureGrid from '@/components/home/FeatureGrid';
+import Hero from '@/components/home/Hero';
+import HighlightedFeatures from '@/components/home/HighlightedFeatures';
+import HomeCta from '@/components/home/HomeCTA';
+import Team from '@/components/home/Team';
+---
+
+<DefaultLayout>
+  <Fragment>
+    <Hero />
+    <FeatureGrid client:idle />
+    <Counter client:visible />
+    <HighlightedFeatures client:visible />
+    <Team client:visible />
+    <HomeCta />
+  </Fragment>
+</DefaultLayout>

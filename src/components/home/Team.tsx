@@ -1,21 +1,18 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 
 import { fallbackContributorsData, teamMembersData } from '@/config/data';
-import { defaultImageBlurDataUrl } from '@/config/defaultImageBlur';
 import {
   GITHUB_CONTRIBUTORS_API_LINK,
   ONE_DAY_IN_MILLISECONDS,
 } from '@/config/site';
 
-import { OptimizedImage } from '@/components/default/OptimizedImage';
-import { SectionContent } from '@/components/default/SectionContent';
-import { SectionHeading } from '@/components/default/SectionHeading';
+import { queryClient } from '@/lib/store';
+
+import { SectionContent } from '@/components/common/SectionContent';
+import { SectionHeading } from '@/components/common/SectionHeading';
 import { CircleBlur } from '@/components/patterns';
 
 interface Contributor {
@@ -62,30 +59,34 @@ const SocialLinks = ({
     <ul role="list" className="flex justify-center space-x-5">
       {socialLinks.map((socialLink) => (
         <li key={socialLink.key}>
-          <Link
+          <a
             title={socialLink.title}
             href={socialLink.url}
             target="_blank"
             rel="noreferrer"
           >
             <span className="sr-only">{socialLink.title}</span>
-            <socialLink.icon className="h-5 w-5 transform text-slate-400 duration-300 ease-in-out hover:scale-110 hover:text-primary" />
-          </Link>
+            <socialLink.icon className="hover:text-primary h-5 w-5 transform text-slate-400 duration-300 ease-in-out hover:scale-110" />
+          </a>
         </li>
       ))}
     </ul>
   );
 };
 
-export const Team = () => {
-  const { data: contributorList } = useQuery({
-    queryKey: ['contributors'],
-    queryFn: () => axios.get(GITHUB_CONTRIBUTORS_API_LINK),
-    staleTime: ONE_DAY_IN_MILLISECONDS,
-    placeholderData: {
-      data: fallbackContributorsData,
-    } as any,
-  });
+export default function Team() {
+  const { data: contributorList } = useQuery(
+    {
+      queryKey: ['contributors'],
+      queryFn: () =>
+        fetch(GITHUB_CONTRIBUTORS_API_LINK).then((res) => res.json()),
+      staleTime: ONE_DAY_IN_MILLISECONDS,
+      placeholderData: {
+        data: fallbackContributorsData,
+      },
+    },
+    queryClient,
+  );
 
   const filteredContributorList = getFilteredContributorList({
     contributorList: contributorList?.data || fallbackContributorsData,
@@ -94,12 +95,12 @@ export const Team = () => {
   return (
     <section
       id="meet-team"
-      className="relative bg-white/10 dark:bg-dark-light/30"
+      className="bg-muted/50 relative py-20 md:py-12 lg:py-16"
     >
-      <div className="absolute left-0 top-1/2 -z-10 flex -translate-x-1/3 -translate-y-1/2">
+      <div className="absolute top-1/2 left-0 -z-10 flex -translate-x-1/3 -translate-y-1/2">
         <CircleBlur />
       </div>
-      <div className="absolute right-0 top-1/2 -z-10 flex -translate-y-1/2 translate-x-1/2">
+      <div className="absolute top-1/2 right-0 -z-10 flex translate-x-1/2 -translate-y-1/2">
         <CircleBlur />
       </div>
       <SectionContent>
@@ -118,19 +119,19 @@ export const Team = () => {
                 <li key={member.name}>
                   <div className="space-y-6">
                     <div className="relative mx-auto h-40 w-40 scale-100 overflow-hidden rounded-full border border-slate-200 shadow-lg grayscale transition-all duration-300 hover:scale-105 hover:border-green-500 hover:grayscale-0 xl:h-56 xl:w-56 dark:border-slate-800">
-                      <OptimizedImage
+                      <img
                         src={member.image}
                         alt={member.name}
-                        placeholder="blur"
-                        blurDataURL={defaultImageBlurDataUrl}
+                        width={460}
+                        height={460}
                       />
                     </div>
                     <div className="space-y-3">
                       <div className="space-y-3">
-                        <p className="text-2xl font-bold leading-10 text-slate-700 dark:text-slate-200">
+                        <p className="text-2xl leading-10 font-bold text-slate-700 dark:text-slate-200">
                           {member.name}
                         </p>
-                        <p className="font-medium text-primary">
+                        <p className="text-primary font-medium">
                           {member.role}
                         </p>
                         <p className="text-sm font-normal text-slate-700 dark:text-slate-300">
@@ -166,7 +167,7 @@ export const Team = () => {
                   <li key={contributor.id}>
                     <div className="space-y-4">
                       <div className="mx-auto h-20 w-20 scale-100 overflow-hidden rounded-full transition-all duration-300 hover:scale-110 hover:border hover:border-green-500 lg:h-24 lg:w-24">
-                        <OptimizedImage
+                        <img
                           className="h-20 w-20 rounded-full object-cover grayscale hover:grayscale-0 lg:h-24 lg:w-24"
                           src={contributor.avatar_url}
                           height={80}
@@ -178,7 +179,7 @@ export const Team = () => {
                         <p className="text-lg font-semibold text-slate-600 dark:text-slate-300">
                           {contributor.login}
                         </p>
-                        <p className="text-sm text-primary">কন্ট্রিবিউটর</p>
+                        <p className="text-primary text-sm">কন্ট্রিবিউটর</p>
                         <p className="text-sm font-normal text-slate-700 dark:text-slate-300">
                           সফটওয়্যার ইঞ্জিনিয়ার
                         </p>
@@ -201,4 +202,4 @@ export const Team = () => {
       </SectionContent>
     </section>
   );
-};
+}

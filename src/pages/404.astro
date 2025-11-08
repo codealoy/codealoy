@@ -1,0 +1,9 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import ErrorState from '@/components/common/ErrorState';
+---
+
+<DefaultLayout>
+  <ErrorState errorCode={404} client:idle />
+</DefaultLayout>

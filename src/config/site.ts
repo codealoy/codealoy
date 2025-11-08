@@ -1,13 +1,5 @@
-import type { Viewport } from 'next';
-import { Metadata } from 'next';
-
-import { env } from '@/config/env';
-
 // Site Configs
-export const BASE_URL =
-  env.NEXT_PUBLIC_RUNTIME_ENV === 'production'
-    ? 'https://www.codealoy.com'
-    : 'https://codealoy.local';
+export const BASE_URL = 'https://www.codealoy.com';
 
 export const SITE_TITLE =
   'Codealoy - Web Development Learning Platform in Bangla';
@@ -69,55 +61,79 @@ export const CODE_EDITOR_BOILERPLATE_CATEGORIES = {
   BLOG: 'blog',
 };
 
-export const SITE_METADATA_GLOBAL: Metadata = {
-  title: {
-    template: '%s - কোডালয় | Codealoy',
-    default: SITE_TITLE,
-  },
+// Schema Markup Data
+export const EDUCATIONAL_ORGANIZATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: SITE_NAME,
+  alternateName: 'কোডালয়',
+  url: BASE_URL,
+  logo: `${BASE_URL}/favicon.svg`,
   description: SITE_DESCRIPTION,
-  icons: {
-    apple: `${BASE_URL}/favicon/apple-touch-icon.png?v=2`,
-    icon: [
-      {
-        url: `${BASE_URL}/favicon/favicon-32x32.png?v=2`,
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: `${BASE_URL}/favicon/favicon-16x16.png?v=2`,
-        sizes: '16x16',
-        type: 'image/png',
-      },
-    ],
-    shortcut: `${BASE_URL}/favicon/favicon.ico?v=2`,
+  image: OG_IMAGE,
+  sameAs: [
+    `https://www.facebook.com/${TWITTER_USER_NAME}`,
+    `https://twitter.com/${TWITTER_USER_NAME}`,
+    'https://github.com/codealoy/codealoy',
+  ],
+  address: {
+    '@type': 'Location',
+    addressRegion: 'Dhaka',
+    addressCountry: 'Bangladesh',
   },
-  manifest: `${BASE_URL}/favicon/site.webmanifest?v=2`,
-  openGraph: {
-    title: SITE_TITLE,
-    siteName: OG_SITE_NAME,
-    url: BASE_URL,
-    description: SITE_DESCRIPTION,
-    locale: 'bn_BD',
-    images: [
-      {
-        url: OG_IMAGE,
-        width: OG_IMAGE_WIDTH,
-        height: OG_IMAGE_HEIGHT,
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    title: SITE_TITLE,
-    creator: TWITTER_USER_NAME,
-  },
-  robots: {
-    index: false,
-    follow: false,
-  },
+  inLanguage: 'bn',
+  educationalCredentialAwarded: 'Certificate',
+  teaches: [
+    'Web Development',
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Programming',
+    'Software Engineering',
+    'Problem Solving',
+    'Career Guidance',
+    'Interview Preparation',
+  ],
 };
 
-export const SITE_VIEWPORT_GLOBAL: Viewport = {
-  themeColor: SITE_COLORS.PRIMARY,
-  colorScheme: 'dark light',
+export const WEB_SITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  alternateName: 'Codealoy',
+  url: BASE_URL,
+  description: SITE_DESCRIPTION,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${BASE_URL}/favicon.svg`,
+    },
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${BASE_URL}/search?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+  inLanguage: 'bn',
+};
+
+export const ORGANIZATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  alternateName: 'Codealoy',
+  url: BASE_URL,
+  logo: `${BASE_URL}/favicon.svg`,
+  description: SITE_DESCRIPTION,
+  sameAs: [
+    `https://www.facebook.com/${TWITTER_USER_NAME}`,
+    `https://twitter.com/${TWITTER_USER_NAME}`,
+    'https://github.com/codealoy/codealoy',
+  ],
 };

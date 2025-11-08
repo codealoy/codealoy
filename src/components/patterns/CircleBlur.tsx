@@ -9,7 +9,7 @@ export const CircleBlur = ({
   return (
     <div
       className={cn(
-        'h-96 w-28 rounded-full bg-primary blur-[150px] md:bg-primary/20 lg:h-80 lg:w-80 xl:h-[500px] xl:w-[500px]',
+        'bg-primary md:bg-primary/20 h-96 w-28 rounded-full blur-[150px] lg:h-80 lg:w-80 xl:h-[500px] xl:w-[500px]',
         className,
       )}
       {...props}

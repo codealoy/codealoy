@@ -1,5 +1,3 @@
-import imageOfMukit from '~/public/images/team/codealoy-team-mukit-yiu0yn8teti9f2nnnp1nk.webp';
-import imageOfShahed from '~/public/images/team/codealoy-team-shahed-eql2q62sebdvpba1uk6fd.webp';
 import {
   FaFacebook,
   FaGithub,
@@ -91,7 +89,7 @@ export const teamMembersData = [
     name: `মুকিতুল ইসলাম মুকিত`,
     role: `প্রতিষ্ঠাতা এবং লিড মেইনটেইনার`,
     position: `সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার`,
-    image: imageOfMukit,
+    image: '/images/team/codealoy-team-mukit-yiu0yn8teti9f2nnnp1nk.webp',
     githubUrl: 'https://github.com/mimukit',
     linkedinUrl: 'https://www.linkedin.com/in/mimukit/',
     facebookUrl: 'https://www.facebook.com/mimukit',
@@ -100,7 +98,7 @@ export const teamMembersData = [
     name: `আল-আমিন শাহেদ সুমন`,
     role: `কোর্স কোর্ডিনেটর এবং কো-মেইনটেইনার`,
     position: `সফটওয়্যার ইঞ্জিনিয়ার`,
-    image: imageOfShahed,
+    image: '/images/team/codealoy-team-shahed-eql2q62sebdvpba1uk6fd.webp',
     githubUrl: 'https://github.com/alaminsahed',
     linkedinUrl: 'https://www.linkedin.com/in/md-al-amin-sahed/',
     facebookUrl: 'https://www.facebook.com/sahed.sumon.2',
