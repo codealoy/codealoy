@@ -40,6 +40,7 @@ export default function FeatureGrid() {
               <Card
                 key={featureItem.id}
                 variant="feature"
+                className="bg-transparent"
                 data={{
                   title: featureItem.title,
                   description: featureItem.description,

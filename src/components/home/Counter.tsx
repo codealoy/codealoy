@@ -21,7 +21,7 @@ export default function Counter() {
       ref={ref}
       className="relative z-10 mx-5 -mb-20"
     >
-      <div className="border-primary/30 dark:border-primary/15 dark:bg-dark-light/80 mx-auto h-40 max-w-3xl rounded-3xl border bg-white/90 p-3 shadow-lg">
+      <div className="border-primary/30 dark:border-primary/15 bg-card mx-auto h-40 max-w-3xl rounded-3xl border p-3 shadow-lg">
         <div
           className={cn(
             'grid h-full grid-cols-3 items-center gap-y-10 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600',

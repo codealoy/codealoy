@@ -56,7 +56,7 @@ export default function HighlightedFeatures() {
       </div>
 
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="border-primary/30 dark:bg-dark-light/30 relative isolate overflow-hidden border bg-white/10 px-6 py-20 shadow-lg sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24 dark:border-gray-700/15">
+        <div className="border-primary/30 bg-card relative isolate overflow-hidden border px-6 py-20 shadow-lg sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24 dark:border-gray-700/15">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:row-start-1 lg:max-w-md">
               <p className="text-primary leading-normal font-medium">

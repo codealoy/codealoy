@@ -93,10 +93,7 @@ export default function Team() {
   });
 
   return (
-    <section
-      id="meet-team"
-      className="dark:bg-dark-light/30 relative bg-white/10"
-    >
+    <section id="meet-team" className="relative">
       <div className="absolute top-1/2 left-0 -z-10 flex -translate-x-1/3 -translate-y-1/2">
         <CircleBlur />
       </div>
