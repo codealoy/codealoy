@@ -41,7 +41,7 @@ export default function HighlightedFeatures() {
   ];
 
   return (
-    <section className="bg-gray dark:bg-dark relative overflow-hidden py-48">
+    <section className="relative overflow-hidden py-48">
       <div
         className="absolute top-1/2 left-0 max-w-[1612px] -translate-y-1/2 max-md:hidden"
         aria-hidden="true"

@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
-    <section className="bg-gray dark:bg-dark relative flex min-h-[90dvh] items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[90dvh] items-center justify-center overflow-hidden">
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2"
+        className="absolute top-0 left-1/2 w-screen -translate-x-1/2"
         aria-hidden="true"
       >
         <TopSkewBoxPattern />
       </div>
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2"
+        className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2"
         aria-hidden="true"
       >
         <BottomSkewBoxPattern />
