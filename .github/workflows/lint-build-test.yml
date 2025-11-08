@@ -7,7 +7,6 @@ on:
 
 env:
   NODE_ENV: ci
-  NEXT_PUBLIC_RUNTIME_ENV: ci
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
   RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
