@@ -58,16 +58,20 @@ export default function Header() {
 
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
               <ul className="flex gap-8 text-sm">
-                {PRIMARY_NAV_ITEMS.map((item, index) => (
-                  <li key={index}>
-                    <a
-                      href={item.href}
-                      className="text-muted-foreground hover:text-primary block duration-150"
-                    >
-                      <span>{item.title}</span>
-                    </a>
-                  </li>
-                ))}
+                {PRIMARY_NAV_ITEMS.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <li key={index}>
+                      <a
+                        href={item.href}
+                        className="text-muted-foreground hover:text-primary flex items-center gap-2 duration-150"
+                      >
+                        <Icon className="size-4" />
+                        <span>{item.title}</span>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -75,16 +79,20 @@ export default function Header() {
             <div className="bg-background mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-xl border p-6 shadow-xs in-data-[state=active]:block md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none lg:in-data-[state=active]:flex dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
-                  {PRIMARY_NAV_ITEMS.map((item, index) => (
-                    <li key={index}>
-                      <a
-                        href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                      >
-                        <span>{item.title}</span>
-                      </a>
-                    </li>
-                  ))}
+                  {PRIMARY_NAV_ITEMS.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <li key={index}>
+                        <a
+                          href={item.href}
+                          className="text-muted-foreground hover:text-primary flex items-center gap-3 duration-150"
+                        >
+                          <Icon className="size-5" />
+                          <span>{item.title}</span>
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
