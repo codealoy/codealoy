@@ -103,13 +103,19 @@ const { pageTitle = SITE_TITLE, pageDescription = SITE_DESCRIPTION } =
 
 <!-- Schema Markup -->
 <script
+  is:inline
   type="application/ld+json"
   set:html={JSON.stringify(EDUCATIONAL_ORGANIZATION_SCHEMA)}
 />
 
-<script type="application/ld+json" set:html={JSON.stringify(WEB_SITE_SCHEMA)} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(WEB_SITE_SCHEMA)}
+/>
 
 <script
+  is:inline
   type="application/ld+json"
   set:html={JSON.stringify(ORGANIZATION_SCHEMA)}
 />
