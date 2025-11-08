@@ -140,7 +140,7 @@ export default function Header() {
                 <ThemeSwitcher />
                 <Button asChild size="sm" className="inline-flex">
                   <a href="#">
-                    <span>Get Started</span>
+                    <span>শুরু করুন</span>
                   </a>
                 </Button>
               </div>
