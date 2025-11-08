@@ -14,14 +14,17 @@ We've used the following tech stack which focused on **simplicity**, **modularit
 
 Here are the building blocks of Codealoy:
 
-- [Next.js](https://nextjs.org)
+- [Astro](https://astro.build)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Shadcn UI](https://ui.shadcn.com)
 - [MDX](https://mdxjs.com)
 - [Sandpack by Codesandbox](https://sandpack.codesandbox.io/)
-- [Hono](https://hono.dev)
-- [Lucia Auth](https://lucia-auth.com)
+- [Better Auth](https://better-auth.com)
 - [TypeScript](https://typescriptlang.org)
+- [Hono](https://hono.dev)
+- [Drizzle ORM](https://orm.drizzle.team)
+- [PostgreSQL](https://www.postgresql.org)
+- [Cloudflare](https://cloudflare.com)
 
 ## Reporting Bugs, Issues or Feedbacks
 
