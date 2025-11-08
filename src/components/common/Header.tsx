@@ -62,7 +62,7 @@ export default function Header() {
                   <li key={index}>
                     <a
                       href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      className="text-muted-foreground hover:text-primary block duration-150"
                     >
                       <span>{item.title}</span>
                     </a>
