@@ -7,13 +7,13 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[90dvh] items-center justify-center overflow-hidden">
       <div
-        className="absolute top-0 left-1/2 w-screen -translate-x-1/2"
+        className="absolute top-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
       >
         <TopSkewBoxPattern />
       </div>
       <div
-        className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2"
+        className="absolute bottom-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
       >
         <BottomSkewBoxPattern />
