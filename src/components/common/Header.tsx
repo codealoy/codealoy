@@ -15,14 +15,43 @@ import { Button } from '@/components/ui/button';
 export default function Header() {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [currentPath, setCurrentPath] = React.useState('');
 
   React.useEffect(() => {
+    // Set initial pathname
+    setCurrentPath(window.location.pathname);
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('popstate', handleLocationChange);
+
+    // Listen for navigation events (for client-side routing)
+    const originalPushState = history.pushState;
+    history.pushState = function (...args) {
+      originalPushState.apply(history, args);
+      handleLocationChange();
+    };
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('popstate', handleLocationChange);
+      history.pushState = originalPushState;
+    };
   }, []);
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return currentPath === '/' || currentPath === '';
+    }
+    return currentPath.startsWith(href);
+  };
   return (
     <header>
       <nav
@@ -60,11 +89,17 @@ export default function Header() {
               <ul className="flex gap-8 text-sm">
                 {PRIMARY_NAV_ITEMS.map((item, index) => {
                   const Icon = item.icon;
+                  const active = isActive(item.href);
                   return (
                     <li key={index}>
                       <a
                         href={item.href}
-                        className="text-muted-foreground hover:text-primary flex items-center gap-2 duration-150"
+                        className={cn(
+                          'flex items-center gap-2 duration-150',
+                          active
+                            ? 'text-primary font-medium'
+                            : 'text-muted-foreground hover:text-primary',
+                        )}
                       >
                         <Icon className="size-4" />
                         <span>{item.title}</span>
@@ -81,11 +116,17 @@ export default function Header() {
                 <ul className="space-y-6 text-base">
                   {PRIMARY_NAV_ITEMS.map((item, index) => {
                     const Icon = item.icon;
+                    const active = isActive(item.href);
                     return (
                       <li key={index}>
                         <a
                           href={item.href}
-                          className="text-muted-foreground hover:text-primary flex items-center gap-3 duration-150"
+                          className={cn(
+                            'flex items-center gap-3 duration-150',
+                            active
+                              ? 'text-primary font-medium'
+                              : 'text-muted-foreground hover:text-primary',
+                          )}
                         >
                           <Icon className="size-5" />
                           <span>{item.title}</span>
