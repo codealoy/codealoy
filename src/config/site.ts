@@ -68,7 +68,7 @@ export const EDUCATIONAL_ORGANIZATION_SCHEMA = {
   name: SITE_NAME,
   alternateName: 'কোডালয়',
   url: BASE_URL,
-  logo: `${BASE_URL}/favicon/favicon.svg`,
+  logo: `${BASE_URL}/favicon.svg`,
   description: SITE_DESCRIPTION,
   image: OG_IMAGE,
   sameAs: [
@@ -109,7 +109,7 @@ export const WEB_SITE_SCHEMA = {
     name: SITE_NAME,
     logo: {
       '@type': 'ImageObject',
-      url: `${BASE_URL}/favicon/favicon.svg`,
+      url: `${BASE_URL}/favicon.svg`,
     },
   },
   potentialAction: {
@@ -129,7 +129,7 @@ export const ORGANIZATION_SCHEMA = {
   name: SITE_NAME,
   alternateName: 'Codealoy',
   url: BASE_URL,
-  logo: `${BASE_URL}/favicon/favicon.svg`,
+  logo: `${BASE_URL}/favicon.svg`,
   description: SITE_DESCRIPTION,
   sameAs: [
     `https://www.facebook.com/${TWITTER_USER_NAME}`,
