@@ -12,7 +12,10 @@ export const BottomSkewBoxPattern = ({
       viewBox="0 0 1920 444"
       fill="none"
       aria-hidden="true"
-      className={cn('text-primary/10 block h-auto w-full', className)}
+      className={cn(
+        'text-primary/30 dark:text-primary/10 block h-auto w-full',
+        className,
+      )}
       {...restProps}
     >
       <path
