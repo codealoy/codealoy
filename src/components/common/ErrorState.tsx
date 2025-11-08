@@ -26,6 +26,23 @@ const errorData = {
     buttonText: 'হোম পেজে ফিরে যান',
     buttonLink: '/',
   },
+  500: {
+    code: 500,
+    title: (
+      <>
+        দুঃখিত <br />
+        সার্ভারে সমস্যা হয়েছে
+      </>
+    ),
+    description: (
+      <>
+        আমাদের সার্ভারে কোনো সমস্যা দেখা দিয়েছে। দয়া করে কিছুক্ষণ পরে আবার
+        চেষ্টা করুন।
+      </>
+    ),
+    buttonText: 'পুনরায় চেষ্টা করুন',
+    buttonLink: '/',
+  },
 } as const;
 
 export default function ErrorState({
