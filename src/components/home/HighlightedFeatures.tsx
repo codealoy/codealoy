@@ -41,15 +41,15 @@ export default function HighlightedFeatures() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-48">
+    <section className="relative -mt-40 overflow-hidden py-60">
       <div
-        className="absolute top-1/2 left-0 max-w-[1612px] -translate-y-1/2 max-md:hidden"
+        className="absolute inset-y-0 left-0 h-full w-auto max-md:hidden"
         aria-hidden="true"
       >
         <LeftSkewBoxPattern />
       </div>
       <div
-        className="absolute top-1/2 right-0 max-w-[1612px] -translate-y-1/2 max-md:hidden"
+        className="absolute inset-y-0 right-0 h-full w-auto max-md:hidden"
         aria-hidden="true"
       >
         <RightSkewBoxPattern />
