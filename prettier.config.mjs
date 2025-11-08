@@ -27,7 +27,7 @@ const config = {
   ],
   importOrder: [
     '^react$',
-    '^next(.*)$',
+    '^astro(.*)$',
     '<THIRD_PARTY_MODULES>',
     '',
     '^@/types$',
