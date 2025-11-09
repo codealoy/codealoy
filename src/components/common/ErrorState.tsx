@@ -40,7 +40,7 @@ const errorData = {
         চেষ্টা করুন।
       </>
     ),
-    buttonText: 'পুনরায় চেষ্টা করুন',
+    buttonText: 'হোম পেজে ফিরে যান',
     buttonLink: '/',
   },
 } as const;
@@ -74,12 +74,22 @@ export default function ErrorState({
           <p className="text-md text-slate-500 md:text-xl dark:text-slate-300">
             {error.description}
           </p>
-          <div>
+          <div className="flex flex-col items-center gap-4">
             <a href={error.buttonLink}>
               <Button variant="default" size="lg">
                 {error.buttonText}
               </Button>
             </a>
+            {errorCode === 500 && (
+              <a
+                role="button"
+                href="#reload"
+                className="text-primary cursor-pointer hover:underline"
+                onClick={() => window.location.reload()}
+              >
+                পুনরায় চেষ্টা করুন
+              </a>
+            )}
           </div>
         </div>
       </motion.div>
