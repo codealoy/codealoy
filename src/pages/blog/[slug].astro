@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import { SITE_TITLE } from '@/config/site';
+
+import MetaTags from '@/components/common/MetaTags.astro';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog', ({ data }) => {
+    return !data.draft;
+  });
+
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const pageTitle = `${post.data.title} | ${SITE_TITLE}`;
+const pageDescription = post.data.description;
+---
+
+<DefaultLayout>
+  <MetaTags pageTitle={pageTitle} pageDescription={pageDescription} />
+
+  <article class="container mx-auto my-32 max-w-6xl px-4 py-12">
+    <header class="mb-8">
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl">{post.data.title}</h1>
+
+      {
+        post.data.description && (
+          <p class="text-muted-foreground mb-6 text-xl">
+            {post.data.description}
+          </p>
+        )
+      }
+
+      <div class="text-muted-foreground mb-4 flex items-center gap-2 text-sm">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {
+            new Intl.DateTimeFormat('bn-BD', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            }).format(post.data.pubDate)
+          }
+        </time>
+        {
+          post.data.updatedDate && (
+            <>
+              <span>•</span>
+              <span>
+                আপডেট:{' '}
+                {new Intl.DateTimeFormat('bn-BD', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                }).format(post.data.updatedDate)}
+              </span>
+            </>
+          )
+        }
+        <span>•</span>
+        <span>{post.data.author}</span>
+      </div>
+
+      {
+        post.data.heroImage && (
+          <div class="bg-muted mb-8 aspect-video w-full overflow-hidden rounded-lg">
+            <img
+              src={post.data.heroImage}
+              alt={post.data.title}
+              class="h-full w-full object-cover"
+            />
+          </div>
+        )
+      }
+
+      {
+        post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.map((tag) => (
+              <span class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div
+      class="prose prose-lg dark:prose-invert prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-muted prose-pre:rounded-lg prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-img:rounded-lg max-w-none"
+    >
+      <Content />
+    </div>
+
+    <footer class="border-border mt-12 border-t pt-8">
+      <a
+        href="/blog"
+        class="text-primary inline-flex items-center gap-2 hover:underline"
+      >
+        ← সব ব্লগ পোস্ট
+      </a>
+    </footer>
+  </article>
+</DefaultLayout>
