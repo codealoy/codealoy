@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
 import { SITE_TITLE } from '@/config/site';
@@ -8,17 +8,25 @@ import MetaTags from '@/components/common/MetaTags.astro';
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog', ({ data }) => {
-    return !data.draft;
+    return data.status === 'published';
   });
 
   return blogPosts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
+    params: { slug: post.data.slug },
+    props: { slug: post.data.slug },
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = await post.render();
+const { slug } = Astro.props;
+
+const post = await getEntry('blog', slug);
+
+if (!post) {
+  console.error(`❌ Blog post not found: ${slug}`);
+  throw Astro.redirect('/404');
+}
+
+const { Content } = await render(post);
 
 const pageTitle = `${post.data.title} | ${SITE_TITLE}`;
 const pageDescription = post.data.description;
@@ -29,6 +37,18 @@ const pageDescription = post.data.description;
 
   <article class="container mx-auto my-32 max-w-6xl px-4 py-12">
     <header class="mb-8">
+      {
+        post.data.coverImage && (
+          <div class="bg-muted mb-8 aspect-video w-full overflow-hidden rounded-lg">
+            <img
+              src={post.data.coverImage}
+              alt={post.data.title}
+              class="h-full w-full object-cover"
+            />
+          </div>
+        )
+      }
+
       <h1 class="mb-4 text-4xl font-bold md:text-5xl">{post.data.title}</h1>
 
       {
@@ -40,17 +60,17 @@ const pageDescription = post.data.description;
       }
 
       <div class="text-muted-foreground mb-4 flex items-center gap-2 text-sm">
-        <time datetime={post.data.pubDate.toISOString()}>
+        <time datetime={post.data.publishedAt.toISOString()}>
           {
             new Intl.DateTimeFormat('bn-BD', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
-            }).format(post.data.pubDate)
+            }).format(post.data.publishedAt)
           }
         </time>
         {
-          post.data.updatedDate && (
+          post.data.updatedAt && (
             <>
               <span>•</span>
               <span>
@@ -59,7 +79,7 @@ const pageDescription = post.data.description;
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
-                }).format(post.data.updatedDate)}
+                }).format(post.data.updatedAt)}
               </span>
             </>
           )
@@ -67,18 +87,6 @@ const pageDescription = post.data.description;
         <span>•</span>
         <span>{post.data.author}</span>
       </div>
-
-      {
-        post.data.heroImage && (
-          <div class="bg-muted mb-8 aspect-video w-full overflow-hidden rounded-lg">
-            <img
-              src={post.data.heroImage}
-              alt={post.data.title}
-              class="h-full w-full object-cover"
-            />
-          </div>
-        )
-      }
 
       {
         post.data.tags && post.data.tags.length > 0 && (
@@ -92,6 +100,7 @@ const pageDescription = post.data.description;
         )
       }
     </header>
+    <hr class="my-12 border-dashed" />
 
     <div
       class="prose prose-lg dark:prose-invert prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-muted prose-pre:rounded-lg prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-img:rounded-lg max-w-none"
