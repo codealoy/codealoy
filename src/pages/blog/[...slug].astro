@@ -28,18 +28,18 @@ if (!post) {
 
 const { Content } = await render(post);
 
-const pageTitle = `${post.data.title} | ${SITE_TITLE}`;
+const pageTitle = `${post.data.title} | কোডালয় ব্লগ`;
 const pageDescription = post.data.description;
 ---
 
-<DefaultLayout>
-  <MetaTags pageTitle={pageTitle} pageDescription={pageDescription} />
-
-  <article class="container mx-auto my-32 max-w-6xl px-4 py-12">
+<DefaultLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <article
+    class="container mx-auto my-32 max-w-4xl px-4 py-12 md:max-w-5xl xl:max-w-6xl"
+  >
     <header class="mb-8">
       {
         post.data.coverImage && (
-          <div class="bg-muted mb-8 aspect-video w-full overflow-hidden rounded-lg">
+          <div class="bg-muted mx-auto mb-8 aspect-auto w-full overflow-hidden rounded-lg shadow-2xl">
             <img
               src={post.data.coverImage}
               alt={post.data.title}
@@ -49,17 +49,19 @@ const pageDescription = post.data.description;
         )
       }
 
-      <h1 class="mb-4 text-4xl font-bold md:text-5xl">{post.data.title}</h1>
+      <h1 class="mt-20 text-3xl font-bold md:text-4xl">
+        {post.data.title}
+      </h1>
 
       {
         post.data.description && (
-          <p class="text-muted-foreground mb-6 text-xl">
+          <p class="text-muted-foreground my-6 text-base lg:text-xl">
             {post.data.description}
           </p>
         )
       }
 
-      <div class="text-muted-foreground mb-4 flex items-center gap-2 text-sm">
+      <div class="text-muted-foreground my-4 flex items-center gap-2 text-sm">
         <time datetime={post.data.publishedAt.toISOString()}>
           {
             new Intl.DateTimeFormat('bn-BD', {
@@ -103,7 +105,7 @@ const pageDescription = post.data.description;
     <hr class="my-12 border-dashed" />
 
     <div
-      class="prose prose-lg dark:prose-invert prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-muted prose-pre:rounded-lg prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-img:rounded-lg max-w-none"
+      class="prose prose-base lg:prose-lg dark:prose-invert prose-a:text-primary prose-a:no-underline prose-img:rounded-lg max-w-none"
     >
       <Content />
     </div>
