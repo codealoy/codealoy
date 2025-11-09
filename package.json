@@ -37,6 +37,7 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.10",
+    "@astrojs/mdx": "^4.3.10",
     "@astrojs/react": "^4.4.2",
     "@fontsource-variable/baloo-da-2": "^5.2.8",
     "@radix-ui/react-slot": "^1.2.4",
