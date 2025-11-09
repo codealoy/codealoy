@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.codealoy.com',
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
   env: {
     schema: {
       NODE_ENV: envField.string({
