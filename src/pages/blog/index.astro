@@ -5,8 +5,8 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
 import { SITE_TITLE } from '@/config/site';
 
 const blogPosts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+  .filter((post) => post.data.status === 'published')
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const pageTitle = `কোডালয় ব্লগ | ${SITE_TITLE}`;
 const pageDescription =
@@ -32,13 +32,13 @@ const pageDescription =
           {blogPosts.map((post) => (
             <article class="group">
               <a
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.data.slug}`}
                 class="border-border bg-card hover:border-primary block h-full rounded-lg border p-6 transition-all hover:shadow-lg"
               >
-                {post.data.heroImage && (
+                {post.data.coverImage && (
                   <div class="bg-muted mb-4 aspect-video w-full overflow-hidden rounded-md">
                     <img
-                      src={post.data.heroImage}
+                      src={post.data.coverImage}
                       alt={post.data.title}
                       class="h-full w-full object-cover transition-transform group-hover:scale-105"
                     />
@@ -47,14 +47,14 @@ const pageDescription =
 
                 <div class="space-y-3">
                   <div class="text-muted-foreground flex items-center gap-2 text-sm">
-                    <time datetime={post.data.pubDate.toISOString()}>
+                    <time datetime={post.data.publishedAt.toISOString()}>
                       {new Intl.DateTimeFormat('bn-BD', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
-                      }).format(post.data.pubDate)}
+                      }).format(post.data.publishedAt)}
                     </time>
-                    {post.data.updatedDate && (
+                    {post.data.updatedAt && (
                       <>
                         <span>•</span>
                         <span>
@@ -63,7 +63,7 @@ const pageDescription =
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric',
-                          }).format(post.data.updatedDate)}
+                          }).format(post.data.updatedAt)}
                         </span>
                       </>
                     )}
