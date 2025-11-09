@@ -6,11 +6,13 @@ import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 import MetaTags from '@/components/common/MetaTags.astro';
 import ThemeScript from '@/components/common/ThemeScript.astro';
+
+const { pageTitle, pageDescription } = Astro.props;
 ---
 
 <html lang="bn" class="h-full scroll-smooth antialiased">
   <head>
-    <MetaTags />
+    <MetaTags pageTitle={pageTitle} pageDescription={pageDescription} />
     <ThemeScript />
   </head>
   <body
