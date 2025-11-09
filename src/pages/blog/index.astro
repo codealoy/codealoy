@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import { SITE_TITLE } from '@/config/site';
+
+const blogPosts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const pageTitle = `কোডালয় ব্লগ | ${SITE_TITLE}`;
+const pageDescription =
+  'কোডালয় ব্লগে ওয়েব ডেভেলপমেন্ট, প্রোগ্রামিং, এবং ক্যারিয়ার সম্পর্কিত আর্টিকেল পড়ুন।';
+---
+
+<DefaultLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <div class="container mx-auto my-24 max-w-6xl px-4 py-12">
+    <header class="mb-12 text-center">
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl">ব্লগ</h1>
+      <p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+        ওয়েব ডেভেলপমেন্ট, প্রোগ্রামিং, এবং ক্যারিয়ার সম্পর্কিত আর্টিকেল
+      </p>
+    </header>
+
+    {
+      blogPosts.length === 0 ? (
+        <div class="py-12 text-center">
+          <p class="text-muted-foreground">কোনো ব্লগ পোস্ট পাওয়া যায়নি।</p>
+        </div>
+      ) : (
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post) => (
+            <article class="group">
+              <a
+                href={`/blog/${post.slug}`}
+                class="border-border bg-card hover:border-primary block h-full rounded-lg border p-6 transition-all hover:shadow-lg"
+              >
+                {post.data.heroImage && (
+                  <div class="bg-muted mb-4 aspect-video w-full overflow-hidden rounded-md">
+                    <img
+                      src={post.data.heroImage}
+                      alt={post.data.title}
+                      class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  </div>
+                )}
+
+                <div class="space-y-3">
+                  <div class="text-muted-foreground flex items-center gap-2 text-sm">
+                    <time datetime={post.data.pubDate.toISOString()}>
+                      {new Intl.DateTimeFormat('bn-BD', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      }).format(post.data.pubDate)}
+                    </time>
+                    {post.data.updatedDate && (
+                      <>
+                        <span>•</span>
+                        <span>
+                          আপডেট:{' '}
+                          {new Intl.DateTimeFormat('bn-BD', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          }).format(post.data.updatedDate)}
+                        </span>
+                      </>
+                    )}
+                  </div>
+
+                  <h2 class="group-hover:text-primary text-xl font-semibold transition-colors">
+                    {post.data.title}
+                  </h2>
+
+                  <p class="text-muted-foreground line-clamp-3">
+                    {post.data.description}
+                  </p>
+
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      {post.data.tags.map((tag) => (
+                        <span class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</DefaultLayout>
