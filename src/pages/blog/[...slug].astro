@@ -2,10 +2,6 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
-import { SITE_TITLE } from '@/config/site';
-
-import MetaTags from '@/components/common/MetaTags.astro';
-
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog', ({ data }) => {
     return data.status === 'published';
