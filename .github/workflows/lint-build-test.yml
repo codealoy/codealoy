@@ -2,8 +2,8 @@ name: Run lint, build & tests
 
 on:
   push:
-    branches-ignore:
-      - 'main'
+    branches:
+      - '*'
 
 env:
   NODE_ENV: ci
