@@ -1,15 +1,16 @@
 ---
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import { getCollection, getEntry, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
-import type { CourseMeta } from '@/lib/types/course';
+import {
+  extractCourseSlug,
+  findAdjacentLessons,
+  isValidLessonPage,
+  readCourseMeta,
+} from '@/lib/courses';
 
 import LessonLayout from '@/components/courses/LessonLayout';
-
-// Get the project root directory using process.cwd() which works at build time
 
 export async function getStaticPaths() {
   const courses = await getCollection('courses', ({ data }) => {
@@ -19,38 +20,18 @@ export async function getStaticPaths() {
   const paths = [];
 
   for (const course of courses) {
-    // Extract course slug from id (e.g., "learn-problem-solving-basic/index" -> "learn-problem-solving-basic")
-    const courseSlug = course.id.replace('/index', '');
-    // Read meta.json to get lesson list
-    const metaPath = join(
-      process.cwd(),
-      'src',
-      'content',
-      'courses',
-      courseSlug,
-      'meta.json',
-    );
+    const courseSlug = extractCourseSlug(course.id);
+    const courseStructure = readCourseMeta(courseSlug);
 
-    try {
-      const metaContent = readFileSync(metaPath, 'utf-8');
-      const courseStructure = JSON.parse(metaContent);
-
-      if (courseStructure.pages) {
-        for (const page of courseStructure.pages) {
-          // Skip section headers and index
-          if (!page.startsWith('---') && page !== 'index') {
-            paths.push({
-              params: { course: courseSlug, lesson: page },
-              props: { courseSlug, lessonSlug: page },
-            });
-          }
+    if (courseStructure?.pages) {
+      for (const page of courseStructure.pages) {
+        if (isValidLessonPage(page)) {
+          paths.push({
+            params: { course: courseSlug, lesson: page },
+            props: { courseSlug, lessonSlug: page },
+          });
         }
       }
-    } catch (error) {
-      console.error(
-        `Failed to read meta.json for course ${courseSlug}:`,
-        error,
-      );
     }
   }
 
@@ -59,8 +40,6 @@ export async function getStaticPaths() {
 
 const { courseSlug, lessonSlug } = Astro.props;
 
-// getEntry needs the full id (e.g., "learn-problem-solving-basic/index")
-// const courseId = `${courseSlug}/index`;
 const course: CollectionEntry<'courses'> | undefined = await getEntry(
   'courses',
   courseSlug,
@@ -70,7 +49,6 @@ if (!course) {
   throw Astro.redirect('/404');
 }
 
-// Get the lesson entry
 const lessonId = `${courseSlug}/${lessonSlug}`;
 const lesson: CollectionEntry<'lessons'> | undefined = await getEntry(
   'lessons',
@@ -81,53 +59,10 @@ if (!lesson) {
   throw Astro.redirect('/404');
 }
 
-// Read meta.json to get navigation structure
-const metaPath = join(
-  process.cwd(),
-  'src',
-  'content',
-  'courses',
-  courseSlug,
-  'meta.json',
-);
-let courseStructure: CourseMeta | null = null;
-let prevLesson: string | null = null;
-let nextLesson: string | null = null;
-
-try {
-  const metaContent = readFileSync(metaPath, 'utf-8');
-  courseStructure = JSON.parse(metaContent);
-
-  if (courseStructure && courseStructure.pages) {
-    const currentIndex = courseStructure.pages.findIndex(
-      (page: string) => page === lessonSlug,
-    );
-
-    if (currentIndex > 0) {
-      // Find previous non-section page
-      for (let i = currentIndex - 1; i >= 0; i--) {
-        const page = courseStructure.pages[i];
-        if (!page.startsWith('---') && page !== 'index') {
-          prevLesson = page;
-          break;
-        }
-      }
-    }
-
-    if (currentIndex < courseStructure.pages.length - 1) {
-      // Find next non-section page
-      for (let i = currentIndex + 1; i < courseStructure.pages.length; i++) {
-        const page = courseStructure.pages[i];
-        if (!page.startsWith('---') && page !== 'index') {
-          nextLesson = page;
-          break;
-        }
-      }
-    }
-  }
-} catch (error) {
-  console.error(`Failed to read meta.json for course ${courseSlug}:`, error);
-}
+const courseStructure = readCourseMeta(courseSlug);
+const { prevLesson, nextLesson } = courseStructure
+  ? findAdjacentLessons(courseStructure, lessonSlug)
+  : { prevLesson: null, nextLesson: null };
 
 const { Content } = await render(lesson);
 
