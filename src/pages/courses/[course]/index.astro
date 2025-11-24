@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
+import { getCoursePaths } from '@/lib/courses';
 import type { CourseMeta, LessonSection } from '@/lib/types/course';
 
 import CourseOverview from '@/components/courses/CourseOverview';
@@ -12,18 +13,7 @@ const metaFiles = import.meta.glob('../../../content/courses/**/meta.json', {
 });
 
 export async function getStaticPaths() {
-  const courses = await getCollection('courses', ({ data }) => {
-    return data.status === 'published';
-  });
-
-  return courses.map((course) => {
-    // The course.id is already the course slug (e.g., "learn-problem-solving-basic")
-    const courseSlug = course.id;
-    return {
-      params: { course: courseSlug },
-      props: { courseSlug },
-    };
-  });
+  return await getCoursePaths();
 }
 
 const { courseSlug } = Astro.props;

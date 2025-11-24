@@ -1,5 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
 import type { CourseMeta } from '@/lib/types/course';
 
 /**
@@ -26,10 +29,7 @@ export function readCourseMeta(courseSlug: string): CourseMeta | null {
     const metaContent = readFileSync(metaPath, 'utf-8');
     return JSON.parse(metaContent) as CourseMeta;
   } catch (error) {
-    console.error(
-      `Failed to read meta.json for course ${courseSlug}:`,
-      error,
-    );
+    console.error(`Failed to read meta.json for course ${courseSlug}:`, error);
     return null;
   }
 }
@@ -96,3 +96,66 @@ export function findAdjacentLessons(
   return { prevLesson, nextLesson };
 }
 
+/**
+ * Get all published courses from the courses collection
+ */
+export async function getPublishedCourses(): Promise<
+  CollectionEntry<'courses'>[]
+> {
+  return await getCollection('courses', ({ data }) => {
+    return data.status === 'published';
+  });
+}
+
+/**
+ * Generate static paths for course index pages ([course]/index.astro)
+ * Returns an array of path objects with params and props
+ */
+export async function getCoursePaths(): Promise<
+  Array<{
+    params: { course: string };
+    props: { courseSlug: string };
+  }>
+> {
+  const courses = await getPublishedCourses();
+
+  return courses.map((course) => {
+    const courseSlug = extractCourseSlug(course.id);
+    return {
+      params: { course: courseSlug },
+      props: { courseSlug },
+    };
+  });
+}
+
+/**
+ * Generate static paths for lesson pages ([course]/[lesson].astro)
+ * Returns an array of path objects with params and props
+ */
+export async function getLessonPaths(): Promise<
+  Array<{
+    params: { course: string; lesson: string };
+    props: { courseSlug: string; lessonSlug: string };
+  }>
+> {
+  const courses = await getPublishedCourses();
+  const paths = [];
+
+  for (const course of courses) {
+    const courseSlug = extractCourseSlug(course.id);
+    const courseStructure = readCourseMeta(courseSlug);
+
+    if (courseStructure?.pages) {
+      for (const page of courseStructure.pages) {
+        if (isValidLessonPage(page)) {
+          paths.push({
+            params: { course: courseSlug, lesson: page },
+            props: { courseSlug, lessonSlug: page },
+          });
+        }
+      }
+    }
+  }
+
+  return paths;
+}

@@ -1,41 +1,18 @@
 ---
-import { getCollection, getEntry, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
 import {
-  extractCourseSlug,
   findAdjacentLessons,
-  isValidLessonPage,
+  getLessonPaths,
   readCourseMeta,
 } from '@/lib/courses';
 
 import LessonLayout from '@/components/courses/LessonLayout';
 
 export async function getStaticPaths() {
-  const courses = await getCollection('courses', ({ data }) => {
-    return data.status === 'published';
-  });
-
-  const paths = [];
-
-  for (const course of courses) {
-    const courseSlug = extractCourseSlug(course.id);
-    const courseStructure = readCourseMeta(courseSlug);
-
-    if (courseStructure?.pages) {
-      for (const page of courseStructure.pages) {
-        if (isValidLessonPage(page)) {
-          paths.push({
-            params: { course: courseSlug, lesson: page },
-            props: { courseSlug, lessonSlug: page },
-          });
-        }
-      }
-    }
-  }
-
-  return paths;
+  return await getLessonPaths();
 }
 
 const { courseSlug, lessonSlug } = Astro.props;
