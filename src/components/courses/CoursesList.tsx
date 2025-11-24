@@ -1,12 +1,5 @@
-'use client';
-
-import React from 'react';
 import type { CollectionEntry } from 'astro:content';
 import CourseCard from './CourseCard';
-import { useWhileInView } from '@/hooks/useWhileInView';
-import { motion } from 'framer-motion';
-
-import { fadeUpAnimation } from '@/config/animation';
 
 import { SectionContent } from '@/components/common/SectionContent';
 import { SectionHeading } from '@/components/common/SectionHeading';
@@ -17,9 +10,6 @@ interface CoursesListProps {
 }
 
 export default function CoursesList({ courses }: CoursesListProps) {
-  const ref = React.useRef<HTMLDivElement>(null!);
-  const controlAnimation = useWhileInView(ref);
-
   return (
     <section className="bg-muted/50 relative py-36 md:py-24 lg:py-32">
       <SectionContent>
@@ -33,17 +23,11 @@ export default function CoursesList({ courses }: CoursesListProps) {
             <CircleBlur />
             <CircleBlur className="lg:-ml-44" />
           </div>
-          <motion.div
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3"
-            initial="initial"
-            animate={controlAnimation}
-            variants={fadeUpAnimation}
-            ref={ref}
-          >
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
             {courses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </SectionContent>
     </section>

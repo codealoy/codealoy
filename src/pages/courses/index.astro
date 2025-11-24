@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
-import CoursesList from '@/components/courses/CoursesList.tsx';
 import type { CourseMeta } from '@/lib/types/course';
+
+import CoursesList from '@/components/courses/CoursesList.tsx';
 
 // Preload all meta.json files using import.meta.glob
 const metaFiles = import.meta.glob('../../content/courses/**/meta.json', {
@@ -24,7 +25,10 @@ const coursesWithCoverImages = courses.map((course) => {
     try {
       courseMeta = metaFiles[matchingPath] as CourseMeta;
     } catch (error) {
-      console.error(`Failed to parse meta.json for course ${courseSlug}:`, error);
+      console.error(
+        `Failed to parse meta.json for course ${courseSlug}:`,
+        error,
+      );
     }
   }
 
@@ -48,5 +52,5 @@ const pageDescription =
 ---
 
 <DefaultLayout pageTitle={pageTitle} pageDescription={pageDescription}>
-  <CoursesList courses={sortedCourses} client:load />
+  <CoursesList courses={sortedCourses} />
 </DefaultLayout>
