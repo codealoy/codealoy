@@ -32,6 +32,14 @@ export default defineConfig({
   vite: {
     // @ts-ignore - Type incompatibility between @tailwindcss/vite and Astro's Vite types
     plugins: [tailwindcss()],
+    ssr: {
+      external: [
+        'node:fs/promises',
+        'node:path',
+        'node:url',
+        'node:crypto',
+      ],
+    },
   },
 
   integrations: [react(), mdx()],
