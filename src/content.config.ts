@@ -16,6 +16,38 @@ const blogCollection = defineCollection({
   }),
 });
 
+const coursesCollection = defineCollection({
+  loader: glob({ pattern: '**/index.{md,mdx}', base: './src/content/courses' }),
+  schema: z.object({
+    pageTitle: z.string(),
+    title: z.string(),
+    description: z.string(),
+    level: z.string(),
+    estimation: z.string(),
+    lessons: z.string(),
+    challenges: z.string(),
+    playgrounds: z.string(),
+    illustrations: z.string(),
+    status: z.enum(['draft', 'published']).default('published'),
+    coverImage: z.string().optional(),
+    author: z.string().default('কোডালয় টিম'),
+    publishedAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional(),
+  }),
+});
+
+const lessonsCollection = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/courses' }),
+  schema: z.object({
+    pageTitle: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+    status: z.enum(['draft', 'published']).default('published'),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
+  courses: coursesCollection,
+  lessons: lessonsCollection,
 };

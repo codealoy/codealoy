@@ -1,10 +1,8 @@
 {
   "title": "learn-problem-solving-basic",
   "root": true,
+  "coverImage": "/images/courses/learn-problem-solving-basic.webp",
   "pages": [
-    "---শেখা শুরু করুন---",
-    "index",
-
     "---ভূমিকা---",
     "1-welcome",
 

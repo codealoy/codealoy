@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface LogoProps extends React.SVGAttributes<LogoProps> {
+interface LogoProps extends React.SVGProps<SVGSVGElement> {
   variant?: 'icon' | 'text';
 }
 
-const LogoIcon = (props: React.SVGAttributes<any>) => (
+const LogoIcon = (props: React.SVGAttributes<SVGSVGElement>) => (
   <svg
     data-name="Layer 2"
     xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +255,7 @@ const LogoIcon = (props: React.SVGAttributes<any>) => (
   </svg>
 );
 
-const LogoText = (props: React.SVGAttributes<any>) => (
+const LogoText = (props: React.SVGAttributes<SVGSVGElement>) => (
   <svg
     data-name="Layer 2"
     xmlns="http://www.w3.org/2000/svg"

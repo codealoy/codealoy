@@ -4,6 +4,7 @@ import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import rehypeSlug from 'rehype-slug';
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,10 +31,10 @@ export default defineConfig({
   },
 
   vite: {
-    // @ts-ignore - Type incompatibility between @tailwindcss/vite and Astro's Vite types
     plugins: [tailwindcss()],
     ssr: {
       external: [
+        'node:fs',
         'node:fs/promises',
         'node:path',
         'node:url',
@@ -42,7 +43,12 @@ export default defineConfig({
     },
   },
 
-  integrations: [react(), mdx()],
+  integrations: [
+    react(),
+    mdx({
+      rehypePlugins: [rehypeSlug],
+    }),
+  ],
   adapter: cloudflare({
     imageService: 'cloudflare',
   }),

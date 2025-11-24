@@ -1,0 +1,55 @@
+---
+import { getEntry } from 'astro:content';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import {
+  createLessonMap,
+  getCourseLessons,
+  getCoursePaths,
+  mergeCourseCoverImage,
+  organizeLessonsIntoSections,
+  readCourseMeta,
+} from '@/lib/courses';
+
+import CourseOverview from '@/components/courses/CourseOverview';
+
+export async function getStaticPaths() {
+  return await getCoursePaths();
+}
+
+const { courseSlug } = Astro.props;
+
+// Use the course slug directly as the course ID
+const course = await getEntry('courses', courseSlug);
+
+if (!course) {
+  throw Astro.redirect('/404');
+}
+
+// Read meta.json to get course structure
+const courseStructure = readCourseMeta(courseSlug);
+
+// Get all lessons for this course
+const allLessons = await getCourseLessons(courseSlug);
+
+// Create a map of lesson slugs to lesson entries
+const lessonMap = createLessonMap(allLessons);
+
+// Organize lessons according to meta.json structure
+const sections = organizeLessonsIntoSections(courseStructure, lessonMap);
+
+// Merge coverImage from meta.json into course data
+const courseWithCoverImage = mergeCourseCoverImage(course, courseStructure);
+
+const pageTitle = `${course.data.title} - কোর্স`;
+const pageDescription = course.data.description;
+---
+
+<DefaultLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <CourseOverview
+    course={courseWithCoverImage}
+    sections={sections}
+    courseSlug={courseSlug}
+    client:load
+  />
+</DefaultLayout>
