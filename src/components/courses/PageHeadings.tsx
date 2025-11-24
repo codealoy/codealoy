@@ -83,13 +83,13 @@ export default function PageHeadings({ headings }: PageHeadingsProps) {
 
   return (
     <aside className="hidden w-64 shrink-0 lg:block">
-      <div className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto">
+      <div className="sticky top-20 max-h-full overflow-y-auto">
         <div className="pl-4">
           <h2 className="text-muted-foreground text-md mb-4 font-semibold tracking-wide uppercase">
             শিরোনাম
           </h2>
           <nav className="space-y-1">
-            {headings.map((heading) => {
+            {headings.map((heading, index) => {
               const isActive = activeId === heading.id;
               const indentClass =
                 heading.level === 3
@@ -100,7 +100,7 @@ export default function PageHeadings({ headings }: PageHeadingsProps) {
 
               return (
                 <a
-                  key={heading.id}
+                  key={heading.id + index}
                   href={`#${heading.id}`}
                   className={cn(
                     'block rounded-md px-3 py-2 text-sm transition-colors',
