@@ -1,0 +1,122 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import CourseOverview from '@/components/courses/CourseOverview';
+
+// Preload all meta.json files using import.meta.glob
+const metaFiles = import.meta.glob('../../../content/courses/**/meta.json', {
+  eager: true,
+});
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses', ({ data }) => {
+    return data.status === 'published';
+  });
+
+  return courses.map((course) => {
+    // The course.id is already the course slug (e.g., "learn-problem-solving-basic")
+    const courseSlug = course.id;
+    return {
+      params: { course: courseSlug },
+      props: { courseSlug },
+    };
+  });
+}
+
+const { courseSlug } = Astro.props;
+
+// Use the course slug directly as the course ID
+const course = await getEntry('courses', courseSlug);
+
+if (!course) {
+  throw Astro.redirect('/404');
+}
+
+// Read meta.json to get course structure
+// Find the matching file in the glob results
+const matchingPath = Object.keys(metaFiles).find((path) =>
+  path.includes(`${courseSlug}/meta.json`),
+);
+let courseStructure: any = null;
+
+if (matchingPath && metaFiles[matchingPath]) {
+  try {
+    // JSON files are imported as modules with default export
+    const imported = metaFiles[matchingPath] as any;
+    courseStructure = imported.default || imported;
+  } catch (error) {
+    console.error(`Failed to parse meta.json for course ${courseSlug}:`, error);
+  }
+} else {
+  console.error(
+    `Failed to find meta.json for course ${courseSlug}. Available paths:`,
+    Object.keys(metaFiles),
+  );
+}
+
+// Get all lessons for this course
+const allLessons = await getCollection('lessons', ({ id, data }) => {
+  // Filter lessons that belong to this course (id starts with courseSlug)
+  // Exclude index.mdx files (they belong to courses collection)
+  return (
+    id.startsWith(courseSlug) &&
+    !id.endsWith('/index') &&
+    data.status === 'published'
+  );
+});
+
+// Create a map of lesson slugs to lesson entries
+const lessonMap = new Map();
+allLessons.forEach((lesson) => {
+  const lessonSlug = lesson.id.split('/').pop() || '';
+  lessonMap.set(lessonSlug, lesson);
+});
+
+// Organize lessons according to meta.json structure
+const sections: any[] = [];
+let currentSection: any = null;
+
+// Ensure sections is always an array, even if courseStructure is null
+if (
+  courseStructure &&
+  courseStructure.pages &&
+  Array.isArray(courseStructure.pages)
+) {
+  for (const item of courseStructure.pages) {
+    if (item.startsWith('---') && item.endsWith('---')) {
+      // This is a section header
+      if (currentSection) {
+        sections.push(currentSection);
+      }
+      currentSection = {
+        title: item.replace(/---/g, '').trim(),
+        lessons: [],
+      };
+    } else if (item !== 'index' && currentSection) {
+      // This is a lesson
+      const lessonEntry = lessonMap.get(item);
+      currentSection.lessons.push({
+        slug: item,
+        title: lessonEntry?.data.title || item,
+        entry: lessonEntry || null,
+      });
+    }
+  }
+  if (currentSection) {
+    sections.push(currentSection);
+  }
+}
+
+const pageTitle = `${course.data.title} - কোর্স`;
+const pageDescription = course.data.description;
+---
+
+<DefaultLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <CourseOverview
+    course={course}
+    sections={sections}
+    courseSlug={courseSlug}
+    client:load
+  />
+</DefaultLayout>
