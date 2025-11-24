@@ -33,7 +33,7 @@ export default function CourseCard({ course }: CourseCardProps) {
   return (
     <Card className="group h-full transition-all duration-300 hover:shadow-xl">
       {/* Course Image Placeholder */}
-      <div className="relative h-48 overflow-hidden rounded-t-lg bg-gradient-to-br from-blue-500 to-purple-600">
+      <div className="relative h-48 overflow-hidden rounded-lg bg-linear-to-br from-teal-400 to-yellow-200">
         <div className="flex h-full items-center justify-center">
           <ImageIcon className="h-16 w-16 text-white/80" />
         </div>
