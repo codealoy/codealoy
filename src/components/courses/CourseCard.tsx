@@ -1,4 +1,3 @@
-import React from 'react';
 import type { CollectionEntry } from 'astro:content';
 import {
   BookOpen,
@@ -7,8 +6,6 @@ import {
   Play,
   Trophy,
 } from 'lucide-react';
-
-import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
 import {

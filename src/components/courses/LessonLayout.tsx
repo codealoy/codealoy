@@ -1,12 +1,15 @@
 'use client';
 
-import React from 'react';
 import type { CollectionEntry } from 'astro:content';
 import CourseNavigation from './CourseNavigation';
-import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
+import CourseTOC from './CourseTOC';
+import PageHeadings from './PageHeadings';
+import { ArrowLeft, BookOpen } from 'lucide-react';
+
+import type { HeadingData } from '@/lib/extractHeadings';
+import type { LessonSection } from '@/lib/types/course';
 
 import { SectionContent } from '@/components/common/SectionContent';
-import { Button } from '@/components/ui/button';
 
 interface LessonLayoutProps {
   course: CollectionEntry<'courses'>;
@@ -14,6 +17,9 @@ interface LessonLayoutProps {
   courseSlug: string;
   prevLesson: string | null;
   nextLesson: string | null;
+  sections: LessonSection[];
+  currentLessonSlug: string;
+  headings: HeadingData[];
   children: React.ReactNode;
 }
 
@@ -23,6 +29,9 @@ export default function LessonLayout({
   courseSlug,
   prevLesson,
   nextLesson,
+  sections,
+  currentLessonSlug,
+  headings,
   children,
 }: LessonLayoutProps) {
   const courseUrl = `/courses/${courseSlug}`;
@@ -74,23 +83,38 @@ export default function LessonLayout({
         </SectionContent>
       </section>
 
-      {/* Lesson Content */}
+      {/* Three Column Layout: ToC | Content | Page Headings */}
       <section>
-        <SectionContent>
-          <article className="py-12">{children}</article>
-        </SectionContent>
-      </section>
+        <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
+          <div className="flex gap-8">
+            {/* Left Sidebar - Course ToC */}
+            <CourseTOC
+              sections={sections}
+              courseSlug={courseSlug}
+              currentLessonSlug={currentLessonSlug}
+            />
 
-      {/* Lesson Navigation */}
-      <section className="border-border border-t">
-        <SectionContent>
-          <CourseNavigation
-            courseSlug={courseSlug}
-            courseBaseUrl={courseBaseUrl}
-            prevLesson={prevLesson}
-            nextLesson={nextLesson}
-          />
-        </SectionContent>
+            {/* Center - Main Content */}
+            <main className="min-w-0 flex-1">
+              <article className="prose prose-base lg:prose-lg dark:prose-invert prose-a:text-primary prose-a:no-underline prose-img:rounded-lg prose-headings:scroll-mt-40 max-w-none">
+                {children}
+              </article>
+
+              {/* Lesson Navigation */}
+              <div className="border-border mt-12 border-t pt-8">
+                <CourseNavigation
+                  courseSlug={courseSlug}
+                  courseBaseUrl={courseBaseUrl}
+                  prevLesson={prevLesson}
+                  nextLesson={nextLesson}
+                />
+              </div>
+            </main>
+
+            {/* Right Sidebar - Page Headings */}
+            <PageHeadings headings={headings} />
+          </div>
+        </div>
       </section>
     </div>
   );

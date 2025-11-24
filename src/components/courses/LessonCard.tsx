@@ -1,4 +1,4 @@
-import React from 'react';
+import type { CollectionEntry } from 'astro:content';
 import { ArrowRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 interface LessonItem {
   slug: string;
   title: string;
-  entry: any | null;
+  entry: CollectionEntry<'lessons'> | null;
 }
 
 interface LessonCardProps {
@@ -18,7 +18,6 @@ interface LessonCardProps {
 
 export default function LessonCard({
   lesson,
-  courseSlug,
   courseBaseUrl,
   lessonNumber,
 }: LessonCardProps) {

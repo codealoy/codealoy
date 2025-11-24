@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import type { CollectionEntry } from 'astro:content';
 import LessonCard from './LessonCard';
 import { BookOpen, Clock, FileText, Trophy } from 'lucide-react';
@@ -39,7 +38,7 @@ export default function CourseOverview({
   );
 
   // Pre-calculate start indices for continuous numbering
-  const sectionStartIndices = sections.reduce((acc, section, index) => {
+  const sectionStartIndices = sections.reduce((acc, _, index) => {
     const prevTotal =
       index > 0 ? acc[index - 1] + sections[index - 1].lessons.length : 0;
     acc.push(prevTotal);
