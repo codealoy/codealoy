@@ -1,0 +1,143 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { getCollection, getEntry, render } from 'astro:content';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+import LessonLayout from '@/components/courses/LessonLayout';
+
+// Get the project root directory using process.cwd() which works at build time
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses', ({ data }) => {
+    return data.status === 'published';
+  });
+
+  const paths = [];
+
+  for (const course of courses) {
+    // Extract course slug from id (e.g., "learn-problem-solving-basic/index" -> "learn-problem-solving-basic")
+    const courseSlug = course.id.replace('/index', '');
+    // Read meta.json to get lesson list
+    const metaPath = join(
+      process.cwd(),
+      'src',
+      'content',
+      'courses',
+      courseSlug,
+      'meta.json',
+    );
+
+    try {
+      const metaContent = readFileSync(metaPath, 'utf-8');
+      const courseStructure = JSON.parse(metaContent);
+
+      if (courseStructure.pages) {
+        for (const page of courseStructure.pages) {
+          // Skip section headers and index
+          if (!page.startsWith('---') && page !== 'index') {
+            paths.push({
+              params: { course: courseSlug, lesson: page },
+              props: { courseSlug, lessonSlug: page },
+            });
+          }
+        }
+      }
+    } catch (error) {
+      console.error(
+        `Failed to read meta.json for course ${courseSlug}:`,
+        error,
+      );
+    }
+  }
+
+  return paths;
+}
+
+const { courseSlug, lessonSlug } = Astro.props;
+
+// getEntry needs the full id (e.g., "learn-problem-solving-basic/index")
+// const courseId = `${courseSlug}/index`;
+const course = await getEntry('courses', courseSlug);
+
+if (!course) {
+  throw Astro.redirect('/404');
+}
+
+// Get the lesson entry
+const lessonId = `${courseSlug}/${lessonSlug}`;
+const lesson = await getEntry('lessons', lessonId);
+
+if (!lesson) {
+  throw Astro.redirect('/404');
+}
+
+// Read meta.json to get navigation structure
+const metaPath = join(
+  process.cwd(),
+  'src',
+  'content',
+  'courses',
+  courseSlug,
+  'meta.json',
+);
+let courseStructure = null;
+let prevLesson = null;
+let nextLesson = null;
+
+try {
+  const metaContent = readFileSync(metaPath, 'utf-8');
+  courseStructure = JSON.parse(metaContent);
+
+  if (courseStructure && courseStructure.pages) {
+    const currentIndex = courseStructure.pages.findIndex(
+      (page) => page === lessonSlug,
+    );
+
+    if (currentIndex > 0) {
+      // Find previous non-section page
+      for (let i = currentIndex - 1; i >= 0; i--) {
+        const page = courseStructure.pages[i];
+        if (!page.startsWith('---') && page !== 'index') {
+          prevLesson = page;
+          break;
+        }
+      }
+    }
+
+    if (currentIndex < courseStructure.pages.length - 1) {
+      // Find next non-section page
+      for (let i = currentIndex + 1; i < courseStructure.pages.length; i++) {
+        const page = courseStructure.pages[i];
+        if (!page.startsWith('---') && page !== 'index') {
+          nextLesson = page;
+          break;
+        }
+      }
+    }
+  }
+} catch (error) {
+  console.error(`Failed to read meta.json for course ${courseSlug}:`, error);
+}
+
+const { Content } = await render(lesson);
+
+const pageTitle = `${lesson.data.title} - ${course.data.title}`;
+const pageDescription = lesson.data.description || lesson.data.title;
+---
+
+<DefaultLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <LessonLayout
+    course={course}
+    lesson={lesson}
+    courseSlug={courseSlug}
+    prevLesson={prevLesson}
+    nextLesson={nextLesson}
+  >
+    <div
+      class="prose prose-base lg:prose-lg dark:prose-invert prose-a:text-primary prose-a:no-underline prose-img:rounded-lg max-w-none"
+    >
+      <Content />
+    </div>
+  </LessonLayout>
+</DefaultLayout>
