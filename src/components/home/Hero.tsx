@@ -1,11 +1,25 @@
 import { GITHUB_REPO_LINK } from '@/config/site';
 
+import LightRays from '@/components/animated/LightRays';
 import { BottomSkewBoxPattern, TopSkewBoxPattern } from '@/components/patterns';
 import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-[90dvh] items-center justify-center overflow-hidden">
+      {/* LightRays as hero background */}
+      <div className="h-100dvh pointer-events-none absolute inset-0 z-0 hidden w-full dark:block">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#72E3AD"
+          raysSpeed={0.5}
+          lightSpread={0.5}
+          rayLength={2}
+          followMouse={false}
+          noiseAmount={0}
+          distortion={0}
+        />
+      </div>
       <div
         className="absolute top-0 left-1/2 w-[240%] -translate-x-1/2 sm:w-[150%] lg:w-screen"
         aria-hidden="true"
