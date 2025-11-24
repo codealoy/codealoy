@@ -60,6 +60,16 @@ export default function CourseOverview({
               </a>
             </div>
 
+            {data.coverImage && (
+              <div className="bg-muted mx-auto mb-8 aspect-auto w-full overflow-hidden rounded-lg shadow-2xl">
+                <img
+                  src={data.coverImage}
+                  alt={data.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
+
             <div className="flex flex-col gap-6 md:gap-8">
               <div>
                 <h1 className="text-foreground mb-4 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl">

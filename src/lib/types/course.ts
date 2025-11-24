@@ -4,6 +4,7 @@ export type CourseMeta = {
   title: string;
   root: boolean;
   pages: string[];
+  coverImage?: string;
 };
 
 export type LessonItem = {

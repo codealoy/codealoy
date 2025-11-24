@@ -29,13 +29,23 @@ export default function CourseCard({ course }: CourseCardProps) {
 
   return (
     <Card className="group h-full transition-all duration-300 hover:shadow-xl">
-      {/* Course Image Placeholder */}
-      <div className="relative h-48 overflow-hidden rounded-lg bg-linear-to-br from-teal-400 to-yellow-200">
-        <div className="flex h-full items-center justify-center">
-          <ImageIcon className="h-16 w-16 text-white/80" />
+      {/* Course Cover Image */}
+      {data.coverImage ? (
+        <div className="bg-muted aspect-video w-full overflow-hidden rounded-t-lg">
+          <img
+            src={data.coverImage}
+            alt={data.title}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
         </div>
-        <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10"></div>
-      </div>
+      ) : (
+        <div className="relative h-48 overflow-hidden rounded-t-lg bg-linear-to-br from-teal-400 to-yellow-200">
+          <div className="flex h-full items-center justify-center">
+            <ImageIcon className="h-16 w-16 text-white/80" />
+          </div>
+          <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/10"></div>
+        </div>
+      )}
 
       <CardHeader className="pb-4">
         <div className="mb-2 flex items-center justify-between">

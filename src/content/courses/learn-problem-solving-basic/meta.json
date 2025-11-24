@@ -1,6 +1,7 @@
 {
   "title": "learn-problem-solving-basic",
   "root": true,
+  "coverImage": "/images/courses/learn-problem-solving-basic.webp",
   "pages": [
     "---ভূমিকা---",
     "1-welcome",

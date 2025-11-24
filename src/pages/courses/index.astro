@@ -3,11 +3,42 @@ import { getCollection } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
 import CoursesList from '@/components/courses/CoursesList.tsx';
+import type { CourseMeta } from '@/lib/types/course';
+
+// Preload all meta.json files using import.meta.glob
+const metaFiles = import.meta.glob('../../content/courses/**/meta.json', {
+  eager: true,
+});
 
 const courses = await getCollection('courses');
 
+// Merge coverImage from meta.json into each course
+const coursesWithCoverImages = courses.map((course) => {
+  const courseSlug = course.id.replace('/index', '');
+  const matchingPath = Object.keys(metaFiles).find((path) =>
+    path.includes(`${courseSlug}/meta.json`),
+  );
+
+  let courseMeta: CourseMeta | undefined = undefined;
+  if (matchingPath && metaFiles[matchingPath]) {
+    try {
+      courseMeta = metaFiles[matchingPath] as CourseMeta;
+    } catch (error) {
+      console.error(`Failed to parse meta.json for course ${courseSlug}:`, error);
+    }
+  }
+
+  return {
+    ...course,
+    data: {
+      ...course.data,
+      coverImage: courseMeta?.coverImage || course.data.coverImage,
+    },
+  };
+});
+
 // Sort courses by title or any other preferred order
-const sortedCourses = courses.sort((a, b) =>
+const sortedCourses = coursesWithCoverImages.sort((a, b) =>
   a.data.title.localeCompare(b.data.title),
 );
 

@@ -247,3 +247,20 @@ export function organizeLessonsIntoSections(
 
   return sections;
 }
+
+/**
+ * Merge coverImage from meta.json into course data
+ * Prioritizes coverImage from meta.json over course entry's coverImage
+ */
+export function mergeCourseCoverImage(
+  course: CollectionEntry<'courses'>,
+  courseStructure: CourseMeta | null | undefined,
+): CollectionEntry<'courses'> {
+  return {
+    ...course,
+    data: {
+      ...course.data,
+      coverImage: courseStructure?.coverImage || course.data.coverImage,
+    },
+  };
+}
