@@ -66,7 +66,7 @@ export default function ErrorState({
             enableOnHover={false}
             className="text-primary text-start"
           >
-            {error.code}
+            {error.code.toString()}
           </GlitchText>
           <h1 className="text-2xl leading-tight font-bold md:text-5xl">
             {error.title}
