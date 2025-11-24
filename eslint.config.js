@@ -5,7 +5,7 @@ export default [
   // js.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ['.astro/**'],
+    ignores: ['.astro/**', 'dist/**'],
   },
   {
     rules: {
