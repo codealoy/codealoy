@@ -1,13 +1,17 @@
 ---
-import { getEntry, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
 import {
+  createLessonMap,
   findAdjacentLessons,
+  getCourseLessons,
   getLessonPaths,
+  organizeLessonsIntoSections,
   readCourseMeta,
 } from '@/lib/courses';
+import { extractHeadingsFromLesson } from '@/lib/extractHeadings';
 
 import LessonLayout from '@/components/courses/LessonLayout';
 
@@ -36,10 +40,24 @@ if (!lesson) {
   throw Astro.redirect('/404');
 }
 
+// Read meta.json to get course structure
 const courseStructure = readCourseMeta(courseSlug);
+
+// Get all lessons for this course
+const allLessons = await getCourseLessons(courseSlug);
+
+// Create a map of lesson slugs to lesson entries
+const lessonMap = createLessonMap(allLessons);
+
+// Organize lessons according to meta.json structure
+const sections = organizeLessonsIntoSections(courseStructure, lessonMap);
+
 const { prevLesson, nextLesson } = courseStructure
   ? findAdjacentLessons(courseStructure, lessonSlug)
   : { prevLesson: null, nextLesson: null };
+
+// Extract headings from the lesson content at build time
+const headings = await extractHeadingsFromLesson(courseSlug, lessonSlug);
 
 const { Content } = await render(lesson);
 
@@ -54,11 +72,11 @@ const pageDescription = lesson.data.description || lesson.data.title;
     courseSlug={courseSlug}
     prevLesson={prevLesson}
     nextLesson={nextLesson}
+    sections={sections}
+    currentLessonSlug={lessonSlug}
+    headings={headings}
+    client:load
   >
-    <div
-      class="prose prose-base lg:prose-lg dark:prose-invert prose-a:text-primary prose-a:no-underline prose-img:rounded-lg max-w-none"
-    >
-      <Content />
-    </div>
+    <Content />
   </LessonLayout>
 </DefaultLayout>
