@@ -1,7 +1,7 @@
 # Codealoy's codebase and curriculum
 
 [![Website](https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fwww.codealoy.com%2F)](https://www.codealoy.com/)
-[![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/codealoy/codealoy/deploy-to-production.yml?style=flat-square)](https://github.com/codealoy/codealoy/actions?query=branch%3Amain)
+[![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/codealoy/codealoy/lint-build-test.yml?style=flat-square)](https://github.com/codealoy/codealoy/actions)
 [![GitHub contributors](https://img.shields.io/github/contributors/codealoy/codealoy?style=flat-square)](https://github.com/codealoy/codealoy/graphs/contributors)
 [![GitHub Repo stars](https://img.shields.io/github/stars/codealoy/codealoy?style=flat-square)](https://github.com/codealoy/codealoy/stargazers)
 [![GitHub](https://img.shields.io/github/license/codealoy/codealoy?style=flat-square)](https://github.com/codealoy/codealoy/blob/main/LICENSE)
