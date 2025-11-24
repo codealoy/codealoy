@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
+import type { CourseMeta, LessonSection } from '@/lib/types/course';
+
 import CourseOverview from '@/components/courses/CourseOverview';
 
 // Preload all meta.json files using import.meta.glob
@@ -38,13 +40,12 @@ if (!course) {
 const matchingPath = Object.keys(metaFiles).find((path) =>
   path.includes(`${courseSlug}/meta.json`),
 );
-let courseStructure: any = null;
+
+let courseStructure: CourseMeta | undefined = undefined;
 
 if (matchingPath && metaFiles[matchingPath]) {
   try {
-    // JSON files are imported as modules with default export
-    const imported = metaFiles[matchingPath] as any;
-    courseStructure = imported.default || imported;
+    courseStructure = metaFiles[matchingPath] as CourseMeta;
   } catch (error) {
     console.error(`Failed to parse meta.json for course ${courseSlug}:`, error);
   }
@@ -74,15 +75,10 @@ allLessons.forEach((lesson) => {
 });
 
 // Organize lessons according to meta.json structure
-const sections: any[] = [];
-let currentSection: any = null;
+const sections: LessonSection[] = [];
+let currentSection: LessonSection | undefined = undefined;
 
-// Ensure sections is always an array, even if courseStructure is null
-if (
-  courseStructure &&
-  courseStructure.pages &&
-  Array.isArray(courseStructure.pages)
-) {
+if (courseStructure && courseStructure.pages) {
   for (const item of courseStructure.pages) {
     if (item.startsWith('---') && item.endsWith('---')) {
       // This is a section header
@@ -96,11 +92,13 @@ if (
     } else if (item !== 'index' && currentSection) {
       // This is a lesson
       const lessonEntry = lessonMap.get(item);
-      currentSection.lessons.push({
-        slug: item,
-        title: lessonEntry?.data.title || item,
-        entry: lessonEntry || null,
-      });
+      if (lessonEntry) {
+        currentSection.lessons.push({
+          slug: item,
+          title: lessonEntry.data.title || item,
+          entry: lessonEntry,
+        });
+      }
     }
   }
   if (currentSection) {
