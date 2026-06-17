@@ -19,24 +19,24 @@ export default function HighlightedFeatures() {
 
   const controlAnimation = useWhileInView(ref);
 
-  const liveCodingEditorFeatures = [
+  const cliVerificationFeatures = [
     {
-      name: 'লোকাল মেশিনের চেয়ে দ্রুত ডেভেলপমেন্ট',
+      name: 'নিজের পছন্দের টুলেই কাজ করুন',
       description:
-        'ধীরগতির বিল্ড টাইম এবং কনটেক্সট-সুইচিংয়ে সময় অপচয় থেকে মুক্তি পান। আমাদের শক্তিশালী VM-গুলি আপনার কোডকে লোকাল মেশিনের তুলনায় ২০০ গুণ দ্রুত গতিতে চালাতে পারে এবং মুহূর্তের মধ্যে যেকোনো প্রজেক্ট সেটআপ করে ফেলতে পারে।',
-      icon: HiOutlineRocketLaunch,
+        'আপনি যে টুলে স্বচ্ছন্দ (VS Code, Cursor, Claude Code কিংবা Codex), সেটাতেই নিজের মেশিনে কাজ করুন। বাস্তব পরিবেশে AI এজেন্টকে অর্কেস্ট্রেট করাই এজেন্টিক ডেভেলপমেন্টের আসল দক্ষতা।',
+      icon: HiOutlineComputerDesktop,
     },
     {
-      name: 'রেডিমেড কোডিং টেমপ্লেটস',
+      name: 'লোকাল ভেরিফিকেশন',
       description:
-        'আমরা ডেভ কন্টেইনার ব্যবহার করে আপনার কোডিং-এর সমস্ত প্রয়োজনীয় টুল, লাইব্রেরি এবং ডিপেন্ডেন্সি অটোমেটিক্যালি ইনস্টল করি, যাতে আপনি সেটআপ এড়িয়ে ইনস্ট্যান্টলি কোডিং শুরু করতে পারেন।',
+        'টাস্ক শেষে শুধু Codealoy CLI টুল চালান, আপনার মেশিনেই টাস্কের ফলাফল যাচাই হয়ে ইনস্ট্যান্ট রিপোর্ট পেয়ে যাবেন। তার সাথে থাকছে প্রোগ্রেস ট্রাক্সিং এর জন্য অনলাইন ড্যাশবোর্ড।',
       icon: HiOutlineTerminal,
     },
     {
-      name: 'যেকোনো কম্পিউটারে কাজ করে',
+      name: 'প্রতিটি প্রজেক্টেই পোর্টফোলিও রেপো',
       description:
-        'আপনার কম্পিউটারটি পুরাতন হোক বা নতুন, অপারেটিং সিস্টেম উইন্ডোস, ম্যাক বা লিনাক্স হোক, আমাদের ক্লাউড বেইজড এডিটর যেকোনো কম্পিউটারে কাজ করতে পারে।',
-      icon: HiOutlineComputerDesktop,
+        'প্রতিটি প্রজেক্টই একটি পোর্টফোলিও-রেডি গিটহাব রেপো হিসেবে তৈরি হবে, যা ইন্টারভিউ বা ক্লায়েন্টের সামনে আপনার এজেন্টিক ডেভেলপমেন্ট দক্ষতার সরাসরি প্রমাণ হিসেবে কাজ করবে।',
+      icon: HiOutlineRocketLaunch,
     },
   ];
 
@@ -60,19 +60,21 @@ export default function HighlightedFeatures() {
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:row-start-1 lg:max-w-md">
               <p className="text-primary leading-normal font-medium">
-                ক্লাউড বেইজড
+                নিজের টুল, নিজের ডিভাইস
               </p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-700 sm:text-4xl dark:text-slate-200">
-                লাইভ কোডিং এডিটর
+                নিজের পছন্দের AI টুল ব্যবহার
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                শুধুমাত্র সাঁতার দেখে দেখে যেমন সাঁতার শেখা যায় না, তেমনি কোডিং
-                বা প্রোগ্রামিংও শুধু দেখে দেখে শেখা সম্ভব নয়। শেখার পাশাপাশি
-                তাই প্রাকটিস করাটাই বেশি গুরুত্বপূর্ণ।
+                শুধুমাত্র সাঁতার দেখে দেখে যেমন সাঁতার শেখা যায় না, তেমনি AI
+                দিয়ে কোডিংও শুধু দেখে দেখে শেখা সম্ভব নয়। তাই দেখে দেখে শেখার
+                চেয়ে নিজে করে দেখাটাই বেশি গুরুত্বপূর্ণ।
                 <br />
                 <br />
-                কোডালয় প্ল্যাটফর্মে রয়েছে ক্লাউড বেইজড লাইভ কোডিং এডিটর ফিচার,
-                যেটা যেকোনো টপিক শেখার সাথে সাথেই প্রাকটিস করার সুযোগ দিবে।
+                কোডালয়ে আপনি নিজের পছন্দের AI টুল দিয়ে বাস্তব পরিবেশে প্রজেক্ট
+                বানাবেন, আর Codealoy CLI সেই কাজের ফলাফল লোকালি যাচাই করবে।
+                শুধুমাত্র থিওরি নয়, প্রাকটিক্যাল প্রজেক্ট করবেন, আপনার নিজের
+                মেশিনেই।
               </p>
             </div>
 
@@ -84,17 +86,17 @@ export default function HighlightedFeatures() {
               variants={fadeFromRightAnimation}
             >
               <img
-                src="/images/features/codealoy-live-coding-editor-2K6qzfcYzU9t.webp"
-                alt="Live coding editor"
+                src="/images/features/codealoy-own-ai-tool-72iqlHqH4Mi1BEgIInqhO.webp"
+                alt="Codealoy CLI দিয়ে টাস্ক যাচাই"
                 className="ring-primary/15 relative -z-10 max-w-xs min-w-full rounded-xl shadow-xl ring-1 lg:w-5xl lg:max-w-none xl:w-296"
-                width={2360}
-                height={1321}
+                width={2952}
+                height={1856}
               />
             </motion.div>
 
             <div className="lg:border-priamry/10 max-w-xl border-dashed lg:row-start-2 lg:mt-10 lg:max-w-md lg:border-t lg:pt-10">
               <dl className="max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
-                {liveCodingEditorFeatures.map((feature) => (
+                {cliVerificationFeatures.map((feature) => (
                   <div key={feature.name} className="relative">
                     <dt className="ml-8 inline-block font-semibold text-slate-700 dark:text-slate-200">
                       <feature.icon
