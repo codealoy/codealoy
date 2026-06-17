@@ -94,7 +94,7 @@ export const EDUCATIONAL_ORGANIZATION_SCHEMA = {
     'Software Engineering',
     'Problem Solving',
     'Interview Preparation',
-    'Datastructure and Algorithms',
+    'Data Structure and Algorithms',
     'Software Verification & Testing',
     'Career Guidance',
   ],

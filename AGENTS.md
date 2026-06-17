@@ -44,7 +44,7 @@ UI is React rendered as Astro islands. `astro.config.mjs` sets `vite.resolve.ded
 
 ## Conventions
 
-- **Content Generation**: Always use `humanizer` sill during writing any content to make it more human-like and natural. Always prefer natural language over technical terms.
+- **Content Generation**: Always use `humanizer` skill during writing any content to make it more human-like and natural. Always prefer natural language over technical terms.
 - **Mode Rules**: Prefer using plan mode for multi-file architectural changes.
 - **Auto commit**: Never automatically commit without approval from user. User will review the code changes manually before commiting.
 - **Path alias**: `@/*` → `src/*` (see `tsconfig.json`). Use it for all internal imports.
