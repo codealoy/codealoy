@@ -108,7 +108,7 @@ export default function Team() {
           <SectionHeading
             heading="কোডালয় টিম"
             title="কোডালয় সদস্য পরিচিতি"
-            tagline="মাতৃভাষা বাংলায় আধুনিক প্রোগ্রামিং ও ওয়েব ডেভেলপমেন্ট শেখার পূর্ণাঙ্গ গাইডলাইন সকলের কাছে বিনামূল্যে পৌঁছে দেওয়ার লক্ষ্যে যারা অবদান রাখছেন"
+            tagline="মাতৃভাষা বাংলায় প্রোগ্রামিং এবং এজেন্টিক AI ডেভেলপমেন্ট শেখার পূর্ণাঙ্গ গাইডলাইন সকলের কাছে বিনামূল্যে পৌঁছে দেওয়ার লক্ষ্যে যারা অবদান রাখছেন"
           />
           <ul
             role="list"
@@ -181,7 +181,7 @@ export default function Team() {
                         </p>
                         <p className="text-primary text-sm">কন্ট্রিবিউটর</p>
                         <p className="text-sm font-normal text-slate-700 dark:text-slate-300">
-                          সফটওয়্যার ইঞ্জিনিয়ার
+                          সফটওয়্যার ইঞ্জিনিয়ার
                         </p>
                         <a
                           href={contributor.html_url}
