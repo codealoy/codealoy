@@ -32,8 +32,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# drizzle
-/drizzle
+# build artifacts / tooling caches
+.next/
+.turbo/
+.content-collections/
+.wrangler/
 
 ## astro
 # build output
