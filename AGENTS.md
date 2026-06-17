@@ -54,15 +54,6 @@ UI is React rendered as Astro islands. `astro.config.mjs` sets `vite.resolve.ded
 - **Commits**: Conventional Commits, enforced by commitlint via a husky `commit-msg` hook. Precommit hooks are maintained by hasky.
 - **PRs** target `main`.
 - Bengali default author string `'কোডালয় টিম'` is baked into content schemas — keep new content in Bengali to match the site's voice.
-  docs(agents): add domain, issue-tracker, and triage-labels docs
-
-This commit introduces new documentation files for the agents, covering domain concepts, issue tracking conventions, and triage label mappings.
-
-- Add `docs/agents/domain.md` to explain how to consume domain documentation.
-- Add `docs/agents/issue-tracker.md` to detail GitHub issue conventions for agent-related tasks.
-- Add `docs/agents/triage-labels.md` to map canonical triage roles to specific GitHub label strings.
-
-## Agent skills
 
 ### Issue tracker
 
