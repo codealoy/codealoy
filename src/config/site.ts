@@ -2,10 +2,10 @@
 export const BASE_URL = 'https://www.codealoy.com';
 
 export const SITE_TITLE =
-  'Codealoy - Web Development Learning Platform in Bangla';
+  'Codealoy - Learn Programming & Agentic AI Development in Bangla';
 
 export const SITE_DESCRIPTION =
-  'Learn web development in Bangla with Codealoy. Access tutorials and courses on HTML, CSS, JavaScript, React, and more. Start your journey with Codealoy today!';
+  'Learn programming and agentic AI development in Bangla with Codealoy: prompting, context engineering, agent orchestration (Claude Code, Codex, Cursor, Antigravity, Github Copilot), and verification. Build real projects with AI agents using your own tools. Free and open-source.';
 
 export const SITE_NAME = 'কোডালয় | Codealoy';
 
@@ -84,16 +84,19 @@ export const EDUCATIONAL_ORGANIZATION_SCHEMA = {
   inLanguage: 'bn',
   educationalCredentialAwarded: 'Certificate',
   teaches: [
+    'Agentic AI Development',
+    'AI-Assisted Coding',
+    'Prompt Engineering',
+    'Context Engineering',
+    'Agent Orchestration',
+    'AI Code Review',
     'Web Development',
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Programming',
     'Software Engineering',
     'Problem Solving',
-    'Career Guidance',
     'Interview Preparation',
+    'Data Structure and Algorithms',
+    'Software Verification & Testing',
+    'Career Guidance',
   ],
 };
 

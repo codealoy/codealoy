@@ -5,7 +5,9 @@ import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 
 import { fallbackContributorsData, teamMembersData } from '@/config/data';
 import {
+  FORUM_LINK,
   GITHUB_CONTRIBUTORS_API_LINK,
+  GITHUB_REPO_LINK,
   ONE_DAY_IN_MILLISECONDS,
 } from '@/config/site';
 
@@ -14,6 +16,7 @@ import { queryClient } from '@/lib/store';
 import { SectionContent } from '@/components/common/SectionContent';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { CircleBlur } from '@/components/patterns';
+import { Button } from '@/components/ui/button';
 
 interface Contributor {
   id: number;
@@ -108,7 +111,7 @@ export default function Team() {
           <SectionHeading
             heading="কোডালয় টিম"
             title="কোডালয় সদস্য পরিচিতি"
-            tagline="মাতৃভাষা বাংলায় আধুনিক প্রোগ্রামিং ও ওয়েব ডেভেলপমেন্ট শেখার পূর্ণাঙ্গ গাইডলাইন সকলের কাছে বিনামূল্যে পৌঁছে দেওয়ার লক্ষ্যে যারা অবদান রাখছেন"
+            tagline="মাতৃভাষা বাংলায় প্রোগ্রামিং এবং এজেন্টিক AI ডেভেলপমেন্ট শেখার পূর্ণাঙ্গ গাইডলাইন সকলের কাছে বিনামূল্যে পৌঁছে দেওয়ার লক্ষ্যে যারা অবদান রাখছেন"
           />
           <ul
             role="list"
@@ -181,7 +184,7 @@ export default function Team() {
                         </p>
                         <p className="text-primary text-sm">কন্ট্রিবিউটর</p>
                         <p className="text-sm font-normal text-slate-700 dark:text-slate-300">
-                          সফটওয়্যার ইঞ্জিনিয়ার
+                          সফটওয়্যার ইঞ্জিনিয়ার
                         </p>
                         <a
                           href={contributor.html_url}
@@ -199,6 +202,32 @@ export default function Team() {
             </div>
           </div>
         )}
+
+        <div className="mx-auto mt-20 max-w-3xl">
+          <div className="border-primary/15 dark:border-primary/15 rounded-2xl border px-8 py-12 text-center shadow-sm">
+            <h3 className="text-2xl font-bold text-slate-700 lg:text-3xl dark:text-slate-200">
+              আপনিও যোগ দিন আমাদের দলে
+            </h3>
+            <p className="mx-auto mt-4 max-w-xl text-slate-600 dark:text-slate-300">
+              কোডালয় সম্পূর্ণ ওপেনসোর্স, সবার অবদানে গড়ে ওঠা একটা প্ল্যাটফর্ম।
+              কনটেন্ট লেখা, ভুল সংশোধন কিংবা কোডে অবদান রেখে আপনিও এই যাত্রার
+              অংশ হতে পারেন।
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a href={GITHUB_REPO_LINK} target="_blank" rel="noreferrer">
+                <Button variant="default" size="lg">
+                  <FaGithubSquare className="h-5 w-5" />
+                  গিটহাবে অবদান রাখুন
+                </Button>
+              </a>
+              <a href={FORUM_LINK} target="_blank" rel="noreferrer">
+                <Button variant="outline" size="lg">
+                  আলোচনায় যোগ দিন
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
       </SectionContent>
     </section>
   );

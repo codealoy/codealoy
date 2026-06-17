@@ -2,6 +2,7 @@
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
 import Counter from '@/components/home/Counter';
+import Faq from '@/components/home/Faq';
 import FeatureGrid from '@/components/home/FeatureGrid';
 import Hero from '@/components/home/Hero';
 import HighlightedFeatures from '@/components/home/HighlightedFeatures';
@@ -16,6 +17,7 @@ import Team from '@/components/home/Team';
     <Counter client:visible />
     <HighlightedFeatures client:visible />
     <Team client:visible />
+    <Faq client:visible />
     <HomeCta />
   </Fragment>
 </DefaultLayout>

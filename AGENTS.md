@@ -1,6 +1,5 @@
 # AGENTS.md
 
-
 ## Project
 
 Codealoy is an open-source interactive platform for learning programming in **Bangla (Bengali)**. It is a content-driven, statically-generated Astro site (React islands + MDX) deployed to **Cloudflare Workers**. Most UI strings and all course content are in Bengali.
@@ -19,7 +18,7 @@ Collection schemas are Zod. `status: 'draft' | 'published'` gates visibility —
 
 ### Course ordering lives in `meta.json`, not the collection
 
-Each course folder has a `meta.json` with a `pages` array that defines lesson **order and section grouping**. This file is read directly from disk (`readCourseMeta` in `src/lib/courses.ts`) — it is *not* part of any content collection.
+Each course folder has a `meta.json` with a `pages` array that defines lesson **order and section grouping**. This file is read directly from disk (`readCourseMeta` in `src/lib/courses.ts`) — it is _not_ part of any content collection.
 
 - Section headers are entries wrapped in dashes: `"---ভূমিকা---"`. They are not lessons.
 - Lesson entries are slugs matching a lesson file's basename (e.g. `"2-two-string"`).
@@ -45,6 +44,7 @@ UI is React rendered as Astro islands. `astro.config.mjs` sets `vite.resolve.ded
 
 ## Conventions
 
+- **Content Generation**: Always use `humanizer` skill during writing any content to make it more human-like and natural. Always prefer natural language over technical terms.
 - **Mode Rules**: Prefer using plan mode for multi-file architectural changes.
 - **Auto commit**: Never automatically commit without approval from user. User will review the code changes manually before commiting.
 - **Path alias**: `@/*` → `src/*` (see `tsconfig.json`). Use it for all internal imports.
@@ -54,4 +54,3 @@ UI is React rendered as Astro islands. `astro.config.mjs` sets `vite.resolve.ded
 - **Commits**: Conventional Commits, enforced by commitlint via a husky `commit-msg` hook. Precommit hooks are maintained by hasky.
 - **PRs** target `main`.
 - Bengali default author string `'কোডালয় টিম'` is baked into content schemas — keep new content in Bengali to match the site's voice.
-
