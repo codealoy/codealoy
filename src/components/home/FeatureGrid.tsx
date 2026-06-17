@@ -21,8 +21,8 @@ export default function FeatureGrid() {
       <SectionContent>
         <SectionHeading
           heading="বৈশিষ্টসমূহ"
-          title="প্রোগ্রামিং ক্যারিয়ার গঠনের পূর্ণাঙ্গ গাইডলাইন"
-          tagline="সবচেয়ে কম সময়ে প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শিখুন"
+          title="AI-নেটিভ ডেভেলপার হওয়ার গাইডলাইন"
+          tagline="AI এজেন্ট দিয়ে প্রোগ্রামিং এবং বাস্তব প্রজেক্ট তৈরি শিখুন"
         />
         <div className="relative z-10">
           <div className="absolute top-1/2 left-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2">

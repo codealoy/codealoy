@@ -35,11 +35,11 @@ export default function Hero() {
       <div className="relative z-10 flex items-center">
         <div className="mx-auto p-4">
           <h1 className="text-center text-4xl font-extrabold tracking-tight text-slate-800 sm:text-5xl lg:text-6xl dark:text-slate-200">
-            কোড + বিদ্যালয় = <span className="text-primary">কোডালয়</span>
+            কোড + বিদ্যালয় = <span className="text-primary">কোডালয়</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-slate-600 dark:text-slate-400">
-            মাতৃভাষা বাংলায় প্রোগ্রামিং এবং ওয়েব ডেভেলপমেন্ট শেখার
+          <p className="mx-auto mt-2 max-w-xl text-center text-lg text-slate-600 dark:text-slate-400">
             <br />
+            মাতৃভাষা বাংলায় প্রোগ্রামিং এবং এজেন্টিক AI ডেভেলপমেন্ট শেখার{' '}
             <span className="text-primary font-medium"> সম্পূর্ণ ফ্রি</span>,
             এবং{' '}
             <span className="text-primary font-medium hover:underline hover:underline-offset-4">

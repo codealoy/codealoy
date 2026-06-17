@@ -25,7 +25,7 @@ export default function HomeCta() {
             আজ থেকেই শুরু হোক নতুন পথচলা
           </h2>
           <p className="mx-auto mt-6 max-w-sm lg:max-w-full">
-            সফটওয়্যার ডেভেলপার হিসাবে ক্যারিয়ার গড়ে তোলার এখনই উপযুক্ত সময়
+            এজেন্টিক AI ডেভেলপার হিসেবে নিজেকে গড়ে তোলার এখনই উপযুক্ত সময়
           </p>
           <div className="mt-10 lg:mt-14">
             <a href="/courses">
