@@ -44,5 +44,6 @@ dist/
 # generated types
 .astro/
 
-# jetbrains setting folder
+# ide setting folders
 .idea/
+.superset/
