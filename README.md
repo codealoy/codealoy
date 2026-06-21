@@ -6,25 +6,33 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/codealoy/codealoy?style=flat-square)](https://github.com/codealoy/codealoy/stargazers)
 [![GitHub](https://img.shields.io/github/license/codealoy/codealoy?style=flat-square)](https://github.com/codealoy/codealoy/blob/main/LICENSE)
 
-Codealoy is an open-source interactive learning web platform that intend to make learning programming & web development easier in **Bangla** (Bengali Language).
+Codealoy is a free and open-source platform for learning **agentic AI development** in **Bangla** (Bengali). The goal is to build the first complete, trustworthy Bangla knowledge base for the AI-native era of software engineering, so a Bengali-speaking developer can learn to build with AI agents without English being the barrier.
+
+## What makes it different
+
+Watching tutorials teaches you to watch. Agentic engineering: prompting, context engineering, reading and reviewing AI output, verifying results, is a skill you only build by doing. So Codealoy is text-first and hands-on rather than video-led.
+
+- **Bring your own agent.** You work in the tools you already like (VS Code, Cursor, Claude Code, Codex) on your own machine. There's no browser sandbox, because orchestrating an AI agent in a _real_ environment is the actual skill.
+- **Local verification via the Codealoy CLI.** Finish a task, run the CLI, and it checks your work locally and gives you an instant pass/fail report. Your code stays on your machine.
+- **Every task is a real project.** Each completed task leaves you a portfolio-ready GitHub repo, direct proof of your agentic skills for an interview or a first client.
+- **Content with a short half-life.** AI tools change every month. Text updates in hours, not the months a video re-shoot takes, and because everything is open-source the community can help keep it current.
 
 ## Tech Stack
 
-We've used the following tech stack which focused on **simplicity**, **modularity**, and **full-stack typesafety**.
-
-Here are the building blocks of Codealoy:
+This repository is the Codealoy website and curriculum: a content-driven, statically generated [Astro](https://astro.build) site with React islands and MDX, deployed to Cloudflare Workers. The stack is chosen for simplicity, modularity, and full-stack type safety.
 
 - [Astro](https://astro.build)
+- [React](https://react.dev)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Shadcn UI](https://ui.shadcn.com)
 - [MDX](https://mdxjs.com)
-- [Sandpack by Codesandbox](https://sandpack.codesandbox.io/)
-- [Better Auth](https://better-auth.com)
+- [TanStack Query](https://tanstack.com/query)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Zod](https://zod.dev)
 - [TypeScript](https://typescriptlang.org)
-- [Hono](https://hono.dev)
-- [Drizzle ORM](https://orm.drizzle.team)
-- [PostgreSQL](https://www.postgresql.org)
 - [Cloudflare](https://cloudflare.com)
+
+> The `codealoy` CLI (upcoming) that learners use to scaffold and verify tasks locally lives in a separate package and is under active development.
 
 ## Reporting Bugs, Issues or Feedbacks
 
